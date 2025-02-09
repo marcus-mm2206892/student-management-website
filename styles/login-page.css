@@ -51,3 +51,26 @@ body {
 .image-layer{
     position: relative;
 }
+
+.form-image-main {
+    width: 400px;
+}
+
+.form-image{
+    position: absolute;
+    left: 0;
+    width: 400px;
+}
+
+/* Form Image */
+
+.welcome {
+    text-align: center;
+    color: white;
+    width: 300px;
+}
+
+.welcome span {
+    font-weight: 600;
+    color: #95190b;
+}
