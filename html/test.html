@@ -1,0 +1,163 @@
+THIS FILE IS FOR TESTING IF JSON LOGIC IS CORRECT
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Course List with Classes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Course ID</th>
+                <th>Credit Hours</th>
+                <th>Type</th>
+                <th>Open for Registration</th>
+                <th>Class ID</th>
+                <th>Instructor</th>
+                <th>Max Students</th>
+                <th>Registered Students</th>
+                <th>Schedule</th>
+            </tr>
+        </thead>
+        <tbody id="courseTableBody">
+        </tbody>
+    </table>
+
+    <script>
+        // JSON data
+        const courses = [
+            {
+                "courseName": "Programming Concepts",
+                "courseId": "CMPS151",
+                "creditHours": 3,
+                "type": "Computer Science",
+                "prerequisites": null,
+                "openForRegistration": true,
+                "classes": [
+                    {"classId": "L01", "instructor": "instructor1", "maxStudents": 40, "inProgress": false, "registeredStudents": 0, "Schedule": ""},
+                    {"classId": "L02", "instructor": "instructor1", "maxStudents": 40, "inProgress": false, "registeredStudents": 0, "Schedule": ""}
+                ]
+            },
+            {
+                "courseName": "Programming Concepts",
+                "courseId": "ARAB100",
+                "creditHours": 3,
+                "type": "Core Curriculum",
+                "prerequisites": null,
+                "openForRegistration": true,
+                "classes": [
+                    {"classId": "L01", "instructor": "instructor2", "maxStudents": 20, "inProgress": false, "registeredStudents": 0, "Schedule": ""},
+                    {"classId": "L02", "instructor": "instructor2", "maxStudents": 20, "inProgress": false, "registeredStudents": 0, "Schedule": ""}
+                ]
+            },
+            {
+                "courseName": "Calculus I",
+                "courseId": "MATH101",
+                "creditHours": 3,
+                "type": "Core Curriculum",
+                "prerequisites": null,
+                "openForRegistration": true,
+                "classes": [
+                    {"classId": "L01", "instructor": "instructor2", "maxStudents": 40, "inProgress": false, "registeredStudents": 0, "Schedule": ""},
+                    {"classId": "L02", "instructor": "instructor2", "maxStudents": 40, "inProgress": false, "registeredStudents": 0, "Schedule": ""}
+                ]
+            },
+            {
+                "courseName": "Object Oriented Programming",
+                "courseId": "CMPS262",
+                "creditHours": 4,
+                "type": "Computer Science",
+                "prerequisites": [
+                    {"courseName": "CMPS151", "minGrade": 60}
+                ],
+                "openForRegistration": false
+            },
+            {
+                "courseName": "Web Fundamentals",
+                "courseId": "CMPS350",
+                "creditHours": 3,
+                "type": "Computer Science",
+                "prerequisites": [
+                    {"courseName": "CMPS262", "minGrade": 60}
+                ],
+                "openForRegistration": true,
+                "classes": [
+                    {"classId": "L01", "instructor": "instructor1", "maxStudents": 40, "inProgress": false, "registeredStudents": 0, "Schedule": "idk the best way to implement this yet"},
+                    {"classId": "L02", "instructor": "instructor1", "maxStudents": 40, "inProgress": false, "registeredStudents": 0, "Schedule": ""}
+                ]
+            }
+        ];
+
+        function displayCourses() {
+            const tableBody = document.getElementById("courseTableBody");
+            tableBody.innerHTML = ""; 
+
+            courses.forEach(course => {
+                if (course.classes) {
+                    course.classes.forEach((cls, index) => {
+                        const row = document.createElement("tr");
+                        if (index === 0) {
+                            row.innerHTML = `
+                                <td rowspan="${course.classes.length}">${course.courseName}</td>
+                                <td rowspan="${course.classes.length}">${course.courseId}</td>
+                                <td rowspan="${course.classes.length}">${course.creditHours}</td>
+                                <td rowspan="${course.classes.length}">${course.type || "N/A"}</td>
+                                <td rowspan="${course.classes.length}">${course.openForRegistration ? "Yes" : "No"}</td>
+                                <td>${cls.classId}</td>
+                                <td>${cls.instructor}</td>
+                                <td>${cls.maxStudents}</td>
+                                <td>${cls.registeredStudents}</td>
+                                <td>${cls.Schedule || "N/A"}</td>
+                            `;
+                        } else {
+                            row.innerHTML = `
+                                <td>${cls.classId}</td>
+                                <td>${cls.instructor}</td>
+                                <td>${cls.maxStudents}</td>
+                                <td>${cls.registeredStudents}</td>
+                                <td>${cls.Schedule || "N/A"}</td>
+                            `;
+                        }
+
+                        tableBody.appendChild(row);
+                    });
+                } else {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${course.courseName}</td>
+                        <td>${course.courseId}</td>
+                        <td>${course.creditHours}</td>
+                        <td>${course.type || "N/A"}</td>
+                        <td>${course.openForRegistration ? "Yes" : "No"}</td>
+                        <td colspan="5">No classes available</td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            });
+        }
+
+        displayCourses();
+    </script>
+
+</body>
+</html>

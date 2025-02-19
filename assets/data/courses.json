@@ -1,0 +1,65 @@
+[
+    {
+        "courseName": "Programming Concepts",
+        "courseId": "CMPS151" ,
+        "creditHours": 3,
+        "type": "Computer Science",
+        "prerequisites": null,
+        "openForRegistration": true,
+        "classes":[
+            {"classId":"L01","instructor":"instructor1","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""},
+            {"classId":"L02","instructor":"instructor1","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""}
+        ]
+    },
+    {
+        "courseName": "Arabic Language I",
+        "courseId": "ARAB100" ,
+        "creditHours": 3,
+        "type": "Core Curriculum",
+        "prerequisites": null,
+        "openForRegistration": true,
+        "classes":[
+            {"classId":"L01","instructor":"instructor2","maxStudents":20,"inProgress":false,"registeredStudents":0,"Schedule":""},
+            {"classId":"L02","instructor":"instructor2","maxStudents":20,"inProgress":false,"registeredStudents":0,"Schedule":""}
+        ]
+    },
+    {
+        "courseName": "Calculus I",
+        "courseId": "MATH101" ,
+        "creditHours": 3,
+        "major": "Core Curriculum",
+        "prerequisites": null,
+        "openForRegistration": true,
+        "classes":[
+            {"classId":"L01","instructor":"instructor2","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""},
+            {"classId":"L02","instructor":"instructor2","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""}
+        ]
+    },
+    {
+        "courseName": "Object Oriented Programming",
+        "courseId": "CMPS262" ,
+        "creditHours": 4,
+        "major": "Computer Science",
+        "prerequisites": [
+            {"courseName":"CMPS151","minGrade":60}
+        ],
+        "openForRegistration": false
+            
+    },
+    {
+        "courseName": "Web Fundamentals",
+        "courseId": "CMPS350" ,
+        "creditHours": 3,
+        "major": "Computer Science",
+        "prerequisites": [
+            {"courseName":"CMPS262","minGrade":60}
+        ],
+        "openForRegistration": true,
+        "classes":[
+            {"classId":"L01","instructor":"instructor1","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":"idk the best way to implement this yet"},
+            {"classId":"L02","instructor":"instructor1","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""}
+        ]
+    }
+    
+  
+]
