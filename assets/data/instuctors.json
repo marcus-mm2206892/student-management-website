@@ -1,0 +1,12 @@
+[
+    {
+        "instructorId":"instructor1",
+        "name":"John Doe",
+        "expertise":"Databases, Cybersecurity"
+    },
+    {
+        "instructorId":"instructor2",
+        "name":"James Bond",
+        "expertise":"Digital Circuits, Artificial Intelligence"
+    }
+]

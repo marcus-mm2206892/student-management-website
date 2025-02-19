@@ -1,0 +1,18 @@
+[
+    {
+        "studentID": "stud1",
+        "completedCourses":[
+            {"courseID":"CMPS151","grade":65},
+            {"courseID":"ARAB100","grade":70},
+            {"courseID":"MATH101","grade":70}
+        ]
+    },
+    {
+        "studentID": "stud2",
+        "completedCourses":[
+            {"courseID":"CMPS151","grade":65},
+            {"courseID":"ARAB100","grade":70},
+            {"courseID":"MATH101","grade":70}
+        ]
+    }
+]
