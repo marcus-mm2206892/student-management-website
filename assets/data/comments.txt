@@ -1,0 +1,7 @@
+I think the better implementation would be to have all of the users in 1 json "users.json",
+ but I'll keep the separate files just in case.
+
+ userType values:
+ 1 --> Student
+ 2 --> Instructor
+ 3 --> Admin

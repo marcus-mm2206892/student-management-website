@@ -1,22 +1,79 @@
 [
   {
-    "id": "1",
+    "userType": 1,
+    "id": "stud1",
     "username": "josh@gmail.com",
-    "password": "josh123"
+    "password": "josh123",
+    "firstName": "Josh",
+    "lastName":".",
+    "completedCourses":[
+      {"courseID":"CMPS151","grade":99},
+      {"courseID":"ARAB100","grade":99},
+      {"courseID":"MATH101","grade":99}
+  ]
   },
   {
-    "id": "2",
+    "userType": 1,
+    "id": "stud2",
     "username": "marcus@gmail.com",
-    "password": "marcus123"
+    "password": "marcus123",
+    "firstName":"Marcus",
+    "lastName":".",
+    "completedCourses":[
+      {"courseID":"CMPS151","grade":99},
+      {"courseID":"ARAB100","grade":99},
+      {"courseID":"MATH101","grade":99}
+  ]
+    
   },
   {
-    "id": "3",
+    "userType": 1,
+    "id": "stud3",
     "username": "audre@gmail.com",
-    "password": "audre123"
+    "password": "audre123",
+    "firstName":"Audre",
+    "lastName":"Caraig",
+    "completedCourses":[
+      {"courseID":"CMPS151","grade":35},
+      {"courseID":"ARAB100","grade":40},
+      {"courseID":"MATH101","grade":60}
+  ]
   },
   {
-    "id": "4",
+    "userType": 1,
+    "id": "stud4",
     "username": "bashar@gmail.com",
-    "password": "bashar123"
+    "password": "bashar123",
+    "firstName": "Bashar",
+    "lastName":".",
+    "completedCourses":[
+            {"courseID":"CMPS151","grade":99},
+            {"courseID":"ARAB100","grade":99},
+            {"courseID":"MATH101","grade":99}
+        ]
+  },
+  {
+    "userType":2,
+    "id":"inst1",
+    "username": "Doe@gmail.com",
+    "password": "doe123",
+    "instructorId":"inst1",
+    "name":"John Doe",
+    "expertise":"Databases, Cybersecurity"
+  },
+  {
+    "userType":2,
+    "id":"inst2",
+    "username": "James@gmail.com",
+    "password": "james123",
+    "instructorId":"instructor2",
+    "name":"James Bond",
+    "expertise":"Digital Circuits, Artificial Intelligence"
+  },
+  {
+    "userType": 3,
+    "id":"admin",
+    "username": "admin",
+    "password": "password"
   }
 ]
