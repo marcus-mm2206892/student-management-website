@@ -37,6 +37,8 @@
         --clr-contrast-a30: #cccccc;
         --clr-contrast-a40: #bfbfbf;
         --clr-contrast-a50: #b2b2b2;
+
+        --clr-accent: #ffc847;
     }
 }
 
@@ -71,5 +73,7 @@
         --clr-contrast-a30: #5a5e64;
         --clr-contrast-a40: #73777c;
         --clr-contrast-a50: #8d9095;
+
+        --clr-accent: #ffc847;
     }
 }

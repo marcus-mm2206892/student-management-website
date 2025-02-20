@@ -30,12 +30,14 @@ body {
 
 .welcome-col {
     grid-area: welcome-col;
-    background-color: var(--clr-primary-a20);
+    background-color: var(--clr-primary-a10);
     border-radius: 12px;
-    margin: 1rem;
+    margin: 1.5rem 1.5rem 1.5rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
 }
 
 .login-form {
@@ -61,7 +63,6 @@ body {
     align-items: flex-start;
 }
 
-/* Sign-in Heading */
 .form-header h1 {
     font-size: 2.5rem;
     font-weight: 600;
@@ -83,15 +84,9 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Input Fields */
-.text-input {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
 .input-field {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
     border: 1px solid var(--clr-surface-a30);
     border-radius: 6px;
     background-color: var(--clr-surface-a10);
@@ -99,12 +94,33 @@ body {
     font-size: 1rem;
 }
 
+.text-input {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.text-input i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--clr-contrast-a0);
+    font-size: 1.2rem;
+}
+
 .input-field::placeholder {
     color: var(--clr-contrast-a0);
     opacity: 0.6;
 }
 
-/* Login Button */
+.input-field:focus {
+    border: 1px solid var(--clr-primary-a20);
+    outline: none;
+    transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+
 .input-submit {
     width: 100%;
     background-color: var(--clr-primary-a0);
@@ -124,6 +140,7 @@ body {
 .input-submit:hover {
     background-color: var(--clr-primary-a20);
     transform: scale(1.02);
+    cursor: pointer;
 }
 
 /* Remember Me & Forgot Password */
@@ -145,21 +162,20 @@ body {
 
 .forgot-password-div a {
     text-decoration: none;
-    color: var(--clr-primary-a20);
+    color: var(--clr-primary-a0);
     font-weight: 600;
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
 }
 
-/* Register Here Link */
+.forgot-password-div a:hover {
+    color: var(--clr-primary-a30);
+}
+
 .form-header a {
     color: var(--clr-primary-a0);
     text-decoration: none;
     font-weight: 600;
-}
-
-.welcome-graphic {
-    align-self: center;
-    width: 90%;
-    
 }
 
 .remember-me {
@@ -176,7 +192,6 @@ body {
     cursor: pointer;
 }
 
-/* This is a custom checkmark */
 .remember-me::after {
     content: "";
     position: absolute;
@@ -190,8 +205,40 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
+.welcome-graphic {
+    align-self: center;
+    width: 100%;
+}
+
 .remember-me:checked::after {
     transform: translate(-50%, -50%) scale(1);
+}
+
+.welcome-col div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.welcome-col h1 {
+    font-size: 1.75rem;
+    color: white;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-col p {
+    font-size: 1.125rem;
+    color: rgb(218, 218, 218);
+}
+
+.welcome-col span {
+    color: var(--clr-accent);
+    font-weight: 700;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.tagline-description {
+    max-width: 24rem;
 }
 
 @media (max-width: 768px) {
@@ -200,6 +247,10 @@ body {
         grid-template-columns: 1fr;
         grid-template-areas: 
         "form-col";
+    }
+
+    .form-col {
+        align-items: center;
     }
 
     .welcome-col {
@@ -224,8 +275,6 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-
-
     body {
         background-image: url(../assets/imgs/unitrack-images/pattern-white.png);
     }
