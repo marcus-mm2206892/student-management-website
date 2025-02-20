@@ -29,8 +29,6 @@
         --clr-surface-tonal-a30: #5e6672;
         --clr-surface-tonal-a40: #777d88;
         --clr-surface-tonal-a50: #91969e;
-
-        font-family: "Inter", sans-serif;
     }
 }
 
@@ -57,7 +55,5 @@
         --clr-surface-tonal-a30: #b7becb;
         --clr-surface-tonal-a40: #aeb4be;
         --clr-surface-tonal-a50: #a5a9b1;
-
-        font-family: "Inter", sans-serif;
     }
 }

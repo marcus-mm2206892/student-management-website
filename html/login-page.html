@@ -11,27 +11,30 @@
     <link rel="stylesheet" href="../styles/login-page.css">
 </head>
 <body>
-    
     <div class="main-page">
-        <section class="col form-col">
+        <section class="form-col">
             <!-- Login Form Container -->
             <div class="login-form">
-                <img src="../assets/imgs/unitrack-logos/unitrack-logo-text-black.png" alt="UniTrack Logo">
-                <div class="form-title">
-                    <span>Sign In</span>
+                <img width=200 src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="UniTrack Logo">
+                <div class="form-header">
+                    <h1>Sign in</h1>
+                    <p>Welcome back! Please log in with your university account.</p>
                 </div>
-                <div class="form-inputs">
-                    <div class="input-box">
-                        <input type="email" class="input-field" placeholder="E-mail" required>
-                        <i class="bx bx-user icon"></i>
+                <div class="form-content">
+                    <div class="text-input">
+                        <input type="email" class="input-field" placeholder="someone@qu.edu.qa" required>
                     </div>
-                    <div class="input-box"> 
+                    <div class="text-input"> 
                         <input type="password" class="input-field" placeholder="Password" required>
-                        <i class="bx bx-lock-alt icon"></i>
                     </div>
-                    <div class="remember-me">
-                        <input type="checkbox" id="remember" class="checkbox">
-                        <label for="remember">Remember Me</label>
+                    <div class="login-options-div">
+                        <div class="remember-me-div">
+                            <input type="checkbox" id="remember" class="checkbox">
+                            <label for="remember">Remember Me</label>
+                        </div>
+                        <div class="forgot-password-div">
+                            <a href="">Forgot Password?</a>
+                        </div>
                     </div>
                     <div class="input-box">
                         <button class="input-submit">
@@ -42,8 +45,11 @@
                 </div>
             </div>
         </section>
-        <section class="col ">
-            <p class="welcome">Welcome to the <span>Student Management App</span></p>
+        <!-- Welcome User Container -->
+        <section class="welcome-col">
+            <img width="500" src="../assets/imgs/unitrack-images/login-page-graphic.png" alt="University Student on the Computer">
+            <h1 class="tagline">Your Path, Your Progress</h1>
+            <p class="tagline-description">Manage courses, track progress, and stay on top of your academic journey with UniTrack.</p>
         </section>
     </div>
 

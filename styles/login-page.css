@@ -7,3 +7,59 @@
   box-sizing: border-box;
 }
 
+html {
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--clr-surface-tonal-a0);
+}
+
+.main-page {
+    min-height: calc(100vh - 2rem);
+    margin: 1rem;
+    background-color: var(--clr-surface-a0);
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "form-col welcome-col";
+}
+
+.form-col {
+    grid-area: form-col;
+}
+
+.welcome-col {
+    grid-area: welcome-col;
+    background-color: var(--clr-primary-a0);
+    border-radius: 12px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 1024px){
+    .main-page {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "form-col"
+        "welcome-col";
+    }
+}
+  
+
+@media (max-width: 768px) {
+    .main-page {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "form-col";
+    }
+
+    .welcome-col {
+        display: none;
+    }
+}
