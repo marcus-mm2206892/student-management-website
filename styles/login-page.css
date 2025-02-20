@@ -12,13 +12,15 @@ html {
 }
 
 body {
-    background-color: var(--clr-surface-tonal-a0);
+    background-color: var(--clr-surface-tonal-a10);
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 .main-page {
     min-height: calc(100vh - 2rem);
     margin: 1rem;
-    background-color: var(--clr-surface-a0);
+    background-color: rgba( var(--clr-surface-a0-rgb), 0.8);
     border-radius: 12px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -26,13 +28,9 @@ body {
     "form-col welcome-col";
 }
 
-.form-col {
-    grid-area: form-col;
-}
-
 .welcome-col {
     grid-area: welcome-col;
-    background-color: var(--clr-primary-a0);
+    background-color: var(--clr-primary-a20);
     border-radius: 12px;
     margin: 1rem;
     display: flex;
@@ -40,16 +38,161 @@ body {
     justify-content: center;
 }
 
-@media (max-width: 1024px){
-    .main-page {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "form-col"
-        "welcome-col";
-    }
+.login-form {
+    max-width: 26rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-  
+
+.unitrack-logo {
+    position: absolute;
+    width: 10rem;
+    padding: 1rem;
+}
+
+/* Styling for Sign-in Section */
+.form-col {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Sign-in Heading */
+.form-header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--clr-contrast-a0);
+    margin-bottom: 1.5rem;
+}
+
+.form-header span {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--clr-primary-a0);
+}
+
+.form-header p {
+    font-size: 1rem;
+    color: var(--clr-contrast-a0);
+    opacity: 0.8;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Input Fields */
+.text-input {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--clr-surface-a30);
+    border-radius: 6px;
+    background-color: var(--clr-surface-a10);
+    color: var(--clr-contrast-a0);
+    font-size: 1rem;
+}
+
+.input-field::placeholder {
+    color: var(--clr-contrast-a0);
+    opacity: 0.6;
+}
+
+/* Login Button */
+.input-submit {
+    width: 100%;
+    background-color: var(--clr-primary-a0);
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.input-submit:hover {
+    background-color: var(--clr-primary-a20);
+    transform: scale(1.02);
+}
+
+/* Remember Me & Forgot Password */
+.login-options-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 0.9rem;
+    color: var(--clr-contrast-a0);
+    opacity: 0.8;
+}
+
+.remember-me-div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.forgot-password-div a {
+    text-decoration: none;
+    color: var(--clr-primary-a20);
+    font-weight: 600;
+}
+
+/* Register Here Link */
+.form-header a {
+    color: var(--clr-primary-a0);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.welcome-graphic {
+    align-self: center;
+    width: 90%;
+    
+}
+
+.remember-me {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--clr-contrast-a30);
+    background-color: var(--clr-surface-a10);
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+/* This is a custom checkmark */
+.remember-me::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: var(--clr-contrast-a30);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 17%, 80% 0%, 43% 62%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.remember-me:checked::after {
+    transform: translate(-50%, -50%) scale(1);
+}
 
 @media (max-width: 768px) {
     .main-page {
@@ -61,5 +204,36 @@ body {
 
     .welcome-col {
         display: none;
+    }
+
+    .form-col {
+        padding: 2rem;
+    }
+
+    .form-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .input-field {
+        font-size: 0.9rem;
+    }
+
+    .input-submit {
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+
+    body {
+        background-image: url(../assets/imgs/unitrack-images/pattern-white.png);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: var(--clr-surface-tonal-a0);
+        background-image: url(../assets/imgs/unitrack-images/pattern-black.png);
     }
 }
