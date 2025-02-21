@@ -11,10 +11,18 @@ html {
 }
 
 body {
-  background: var(--clr-surface-a0);
+  background-color: var(--clr-surface-a10);
+  background-image: url("../assets/imgs/unitrack-images/pattern-black.png");
+  background-repeat: repeat;
   color: var(--clr-contrast-a0);
   font-family: "Inter", sans-serif;
   font-size: 0.85rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+      background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
+  }
 }
 
 .student-home {
