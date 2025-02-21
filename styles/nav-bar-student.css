@@ -43,6 +43,12 @@
     object-fit: cover;
 }
 
+.nav-bar-logo > .unitrack-logo {
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: cover;
+}
+
 .bordered-div {
     display: flex;
     align-items: center;

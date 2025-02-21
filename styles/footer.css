@@ -7,14 +7,6 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
 .footer {
   margin-top: auto;
   width: 100%;
@@ -55,7 +47,6 @@ html, body {
   border-top-right-radius: 0rem;
   transition: border-top-left-radius 0.3s ease-in-out, border-top-right-radius 0.3s ease-in-out;
 }
-
 
 .top-half {
   width: 100%;

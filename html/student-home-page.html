@@ -8,13 +8,104 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/nav-bar-student.css">
+    <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/student-home-page.css">
+
 </head>
-<body>
 
-    <!-- Include Navbar -->
-    <div id="navbar-container"></div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-user bordered-div" id="userMenuButton">
+            <div class="nav-item">
+                <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
+                <span class="username">Mohammad Ahmed</span>
+                <i class="bx bx-chevron-down dropdown-icon"></i>
+            </div>
+        </div>
 
+        <div class="nav-bar-logo bordered-div">
+            <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="User">
+        </div>
+
+        <div class="use-cases bordered-div">
+            <ul class="navbar-menu">
+                <div class="nav-item"><li><a href="#">Register Courses <i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">Use Case 2 <i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">Use Case 3 <i class="bx bx-chevron-down"></i></a></li></div>
+            </ul>
+
+            <div class="mobile-menu">
+                <div class="nav-item">
+                    <button class="browse-btn">
+                        <i class="fa-solid fa-list"></i> Browse
+                    </button>
+                </div>
+            </div>
+
+            <button class="milestones-btn">Milestones</button>
+        </div>
+    </nav>
+
+    <!-- USER DROPDOWN -->
+    <section class="user-dropdown" id="userDropdown">
+        <div class="dropdown-header">
+            <div class="top-header">
+                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar">
+                <button class="close-btn" id="closeDropdown">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                
+            </div>
+            <div class="bottom-header">
+                <h4 class="dropdown-name">Mohammad Ahmed</h4>
+                <p class="dropdown-email">mohammad.ahmed@example.com</p>
+            </div>
+        </div>        
+        
+        <div class="dropdown-options">
+            <button class="dropdown-btn profile">
+                <div class="icon-box">
+                    <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon">
+                </div>
+                Profile
+            </button>
+        </div>
+        
+        <hr class="hr options-theme">
+    
+        <div class="theme-toggle">
+            <div class="theme-option">
+                <button class="theme-btn active" id="systemMode">
+                        <i class="fa-solid fa-laptop"></i>
+                </button>
+                <span class="theme-label">System</span>
+            </div>
+        
+            <div class="theme-option">
+                <button class="theme-btn" id="lightMode">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <span class="theme-label">Light</span>
+            </div>
+        
+            <div class="theme-option">
+                <button class="theme-btn" id="darkMode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <span class="theme-label">Dark</span>
+            </div>
+        </div>
+
+        <hr class="hr theme-signout">
+    
+        <button class="signout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+        </button>
+    </section>
+
+    <!-- MAIN DISCOVER PAGE -->
     <main class="student-home">
         <!-- Hero Section with Search -->
         <section class="hero">
@@ -54,10 +145,73 @@
         </section>
     </main>
 
-    <!-- Include Footer -->
-    <div id="footer-container"></div>
+    <!-- FOOTER-->
+    <footer class="footer">
+        <div class="top-half">
+            <div class="contact-div">
+                <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="UniTrack Logo">
+                <div class="contact-texts">
+                    <h1>UniTrack</h1>
+                    <a href="mailto:contact@unitrack.com" class="text-link">contact@unitrack.com</a>
+                </div>
+                <div class="social-media-buttons">
+                    <div><i id="discord" class="fa-brands fa-discord"></i></div>
+                    <div><i id="github" class="fa-brands fa-github"></i></div>
+                    <div><i id="instagram" class="fa-brands fa-instagram"></i></div>
+                    <div><i id="coffee"class="fa fa-coffee"></i></div>
+                </div>
+            </div>
+
+            <div class="links-div">
+                <div class="links-content">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-book-open"></i> <a href="#register" class="text-link">Register Courses</a></li>
+                        <li><i class="fa-solid fa-trophy"></i> <a href="#milestones" class="text-link">Milestones</a></li>
+                        <li><i class="fa-solid fa-list-check"></i> <a href="#usecase3" class="text-link">Use Case 3</a></li>
+                        <li><i class="fa-solid fa-puzzle-piece"></i> <a href="#usecase4" class="text-link">Use Case 4</a></li>
+                        <li><i class="fa-solid fa-gears"></i> <a href="#usecase5" class="text-link">Use Case 5</a></li>
+                    </ul>
+                </div>
+            
+                <div class="links-content">
+                    <h3>Legal & Policies</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-scroll"></i> <a href="#terms-and-conditions" class="text-link">Terms & Conditions</a></li>
+                        <li><i class="fa-solid fa-user-shield"></i> <a href="#privacy-policy" class="text-link">Privacy Policy</a></li>
+                        <li><i class="fa-solid fa-shield-halved"></i> <a href="#data-protection" class="text-link">Data Protection</a></li>
+                    </ul>
+                </div>
+            
+                <div class="links-content">
+                    <h3>Others</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-question"></i> <a href="#help" class="text-link">Help & Support</a></li>
+                        <li><i class="fa-solid fa-university"></i> <a href="#location" class="text-link">Qatar University</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <hr class="hr">
+
+        <div class="bottom-half">
+            <div class="footer-info">
+                <span>Made with ♥️ & ☕️ by <a class="text-link dev-name" href="">@marcusmonteiro</a>, <a class="text-link dev-name" href="">@joshcalma</a>, <a class="text-link dev-name" href="">@mohdbashar</a>, & <a class="text-link dev-name" href="">@audrecaraig</a></span>
+                <div>
+                    <span>©2025 UniTrack</span>
+                    <p class="version-tag">v1.0.0</p>
+                </div>
+            </div>
+            <div class="unitrack-name">
+                <span>UniTrack</span>
+            </div>
+        </div>
+    </footer>
 
     <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/footer.js"></script>
     <script src="../scripts/dark-light-elements.js"></script>
     <script src="../scripts/student-home-page.js"></script>
 
