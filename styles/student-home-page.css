@@ -11,8 +11,8 @@ html {
 }
 
 body {
-  background-color: var(--clr-surface-a10);
-  background-image: url("../assets/imgs/unitrack-images/pattern-black.png");
+  background-color: var(--clr-surface-a0);
+  background-image: url("../assets/imgs/unitrack-images/pattern-blue.png");
   background-repeat: repeat;
   color: var(--clr-contrast-a0);
   font-family: "Inter", sans-serif;
@@ -39,7 +39,8 @@ main {
 }
 
 .hero {
-  background: var(--clr-surface-tonal-a0);
+  background: var(--clr-surface-a0);
+  border: 1px solid var(--clr-surface-a20);
   color: var(--clr-contrast-a0);
   padding: 40px 20px;
   border-radius: 10px;
