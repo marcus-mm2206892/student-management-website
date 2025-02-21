@@ -6,7 +6,6 @@
   box-sizing: border-box;
 }
 
-/* Navbar Styling */
 .navbar {
     display: grid;
     grid-template-columns: auto auto 1fr;
@@ -17,7 +16,6 @@
     font-size: 0.85rem;
 }
 
-/* Left Section (User Info) */
 .navbar-user {
     display: flex;
     justify-content: center;
@@ -80,7 +78,6 @@
     font-size: 1.25rem;
 }
 
-/* Center Menu */
 .navbar-menu {
     display: flex;
     gap: .75rem;
@@ -312,7 +309,7 @@
     width: 100%;
 }
 
-/* Default Theme Button Styles */
+/* Theme Button Styles */
 .theme-btn {
     width: 100%;
     height: 2.5rem;
@@ -330,29 +327,24 @@
     margin-bottom: .5rem;
 }
 
-
-/* System Theme */
 #systemMode {
     background-image: url("../assets/imgs/theme-buttons-system.png");
     background-size: cover;
     background-position: center;
 }
 
-/* Light Theme */
 #lightMode {
     background-image: url("../assets/imgs/theme-buttons-light.png");
     background-size: cover;
     background-position: center;
 }
 
-/* Dark Theme */
 #darkMode {
     background-image: url("../assets/imgs/theme-buttons-dark.png");
     background-size: cover;
     background-position: center;
 }
 
-/* Default Icon Colors */
 #systemMode i, #lightMode i {
     color: black;
 }
@@ -361,7 +353,6 @@
     color: white;
 }
 
-/* Theme Label Text */
 .theme-label {
     align-self: flex-start;
     text-align: left;
@@ -371,7 +362,6 @@
     transition: color 0.3s ease-in-out;
 }
 
-/* Active State */
 .theme-btn.active {
     border: 2px solid var(--clr-primary-a10);
 }

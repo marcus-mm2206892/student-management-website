@@ -1,73 +1,7 @@
-/* FONT */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    
-}
-
-body {
-    background: url("/assets/imgs/bg3.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.top-bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: white;
-    padding: 1rem;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.welcome-message {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    
-    padding: 20px;
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-    /* border: 1px solid rgba(255, 255, 255, 0.1); */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    color: white;
-
-    width: 25%;
-}
-
-.cards {
-    display: flex;
-    flex-direction: row;
-    margin: 1rem;
-    justify-content: space-around;
-    /* background-color: aqua; */
-    width: 1000px;
-    height: 300px;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
