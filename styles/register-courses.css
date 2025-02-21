@@ -8,11 +8,25 @@
 
 body {
     background-image: url("../assets/imgs/unitrack-images/pattern-black.png");
-    text-align: center;
-    font-size: 40px;
-    font-weight: 900;
+    background-size: cover;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 table, th, td {
-    border: 1px solid black;
+    border-bottom: 1px solid grey;
+    padding: 1rem;
+}
+
+.course-table {
+    background-color: #fff5;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0.4rem 0.8rem #0005;
+    border-radius: 0.8rem;
+    overflow: hidden;
 }
