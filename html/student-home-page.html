@@ -3,40 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student | Home Page</title>
+    <title>Student Home | UniTrack</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/theme.css">
     <link rel="stylesheet" href="../styles/student-home-page.css">
 </head>
 <body>
-    <header>
-        <div class="top-bar">
-            <h1>Logo</h1>
-            <button type="button">Sign Out</button>
-        </div>
-    </header>
 
-    <main>
-        <div class="welcome-message">
-            <h1>Welcome Ahmed!</h1>
-            <p>What would you like to do?</p>
-        </div>
+    <!-- Include Navbar -->
+    <div id="navbar-container"></div>
 
-
-
-        <div class="cards">
-            <div class="card">
-                <img src="assets/imgs/Magnifying_glass_icon.svg.png" width="100" height="100">
-                <h3>Search & display courses</h3>
+    <main class="student-home">
+        <!-- Hero Section with Search -->
+        <section class="hero">
+            <h1>Search for Courses</h1>
+            <p>Discover available courses and register easily.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for courses...">
+                <button><i class="fa fa-search"></i></button>
             </div>
-            <div class="card">
-                <img src="assets/imgs/register-icon.png" width="100" height="100">
-                <h3>Register in a course</h3>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="courses">
+            <h2>Find Available Courses</h2>
+            <p>Explore the courses that fit your learning path.</p>
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-image"></div>
+                    <span class="course-tag">Code</span>
+                    <h3>Title 1</h3>
+                    <p>Subtitle 1</p>
+                </div>
+                <div class="course-card">
+                    <div class="course-image"></div>
+                    <span class="course-tag">Code</span>
+                    <h3>Title 2</h3>
+                    <p>Subtitle 2</p>
+                </div>
+                <div class="course-card">
+                    <div class="course-image"></div>
+                    <span class="course-tag">Code</span>
+                    <h3>Title 3</h3>
+                    <p>Subtitle 3</p>
+                </div>
             </div>
-            <div class="card">
-                <img src="assets/imgs/path.png" width="100" height="100">
-                <h3>View learning path</h3>
-            </div>
-        </div>
+            <button class="more-btn">More Courses</button>
+        </section>
     </main>
-    
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/dark-light-elements.js"></script>
+    <script src="../scripts/student-home-page.js"></script>
+
 </body>
 </html>
