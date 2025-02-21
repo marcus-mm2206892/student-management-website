@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const logo = document.querySelector(".unitrack-logo");
+    const logo = document.querySelector(".unitrack-logo-text");
 
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         logo.src = "../assets/imgs/unitrack-images/unitrack-logo-text-white.png";

@@ -7,12 +7,85 @@
   box-sizing: border-box;
 }
 
-html {
-    overflow: hidden;
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: var(--clr-surface-a10);
+    background-color: var(--clr-surface-a0);
     background-repeat: repeat;
     background-size: cover;
+}
+
+.footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: var(--clr-surface-a10);
+  color: var(--clr-contrast-a0);
+  padding: 3rem 6rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* pseudo-element for starting the animation */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background-color: var(--clr-primary-a0);
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+/* expanding border from the center animation */
+.footer:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* removing border radius on hover */
+.footer:hover {
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
+  transition: border-top-left-radius 0.3s ease, border-top-right-radius 0.3s ease;
+}
+
+
+.top-half {
+  width: 100%;
+  display: flex;
+
+}
+
+
+
+.unitrack-logo {
+  width: 5rem;
+}
+
+.hr {
+  border: none;
+  height: 1px;
+  background-color: var(--clr-surface-a20);
+  margin: 1rem 0;
+  width: 100%;
+
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+@media (max-width: 768px) {
 }
