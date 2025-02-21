@@ -15,12 +15,6 @@ html, body {
   padding: 0;
 }
 
-body {
-    background-color: var(--clr-surface-a0);
-    background-repeat: repeat;
-    background-size: cover;
-}
-
 .footer {
   margin-top: auto;
   width: 100%;
@@ -168,7 +162,7 @@ body {
   display: flex;
   align-items: center;
   list-style-type: none;
-  gap: 0.5rem; /* Adjust space between icon and text */
+  gap: 0.5rem;
 }
 
 .text-link {
@@ -208,7 +202,6 @@ body {
   transition: color 0.3s ease-in-out;
 }
 
-/* Hover effect */
 .text-link:hover,
 .links-div li:hover i {
   color: var(--clr-primary-a0);
@@ -304,7 +297,36 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
-    background-color: red;
+
+  .footer {
+    padding: 1rem 2rem;
+  }
+
+  .top-half {
+    flex-direction: column;
+  }
+
+  .contact-div {
+    flex: none;
+    max-width: fit-content;
+    padding-bottom: 0;
+  }
+
+  .links-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+    gap: 1rem;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-info > span {
+    padding: 0 1rem;
   }
 }
