@@ -42,29 +42,66 @@
         </div>
     </nav>
 
-    <!-- Profile Dropdown Menu -->
-    <div class="profile-dropdown" id="profileDropdown">
-        <div class="profile-header">
-            <img src="../assets/imgs/person.png" alt="User" class="profile-image">
-            <div class="profile-info">
-                <p class="profile-name">Mohammad Ahmed</p>
-                <p class="profile-email">mohammad.ahmed@example.com</p>
+    <div class="user-dropdown" id="userDropdown">
+        <div class="dropdown-header">
+            <div class="top-header">
+                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar">
+                <button class="close-btn" id="closeDropdown">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                
             </div>
-            <i class="fa-solid fa-pencil edit-icon"></i>
+            <div class="bottom-header">
+                <h4 class="dropdown-name">Mohammad Ahmed</h4>
+                <p class="dropdown-email">mohammad.ahmed@example.com</p>
+            </div>
+        </div>        
+        
+        <div class="dropdown-options">
+            <button class="dropdown-btn profile">
+                <div class="icon-box">
+                    <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon">
+                </div>
+                Profile
+            </button>
         </div>
-
-        <ul class="profile-menu">
-            <li><i class="fa-regular fa-moon"></i> Theme</li>
-            <li><i class="fa-solid fa-sliders"></i> Settings</li>
-        </ul>
-
-        <hr>
-
-        <div class="logout">
-            <i class="fa-solid fa-right-from-bracket"></i> Log out
+        
+        <hr class="hr options-theme">
+    
+        <div class="theme-toggle">
+            <div class="theme-option">
+                <button class="theme-btn active" id="systemMode">
+                        <i class="fa-solid fa-laptop"></i>
+                </button>
+                <span class="theme-label">System</span>
+            </div>
+        
+            <div class="theme-option">
+                <button class="theme-btn" id="lightMode">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <span class="theme-label">Light</span>
+            </div>
+        
+            <div class="theme-option">
+                <button class="theme-btn" id="darkMode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <span class="theme-label">Dark</span>
+            </div>
         </div>
+        
+        
+
+        <hr class="hr theme-signout">
+    
+        <button class="signout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+        </button>
+        
     </div>
-
+    
     <script src="../scripts/navbar.js"></script>
     <script src="../scripts/dark-light-elements.js"></script>
 </body>

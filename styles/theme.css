@@ -74,6 +74,13 @@
         --clr-contrast-a40: #73777c;
         --clr-contrast-a50: #8d9095;
 
+        --clr-primary-contrast-a0: #0d8ce9;
+        --clr-primary-contrast-a10: #4998ec;
+        --clr-primary-contrast-a20: #68a4ef;
+        --clr-primary-contrast-a30: #82b1f1;
+        --clr-primary-contrast-a40: #b2cbf1;
+        --clr-primary-contrast-a50: #d7e6ff;
+
         --clr-accent: #ffc847;
     }
 }
