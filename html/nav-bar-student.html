@@ -6,17 +6,17 @@
     <title>UniTrack Navbar</title>
 
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../styles/theme.css">
     <link rel="stylesheet" href="../styles/nav-bar-student.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <!-- Left Section (User) -->
-        <div class="navbar-user bordered-div">
+        <div class="navbar-user bordered-div" id="userMenuButton">
             <div class="nav-item">
                 <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
-                <span class="username">Miles Morales Jr.</span>
+                <span class="username">Mohammad Ahmed</span>
                 <i class="bx bx-chevron-down dropdown-icon"></i>
             </div>
         </div>
@@ -26,22 +26,46 @@
         </div>
 
         <div class="use-cases bordered-div">
-            <!-- Center Menu -->
             <ul class="navbar-menu">
-                <li><a href="#">Register Courses <i class="bx bx-chevron-down"></i></a></li>
-                <li><a href="#">Use Case 2 <i class="bx bx-chevron-down"></i></a></li>
-                <li><a href="#">Use Case 3 <i class="bx bx-chevron-down"></i></a></li>
-                <li><a href="#">Use Case 4 <i class="bx bx-chevron-down"></i></a></li>
+                <div class="nav-item"><li><a href="#">Register Courses <i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">Use Case 2 <i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">Use Case 3 <i class="bx bx-chevron-down"></i></a></li></div>
             </ul>
-            <!-- Mobile Menu -->
+
             <div class="mobile-menu">
-                <button class="browse-btn">☰ Browse</button>
+                <button class="browse-btn">
+                    <i class="fa-solid fa-list"></i> Browse
+                </button>
             </div>
 
-            <!-- Right Section -->
             <button class="milestones-btn">Milestones</button>
         </div>
     </nav>
 
+    <!-- Profile Dropdown Menu -->
+    <div class="profile-dropdown" id="profileDropdown">
+        <div class="profile-header">
+            <img src="../assets/imgs/person.png" alt="User" class="profile-image">
+            <div class="profile-info">
+                <p class="profile-name">Mohammad Ahmed</p>
+                <p class="profile-email">mohammad.ahmed@example.com</p>
+            </div>
+            <i class="fa-solid fa-pencil edit-icon"></i>
+        </div>
+
+        <ul class="profile-menu">
+            <li><i class="fa-regular fa-moon"></i> Theme</li>
+            <li><i class="fa-solid fa-sliders"></i> Settings</li>
+        </ul>
+
+        <hr>
+
+        <div class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i> Log out
+        </div>
+    </div>
+
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/dark-light-elements.js"></script>
 </body>
 </html>
