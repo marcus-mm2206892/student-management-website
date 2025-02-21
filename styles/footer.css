@@ -130,22 +130,6 @@ html, body {
   font-size: 1rem;
 }
 
-#discord {
-  color: rgb(117, 87, 238);
-}
-
-#github {
-  color: rgb(109, 5, 119);
-}
-
-#instagram {
-  color: rgb(234, 76, 129);
-}
-
-#coffee {
-  color: black;
-}
-
 .links-div h3 {
   font-size: 0.85rem;
   margin-bottom: 1rem;
@@ -293,6 +277,22 @@ html, body {
 
   .social-media-buttons > div:hover {
     background-color: var(--clr-primary-contrast-a50);
+  }
+
+  #discord {
+    color: rgb(117, 87, 238);
+  }
+  
+  #github {
+    color: rgb(109, 5, 119);
+  }
+  
+  #instagram {
+    color: rgb(234, 76, 129);
+  }
+  
+  #coffee {
+    color: black;
   }
 }
 
