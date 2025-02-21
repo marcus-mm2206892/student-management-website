@@ -371,6 +371,10 @@
     transition: color 0.3s ease-in-out;
 }
 
+.theme-btn:hover {
+    border: 2px solid var(--clr-primary-a30);
+}
+
 .theme-btn.active {
     border: 2px solid var(--clr-primary-a10);
 }
@@ -406,6 +410,10 @@
     .signout-btn:hover {
         background: var(--clr-surface-tonal-a10);
         border: 1px solid var(--clr-surface-a40);
+    }
+
+    .user-dropdown {
+        border: 1px solid var(--clr-surface-a20);
     }
 }
 
