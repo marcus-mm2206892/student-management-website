@@ -19,12 +19,6 @@ body {
   font-size: 0.85rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-      background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
-  }
-}
-
 .student-home {
   max-width: 1200px;
   margin: 53px auto 0 auto;
@@ -57,38 +51,70 @@ main {
   margin-bottom: 10px;
   max-width: 30rem;
   text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 span {
+  color: var(--clr-surface-a50);
+  transition: color 0.2s ease-in-out;
+}
+
+.hero h1 span:hover {
+  color: var(--clr-primary-a0);
 }
 
 .search-bar {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
-  max-width: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: .25rem 1rem;
+  width: 24rem;
   margin: 0 auto;
 }
 
 .search-bar input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid var(--clr-surface-a30);
-  background: var(--clr-surface-a0);
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: transparent;
   color: var(--clr-contrast-a0);
-  border-radius: 5px;
+  padding: .5rem 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
+
+.search-bar input::placeholder {
+  color: var(--clr-surface-a50);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
 
 .search-bar button {
-  padding: 10px 15px;
+  background: none;
   border: none;
-  background: var(--clr-primary-a0);
-  color: white;
-  border-radius: 5px;
   cursor: pointer;
+  color: var(--clr-contrast-a0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.search-bar button:hover {
-  background: var(--clr-primary-a10);
+.search-bar i {
+  font-size: 0.75rem;
+  color: var(--clr-contrast-a0);
+  transition: color 0.3s ease;
 }
+
+.search-bar button:hover i {
+  
+}
+
 
 .courses {
   display: flex;
@@ -224,5 +250,25 @@ main {
   .course-grid {
       flex-direction: column;
       align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+      background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .search-bar {
+    background-color: var(--clr-surface-a10);
   }
 }
