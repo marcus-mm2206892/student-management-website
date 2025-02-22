@@ -7,8 +7,8 @@
         "prerequisites": null,
         "openForRegistration": true,
         "classes":[
-            {"classId":"L01","instructor":"inst1","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""},
-            {"classId":"L02","instructor":"inst1","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""}
+            {"classId":"L01","instructor":"inst1","maxStudents":40,"inProgress":false,"Students": [""],"Schedule":""},
+            {"classId":"L02","instructor":"inst1","maxStudents":40,"inProgress":false,"Students": [""],"Schedule":""}
         ]
     },
     {
@@ -19,8 +19,8 @@
         "prerequisites": null,
         "openForRegistration": true,
         "classes":[
-            {"classId":"L01","instructor":"inst2","maxStudents":20,"inProgress":false,"registeredStudents":0,"Schedule":""},
-            {"classId":"L02","instructor":"inst2","maxStudents":20,"inProgress":false,"registeredStudents":0,"Schedule":""}
+            {"classId":"L01","instructor":"inst2","maxStudents":20,"inProgress":false,"Students": [""],"Schedule":""},
+            {"classId":"L02","instructor":"inst2","maxStudents":20,"inProgress":false,"Students": [""],"Schedule":""}
         ]
     },
     {
@@ -31,8 +31,8 @@
         "prerequisites": null,
         "openForRegistration": true,
         "classes":[
-            {"classId":"L01","instructor":"inst2","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""},
-            {"classId":"L02","instructor":"inst2","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""}
+            {"classId":"L01","instructor":"inst2","maxStudents":40,"inProgress":false,"Students": [""],"Schedule":""},
+            {"classId":"L02","instructor":"inst2","maxStudents":40,"inProgress":false,"Students": [""],"Schedule":""}
         ]
     },
     {
@@ -45,7 +45,7 @@
         ],
         "openForRegistration": true,
         "classes":[
-            {"classId":"L01","instructor":"inst2","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""}
+            {"classId":"L01","instructor":"inst2","maxStudents":40,"inProgress":false,"Students": ["stud1"],"Schedule":""}
         ]
     },
     {
@@ -60,6 +60,20 @@
             
     },
     {
+        "courseName": "Computer Graphics",
+        "courseId": "CMPS373" ,
+        "creditHours": 3,
+        "major": "Computer Science",
+        "prerequisites": [
+            {"courseId":"CMPS262","minGrade":60}
+        ],
+        "openForRegistration": true,
+        "classes":[
+            {"classId":"L01","instructor":"inst1","maxStudents":40,"inProgress":false,"Students": [""],"Schedule":""},
+            {"classId":"L02","instructor":"inst2","maxStudents":40,"inProgress":false,"Students": [""],"Schedule":""}
+        ]
+    },
+    {
         "courseName": "Web Fundamentals",
         "courseId": "CMPS350" ,
         "creditHours": 3,
@@ -69,10 +83,11 @@
         ],
         "openForRegistration": true,
         "classes":[
-            {"classId":"L01","instructor":"inst1","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":"idk the best way to implement this yet"},
-            {"classId":"L02","instructor":"inst1","maxStudents":40,"inProgress":false,"registeredStudents":0,"Schedule":""}
+            {"classId":"L01","instructor":"inst1","maxStudents":40,"inProgress":false,"Students": ["stud1","stud2","stud3"],"Schedule":"idk the best way to implement this yet,probably Date?"},
+            {"classId":"L02","instructor":"inst1","maxStudents":40,"inProgress":false,"Students": ["stud4"],"Schedule":""}
         ]
     }
+
     
   
 ]
