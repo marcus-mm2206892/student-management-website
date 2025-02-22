@@ -111,8 +111,8 @@ main {
   transition: color 0.3s ease;
 }
 
-.search-bar button:hover i {
-  
+.search-bar i:hover {
+  cursor: pointer;
 }
 
 
