@@ -55,4 +55,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    document.querySelector(".nav-bar-logo").addEventListener("click", function() {
+        window.location.href = "student-home-page.html";
+    });
+
+    document.querySelector(".learningpath-btn").addEventListener("click", function() {
+        window.location.href = "learningpath.html";
+    });
+
+    document.querySelector(".signout-btn").addEventListener("click", function() {
+        window.location.href = "index.html";
+    });
+
 });

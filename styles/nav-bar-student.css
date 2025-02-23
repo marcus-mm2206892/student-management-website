@@ -55,6 +55,11 @@
     object-fit: cover;
 }
 
+.nav-bar-logo > .unitrack-logo:hover {
+    cursor: pointer;
+}
+
+
 .bordered-div {
     display: flex;
     align-items: center;

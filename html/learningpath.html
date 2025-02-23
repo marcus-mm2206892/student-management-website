@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/scroll-up.css">
     <link rel="stylesheet" href="../styles/learningpath.css">
+    <link rel="stylesheet" href="../styles/course-card.css">
+    <link rel="stylesheet" href="../styles/scrollbar.css">
 
 </head>
 
@@ -20,7 +22,7 @@
         <div class="navbar-user bordered-div" id="userMenuButton">
             <div class="nav-item">
                 <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
-                <span class="username">Mohammad Ahmed</span>
+                <span class="username">Lee Sanghyeok</span>
                 <i class="bx bx-chevron-down dropdown-icon"></i>
             </div>
         </div>
@@ -59,8 +61,8 @@
                 
             </div>
             <div class="bottom-header">
-                <h4 class="dropdown-name">Mohammad Ahmed</h4>
-                <p class="dropdown-email">mohammad.ahmed@example.com</p>
+                <h4 class="dropdown-name">Lee Sanghyeok</h4>
+                <p class="dropdown-email">lee.sanghyeok@example.com</p>
             </div>
         </div>        
         
@@ -106,7 +108,184 @@
         </button>
     </section>
 
- 
+    <main class="learning-path">
+        <header class="learning-path-header">
+            <div class="learning-path-top-header">
+                <h1 class="learning-path-title">Your Learning Path</span></h1>
+                <span class="major-tag">BSc. Computer Science</span>
+            </div>
+            <p class="learning-path-description">View your progress of your learning here.</p>
+        </header>
+        
+    
+        <div class="learning-container">
+            <!-- Completed Section -->
+            <div class="category completed">
+                <h2><i class="fa-solid fa-circle-check"></i> Completed <span>3/10</span></h2>
+                <div class="cards-container">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag">CMPS 303</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag">CMPS 303</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag">CMPS 303</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    
+            <!-- In Progress Section -->
+            <div class="category in-progress">
+                <h2><i class="fa-solid fa-circle"></i> In Progress <span>2/10</span></h2>
+                <div class="cards-container">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag">CMPS 303</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Pending Section -->
+            <div class="category pending">
+                <h2><i class="fa-solid fa-circle-dot"></i> Pending <span>5/10</span></h2>
+                <div class="cards-container">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag">CMPS 303</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    
+            <!-- Backlog Section -->
+            <div class="category backlog">
+                <h2><i class="fa-solid fa-circle-xmark"></i> Backlog <span>1/10</span></h2>
+                <div class="cards-container">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag">CMPS 303</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+        <!-- Mobile View Navigation -->
+        <div class="mobile-nav">
+            <button id="prevCategory"><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="nextCategory"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </main>
+    
 
     <!-- FOOTER-->
     <footer class="footer">
