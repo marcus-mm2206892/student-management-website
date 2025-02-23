@@ -217,7 +217,7 @@ main {
   transition: transform 0.2s, box-shadow 0.2s;
   min-width: 280px;
   align-items: center;
-  gap: 15px;
+  gap: 1rem;
   
   display: grid;
   grid-template-columns: 1fr;
@@ -225,10 +225,10 @@ main {
 }
 
 .course-card:hover {
-  transform: translateY(-5px); /* move card slightly up */
+  transform: translateY(-0.8rem); /* move card slightly up */
   background: linear-gradient(
       135deg,
-      var(--clr-surface-a0) 10%,
+      var(--clr-surface-a0) 30%,
       var(--clr-primary-a0) 100%
   ); /* put a gradient background */
   border: 1px solid var(--clr-contrast-a0);
@@ -254,16 +254,15 @@ main {
 /* HOVER ICON */
 .hover-icon {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  width: 32px;
-  height: 32px;
+  bottom: 1rem;
+  left: 1rem;
+  width: 2rem;
+  height: 2rem;
   background: linear-gradient(-45deg, rgba(5, 5, 6, 0.8), rgba(116, 116, 116, 0.8));
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
-  transition: background 0.3s ease-in-out;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
@@ -279,25 +278,45 @@ main {
 /* click hint icon on hover */
 .course-card .top-right-icon {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.5rem;
+  right: 0.5rem;
   font-size: 1rem;
   color: var(--clr-contrast-a0);
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transform: translateY(-10px) translateX(10px);
+  transition: opacity 0.1s ease-in-out, transform 0.2s ease-out;
 }
 
 .course-card:hover .top-right-icon {
   opacity: 1;
+  transform: translateY(0) translateX(0);
+  animation: bounceIn 0.2s ease-out;
 }
+
+/* bouncing effect keyframes */
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-10px) translateX(10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(2px) translateX(-2px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+
 
 /* TOOLTIP */
 .hover-icon .hover-text {
   position: absolute;
-  bottom: 110%;
+  bottom: 130%;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--clr-primary-a0);
+  background: var(--clr-surface-a20);
   color: var(--clr-contrast-a0);
   padding: 5px 10px;
   border-radius: 4px;
@@ -322,7 +341,7 @@ main {
   transform: translateX(-50%);
   border-width: 6px;
   border-style: solid;
-  border-color: var(--clr-primary-a0) transparent transparent transparent;
+  border-color: var(--clr-surface-a20) transparent transparent transparent;
 }
 
 /* COURSE INFO */
