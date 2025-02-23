@@ -43,6 +43,12 @@
     object-fit: cover;
 }
 
+.user-avatar {
+    border-radius: 50%;
+    height: 1.75rem;
+    width: 1.75rem;
+}
+
 .nav-bar-logo > .unitrack-logo {
     width: 2.25rem;
     height: 2.25rem;
@@ -107,7 +113,7 @@
     transition: color 0.3s ease;
 }
 
-.milestones-btn {
+.learningpath-btn {
     background-color: var(--clr-primary-a0);
     color: white;
     font-size: 0.85rem;
@@ -118,7 +124,7 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.milestones-btn:hover {
+.learningpath-btn:hover {
     background-color: var(--clr-primary-a20);
     transform: scale(1.05);
 }
@@ -271,6 +277,7 @@
     width: 20px;
     height: 20px;
     object-fit: contain;
+    border-radius: 50%;
 }
 
 .dropdown-btn:hover {
@@ -482,7 +489,7 @@
 }
 
 @media (max-width: 480px) {
-    .milestones-btn {
+    .learningpath-btn {
         display: none
     }
 }
