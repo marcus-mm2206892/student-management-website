@@ -225,7 +225,7 @@ main {
 }
 
 .course-card:hover {
-  transform: translateY(-0.8rem); /* move card slightly up */
+  transform: translateY(-0.5rem); /* move card slightly up */
   background: linear-gradient(
       135deg,
       var(--clr-surface-a0) 30%,
@@ -264,6 +264,10 @@ main {
   justify-content: center;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+
+.hover-icon i{
+  color: #f5f5f5;
 }
 
 .hover-icon:hover .hover-text {
@@ -309,15 +313,14 @@ main {
   }
 }
 
-
 /* TOOLTIP */
 .hover-icon .hover-text {
   position: absolute;
   bottom: 130%;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--clr-surface-a20);
-  color: var(--clr-contrast-a0);
+  background: var(--clr-contrast-a50);
+  color: var(--clr-surface-a0);
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 12px;
@@ -341,7 +344,7 @@ main {
   transform: translateX(-50%);
   border-width: 6px;
   border-style: solid;
-  border-color: var(--clr-surface-a20) transparent transparent transparent;
+  border-color: var(--clr-contrast-a50) transparent transparent transparent;
 }
 
 /* COURSE INFO */
@@ -363,7 +366,7 @@ main {
 /* CODE TAG */
 .course-tag {
   background: var(--clr-primary-a0);
-  color: var(--clr-contrast-a0);
+  color: #f5f5f5;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.75rem;
@@ -383,12 +386,16 @@ main {
   font-size: 0.9rem;
 }
 
+.course-card:hover .semester {
+  color: #f5f5f5;
+}
+
 /* TITLE */
 .course-info h3 {
   text-align: left;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1rem;
+  line-height: 1.2rem;
 }
 
 /* SUBTITLE - TRUNCATE AT 2 LINES */
@@ -411,7 +418,6 @@ main {
 }
 
 .tag {
-  background: var(--clr-surface-a10);
   color: var(--clr-contrast-a0);
   border: 1px solid var(--clr-surface-a20);
   padding: .25rem .5rem;
