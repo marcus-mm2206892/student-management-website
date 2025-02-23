@@ -7,13 +7,14 @@
   position: relative;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-  min-width: 280px;
+  width: 100%;
+  min-width: 250px;
   align-items: center;
   gap: 1rem;
   display: grid;
   grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+  grid-template-rows: auto auto;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .course-card:hover {
@@ -21,20 +22,74 @@
   background: linear-gradient(
       135deg,
       var(--clr-surface-a0) 30%,
-      var(--clr-primary-a0) 100%
+      #2a81bf 100%
   ); /* put a gradient background */
   border: 1px solid var(--clr-contrast-a0);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
+@media(prefers-color-scheme: light) {
+  .course-card:hover {
+    background: linear-gradient(
+        135deg,
+        var(--clr-surface-a0) 30%,
+        #75a4c6 100%
+    );
+    border: 1px solid var(--clr-primary-a0);
+  }
+}
+
 /* COURSE IMAGE */
 .course-image {
+  /* background: var(--clr-surface-tonal-a20);
+  aspect-ratio: 1 / 1; 
+  border-radius: 5px;
+  position: relative;
+  width: 100%;
+  max-height: 10rem;
+  height: auto; */
   display: none;
 }
 
 .course-image img {
   object-fit: contain; /* center and keep aspect ratio */
+}
+
+.course-grade {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.course-completed-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.final-grade {
+  font-size: 0.7rem;
+  color: var(--clr-contrast-a40);
+}
+
+.letter-grade-container {
+  width: 3rem;
+  min-width: 3rem;
+  height: 3rem;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--clr-surface-a20);
+}
+
+@media(prefers-color-scheme: light) {
+  .letter-grade-container {
+    background: var(--clr-surface-a50);
+  }
 }
 
 /* HOVER ICON */
@@ -45,7 +100,7 @@
   width: 2rem;
   height: 2rem;
   background: linear-gradient(-45deg, rgba(5, 5, 6, 0.8), rgba(116, 116, 116, 0.8));
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
@@ -139,7 +194,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 /* HEADER (TITLE & TAG) */
@@ -168,7 +223,7 @@
 
 /* SEMESTER */
 .semester {
-  color: var(--clr-surface-a50);
+  color: var(--clr-contrast-a40);
   font-size: 0.9rem;
 }
 
@@ -177,7 +232,7 @@
 }
 
 /* TITLE */
-.course-info h3 {
+.category h3 {
   text-align: left;
   font-size: 1rem;
   font-weight: 500;
@@ -219,6 +274,6 @@
   font-size: 0.7rem;
 }
 
-.completed course-card {
-
+.completed .course-subtitle {
+  display: none;
 }

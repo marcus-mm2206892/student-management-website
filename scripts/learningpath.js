@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const categories = document.querySelectorAll(".category");
-    let currentIndex = 0;
-
     const prevButton = document.getElementById("prevCategory");
     const nextButton = document.getElementById("nextCategory");
+    let currentIndex = 0;
 
     function updateVisibility() {
         categories.forEach((category, index) => {
@@ -11,30 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    prevButton.addEventListener("click", () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateVisibility();
-        }
-    });
+    if (prevButton && nextButton) {
+        prevButton.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateVisibility();
+            }
+        });
 
-    nextButton.addEventListener("click", () => {
-        if (currentIndex < categories.length - 1) {
-            currentIndex++;
-            updateVisibility();
-        }
-    });
-
-    // Initialize
-    if (window.innerWidth <= 768) {
-        updateVisibility();
+        nextButton.addEventListener("click", () => {
+            if (currentIndex < categories.length - 1) {
+                currentIndex++;
+                updateVisibility();
+            }
+        });
     }
-
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 768) {
-            categories.forEach((category) => (category.style.display = "flex"));
-        } else {
-            updateVisibility();
-        }
-    });
 });

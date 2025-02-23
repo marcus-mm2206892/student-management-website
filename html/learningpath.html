@@ -111,33 +111,43 @@
     <main class="learning-path">
         <header class="learning-path-header">
             <div class="learning-path-top-header">
-                <h1 class="learning-path-title">Your Learning Path</span></h1>
+                <h1 class="learning-path-title">Track Your Learning Path</span></h1>
                 <span class="major-tag">BSc. Computer Science</span>
             </div>
-            <p class="learning-path-description">View your progress of your learning here.</p>
+            <p class="learning-path-description">Monitor your course progress and stay on track with your degree.</p>
         </header>
         
     
         <div class="learning-container">
             <!-- Completed Section -->
             <div class="category completed">
-                <h2><i class="fa-solid fa-circle-check"></i> Completed <span>3/10</span></h2>
+                <div class="category-header">
+                    <h2><i class="fa-solid fa-circle-check"></i> Completed <span class="tracking-number">3 completed</span></h2>
+                    <p>Courses that have already been completed</p>
+                </div>
                 <div class="cards-container">
+                    
                     <div class="course-card">
                         <div class="course-image">
                             <div class="hover-icon">
                                 <i class="fa-solid fa-plus"></i>
                                 <span class="hover-text">Register Course</span>
                             </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
                         </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag">CMPS 303</span>
-                                <span class="semester">Fall 2025</span>
+                        <div class="course-header">
+                            <span class="course-tag">CMPS 303</span>
+                            <span class="semester">Fall 2025</span>
+                        </div>
+                        <div class="course-completed-main">
+                            <div class="course-grade">
+                                <div class="letter-grade-container">
+                                    <span class="letter-grade">A</span>
+                                </div>
+                                <div>
+                                    <span class="final-grade">Final Grade</span>
+                                    <h3>Design & Analysis of Algorithms</h3>
+                                </div>
                             </div>
-                            <h3>Data Structures</h3>
-                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
                             <div class="course-tags">
                                 <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
                                 <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
@@ -151,50 +161,65 @@
                                 <i class="fa-solid fa-plus"></i>
                                 <span class="hover-text">Register Course</span>
                             </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
                         </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag">CMPS 303</span>
-                                <span class="semester">Fall 2025</span>
+                        <div class="course-header">
+                            <span class="course-tag">CMPS 303</span>
+                            <span class="semester">Fall 2025</span>
+                        </div>
+                        <div class="course-completed-main">
+                            <div class="course-grade">
+                                <div class="letter-grade-container">
+                                    <span class="letter-grade">B+</span>
+                                </div>
+                                <div>
+                                    <span class="final-grade">Final Grade</span>
+                                    <h3>Data Structures</h3>
+                                </div>
                             </div>
-                            <h3>Data Structures</h3>
-                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
                             <div class="course-tags">
                                 <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
                                 <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
                             </div>
                         </div>
                     </div>
-
                     <div class="course-card">
                         <div class="course-image">
                             <div class="hover-icon">
                                 <i class="fa-solid fa-plus"></i>
                                 <span class="hover-text">Register Course</span>
                             </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
                         </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag">CMPS 303</span>
-                                <span class="semester">Fall 2025</span>
+                        <div class="course-header">
+                            <span class="course-tag">CMPS 405</span>
+                            <span class="semester">Fall 2025</span>
+                        </div>
+                        <div class="course-completed-main">
+                            <div class="course-grade">
+                                <div class="letter-grade-container">
+                                    <span class="letter-grade">A</span>
+                                </div>
+                                <div>
+                                    <span class="final-grade">Final Grade</span>
+                                    <h3>Operating Systems</h3>
+                                </div>
                             </div>
-                            <h3>Data Structures</h3>
-                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
                             <div class="course-tags">
                                 <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
                                 <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
                             </div>
                         </div>
                     </div>
+                    
 
                 </div>
             </div>
     
             <!-- In Progress Section -->
             <div class="category in-progress">
-                <h2><i class="fa-solid fa-circle"></i> In Progress <span>2/10</span></h2>
+                <div class="category-header">
+                    <h2><i class="fa-solid fa-circle-dot"></i> In Progress <span class="tracking-number">5 in progress</span></h2>
+                    <p>Courses being taken in the current semester</p>
+                </div>
                 <div class="cards-container">
                     <div class="course-card">
                         <div class="course-image">
@@ -222,7 +247,10 @@
     
             <!-- Pending Section -->
             <div class="category pending">
-                <h2><i class="fa-solid fa-circle-dot"></i> Pending <span>5/10</span></h2>
+                <div class="category-header">
+                    <h2><i class="fa-solid fa-clock"></i> Pending <span class="tracking-number"> 14 courses left</span></h2>
+                    <p>Courses you need to complete before graduating</p>
+                </div>
                 <div class="cards-container">
                     <div class="course-card">
                         <div class="course-image">
@@ -251,7 +279,10 @@
     
             <!-- Backlog Section -->
             <div class="category backlog">
-                <h2><i class="fa-solid fa-circle-xmark"></i> Backlog <span>1/10</span></h2>
+                <div class="category-header">
+                    <h2><i class="fa-solid fa-circle-xmark"></i> Backlog <span class="tracking-number"> 4 left behind</span></h2>
+                    <p>Unfinished courses that need to be retaken or completed</p>
+                </div>
                 <div class="cards-container">
                     <div class="course-card">
                         <div class="course-image">

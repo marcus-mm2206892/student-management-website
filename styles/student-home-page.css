@@ -55,7 +55,7 @@ main {
 }
 
 .hero h1 span {
-  color: var(--clr-surface-a50);
+  color: var(--clr-contrast-a40);
   transition: color 0.2s ease-in-out;
 }
 
@@ -87,7 +87,7 @@ main {
 }
 
 .search-bar input::placeholder {
-  color: var(--clr-surface-a50);
+  color: var(--clr-contrast-a40);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
