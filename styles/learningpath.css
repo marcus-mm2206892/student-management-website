@@ -21,7 +21,7 @@ body {
 
 .learning-path {
     height: calc(100vh - 53px); /* full screen height minus navbar height */
-    margin: 53px auto 0 auto;
+    margin: 53px auto 1rem auto;
     display: flex;
     flex-direction: column;
     overflow: hidden;
