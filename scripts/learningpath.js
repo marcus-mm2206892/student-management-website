@@ -5,9 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
 
     function updateVisibility() {
-        categories.forEach((category, index) => {
-            category.style.display = index === currentIndex ? "flex" : "none";
-        });
+        if (window.innerWidth > 768) {
+            categories.forEach(category => {
+                category.style.display = "flex";
+            });
+        } else {
+            categories.forEach((category, index) => {
+                category.style.display = index === currentIndex ? "flex" : "none";
+            });
+        }
     }
 
     if (prevButton && nextButton) {
@@ -25,4 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+    window.addEventListener("resize", updateVisibility);
+
+    updateVisibility();
 });
