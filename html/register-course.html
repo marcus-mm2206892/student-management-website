@@ -6,56 +6,91 @@
     <title>UniTrack | Register Courses</title>
     <link rel="stylesheet" href="../styles/theme.css">
     <link rel="stylesheet" href="../styles/register-courses.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 </head>
 <body>
     <header id="navbar"></header>
-    <main>
-        <h1> Register Courses </h1>
-        <div class="course-table">
+    <main class="table">
+        <section class="table-header">
+            <h1> Register Courses </h1>
+        </section>
+        <section class="table-body">
             <table>
                 <thead>
                     <tr>
-                        <th> Course No </th>
+                        <th class="course-no"> Course No </th>
                         <th> Name </th>
                         <th> Instructor </th>
+                        <th> Section </th>
                         <th> Enrollment </th>
                         <th> Status </th>
+                        <th> Schedule </th>
                         <th> Action </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td> CMPS350 </td>
+                        <td class="course-no"> CMPS350 </td>
                         <td> Web Development </td>
                         <td> Mahmoud B. </td>
+                        <td> L01 </td>
                         <td> 33/40 </td>
-                        <td> Waiting for approval </td>
+                        <td> <p class="status"> Waiting for approval </p>  </td>
+                        <td> MON-WED </td>
                         <td>
-                            <button> Register </button> 
+                            <button> <strong> Register </strong> </button> 
                         </td>
                     </tr>
                     <tr>
                         <td> CMPS497 </td>
                         <td> Deep Learning </td>
                         <td> Salem S. </td>
+                        <td> L03 </td>
                         <td> 39/40 </td>
-                        <td> Waiting for approval </td>
+                        <td> <p class="status"> Waiting for approval </p> </td>
+                        <td> SUN-TUE-THU </td>
                         <td>
-                            <button> Register </button> 
+                            <button> <strong> Register </strong>  </button> 
                         </td>
+                    </tr>
+                    <tr>
+                        <td> CMPS497 </td>
+                        <td> Deep Learning </td>
+                        <td> Salem S. </td>
+                        <td> L03 </td>
+                        <td> 39/40 </td>
+                        <td> <p class="status"> Waiting for approval </p> </td>
+                        <td> SUN-TUE-THU </td>
+                        <td>
+                            <button> <strong> Register </strong>  </button> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> CMPS497 </td>
+                        <td> Deep Learning </td>
+                        <td> Salem S. </td>
+                        <td> L03 </td>
+                        <td> 39/40 </td>
+                        <td> <p class="status"> Waiting for approval </p> </td>
+                        <td> SUN-TUE-THU </td>
+                        <td>
+                            <button> <strong> Register </strong>  </button> 
+                        </td>
+                    </tr>
+
+
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </section>
 
     </main>
 
     <footer id="footer"></footer>
     
-    <script>
+    <!-- <script>
         $("#navbar").load( "nav-bar-student.html" );
-        // $("#footer").load( "footer.html" );
-    </script>
+        $("#footer").load( "footer.html" );
+    </script> -->
 </body>
 </html>
