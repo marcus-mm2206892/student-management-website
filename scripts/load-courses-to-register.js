@@ -13,7 +13,7 @@ fetch("../assets/data/courses.json")
             <td> ${course.courseName}  </td>
             <td> L01 </td>
             <td> 33/40 </td>
-            <td> <p class="status"> Waiting for approval </p>  </td>
+            <td> <p class="status"> Not Approved </p>  </td>
             <td> MON-WED </td>
             <td>
                 <button> <strong> Register </strong> </button> 
