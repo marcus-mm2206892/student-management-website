@@ -41,7 +41,7 @@ table, th, td {
 
 .table-body {
     width: 89%;
-    max-height: 89%;
+    max-height: calc(89% - 1.6rem);
     background-color: #fffb;
     margin: .8rem auto;
     border-radius: .6rem;
@@ -100,14 +100,13 @@ tbody tr td button {
     color: #b30021;
     padding: .6rem 0;
     border-radius: 2rem;
+
 }
 
-@media (max-width:1000px)
+@media (max-width:1000px) {
+
+}
 
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
-    }
-  }
+
   
