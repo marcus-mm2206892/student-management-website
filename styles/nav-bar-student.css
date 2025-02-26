@@ -197,21 +197,6 @@
     object-fit: cover;
 }
 
-.close-btn {
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: 1px solid var(--clr-surface-a20);
-    border-radius: 50%;
-    font-size: 1.2rem;
-    color: var(--clr-contrast-a20);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
 .hr {
     border: none;
     height: 1px;
@@ -235,6 +220,20 @@
     max-width: 12rem;
 }
 
+.close-btn {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid var(--clr-surface-a20);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: var(--clr-contrast-a20);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
 
 .close-btn i {
     font-size: 0.75rem;

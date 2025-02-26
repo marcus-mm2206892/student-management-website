@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Modal Testing</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="stylesheet" href="../styles/scrollbar.css">
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <!-- Button to Open Modal -->
+    <button onclick="openModal()">Open Class Details</button>
+
+    <!-- Modal -->
+    <div id="classDetailsModal" class="modal">
+        <div class="modal-popup">
+
+            <!-- Header with Dropdown and Close Button -->
+            <div class="modal-header">
+                <h2>Web Development Fundamentals</h2>
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown()">
+                        <span id="selectedOption">Class Details</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <div onclick="selectOption('Class Details')"><i class="fas fa-info-circle"></i> Class Details</div>
+                        <div onclick="selectOption('Course Description')"><i class="fas fa-book"></i> Course Description</div>
+                        <div onclick="selectOption('Instructors')"><i class="fas fa-chalkboard-teacher"></i> Instructors</div>
+                        <div onclick="selectOption('Class Schedule')"><i class="fas fa-calendar-alt"></i> Class Schedule</div>
+                        <div onclick="selectOption('Enrollment')"><i class="fas fa-user-check"></i> Enrollment</div>
+                        <div onclick="selectOption('Prerequisite Courses')"><i class="fas fa-list"></i> Prerequisite Courses</div>
+                    </div>
+                </div>
+                <!-- Close Button -->
+                <button class="close-btn close-modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="modal-content">
+                <div id="Class Details" class="content-section active">
+                    <h2>Class Details</h2>
+                    <p>Information about this class, its level, and credits.</p>
+                </div>
+                <div id="Course Description" class="content-section">
+                    <h2>Course Description</h2>
+                    <p>This course covers advanced concepts in web development.</p>
+                </div>
+                <div id="Instructors" class="content-section">
+                    <h2>Instructors</h2>
+                    <p>Prof. John Doe and Dr. Jane Smith will be leading this class.</p>
+                </div>
+                <div id="Class Schedule" class="content-section">
+                    <h2>Class Schedule</h2>
+                    <p>Monday and Wednesday, 10:00 AM - 12:00 PM.</p>
+                </div>
+                <div id="Enrollment" class="content-section">
+                    <h2>Enrollment</h2>
+                    <p>Open for all students. Enrollment ends on March 1st.</p>
+                </div>
+                <div id="Prerequisite Courses" class="content-section">
+                    <h2>Prerequisite Courses</h2>
+                    <p>Students must have completed Introduction to Programming.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../scripts/modal.js"></script>
+    <script src="../scripts/scroll-up.js"></script>
+    <script src="../scripts/dark-light-elements.js"></script>
+</body>
+</html>
