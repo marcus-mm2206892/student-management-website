@@ -93,7 +93,7 @@ body {
 }
 
   
-  .class-card:hover {
+.class-card:hover {
     transform: translateY(-0.5rem); /* move card slightly up */
     background: linear-gradient(
         135deg,
@@ -104,6 +104,51 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     cursor: pointer;
   }
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    width: 100%;
+    max-width: 60px;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border: 1px solid var(--clr-surface-a20);
+    border-radius: 8px;
+    cursor: pointer;
+    background: var(--clr-surface-a20);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--clr-surface-a20);
+    border: 1px solid var(--clr-surface-a20);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-menu div {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+}
+
+.dropdown-menu div:hover {
+    background: #f1f1f1;
+}
 
 @media (prefers-color-scheme: dark) {
     body {

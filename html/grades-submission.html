@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/scroll-up.css">
     <link rel="stylesheet" href="../styles/scrollbar.css">
-    <link rel="stylesheet" href="../styles/course-card-discover.css">
     <link rel="stylesheet" href="../styles/student-home-page.css">
     <link rel="stylesheet" href="../styles/learningpath.css">
     <link rel="stylesheet" href="../styles/course-card-view.css">
     <link rel="stylesheet" href="../styles/grade-submission.css">
 
+    <script src="../scripts/grades-submission.js"></script>
+    <script src="../scripts/scroll-up.js"></script>
+    <script src="../scripts/dark-light-elements.js"></script>
 </head>
 
 <body>
@@ -160,15 +162,33 @@
                                 <span class="course-tag">CMPS 303</span>
                                 <span class="semester">Fall 2025</span>
                             </div>
+
                             <div class="course-completed-main">
                                 <div class="course-grade">
-                                    <div class="letter-grade-container">
-                                        <span class="letter-grade">A</span>
-                                    </div>
                                     <div>
-                                        <span class="final-grade">Final Grade</span>
                                         <h3>Design & Analysis of Algorithms</h3>
+                                        <span class="final-grade">Final Grade</span>
                                     </div>
+
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle" onclick="toggleDropdown()">
+                                            <span id="selectedOption">A</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        
+                                        <div class="dropdown-menu">
+                                            <div onclick="selectOption('A')">A</div>
+                                            <div onclick="selectOption('B+')">B+</div>
+                                            <div onclick="selectOption('B')">B</div>
+                                            <div onclick="selectOption('C+')">C+</div>
+                                            <div onclick="selectOption('C')">C</div>
+                                            <div onclick="selectOption('D+')">D+</div>
+                                            <div onclick="selectOption('D')">D</div>
+                                            <div onclick="selectOption('F')">F</div>
+                                            <div onclick="selectOption('I')">I</div>
+                                        </div>
+                                    </div>
+                        
                                 </div>
                                 <div class="course-tags">
                                     <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
