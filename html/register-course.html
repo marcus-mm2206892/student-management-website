@@ -6,11 +6,12 @@
     <title>UniTrack | Register Courses</title>
     <link rel="stylesheet" href="../styles/theme.css">
     <link rel="stylesheet" href="../styles/register-courses.css">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../styles/nav-bar-student.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/scroll-up.css">
+    <link rel="stylesheet" href="../styles/scrollbar.css">
 </head>
 <body>
     <nav class="navbar">
@@ -103,8 +104,6 @@
 
     </div>
 
-    <script src="../scripts/navbar.js"></script>
-    <script src="../scripts/dark-light-elements.js"></script>
     <main class="table">
         <section class="table-header">
             <h1> Register Courses </h1>
@@ -131,7 +130,7 @@
 
     </main>
 
-    <!-- <footer class="footer">
+    <footer class="footer">
         <div class="top-half">
             <div class="contact-div">
                 <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="UniTrack Logo">
@@ -193,16 +192,20 @@
                 <span>UniTrack</span>
             </div>
         </div>
-    </footer> -->
+    </footer>
     
+    <button id="scrollUpBtn" class="scroll-up-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/dark-light-elements.js"></script>
+
     <script src="../scripts/dark-light-elements.js"></script>
     <script src="../scripts/footer.js"></script>
 
     <script src="../scripts/load-courses-to-register.js"></script>
+    <script src="../scripts/scroll-up.js"></script>
     
-    <!-- <script>
-        $("#navbar").load( "nav-bar-student.html" );
-        $("#footer").load( "footer.html" );
-    </script> -->
 </body>
 </html>
