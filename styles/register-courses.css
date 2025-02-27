@@ -10,7 +10,7 @@ body {
     background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
     background-color: var(--clr-surface-a0);;
     background-size: cover;
-    min-height: 100vh; /* take the full height */
+    min-height: 170vh; /* take the full height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,6 +25,9 @@ main.table {
     box-shadow: 0 0.4rem 0.8rem #0005;
     border-radius: 0.8rem;
     overflow: hidden;
+    position: relative;
+    top: 70px;
+    
 }
 
 table, th, td {
