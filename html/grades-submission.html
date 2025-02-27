@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="../styles/course-card-discover.css">
     <link rel="stylesheet" href="../styles/student-home-page.css">
     <link rel="stylesheet" href="../styles/learningpath.css">
+    <link rel="stylesheet" href="../styles/course-card-view.css">
+    <link rel="stylesheet" href="../styles/grade-submission.css">
 
 </head>
 
@@ -22,7 +24,7 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-bar-logo bordered-div">
-            <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="User">
+            <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="User">
         </div>
 
         <div class="navbar-user bordered-div" id="userMenuButton">
@@ -94,29 +96,30 @@
 
      <!-- GRADE SUBMISSION PAGE -->
     <main class="grade-submission">
+
         <header class="grade-submission-header">
             <h1>Student Grades</h1>
             <h3>No. of Courses</h3>
         </header>
 
-        <section class="courses">
-            <div class="learning-container">
+        <section class="classes">
+            <div class="classes-container">
                 <!-- Completed Section -->
-                <div class="category completed">
-                    <div class="category-header">
+                <div class="classes teaching">
+                    <div class="classes-header">
                         <h2><i class="fa-solid fa-circle-check"></i> Completed <span class="tracking-number">3 completed</span></h2>
                         <p>Courses that have already been completed</p>
                     </div>
                     <div class="cards-container">
                         
-                        <div class="course-card">
+                        <div class="class-card">
                             <div class="course-image">
                                 <div class="hover-icon">
                                     <i class="fa-solid fa-plus"></i>
                                     <span class="hover-text">Register Course</span>
                                 </div>
                             </div>
-                            <div class="course-header">
+                            <div class="class-header">
                                 <span class="course-tag">CMPS 303</span>
                                 <span class="semester">Fall 2025</span>
                             </div>
@@ -136,43 +139,25 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="course-card">
+                <div class="classes selected">
+                    <div class="classes-header">
+                        <h2><i class="fa-solid fa-circle-check"></i> Completed <span class="tracking-number">3 completed</span></h2>
+                        <p>Courses that have already been completed</p>
+                    </div>
+                    <div class="cards-container">
+                        
+                        <div class="class-card">
                             <div class="course-image">
                                 <div class="hover-icon">
                                     <i class="fa-solid fa-plus"></i>
                                     <span class="hover-text">Register Course</span>
                                 </div>
                             </div>
-                            <div class="course-header">
+                            <div class="class-header">
                                 <span class="course-tag">CMPS 303</span>
-                                <span class="semester">Fall 2025</span>
-                            </div>
-                            <div class="course-completed-main">
-                                <div class="course-grade">
-                                    <div class="letter-grade-container">
-                                        <span class="letter-grade">B+</span>
-                                    </div>
-                                    <div>
-                                        <span class="final-grade">Final Grade</span>
-                                        <h3>Data Structures</h3>
-                                    </div>
-                                </div>
-                                <div class="course-tags">
-                                    <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                                    <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card">
-                            <div class="course-image">
-                                <div class="hover-icon">
-                                    <i class="fa-solid fa-plus"></i>
-                                    <span class="hover-text">Register Course</span>
-                                </div>
-                            </div>
-                            <div class="course-header">
-                                <span class="course-tag">CMPS 405</span>
                                 <span class="semester">Fall 2025</span>
                             </div>
                             <div class="course-completed-main">
@@ -182,7 +167,7 @@
                                     </div>
                                     <div>
                                         <span class="final-grade">Final Grade</span>
-                                        <h3>Operating Systems</h3>
+                                        <h3>Design & Analysis of Algorithms</h3>
                                     </div>
                                 </div>
                                 <div class="course-tags">
@@ -191,8 +176,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-
                     </div>
                 </div>
             </section>    

@@ -1,0 +1,112 @@
+body {
+    background-color: var(--clr-surface-a0);
+    background-image: url("../assets/imgs/unitrack-images/pattern-blue.png");
+    background-repeat: repeat;
+    color: var(--clr-contrast-a0);
+    font-family: "Inter", sans-serif;
+    font-size: 0.85rem;
+}
+
+.grade-submission {
+    height: calc(100vh - 53px); /* full screen height minus navbar height */
+    margin: 53px auto 1rem auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.grade-submission-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem;
+    background-color: var(--clr-surface-a10);
+    padding: 1rem;
+    border: 1px solid var(--clr-surface-a20);
+    border-radius: 10px;
+    align-self: stretch;
+}
+
+.classes-container {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+}
+
+.classes {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--clr-surface-a0);
+    border: 1px solid var(--clr-surface-a20);
+    border-radius: 10px;
+    padding: 0.8rem;
+    scroll-snap-align: start;
+    margin: 0 1rem;
+}
+
+.teaching {
+    min-width: 350px;
+    max-width: 25%;
+}
+
+.selected {
+    min-width: 1350px;
+    max-width: 75%;
+}
+
+.classes-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.class-card {
+    display: flex;
+    background: var(--clr-surface-a10);
+    padding: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    min-width: 250px;
+    align-items: center;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+.class-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+  
+  .class-card:hover {
+    transform: translateY(-0.5rem); /* move card slightly up */
+    background: linear-gradient(
+        135deg,
+        var(--clr-surface-a0) 30%,
+        #2a81bf 100%
+    ); /* put a gradient background */
+    border: 1px solid var(--clr-contrast-a0);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
+    }
+  }
