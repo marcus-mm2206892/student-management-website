@@ -25,6 +25,9 @@ main.table {
     box-shadow: 0 0.4rem 0.8rem #0005;
     border-radius: 0.8rem;
     overflow: hidden;
+    position: relative;
+    top: 50px;
+    
 }
 
 table, th, td {
