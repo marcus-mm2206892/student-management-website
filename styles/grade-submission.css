@@ -98,7 +98,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.class-card {
+.card {
     display: flex;
     background: var(--clr-surface-a10);
     padding: 1rem;
@@ -131,6 +131,12 @@ body {
     gap: 1rem;
 }
 
+.students {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
 .student-grade h3 {
     text-align: left;
     font-size: 1.2rem;
@@ -151,7 +157,7 @@ body {
     gap: 0.5rem;
 }
   
-.class-card:hover {
+.card:hover {
     transform: translateY(-0.5rem); /* move card slightly up */
     background: linear-gradient(
         135deg,
@@ -169,6 +175,29 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+}
+
+.submit-container {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-self: end;
+}
+
+.submit-btn {
+    background-color: var(--clr-primary-a0);
+    color: white;
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--clr-primary-a20);
+    transform: scale(1.05);
 }
 
 /* Dropdown */
