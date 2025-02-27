@@ -17,7 +17,6 @@ body {
 
 .grade-submission-header {
     display: flex;
-    flex-direction: column;
     gap: 0.5rem;
     margin: 1rem;
     background-color: var(--clr-surface-a10);
@@ -25,6 +24,18 @@ body {
     border: 1px solid var(--clr-surface-a20);
     border-radius: 10px;
     align-self: stretch;
+}
+
+.grade-submission-header h1 {
+    align-self: center;
+    margin-right: 1rem;
+}
+
+.grade-submission-header h3 {
+    background: var(--clr-surface-a20);
+    border-radius: 50%;
+    align-self: center;
+    padding: 1rem;
 }
 
 .classes-container {
@@ -60,6 +71,26 @@ body {
     max-width: 75%;
 }
 
+.course-header {
+    display: flex;
+    gap: 1rem;
+    justify-content: start;
+    align-items: center;
+  }
+
+.status-container {
+    width: 3rem;
+    min-width: 3rem;
+    height: 3rem;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--clr-surface-a20);
+  }
+
 .classes-header {
     display: flex;
     flex-direction: column;
@@ -90,8 +121,35 @@ body {
     justify-content: space-between;
     font-size: 0.9rem;
     font-weight: bold;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--clr-surface-a20);
 }
 
+.course {
+    display: flex;
+    gap: 1rem;
+}
+
+.student-grade h3 {
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2rem;
+    margin: 0.2rem 0rem 0.5rem;
+  }
+
+.student-info {
+    font-size: 0.8rem;
+    color: var(--clr-contrast-a40);
+    gap: 0.5rem;
+}
+
+.email {
+    padding-right: 0.5rem;
+    border-right: 1px solid var(--clr-contrast-a40);
+    gap: 0.5rem;
+}
   
 .class-card:hover {
     transform: translateY(-0.5rem); /* move card slightly up */
@@ -104,6 +162,14 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     cursor: pointer;
   }
+
+.student-grade {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
 
 /* Dropdown */
 .dropdown {
