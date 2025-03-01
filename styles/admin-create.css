@@ -1,0 +1,55 @@
+/*css for create-class and create-course */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--clr-surface-a0);
+  background-image: url("../assets/imgs/unitrack-images/pattern-blue.png");
+  background-repeat: repeat;
+  color: var(--clr-contrast-a0);
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .course-grid {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+      background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .search-bar {
+    background-color: var(--clr-surface-a10);
+  }
+
+  .course-card:hover {
+    border: 1px solid var(--clr-primary-a0);
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Class | UniTrack</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/nav-bar-student.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/scroll-up.css">
+    <link rel="stylesheet" href="../styles/scrollbar.css">
+    <link rel="stylesheet" href="../styles/course-card-discover.css">
+    <link rel="stylesheet" href="../styles/admin-create.css">
+</head>
+<body>
+    <main>
+            <h1>Create New Class</h1>
+            <form id="createClassForm">
+                <ul>
+                    <li>
+                        <label for="courseId">Course ID:</label>
+                        <input type="text" id="courseId" name="courseId" required>
+                        <!-- Should change this to a select that lists all courses in courses.json -->
+                    </li>
+                    <li>
+                        <label for="classId">Class ID:</label>
+                        <input type="text" id="classId" name="classId" required>
+                    </li>
+                    <li>
+                        <label for="instructor">Instructor ID:</label>
+                        <input type="text" id="instructor" name="instructor" required>
+                    </li>
+                    <li>
+                        <label for="maxStudents">Maximum Students:</label>
+                        <input type="number" id="maxStudents" name="maxStudents" required>
+                    </li>
+                    <li>
+                        <label for="schedule">Schedule:</label>
+                        <input type="text" id="schedule" name="schedule" value="">  
+                        <!-- not required yet, default value empty string til we figure out what to use for sched -->
+                    </li>
+                    <li>
+                        Campus:
+                        <label>
+                            <input type="radio" name="campus" value="male" checked required> Male Campus
+                        </label>
+                        <label>
+                            <input type="radio" name="campus" value="female" required> Female Campus
+                        </label>
+                    </li>
+                    <li>
+                        <button type="submit">Create Class</button>
+                    </li>
+                </ul>
+            </form>
+    </main>
+    <script src="../scripts/admin-create-class.js"></script>
+</body>
+</html>
