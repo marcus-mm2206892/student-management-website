@@ -3,7 +3,7 @@
       "courseName": "Programming Concepts",
       "courseId": "CMPS151",
       "creditHours": 3,
-      "type": "Computer Science",
+      "majorsOffered": [{"major":"Computer Science"}],
       "prerequisites": null,
       "openForRegistration": true,
       "classes": [
@@ -11,21 +11,23 @@
           "classId": "L01",
           "instructor": "inst1",
           "maxStudents": 40,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             ""
           ],
-          "Schedule": ""
+          "Schedule": "",
+          "campus":"male"
         },
         {
           "classId": "L02",
           "instructor": "inst1",
           "maxStudents": 40,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             ""
           ],
-          "Schedule": ""
+          "Schedule": "",
+          "campus":"male"
         }
       ]
     },
@@ -33,7 +35,7 @@
       "courseName": "Arabic Language I",
       "courseId": "ARAB100",
       "creditHours": 3,
-      "type": "Core Curriculum",
+      "majorsOffered": [{"major":"General Engineering"}],
       "prerequisites": null,
       "openForRegistration": true,
       "classes": [
@@ -41,21 +43,23 @@
           "classId": "L01",
           "instructor": "inst2",
           "maxStudents": 20,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             ""
           ],
-          "Schedule": ""
+          "Schedule": "",
+          "campus":"male"
         },
         {
           "classId": "L02",
           "instructor": "inst2",
           "maxStudents": 20,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             ""
           ],
-          "Schedule": ""
+          "Schedule": "",
+          "campus":"male"
         }
       ]
     },
@@ -63,7 +67,7 @@
       "courseName": "Calculus I",
       "courseId": "MATH101",
       "creditHours": 3,
-      "major": "Core Curriculum",
+      "majorsOffered": [{"major":"General Engineering"}],
       "prerequisites": null,
       "openForRegistration": true,
       "classes": [
@@ -71,21 +75,23 @@
           "classId": "L01",
           "instructor": "inst2",
           "maxStudents": 40,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             ""
           ],
-          "Schedule": ""
+          "Schedule": "",
+          "campus":"male"
         },
         {
           "classId": "L02",
           "instructor": "inst2",
           "maxStudents": 40,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             ""
           ],
-          "Schedule": ""
+          "Schedule": "",
+          "campus":"male"
         }
       ]
     },
@@ -93,7 +99,7 @@
       "courseName": "Calculus II",
       "courseId": "MATH201",
       "creditHours": 3,
-      "major": "Core Curriculum",
+      "majorsOffered": [{"major":"General Engineering"}],
       "prerequisites": [
         {
           "courseId": "MATH101",
@@ -106,11 +112,12 @@
           "classId": "L01",
           "instructor": "inst2",
           "maxStudents": 40,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             "stud1"
           ],
-          "Schedule": ""
+          "Schedule": "",
+          "campus":"male"
         }
       ]
     },
@@ -118,7 +125,7 @@
       "courseName": "Object Oriented Programming",
       "courseId": "CMPS262",
       "creditHours": 4,
-      "major": "Computer Science",
+      "majorsOffered": [{"major":"Computer Science"}],
       "prerequisites": [
         {
           "courseId": "CMPS151",
@@ -131,7 +138,7 @@
       "courseName": "Computer Graphics",
       "courseId": "CMPS373",
       "creditHours": 3,
-      "major": "Computer Science",
+      "majorsOffered": [{"major":"Computer Science"}],
       "prerequisites": [
         {
           "courseId": "CMPS262",
@@ -144,21 +151,23 @@
           "classId": "L01",
           "instructor": "inst1",
           "maxStudents": 40,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             ""
           ],
-          "Schedule": ""
+          "Schedule": "",
+          "campus":"male"
         },
         {
           "classId": "L02",
           "instructor": "inst2",
           "maxStudents": 40,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             ""
           ],
-          "Schedule": ""
+          "Schedule": "",
+          "campus":"male"
         }
       ]
     },
@@ -166,7 +175,7 @@
       "courseName": "Web Fundamentals",
       "courseId": "CMPS350",
       "creditHours": 3,
-      "major": "Computer Science",
+      "majorsOffered": [{"major":"Computer Science"}],
       "prerequisites": [
         {
           "courseId": "CMPS262",
@@ -179,23 +188,24 @@
           "classId": "L01",
           "instructor": "inst1",
           "maxStudents": 40,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             "stud1",
             "stud2",
             "stud3"
           ],
-          "Schedule": "idk the best way to implement this yet,probably Date?"
+          "Schedule": "idk the best way to implement this yet,probably Date class?"
         },
         {
           "classId": "L02",
           "instructor": "inst1",
           "maxStudents": 40,
-          "inProgress": false,
+          "classStatus": false,
           "Students": [
             "stud4"
           ],
-          "Schedule": ""
+          "Schedule": "",
+          "campus":"male"
         }
       ]
     }
