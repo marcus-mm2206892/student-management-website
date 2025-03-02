@@ -120,7 +120,6 @@ body {
     transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-
 .input-submit {
     width: 100%;
     background-color: var(--clr-primary-a0);
