@@ -261,3 +261,7 @@ body {
         background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
     }
   }
+
+@media (max-width: 768px) {
+    
+}
