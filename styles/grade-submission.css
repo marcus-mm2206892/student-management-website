@@ -50,6 +50,7 @@ body {
 
 .classes-container {
     display: flex;
+    width: 100%;
     height: 100%;
     overflow-x: auto;
     overflow-y: hidden;
@@ -73,12 +74,13 @@ body {
 }
 
 .teaching {
+    justify-content: start;
     min-width: 350px;
     max-width: 25%;
 }
 
 .selected {
-    min-width: 1350px;
+    min-width: 950px;
     max-width: 75%;
 }
 
