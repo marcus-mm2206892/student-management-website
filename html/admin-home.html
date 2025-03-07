@@ -20,12 +20,12 @@
 
 <body>
     <!-- NAVBAR -->
-    <!-- <nav class="navbar">
+     <nav class="navbar">
         <div class="navbar-user bordered-div" id="userMenuButton">
             <div class="nav-item">
-                <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
-                <span class="username">Lee Sanghyeok</span>
-                <i class="bx bx-chevron-down dropdown-icon"></i>
+                <img src="../assets/imgs/user-icon-white.png" alt="User" class="nav-image user-avatar">
+                <span class="username">Welcome, Admin!</span>
+                
             </div>
         </div>
 
@@ -35,50 +35,40 @@
 
         <div class="use-cases bordered-div">
             <ul class="navbar-menu">
-                <div class="nav-item"><li><a href="#">Register Courses <i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="#">Use Case 2 <i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="#">Use Case 3 <i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="admin-home.html">Home <i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="admin-create-class.html">Create Class<i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="admin-create-course.html">Create Course<i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="admin-approve-class.html">Approve Class <i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">View Schedule<i class="bx bx-chevron-down"></i></a></li></div>
             </ul>
-
-            <div class="mobile-menu">
-                <div class="nav-item">
-                    <button class="browse-btn">
-                        <i class="fa-solid fa-list"></i> Browse
-                    </button>
-                </div>
-            </div>
-
-            <button class="learningpath-btn">Learning Path</button>
         </div>
-    </nav> -->
+    </nav> 
     <main><section class="courses recommended-courses">
-        <div class="courses-header">
+        <div class="main-header">
             <div class="courses-header-left">
-                <h2>Welcome Admin!</h2>
-                <p>What would you like to do today?</p>
+                <h2>What would you like to do today?</h2>
+                <p>Lorem ipsum and lorem ipsum.</p>
             </div>
+        </div>
+          
     
         </div>
         <a href="admin-create-class.html">
         <div class="course-grid">
             <div class="course-card">
                 <div class="course-image">
-                    <div class="hover-icon">
-                        <i class="fa-solid fa-plus"></i>
-                        <span class="hover-text">Register Course</span>
-                    </div>
-                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+                    
+                   
                 </div>
                 <div class="course-info">
                     <div class="course-header">
-                        <span class="course-tag">Lorem</span>
+                        <span class="course-tag">Add</span>
                         <span class="semester">Fall 2025</span>
                     </div>
                     <h3>Create Class</h3>
                     <p class="course-subtitle">Add a new class.</p>
                     <div class="course-tags">
-                        <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                        <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+
                     </div>
                 </div>
             </div></a>
@@ -86,22 +76,16 @@
             <a href="admin-create-course.html">
             <div class="course-card">
                 <div class="course-image">
-                    <div class="hover-icon">
-                        <i class="fa-solid fa-plus"></i>
-                        <span class="hover-text">Register Course</span>
-                    </div>
-                    <i class="fa-solid fa-turn-up top-right-icon"></i>
                 </div>
                 <div class="course-info">
                     <div class="course-header">
-                        <span class="course-tag"></i>CMPS 351</span>
+                        <span class="course-tag"></i>Add</span>
                         <span class="semester">Fall 2025</span>
                     </div>
                     <h3>Create Course</h3>
-                    <p class="course-subtitle">Add a new course</p>
+                    <p class="course-subtitle">Add a new course.</p>
                     <div class="course-tags">
-                        <span class="tag"><i class="fa-solid fa-table"></i> SQL</span>
-                        <span class="tag"><i class="fa-solid fa-server"></i> Data Management</span>
+           
                     </div>
                 </div>
             </div></a>
@@ -109,22 +93,37 @@
             <a href="admin-approve-class.html">
             <div class="course-card">
                 <div class="course-image">
-                    <div class="hover-icon">
-                        <i class="fa-solid fa-plus"></i>
-                        <span class="hover-text">Register Course</span>
-                    </div>
-                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+        
                 </div>
                 <div class="course-info">
                     <div class="course-header">
-                        <span class="course-tag"></i>CMPS 360</span>
+                        <span class="course-tag"></i>Update</span>
                         <span class="semester">Fall 2025</span>
                     </div>
                     <h3>Approve Current Classes</h3>
                     <p class="course-subtitle">View all classes and check for approval.</p>
                     <div class="course-tags">
-                        <span class="tag"><i class="fa-solid fa-gears"></i> Complexity</span>
-                        <span class="tag"><i class="fa-solid fa-code"></i> Optimization</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </a>
+          
+
+        <a href="admin-view-schedule.html">
+            <div class="course-card">
+                <div class="course-image">
+        
+                </div>
+                <div class="course-info">
+                    <div class="course-header">
+                        <span class="course-tag"></i>View</span>
+                        <span class="semester">Fall 2025</span>
+                    </div>
+                    <h3>View Schedule</h3>
+                    <p class="course-subtitle">Displays the schedule of all approved classes.</p>
+                    <div class="course-tags">
+                        
                     </div>
                 </div>
             </div>
