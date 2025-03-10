@@ -25,5 +25,18 @@
         //     document.getElementById('createClassForm').reset(); // Clear the form
         // });
 
-const jsonData = import ('../data/courses.json');
-console.log(jsonData);
+
+fetch("../assets/data/courses.json")
+.then(response => response.json())
+.then( users => {
+    //Check if the username and password matches
+    const user = users.find( student => student.username === username && student.password === password);
+    if (user) {
+        window.location.href = "student-home-page.html";
+    } else {
+        console.log("Invalid input");
+        document.querySelector(".input-field").style.border = '1px solid red';
+    }
+}).catch(error => {
+    console.error('Error loading users.json:', error);
+});

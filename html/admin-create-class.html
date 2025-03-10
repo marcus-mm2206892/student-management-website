@@ -27,6 +27,7 @@
                     <li>
                         <label for="courseId">Select Course:    </label>
                         <select id="courseId" name="courseId" class="input-field" required>
+                            <option id="courseId" name="courseId" value="xx"> </option>
                             <!-- to be filled with js -->
                         </select>
                     </li>
@@ -44,17 +45,19 @@
                     </li>
                     <li>
                         <label for="schedule">Schedule:</label>
-                        <input type="text" id="schedule" name="schedule" value="" class="input-field">  
-                        <!-- not required yet, default value empty string til we figure out what to use for sched -->
+                        <input type="datetime-local" id="schedule" name="schedule" value="2025-01-1T5:30" min="2025-01-01T00:00" max="2025-06-14T00:00" class="input-field"/>
+                        <!-- takes one date and time, then we reproduce to make weekly -->
                     </li>
                     <li>
                         Campus:
+                        <div class="input-field">
                         <label>
-                            <input type="radio" name="campus" value="male" checked required> Male Campus
+                            <input type="radio" name="campus" value="male" required> Male 
                         </label>
                         <label>
-                            <input type="radio" name="campus" value="female" required> Female Campus
+                            <input type="radio" name="campus" value="female" required> Female 
                         </label>
+                    </div>
                     </li>
                     <li>
                         <button type="submit" class="input-submit">Create Class</button>

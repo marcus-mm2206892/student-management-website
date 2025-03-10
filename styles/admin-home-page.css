@@ -50,11 +50,11 @@ main {
 
 .main-header {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   width: 100%;
   margin-bottom: 1.5rem;
   margin-top:20px; /*putting some space between navbar and header */
-  
+  font-size:large;
 }
 
 
@@ -101,6 +101,10 @@ main {
 
   .search-bar {
     width: 90%;
+  }
+  .main-header{
+    justify-content: left;
+    font-size: 1em;
   }
 }
 

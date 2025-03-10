@@ -53,9 +53,12 @@ html {
 }
 
 body {
-    background-color: var(--clr-surface-tonal-a10);
+    background-color: var(--clr-surface-a0);
+    background-image: url("../assets/imgs/unitrack-images/pattern-blue.png");
     background-repeat: repeat;
-    background-size: cover;
+    color: var(--clr-contrast-a0);
+    font-family: "Inter", sans-serif;
+    font-size: 0.85rem;
 }
 
 .main-page {
@@ -126,6 +129,7 @@ body {
 }
 
 .input-field {
+    
     width: 100%;
     padding: 0.75rem 0.75rem 0.75rem 2.5rem;
     border: 1px solid var(--clr-surface-a30);
@@ -219,68 +223,7 @@ body {
     font-weight: 600;
 }
 
-.remember-me {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 1px solid var(--clr-contrast-a30);
-    background-color: var(--clr-surface-a10);
-    border-radius: 4px;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-}
 
-.remember-me::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    transform: translate(-50%, -50%) scale(0);
-    background-color: var(--clr-contrast-a30);
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 17%, 80% 0%, 43% 62%);
-    transition: transform 0.2s ease-in-out;
-}
-
-.welcome-graphic {
-    align-self: center;
-    width: 100%;
-}
-
-.remember-me:checked::after {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.welcome-col div {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-.welcome-col h1 {
-    font-size: 1.75rem;
-    color: white;
-    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);
-}
-
-.welcome-col p {
-    font-size: 1.125rem;
-    color: rgb(218, 218, 218);
-}
-
-.welcome-col span {
-    color: var(--clr-accent);
-    font-weight: 700;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-}
-
-.tagline-description {
-    max-width: 24rem;
-}
 
 @media (max-width: 768px) {
     .main-page {
