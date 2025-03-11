@@ -6,6 +6,7 @@
     "password": "josh123",
     "firstName": "Josh",
     "lastName":".",
+    "themePreference": "system",
     "completedCourses":[
       {"courseID":"CMPS151","grade":99},
       {"courseID":"ARAB100","grade":99},
@@ -19,6 +20,7 @@
     "password": "marcus123",
     "firstName":"Marcus",
     "lastName":".",
+    "themePreference": "system",
     "completedCourses":[
       {"courseID":"CMPS151","grade":99},
       {"courseID":"ARAB100","grade":99},
@@ -33,6 +35,7 @@
     "password": "audre123",
     "firstName":"Audre",
     "lastName":"Caraig",
+    "themePreference": "system",
     "completedCourses":[
       {"courseID":"CMPS151","grade":35},
       {"courseID":"ARAB100","grade":40},
@@ -46,6 +49,7 @@
     "password": "bashar123",
     "firstName": "Bashar",
     "lastName":".",
+    "themePreference": "system",
     "completedCourses":[
             {"courseID":"CMPS151","grade":99},
             {"courseID":"ARAB100","grade":99},
@@ -55,8 +59,9 @@
   {
     "userType":2,
     "id":"inst1",
-    "username": "Doe@gmail.com",
+    "username": "joe@gmail.com",
     "password": "doe123",
+    "themePreference": "system",
     "instructorId":"inst1",
     "name":"John Doe",
     "expertise":"Databases, Cybersecurity"
@@ -64,7 +69,8 @@
   {
     "userType":2,
     "id":"inst2",
-    "username": "James@gmail.com",
+    "themePreference": "system",
+    "username": "james@gmail.com",
     "password": "james123",
     "instructorId":"instructor2",
     "name":"James Bond",
@@ -73,6 +79,7 @@
   {
     "userType": 3,
     "id":"admin",
+    "themePreference": "system",
     "username": "admin",
     "password": "password"
   }
