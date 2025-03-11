@@ -16,46 +16,54 @@
     <link rel="stylesheet" href="../styles/admin-create.css">
 </head>
 <body>
+    <nav>
+        <a href="admin-home.html">Back to home</a>
+    </nav>
     <main>
-            <h1>Create New Class</h1>
-            <form id="createClassForm" class="form-col">
-                <ul>
-                    <li>
-                        <label for="courseId">Select Course:    </label>
-                        <select id="courseId" name="courseId" class="input-field" required>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="classId">Class ID:</label>
-                        <input type="text" id="classId" name="classId" class="input-field" required>
-                    </li>
-                    <li>
-                        <label for="instructor">Instructor ID:</label>
-                        <input type="text" id="instructor" name="instructor" class="input-field" required>
-                    </li>
-                    <li>
-                        <label for="maxStudents">Maximum Students:</label>
-                        <input type="number" id="maxStudents" name="maxStudents" class="input-field" required>
-                    </li>
-                    <li>
-                        <label for="schedule">Schedule:</label>
-                        <input type="text" id="schedule" name="schedule" value="" class="input-field">  
-                        <!-- not required yet, default value empty string til we figure out what to use for sched -->
-                    </li>
-                    <li>
-                        Campus:
-                        <label>
-                            <input type="radio" name="campus" value="male" checked required> Male Campus
-                        </label>
-                        <label>
-                            <input type="radio" name="campus" value="female" required> Female Campus
-                        </label>
-                    </li>
-                    <li>
-                        <button type="submit" class="input-submit">Create Class</button>
-                    </li>
-                </ul>
-            </form>
+        <h1>Create New Course</h1>
+        <form id="createClassForm" class="form-col">
+            <ul>
+                <li>
+                    <label for="courseName">Course Name:    </label>
+                    <input type="text" id="courseName" name="courseName" class="input-field" required>
+                </label>
+                </li>
+                <li>
+                    <label for="courseId">Course ID:</label>
+                    <input type="text" id="courseId" name="courseId" class="input-field" required>
+                </li>
+                <li>
+                    <label for="creditHours">Credit Hours:</label>
+                    <input type="number" id="creditHours" name="creditHours" class="input-field" required>
+                </li>
+                <li>
+                    <label for="description">Description: </label>
+                    <textarea id="description" name="description" class="input-field" required>
+                    </textarea>
+                </li>
+                <li>
+                    Prerequisites:
+                    <div class="input-field">
+                    <label for="prereqCourse">Prerequisite Course(s):</label>
+                        <select id="prereqCourse" name="prereqCourse">
+                            <option id="courseId" name="courseId" value="xx"> </option>
+                            <!-- to be filled with js -->
+                        </select><br>
+                    <!-- replace br later with css/js -->
+                    <label for="minGrade">Minimum Grade:</label>
+                    <select id="minGrade" name="minGrade">
+                        <option id="A" name="minGrade" value="A">A</option>
+                        <option id="B+" name="minGrade" value="B+">B+</option>
+                        <!-- to be filled with js -->
+                    </select><br>
+                    
+                </div>
+                </li>
+                <li>
+                    <button type="submit" class="input-submit">Create Class</button>
+                </li>
+            </ul>
+        </form>
     </main>
 </body>
 </html>

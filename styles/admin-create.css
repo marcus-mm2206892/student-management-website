@@ -60,7 +60,9 @@ body {
     font-family: "Inter", sans-serif;
     font-size: 0.85rem;
 }
-
+textarea{
+    resize:none;
+}
 .main-page {
     min-height: calc(100vh - 2rem);
     margin: 1rem;
@@ -70,6 +72,12 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "form-col welcome-col";
+}
+.nav a,a:visited,a{
+    text-decoration: none;
+    color:white;
+    padding:1em;
+    margin:auto;
 }
 
 .welcome-col {

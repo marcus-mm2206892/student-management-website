@@ -14,7 +14,18 @@
   grid-template-columns: 1fr;
     grid-template-rows: auto auto;
 }
-
+.card{
+    display: flex;
+  background: var(--clr-surface-a10);
+  padding: 1rem;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 280px;
+  justify-content: center;
+  gap: 1rem;
+}
 .course-card:hover {
   transform: translateY(-0.5rem); /* move card slightly up */
   background: linear-gradient(
