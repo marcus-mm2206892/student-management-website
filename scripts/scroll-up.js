@@ -1,16 +1,26 @@
-const scrollUpBtn = document.getElementById("scrollUpBtn");
+document.addEventListener("DOMContentLoaded", () => {
+    const scrollUpBtn = document.createElement("button");
+    scrollUpBtn.id = "scrollUpBtn";
+    scrollUpBtn.classList.add("scroll-up-btn");
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        scrollUpBtn.classList.add("show");
-    } else {
-        scrollUpBtn.classList.remove("show");
-    }
-});
+    const icon = document.createElement("i");
+    icon.classList.add("fa-solid", "fa-arrow-up");
 
-scrollUpBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+    scrollUpBtn.appendChild(icon);
+    document.body.appendChild(scrollUpBtn);
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            scrollUpBtn.classList.add("show");
+        } else {
+            scrollUpBtn.classList.remove("show");
+        }
+    });
+
+    scrollUpBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     });
 });
