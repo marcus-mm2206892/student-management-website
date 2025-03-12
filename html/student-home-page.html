@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="navbar-user bordered-div" id="userMenuButton">
@@ -33,10 +34,11 @@
         </div>
 
         <div class="use-cases bordered-div">
+            <!-- javascript navbar for instructor/student/admin -->
             <ul class="navbar-menu">
-                <div class="nav-item"><li><a href="#">Register Courses <i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="#">Use Case 2 <i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="#">Use Case 3 <i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">Browse Courses<i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">Register Courses<i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">View Major<i class="bx bx-chevron-down"></i></a></li></div>
             </ul>
 
             <div class="mobile-menu">
@@ -50,6 +52,28 @@
             <button class="learningpath-btn">Learning Path</button>
         </div>
     </nav>
+
+    <!-- SIDEBAR FOR MOBILE -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <!-- Background Circle Elements -->
+        <div class="circle big-circle"></div>
+        <div class="circle small-circle"></div>
+    
+        <div>
+            <img class="unitrack-logo-text" src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="UniTrack Logo">
+            <ul class="menu">
+                <li><span class="hover-circle"></span><a href="#">Browse Courses</a></li>
+                <li><span class="hover-circle"></span><a href="#">Register Courses</a></li>
+                <li><span class="hover-circle"></span><a href="#">View Major</a></li>
+                <li><span class="hover-circle"></span><a href="#">View Learning Path</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- USER DROPDOWN -->
     <section class="user-dropdown" id="userDropdown">

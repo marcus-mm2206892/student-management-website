@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.querySelector("#sidebar");
     const sidebarOverlay = document.querySelector("#sidebarOverlay");
     const closeSidebar = document.querySelector("#closeSidebar");
+    const navbar = document.querySelector(".navbar");
 
-    // Make dropdown hidden at first
+    // Dropdown functions
     userDropdown.style.opacity = "0";
     userDropdown.style.transform = "translateY(-20px)";
     userDropdown.style.display = "none";
@@ -61,24 +62,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Sidebar functions
 
-    // Open Sidebar
     browseBtn.addEventListener("click", function (event) {
         event.stopPropagation();
         sidebar.classList.add("active");
-        sidebarOverlay.classList.add("active"); // FIXED: Overlay now appears
+        sidebarOverlay.classList.add("active");
     });
 
-    // Close Sidebar when close button is clicked
     closeSidebar.addEventListener("click", function () {
         sidebar.classList.remove("active");
-        sidebarOverlay.classList.remove("active"); // FIXED: Overlay disappears
+        sidebarOverlay.classList.remove("active");
     });
+    
 
-    // Close sidebar when clicking outside
     sidebarOverlay.addEventListener("click", function () {
         sidebar.classList.remove("active");
         sidebarOverlay.classList.remove("active");
     });
+
+    sidebarOverlay.addEventListener("click", function () {
+        sidebar.classList.remove("active");
+        sidebarOverlay.classList.remove("active");
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove("active");
+            sidebarOverlay.classList.remove("active");
+        }
+    });
+
+    // Selecting navigation item paths
 
     document.querySelector(".nav-bar-logo").addEventListener("click", function() {
         window.location.href = "student-home-page.html";

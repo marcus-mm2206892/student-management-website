@@ -11,7 +11,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 998;
     display: grid;
     grid-template-columns: auto auto 1fr;
     align-items: center;
@@ -139,6 +139,7 @@
 }
 
 .browse-btn {
+    padding: 0.7rem 0;
     background: none;
     border: none;
     color: var(--clr-contrast-a0);
@@ -411,41 +412,63 @@
 
 .sidebar {
     position: fixed;
-    top: 1rem;
-    bottom: 2rem;
-    left: -350px;
-    width: 80%;
-    height: calc(100vh - 2rem);
+    top: 0;
+    left: -320px;
+    width: min(320px, 95%);
+    height: 100vh;
     background: var(--clr-surface-a10);
-    padding: 2rem;
-    display: flex;
+    padding: 8rem 3rem;
     flex-direction: column;
     justify-content: space-between;
     transition: left 0.3s ease-in-out;
     z-index: 1000;
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
+    border-radius: 0 1rem 1rem 0;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .sidebar.active {
-    left: 1rem;
+    left: 0;
 }
+
+.sidebar.active .navbar{
+    display: none;
+}
+
 
 .sidebar-overlay.active {
     opacity: 1;
     visibility: visible;
 }
 
+.sidebar .unitrack-logo-text {
+    width: 50%;
+}
+
 .sidebar .close-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 1rem;
+    right: 1rem;
 }
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
 
 .menu {
     list-style: none;
     padding: 0;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .menu li {
@@ -457,8 +480,7 @@
 
 .menu li a {
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.20rem;
     color: var(--clr-contrast-a0);
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
     display: inline-block;
@@ -487,25 +509,25 @@
 .circle {
     position: absolute;
     border-radius: 50%;
-    background: var(--clr-contrast-a0);
-    opacity: 0.5;
+    background: var(--clr-primary-a10);
+    opacity: 0.1;
     z-index: -1;
-    animation: fadeInLeft 1.2s ease-in-out forwards;
 }
 
 .big-circle {
-    width: 300px;
-    height: 300px;
-    top: 20%;
-    left: -400px;
+    width: 40rem;
+    height: 40rem;
+    top: -32%;
+    left: 20%;
 }
 
 .small-circle {
-    width: 180px;
-    height: 180px;
-    top: 60%;
-    left: -250px;
+    width: 40rem;
+    height: 40rem;
+    top: -28%;
+    left: 28%;
 }
+
 
 /* Animation */
 @keyframes fadeInLeft {
@@ -519,22 +541,12 @@
     }
 }
 
-/* Responsive Sidebar */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 80%;
-        left: -100%;
-    }
-
-    .sidebar.active {
-        left: 10px;
-    }
-}
-
-
-
 /* change some elements in dark mode */
 @media (prefers-color-scheme: dark) {
+    .circle {
+        background: var(--clr-contrast-a40);
+    }
+
     .icon-box {
         width: 2rem;
         height: 2rem;
@@ -631,8 +643,8 @@
     }
 }
 
-@media (max-width: 480px) {
-    .learningpath-btn {
+@media (max-width: 768px) {
+    .navbar .learningpath-btn {
         display: none
     }
 }

@@ -18,10 +18,17 @@
     <!-- Modal -->
     <div id="classDetailsModal" class="modal">
         <div class="modal-popup">
+            <button class="close-btn close-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
 
             <!-- Header with Dropdown and Close Button -->
             <div class="modal-header">
-                <h2>Web Development Fundamentals</h2>
+                <h2 class="course-title">Web Development Fundamentals</h2>
+                <div class="course-tags-div">
+                    <span class="course-tag">CMPS 303</span>
+                    <span class="crn">Fall 2025</span>
+                </div>
                 <!-- Dropdown -->
                 <div class="dropdown">
                     <div class="dropdown-toggle" onclick="toggleDropdown()">
@@ -37,10 +44,6 @@
                         <div onclick="selectOption('Prerequisite Courses')"><i class="fas fa-list"></i> Prerequisite Courses</div>
                     </div>
                 </div>
-                <!-- Close Button -->
-                <button class="close-btn close-modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
             </div>
 
             <!-- Modal Content -->
