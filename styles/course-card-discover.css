@@ -38,6 +38,16 @@
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .course-card {
+    min-width: 250px;
+  }
+
+  .card {
+    min-width: 250px;
+  }
+}
+
 @media(prefers-color-scheme: light) {
   .course-card:hover {
     background: linear-gradient(
