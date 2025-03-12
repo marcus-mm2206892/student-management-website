@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../styles/theme.css">
-    <link rel="stylesheet" href="../styles/nav-bar-student.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
 </head>
 <body>
 
@@ -44,6 +44,25 @@
             <button class="learningpath-btn">Learning Path</button>
         </div>
     </nav>
+
+    <!-- SIDEBAR FOR MOBILE -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="menu">
+            <li><span class="hover-circle"></span><a href="#">Register Courses</a></li>
+            <li><span class="hover-circle"></span><a href="#">Use Case 2</a></li>
+            <li><span class="hover-circle"></span><a href="#">Use Case 3</a></li>
+        </ul>
+    </div>
+
+    <div class="circle big-circle"></div>
+    <div class="circle small-circle"></div>
+
+    <!-- USER DROPDOWN -->
 
     <div class="user-dropdown" id="userDropdown">
         <div class="dropdown-header">

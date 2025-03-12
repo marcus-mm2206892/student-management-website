@@ -1,31 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
     const userMenuButton = document.querySelector(".navbar-user .nav-item");
-    const userDropdown = document.getElementById("userDropdown");
-    const closeDropdown = document.getElementById("closeDropdown");
+    const userDropdown = document.querySelector("#userDropdown");
+    const closeDropdown = document.querySelector("#closeDropdown");
+    const browseBtn = document.querySelector(".browse-btn");
+    const sidebar = document.querySelector("#sidebar");
+    const sidebarOverlay = document.querySelector("#sidebarOverlay");
+    const closeSidebar = document.querySelector("#closeSidebar");
 
-    // make dropdown hidden at first
+    // Make dropdown hidden at first
     userDropdown.style.opacity = "0";
     userDropdown.style.transform = "translateY(-20px)";
     userDropdown.style.display = "none";
 
-    // show dropdown
+    // Show dropdown
     userMenuButton.addEventListener("click", function () {
         if (userDropdown.style.display === "none" || userDropdown.style.opacity === "0") {
             userDropdown.style.display = "block";
             setTimeout(() => {
                 userDropdown.style.opacity = "1";
                 userDropdown.style.transform = "translateY(0)";
-            }, 10); // add delay for dropping down
+            }, 10);
         } else {
             userDropdown.style.opacity = "0";
             userDropdown.style.transform = "translateY(-20px)";
             setTimeout(() => {
                 userDropdown.style.display = "none";
-            }, 300); // same transition time as css for going up
+            }, 300);
         }
     });
 
-    // hide again when clicked outside
+    // Hide dropdown when clicking outside
     document.addEventListener("click", function (event) {
         if (!userDropdown.contains(event.target) && !userMenuButton.contains(event.target)) {
             userDropdown.style.opacity = "0";
@@ -36,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // hide when x button is clicked
+    // Hide dropdown when close button is clicked
     closeDropdown.addEventListener("click", function () {
         userDropdown.style.opacity = "0";
         userDropdown.style.transform = "translateY(-20px)";
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 300);
     });
 
-    // adding theme button functionality
+    // Theme button functionality
     const themeButtons = document.querySelectorAll(".theme-btn");
 
     themeButtons.forEach(button => {
@@ -53,6 +57,27 @@ document.addEventListener("DOMContentLoaded", function () {
             themeButtons.forEach(btn => btn.classList.remove("active"));
             this.classList.add("active");
         });
+    });
+
+    // Sidebar functions
+
+    // Open Sidebar
+    browseBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        sidebar.classList.add("active");
+        sidebarOverlay.classList.add("active"); // FIXED: Overlay now appears
+    });
+
+    // Close Sidebar when close button is clicked
+    closeSidebar.addEventListener("click", function () {
+        sidebar.classList.remove("active");
+        sidebarOverlay.classList.remove("active"); // FIXED: Overlay disappears
+    });
+
+    // Close sidebar when clicking outside
+    sidebarOverlay.addEventListener("click", function () {
+        sidebar.classList.remove("active");
+        sidebarOverlay.classList.remove("active");
     });
 
     document.querySelector(".nav-bar-logo").addEventListener("click", function() {
