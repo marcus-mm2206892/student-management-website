@@ -1,0 +1,72 @@
+[
+    {
+      "classId": "1",
+      "courseId": "CMPS151",
+      "semester": "Spring 2025",
+      "instructionalMethods": "English",
+      "campus": "Male",
+      "enrollmentActual": "0",
+      "enrollmentMaximum": "40",
+      "classStatus": "closed"
+    },
+    {
+      "classId": "2",
+      "courseId": "ARAB100",
+      "semester": "Spring 2025",
+      "instructionalMethods": "Arabic",
+      "campus": "Male",
+      "enrollmentActual": "0",
+      "enrollmentMaximum": "50",
+      "classStatus": "closed"
+    },
+    {
+      "classId": "3",
+      "courseId": "CMPS373",
+      "semester": "Spring 2025",
+      "instructionalMethods": "English",
+      "campus": "Male",
+      "enrollmentActual": "0",
+      "enrollmentMaximum": "35",
+      "classStatus": "closed"
+    },
+    {
+      "classId": "4",
+      "courseId": "MATH101",
+      "semester": "Spring 2025",
+      "instructionalMethods": "English",
+      "campus": "Male",
+      "enrollmentActual": "0",
+      "enrollmentMaximum": "45",
+      "classStatus": "closed"
+    },
+    {
+      "classId": "5",
+      "courseId": "CMPS262",
+      "semester": "Spring 2025",
+      "instructionalMethods": "English",
+      "campus": "Male",
+      "enrollmentActual": "0",
+      "enrollmentMaximum": "30",
+      "classStatus": "closed"
+    },
+    {
+      "classId": "6",
+      "courseId": "CMPS350",
+      "semester": "Spring 2025",
+      "instructionalMethods": "English",
+      "campus": "Male",
+      "enrollmentActual": "0",
+      "enrollmentMaximum": "40",
+      "classStatus": "closed"
+    },
+    {
+      "classId": "7",
+      "courseId": "MATH201",
+      "semester": "Spring 2025",
+      "instructionalMethods": "English",
+      "campus": "Male",
+      "enrollmentActual": "0",
+      "enrollmentMaximum": "35",
+      "classStatus": "closed"
+    }
+  ]
