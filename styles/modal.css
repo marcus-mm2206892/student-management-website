@@ -1,4 +1,3 @@
-/* Global Reset */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -9,7 +8,7 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-/* Modal Background */
+/* dim background when opened */
 .modal {
     display: none;
     position: fixed;
@@ -23,7 +22,6 @@ body {
     align-items: center;
 }
 
-/* Modal Box */
 .modal-popup {
     position: relative;
     background: var(--clr-surface-a0);
@@ -79,12 +77,12 @@ body {
     color: #f5f5f5;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     font-weight: bold;
     display: flex;
     align-items: center;
     gap: 5px;
-    white-space: nowrap; /* Prevent text from wrapping inside each tag */
+    white-space: nowrap;
 }
 
 .dropdown-div {
@@ -111,7 +109,6 @@ body {
     padding-right: 0.5rem;
 }
 
-/* Dropdown */
 .dropdown {
     display: flex;
     justify-content: flex-end;
@@ -155,7 +152,6 @@ body {
     z-index: 1000;
 }
 
-/* Dropdown Menu Items */
 .dropdown-menu div {
     padding: 10px;
     cursor: pointer;
@@ -201,9 +197,7 @@ body {
 }
 
 
-/* ============================= */
 /* MODAL CONTENT */
-/* ============================= */
 .modal-content {
     flex-grow: 1;
     padding: 1.5rem;
@@ -212,29 +206,72 @@ body {
     margin: 1.5rem;
     border-radius: 0.5rem;
     color: var(--clr-contrast-a0);
+    border: 1px solid var(--clr-surface-a50);
 }
 
-.course-section-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.content-section.active {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.modal-content h3 {
+    font-size: 1rem;
 }
 
 .modal-content p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--clr-contrast-a40);
     line-height: 1.5;
+}
+
+.content-info-div {
+    background: var(--clr-surface-a10);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content-info-div:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(
+      135deg,
+      var(--clr-surface-a0) 30%,
+      #2a81bf 100%
+    );
+
+    border: 1px solid var(--clr-contrast-a0);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.content-info-text {
+    border: 1px solid var(--clr-surface-a50);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    width: fit-content;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.content-info-text i {
+    color: var(--clr-primary-a0);
+    font-size: 0.7rem;
+    align-self: center;
 }
 
 .content-section {
     display: none;
 }
 
-.active {
-    display: block;
-}
-
-/* Buttons */
 .modal-btn {
     display: flex;
     align-items: center;
@@ -270,9 +307,6 @@ body {
     transform: scale(1.05);
 }
 
-/* ============================= */
-/* RESPONSIVE DESIGN */
-/* ============================= */
 @media (max-width: 768px) {
 
     .modal-header {
@@ -287,6 +321,11 @@ body {
         width: 100%;
     }
 
+    .content-section.active {
+        grid-template-columns: 1fr;
+    }
+    
+
     .dropdown-text {
         display: none;
     }
@@ -300,9 +339,6 @@ body {
     }
 }
 
-/* ============================= */
-/* DARK MODE */
-/* ============================= */
 @media (prefers-color-scheme: dark) {
     .modal-popup {
         background: var(--clr-surface-a10);
