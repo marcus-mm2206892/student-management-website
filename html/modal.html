@@ -24,24 +24,30 @@
 
             <!-- Header with Dropdown and Close Button -->
             <div class="modal-header">
-                <h2 class="course-title">Web Development Fundamentals</h2>
-                <div class="course-tags-div">
-                    <span class="course-tag">CMPS 303</span>
-                    <span class="crn">Fall 2025</span>
-                </div>
-                <!-- Dropdown -->
-                <div class="dropdown">
-                    <div class="dropdown-toggle" onclick="toggleDropdown()">
-                        <span id="selectedOption">Class Details</span>
-                        <i class="fas fa-chevron-down"></i>
+                <div class="course-title-div">
+                    <h2 class="course-title">Web Development Fundamentals</h2>
+                    <div class="course-tags-div">
+                        <span class="course-tag">CMPS 350</span>
+                        <span class="crn">CRN: 21937</span>
                     </div>
-                    <div class="dropdown-menu">
-                        <div onclick="selectOption('Class Details')"><i class="fas fa-info-circle"></i> Class Details</div>
-                        <div onclick="selectOption('Course Description')"><i class="fas fa-book"></i> Course Description</div>
-                        <div onclick="selectOption('Instructors')"><i class="fas fa-chalkboard-teacher"></i> Instructors</div>
-                        <div onclick="selectOption('Class Schedule')"><i class="fas fa-calendar-alt"></i> Class Schedule</div>
-                        <div onclick="selectOption('Enrollment')"><i class="fas fa-user-check"></i> Enrollment</div>
-                        <div onclick="selectOption('Prerequisite Courses')"><i class="fas fa-list"></i> Prerequisite Courses</div>
+                </div>
+                <div class="dropdown-div">
+                    <span class="dropdown-text">
+                        <i class="fas fa-info-circle"></i>
+                    </span>                    
+                    <div class="dropdown">
+                        <div class="dropdown-toggle" onclick="toggleDropdown()">
+                            <span id="selectedOption">Class Details</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div onclick="selectOption('Class Details')"><i class="fas fa-info-circle"></i> Class Details</div>
+                            <div onclick="selectOption('Course Description')"><i class="fas fa-book"></i> Course Description</div>
+                            <div onclick="selectOption('Instructors')"><i class="fas fa-chalkboard-teacher"></i> Instructors</div>
+                            <div onclick="selectOption('Class Schedule')"><i class="fas fa-calendar-alt"></i> Class Schedule</div>
+                            <div onclick="selectOption('Enrollment')"><i class="fas fa-user-check"></i> Enrollment</div>
+                            <div onclick="selectOption('Prerequisite Courses')"><i class="fas fa-list"></i> Prerequisite Courses</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -49,27 +55,27 @@
             <!-- Modal Content -->
             <div class="modal-content">
                 <div id="Class Details" class="content-section active">
-                    <h2>Class Details</h2>
+                    <h2 class="content-section-title">Class Details</h2>
                     <p>Information about this class, its level, and credits.</p>
                 </div>
                 <div id="Course Description" class="content-section">
-                    <h2>Course Description</h2>
+                    <h2 class="content-section-title">Course Description</h2>
                     <p>This course covers advanced concepts in web development.</p>
                 </div>
                 <div id="Instructors" class="content-section">
-                    <h2>Instructors</h2>
+                    <h2 class="content-section-title">Instructors</h2>
                     <p>Prof. John Doe and Dr. Jane Smith will be leading this class.</p>
                 </div>
                 <div id="Class Schedule" class="content-section">
-                    <h2>Class Schedule</h2>
+                    <h2 class="content-section-title">Class Schedule</h2>
                     <p>Monday and Wednesday, 10:00 AM - 12:00 PM.</p>
                 </div>
                 <div id="Enrollment" class="content-section">
-                    <h2>Enrollment</h2>
+                    <h2 class="content-section-title">Enrollment</h2>
                     <p>Open for all students. Enrollment ends on March 1st.</p>
                 </div>
                 <div id="Prerequisite Courses" class="content-section">
-                    <h2>Prerequisite Courses</h2>
+                    <h2 class="content-section-title">Prerequisite Courses</h2>
                     <p>Students must have completed Introduction to Programming.</p>
                 </div>
             </div>
