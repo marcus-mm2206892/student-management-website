@@ -17,12 +17,16 @@ function userVerification() {
     .then(response => response.json())
     .then( users => {
         //Check if the username and password matches
-        const user = users.find( student => student.username === username && student.password === password);
-        if (user) {
+        const user = users.findIndex( student => student.username == username && student.password == password);
+        if (user != -1) {
             window.location.href = "student-home-page.html";
         } else {
             console.log("Invalid input");
-            document.querySelector(".input-field").style.border = '1px solid red';
+            const nodeList = document.querySelectorAll(".input-field");
+            for (let i = 0; i < nodeList.length; i++) {
+                nodeList[i].style.border = '1px solid red';
+              }
+            alert("Invalid Username or Password! Try again");
         }
     }).catch(error => {
         console.error('Error loading users.json:', error);
