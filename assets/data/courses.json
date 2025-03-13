@@ -1,200 +1,101 @@
 [
-    {
-      "courseName": "Programming Concepts",
-      "courseId": "CMPS151",
-      "creditHours": 3,
-      "description": "Lorem Ipsum",
-      "prerequisites": null,
-      "classes": [
-        {
-          "classId": "L01",
-          "instructor": "inst1",
-          "maxStudents": 40,
-          "classStatus": false,
-          "Students": [
-            ""
-          ],
-          "Schedule": ""
-        },
-        {
-          "classId": "L02",
-          "instructor": "inst1",
-          "maxStudents": 40,
-          "classStatus": false,
-          "Students": [
-            ""
-          ],
-          "Schedule": ""
-        }
-      ]
-    },
-    {
-      "courseName": "Arabic Language I",
-      "courseId": "ARAB100",
-      "creditHours": 3,
-      "description": "Lorem Ipsum",
-      "prerequisites": null,
-      "classes": [
-        {
-          "classId": "L01",
-          "instructor": "inst2",
-          "maxStudents": 20,
-          "classStatus": false,
-          "Students": [
-            ""
-          ],
-          "Schedule": ""
-        },
-        {
-          "classId": "L02",
-          "instructor": "inst2",
-          "maxStudents": 20,
-          "classStatus": false,
-          "Students": [
-            ""
-          ],
-          "Schedule": "",
-          "campus":"male"
-        }
-      ]
-    },
-    {
-      "courseName": "Calculus I",
-      "courseId": "MATH101",
-      "creditHours": 3,
-      "description": "Lorem Ipsum",
-      "prerequisites": null,
-      "classes": [
-        {
-          "classId": "L01",
-          "instructor": "inst2",
-          "maxStudents": 40,
-          "classStatus": false,
-          "Students": [
-            ""
-          ],
-          "Schedule": "",
-          "campus":"male"
-        },
-        {
-          "classId": "L02",
-          "instructor": "inst2",
-          "maxStudents": 40,
-          "classStatus": false,
-          "Students": [
-            ""
-          ],
-          "Schedule": "",
-          "campus":"male"
-        }
-      ]
-    },
-    {
-      "courseName": "Calculus II",
-      "courseId": "MATH201",
-      "creditHours": 3,
-      "description": "Lorem Ipsum",
-      "prerequisites": [
-        {
-          "courseId": "MATH101",
-          "minGrade": 60
-        }
-      ],
-      "classes": [
-        {
-          "classId": "L01",
-          "instructor": "inst2",
-          "maxStudents": 40,
-          "classStatus": false,
-          "Students": [
-            "stud1"
-          ],
-          "Schedule": ""
-        }
-      ]
-    },
-    {
-      "courseName": "Object Oriented Programming",
-      "courseId": "CMPS262",
-      "creditHours": 4,
-      "description": "Lorem Ipsum",
-      "prerequisites": [
-        {
-          "courseId": "CMPS151",
-          "minGrade": 60
-        }
-      ],
-      "classes":[]
-    },
-    {
-      "courseName": "Computer Graphics",
-      "courseId": "CMPS373",
-      "creditHours": 3,
-      "description": "Lorem Ipsum",
-      "prerequisites": [
-        {
-          "courseId": "CMPS262",
-          "minGrade": 60
-        }
-      ],
-      "classes": [
-        {
-          "classId": "L01",
-          "instructor": "inst1",
-          "maxStudents": 40,
-          "classStatus": false,
-          "Students": [
-            ""
-          ],
-          "Schedule": ""
-        },
-        {
-          "classId": "L02",
-          "instructor": "inst2",
-          "maxStudents": 40,
-          "classStatus": false,
-          "Students": [
-            ""
-          ],
-          "Schedule": ""
-        }
-      ]
-    },
-    {
-      "courseName": "Web Fundamentals",
-      "courseId": "CMPS350",
-      "creditHours": 3,
-      "description": "Lorem Ipsum",
-      "prerequisites": [
-        {
-          "courseId": "CMPS262",
-          "minGrade": 60
-        }
-      ],
-      
-      "classes": [
-        {
-          "classId": "L01",
-          "instructor": "inst1",
-          "maxStudents": 40,
-          "classStatus": false,
-          "Students": [
-            "stud1",
-            "stud2",
-            "stud3"
-          ],
-          "Schedule": "idk the best way to implement this yet,probably Date class?"
-        },
-        {
-          "classId": "L02",
-          "instructor": "inst1",
-          "maxStudents": 40,
-          "classStatus": false,
-          "Students": [
-            "stud4"
-          ],
-          "Schedule": ""
-        }
-      ]
-    }
-  ]
+  {
+    "courseId": "CMPS151",
+    "courseName": "Introduction to Computer Science",
+    "creditHours": 3,
+    "subject": "Computer Science",
+    "courseNumber": "CMPS151",
+    "prerequisites": [],
+    "majorsOffered": [
+      "CS"
+    ],
+    "currentClasses": [
+      "1"
+    ],
+    "description": "Problem solving techniques such as pseudo-code of flowcharts, algorithmic thinking. Basic prigramming concepts including: variables, arithmetic and logical operations, input/ output, conditional statements, loops, arrays, functions, and file processing. The laboratory provides a practical programming experience."
+  },
+  {
+    "courseId": "CMPS251",
+    "courseName": "Object Oreinted Programming",
+    "creditHours": 4,
+    "subject": "Computer Science",
+    "courseNumber": "251",
+    "prerequisites": [
+      "CMPS151"
+    ],
+    "majorsOffered": [
+      "CS"
+    ],
+    "currentClasses": [
+      "2"
+    ],
+    "description": "Fundamentals of object-oriented programming, object-oriented design, apply object oriented concepts such as abstraction, encapsulation, composition, inheritance, polymorphism, and interfaces. Graphical user interface and event-driven programming; exception handling; additional object-oriented features. The laboratory provides practical object-oriented programming experience."
+  },
+  {
+    "courseId": "CMPS205",
+    "courseName": "Discrete Structures for Computing",
+    "creditHours": 4,
+    "subject": "Computer Science",
+    "courseNumber": "CMPS205",
+    "prerequisites": [],
+    "majorsOffered": [
+      "CS"
+    ],
+    "currentClasses": [
+      "3"
+    ],
+    "description": "Introduction to the elements of mathematics applicable to the computing field. Logic and methods of proof; logic gates; Boolean algebra and minimization; set theory; relations and functions; sequences and sums; induction; numbering systems and combinatorics."
+  },
+  {
+    "courseId": "CMPS350",
+    "courseName": "Web Development Fundamentals",
+    "creditHours": 3,
+    "subject": "Computer Science",
+    "courseNumber": "350",
+    "prerequisites": [
+      "CMPS251"
+    ],
+    "majorsOffered": [
+      "CS"
+    ],
+    "currentClasses": [
+      "6"
+    ],
+    "description": "Concepts, protocols and enabling technologies related to the development of modern web applications. Fundamentals of designing and developing dynamic and interactive web applications using HTML and related standards, scripting languages, client-side and server-side programming. Hands-on Lab to design and develop Web applications."
+  },
+  {
+    "courseId": "CMPE263",
+    "courseName": "Computer Architecure 1",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "263",
+    "prerequisites": [
+      "CMPS151"
+    ],
+    "majorsOffered": [
+      "CS, CE"
+    ],
+    "currentClasses": [
+      "7"
+    ],
+    "description": "Higher-level concepts in computer architecture. Data representation; classic components of a computer; performance measures for computers; CPU types, design, organization, instruction-level description; processor programming, register transfer languages, addressing modes, assembly language; main and cache memory, caching techniques."
+  },
+  {
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+]

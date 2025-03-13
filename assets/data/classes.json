@@ -11,9 +11,9 @@
     },
     {
       "classId": "2",
-      "courseId": "ARAB100",
+      "courseId": "CMPS251",
       "semester": "Spring 2025",
-      "instructionalMethods": "Arabic",
+      "instructionalMethods": "English",
       "campus": "Male",
       "enrollmentActual": "0",
       "enrollmentMaximum": "50",
@@ -21,7 +21,7 @@
     },
     {
       "classId": "3",
-      "courseId": "CMPS373",
+      "courseId": "CMPS205",
       "semester": "Spring 2025",
       "instructionalMethods": "English",
       "campus": "Male",
@@ -41,7 +41,7 @@
     },
     {
       "classId": "5",
-      "courseId": "CMPS262",
+      "courseId": "CMPE261",
       "semester": "Spring 2025",
       "instructionalMethods": "English",
       "campus": "Male",
@@ -61,7 +61,7 @@
     },
     {
       "classId": "7",
-      "courseId": "MATH201",
+      "courseId": "CMPE264",
       "semester": "Spring 2025",
       "instructionalMethods": "English",
       "campus": "Male",
