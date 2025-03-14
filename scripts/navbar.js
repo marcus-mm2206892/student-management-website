@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebarOverlay = document.querySelector("#sidebarOverlay");
     const closeSidebar = document.querySelector("#closeSidebar");
     const navbar = document.querySelector(".navbar");
+    const registerNavItem = document.querySelector(".navbar-menu .nav-item:nth-child(2) a");
 
     // Dropdown functions
     userDropdown.style.opacity = "0";
@@ -91,10 +92,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Selecting navigation item paths
-
     document.querySelector(".nav-bar-logo").addEventListener("click", function() {
         window.location.href = "student-home-page.html";
+    });
+
+    registerNavItem.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "register-course.html";
     });
 
     document.querySelector(".learningpath-btn").addEventListener("click", function() {

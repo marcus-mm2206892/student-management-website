@@ -215,7 +215,7 @@ thead {
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: var(--clr-primary-a20);
+    background-color: var(--clr-surface-tonal-a10);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -234,11 +234,11 @@ td {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #0000000b;
+    background-color: #819fea0b;
 }
 
 tbody tr:hover {
-    background-color: #fff6;
+    background-color: var(--clr-surface-tonal-a10);
 }
 
 tbody tr td button {
