@@ -784,7 +784,6 @@ body {
 
 .register-btn:hover {
     background-color: var(--clr-primary-a20);
-    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
