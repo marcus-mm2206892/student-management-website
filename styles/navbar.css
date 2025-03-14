@@ -84,6 +84,10 @@
     transition: background-color 0.1s ease-in-out;
 }
 
+#userMenuButton:hover .nav-item {
+    cursor: pointer;
+}
+
 .nav-item:hover {
     background-color: var(--clr-surface-a10);
 }

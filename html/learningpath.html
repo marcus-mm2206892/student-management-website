@@ -32,10 +32,11 @@
         </div>
 
         <div class="use-cases bordered-div">
+            <!-- javascript navbar for instructor/student/admin -->
             <ul class="navbar-menu">
-                <div class="nav-item"><li><a href="#">Register Courses <i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="#">Use Case 2 <i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="#">Use Case 3 <i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">Browse Courses</a></li></div>
+                <div class="nav-item"><li><a href="#">Register Courses</a></li></div>
+                <div class="nav-item"><li><a href="#">View Major</a></li></div>
             </ul>
 
             <div class="mobile-menu">
@@ -50,32 +51,41 @@
         </div>
     </nav>
 
-    <!-- Sidebar -->
+    <!-- SIDEBAR FOR MOBILE -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <div class="sidebar" id="sidebar">
         <button class="close-btn" id="closeSidebar">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <ul class="menu">
-            <li><span class="hover-circle"></span><a href="#">Register Courses</a></li>
-            <li><span class="hover-circle"></span><a href="#">Use Case 2</a></li>
-            <li><span class="hover-circle"></span><a href="#">Use Case 3</a></li>
-        </ul>
+        
+        <!-- Background Circle Elements -->
+        <div class="circle big-circle"></div>
+        <div class="circle small-circle"></div>
+    
+        <div>
+            <img class="unitrack-logo-text" src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="UniTrack Logo">
+            <ul class="menu">
+                <li><span class="hover-circle"></span><a href="#">Browse Courses</a></li>
+                <li><span class="hover-circle"></span><a href="#">Register Courses</a></li>
+                <li><span class="hover-circle"></span><a href="#">View Major</a></li>
+                <li><span class="hover-circle"></span><a href="#">View Learning Path</a></li>
+            </ul>
+        </div>
     </div>
 
-    <!-- Floating Animated Circles -->
-    <div class="circle big-circle"></div>
-    <div class="circle small-circle"></div>
-
     <!-- USER DROPDOWN -->
-    <section class="user-dropdown" id="userDropdown">
+
+    <div class="user-dropdown" id="userDropdown">
         <div class="dropdown-header">
             <div class="top-header">
-                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar">
+                <!-- javascript image for user -->
+                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar"> 
                 <button class="close-btn" id="closeDropdown">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
                 
             </div>
+            <!-- javascript user details -->
             <div class="bottom-header">
                 <h4 class="dropdown-name">Lee Sanghyeok</h4>
                 <p class="dropdown-email">lee.sanghyeok@example.com</p>
@@ -115,14 +125,15 @@
                 <span class="theme-label">Dark</span>
             </div>
         </div>
-
+        
         <hr class="hr theme-signout">
     
         <button class="signout-btn">
             <i class="fa-solid fa-right-from-bracket"></i>
             Sign Out
         </button>
-    </section>
+
+    </div>
 
     <main class="learning-path">
         <header class="learning-path-header">
