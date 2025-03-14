@@ -17,9 +17,11 @@ function userVerification() {
     .then(response => response.json())
     .then( users => {
         //Check if the username and password matches
-        const user = users.findIndex( student => student.username == username && student.password == password);
-        if (user != -1) {
+        const user = users.find( student => student.username == username && student.password == password);
+        if (user) {
             window.location.href = "student-home-page.html";
+            delete localStorage.loggedInUser;
+            localStorage.loggedInUser = JSON.stringify(user);
         } else {
             console.log("Invalid input");
             const nodeList = document.querySelectorAll(".input-field");
