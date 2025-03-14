@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </td>
                 <td class="data course-schedule"><span>MON-WED</span></td>
                 <td>
-                    <button class="course-button" ${buttonDisabled}>
+                    <button class="course-button" data-course-id=${cls.classId} ${buttonDisabled}>
                         <strong><span>${buttonText}</span></strong>
                     </button>
                 </td>
@@ -169,4 +169,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // initial call on page load
     adjustTableColumns();
+
+    function getCourseId(button) {
+        let courseId = button.getAttribute("data-course-id");
+        return courseId;
+    }
+
+    document.querySelector(".course-button").addEventListener('onclick', registerCourse)
+
+    function registerCourse(){
+        const courseEnrollment = {
+            
+        }
+    }
+
 });
