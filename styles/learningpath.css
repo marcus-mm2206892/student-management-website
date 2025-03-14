@@ -75,7 +75,7 @@ body {
 
 .category {
     flex: 1;
-    min-width: 350px;
+    min-width: 345px;
     max-width: 25%;
     height: 100%;
     display: flex;
@@ -85,7 +85,7 @@ body {
     border-radius: 10px;
     padding: 0.8rem;
     scroll-snap-align: start;
-    margin: 0 1rem;
+    margin: 0 0.8rem;
 }
 
 .category-header {
@@ -121,15 +121,21 @@ body {
 
 .cards-container {
     flex: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    padding-right: 1rem;
     align-items: center;
     min-width: fit-content;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
 }
 
-.course-card {
+.cards-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+.cards-container .course-card {
     margin-top: 1rem;
 }
 
@@ -212,15 +218,12 @@ body {
 
     .learning-path-top-header {
         flex-direction: column;
+        gap: 0.5rem;
     }
 
     .learning-path-title {
         text-align: center;
         font-size: 1.2rem;
-    }
-    
-    .learning-path-top-header {
-        gap: 0.5rem;
     }
 }
 

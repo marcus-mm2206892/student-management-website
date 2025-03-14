@@ -7,79 +7,230 @@
 }
 
 body {
-    background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
-    background-color: var(--clr-surface-a0);;
-    background-size: cover;
-    min-height: 170vh; /* take the full height */
+    background-color: var(--clr-surface-a0);
+    background-image: url("../assets/imgs/unitrack-images/pattern-blue.png");
+    background-repeat: repeat;
+    color: var(--clr-contrast-a0);
+    font-family: "Inter", sans-serif;
+    font-size: 0.85rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
+    }
+}
+
+.register {
+    height: calc(100vh - 53px); /* full screen height minus navbar height */
+    margin: 50px auto 1rem auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-main.table {
-    width: 85vw;
-    height: 90vh;
-    background-color: #fff5;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 0.4rem 0.8rem #0005;
-    border-radius: 0.8rem;
     overflow: hidden;
-    position: relative;
-    top: 70px;
-    
 }
 
-table, th, td {
-    /* border-bottom: 1px solid grey; */
-    padding: 1rem;
-}
-
-.table-header {
-    width: 100%;
-    height: 10%;
+/* LEARNING PATH HEADER */
+.register-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem;
     background-color: var(--clr-surface-a10);
-    color: var(--clr-contrast-a0);
-    padding: 0.8rem 1rem;
+    padding: 1rem;
+    border: 1px solid var(--clr-surface-a20);
+    border-radius: 10px;
 }
 
-.table-body {
-    width: 89%;
-    max-height: calc(89% - 1.6rem);
-    background-color: #fffb;
-    margin: .8rem auto;
+.register-top-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.register-title {
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.major-tag {
+    font-size: 0.85rem;
+    background-color: var(--clr-primary-a0);
+    color: #f5f5f5;
+    padding: 0.25rem .5rem;
+    border-radius: 12px;
+}
+
+.register-description {
+    color: var(--clr-contrast-a0);
+}
+
+.register-body {
+    position: relative;
+    height: 100%;
+    background-color: var(--clr-surface-a10);
+    margin: 1rem;
     border-radius: .6rem;
     overflow: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
 }
 
-.table-body::-webkit-scrollbar {  /* Scroll bar for the table */
-    width: 0.5rem;
-    height: 0.5rem;
+.register-body::-webkit-scrollbar {
+    display: none;
 }
 
-.table-body::-webkit-scrollbar-thumb {
-    border-radius: .5rem;
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: #0004;
-    visibility: hidden;
-}
-
-.table-body:hover::-webkit-scrollbar-thumb {
+.register-body:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }
 
-table, th, td {
-    border-collapse: collapse; /* To make the default table header columns invisible */
+.search-bar-div {
+    background-color: var(--clr-surface-a10);
+    padding: 1rem;
+    border-bottom: 1px solid var(--clr-surface-a20);
+    text-align: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    width: 30rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--clr-contrast-a0);
+    padding: 0.5rem;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    min-width: 0;
+}
+
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--clr-contrast-a0);
+}
+
+.search-info {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--clr-contrast-a30);
+    margin-top: 0.5rem;
+}
+
+.search-bar i {
+    font-size: 0.75rem;
+    color: var(--clr-contrast-a0);
+    transition: color 0.3s ease;
+}
+
+.search-bar i:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        width: 90%;
+    }
+}
+
+/* NO RESULTS FOUND */
+.no-results {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--clr-contrast-a40);
+    font-size: 1rem;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.no-results-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background: var(--clr-surface-a10);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* Default to dark mode */
+.dark-mode-svg {
+    width: 12rem;
+    height: 12rem;
+    display: block;
+}
+
+.light-mode-svg {
+    width: 12rem;
+    height: 12rem;
+    display: none;
+}
+
+/* Light mode styles */
+@media (prefers-color-scheme: light) {
+    .dark-mode-svg {
+        display: none;
+    }
+    .light-mode-svg {
+        display: block;
+    }
+}
+
+.no-results p {
+    font-size: 1rem;
+    color: var(--clr-contrast-a30);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
     text-align: left;
 }
 
-thead th {
-    position: sticky;  /* th stays in position even after scrolling */
+thead {
+    position: sticky;
     top: 0;
-    left: 0;
+    z-index: 10;
     background-color: var(--clr-primary-a20);
-    color: var(--clr-contrast-a0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead th[colspan="8"] {
+    padding: 0;
+    background-color: var(--clr-primary-a20);
+}
+
+/* Adjust padding for column headers */
+thead tr:nth-child(2) th {
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+td {
+    padding: 1rem;
 }
 
 tbody tr:nth-child(even) {
@@ -98,24 +249,24 @@ tbody tr td button {
     color: var(--clr-contrast-a0);
     border: 0;
 }
+
 tbody tr td button:hover {
     background-color: #2c974b;
 }
 
-.status {
-    /* background-color: brown; */
-    background-color: #d893a3;
-    color: #b30021;
-    padding: .6rem 0.6rem;
-    border-radius: 2rem;
-    text-align: center;
+@media (max-width: 768px) {
 
+    .register-description{
+        display: none;
+    }
+
+    .register-top-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .register-title {
+        text-align: center;
+        font-size: 1.2rem;
+    }
 }
-
-@media (max-width:1000px) {
-
-}
-
-
-
-  

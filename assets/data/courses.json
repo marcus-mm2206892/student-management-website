@@ -97,5 +97,257 @@
       "5"
     ],
     "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  },
+  {
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
+  }
+  ,{
+    "courseId": "CMPE261",
+    "courseName": "Digital Logic Design",
+    "creditHours": 3,
+    "subject": "Computer Engineering",
+    "courseNumber": "261",
+    "prerequisites": [
+      "CMPS151",
+      "CMPS205"
+    ],
+    "majorsOffered": [
+      "CE"
+    ],
+    "currentClasses": [
+      "5"
+    ],
+    "description": "Introduction to digital logic circuit design, combinational and sequential circuits. TTL logic family; combinational logic design; logic minimization techniques; logic implementation techniques for ROM, RAM, EPROM, and PLDs, flip flops; sequential logic design, state diagrams, logic minimization; registers and counters; synthesis and analysis of sequential machines. The laboratory provides experiments examining logic devices and circuits, and a final design project."
   }
 ]
