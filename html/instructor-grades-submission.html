@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="../styles/student-home-page.css">
     <link rel="stylesheet" href="../styles/course-card-view.css">
     <link rel="stylesheet" href="../styles/grade-submission.css">
-
-    <script src="../scripts/grades-submission.js"></script>
-    <script src="../scripts/scroll-up.js"></script>
-    <script src="../scripts/dark-light-elements.js"></script>
 </head>
 
 <body>
@@ -97,12 +93,12 @@
   <!-- GRADE SUBMISSION PAGE -->
   <main class="grade-submission">
     <header class="grade-submission-header">
-      <div class="grade-submission-header-top">
-        <h1>Student Grades</h1>
-        <span>5 Courses</span>
+      <div class="grade-submission-top-header">
+          <h1>Submit Student Grades</h1>
+          <span>5 Courses</span>
       </div>
-      <div class="grade-submission-header-bottom">
-        <p>Add Description Here</p>
+      <div class="grade-submission-bottom-header">
+          <p>Review and finalize student grades for your courses</p>
       </div>
     </header>
 
@@ -114,36 +110,109 @@
           <p>Classes you are currently teaching</p>
         </div>
 
-        <!-- Teaching Dropdown (hidden on large screens, shown on mobile) -->
-        <div class="teaching-dropdown">
-          <button class="dropdown-toggle" onclick="toggleTeachingDropdown()">Select Class <i class="fas fa-chevron-down"></i></button>
-          <div class="dropdown-menu teaching-menu">
-            <div onclick="selectTeachingClass('CMPS 303')">CMPS 303 - Algorithms</div>
-            <div onclick="selectTeachingClass('CMPS 350')">CMPS 350 - Web Dev</div>
-            <div onclick="selectTeachingClass('CMPE 261')">CMPE 261 - Logic Design</div>
-          </div>
-        </div>
-
-        <!-- Visible on large screens, hidden on mobile -->
+        <!-- VISIBLE ON LARGE SCREENS -->
         <div class="cards-container">
           <div class="card">
             <div class="course-header">
               <span class="course-tag">CMPS 303</span>
-              <span class="section">L01</span>
+              <span class="section-tag">Section L01</span>
             </div>
             <div class="course-completed-main">
               <div class="course-grade">
                 <div>
                   <h3>Design & Analysis of Algorithms</h3>
-                  <p>No. of Students</p>
                 </div>
                 <div class="status-container">
                   <span class="status">S</span>
                 </div>
               </div>
               <div class="course-tags">
-                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                <span class="tag"><i class="fa-solid fa-user-graduate"></i> 35 Students</span>
+                <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="course-header">
+              <span class="course-tag">CMPS 350</span>
+              <span class="section-tag">Section L01</span>
+            </div>
+            <div class="course-completed-main">
+              <div class="course-grade">
+                <div>
+                  <h3>Web Development Fundamentals</h3>
+                </div>
+                <div class="status-container">
+                  <span class="status">S</span>
+                </div>
+              </div>
+              <div class="course-tags">
+                <span class="tag"><i class="fa-solid fa-user-graduate"></i> 40 Students</span>
+                <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: C+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="course-header">
+              <span class="course-tag">CMPS 350</span>
+              <span class="section-tag">Section L01</span>
+            </div>
+            <div class="course-completed-main">
+              <div class="course-grade">
+                <div>
+                  <h3>Web Development Fundamentals</h3>
+                </div>
+                <div class="status-container">
+                  <span class="status">S</span>
+                </div>
+              </div>
+              <div class="course-tags">
+                <span class="tag"><i class="fa-solid fa-user-graduate"></i> 40 Students</span>
+                <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: C+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="course-header">
+              <span class="course-tag">CMPS 350</span>
+              <span class="section-tag">Section L01</span>
+            </div>
+            <div class="course-completed-main">
+              <div class="course-grade">
+                <div>
+                  <h3>Web Development Fundamentals</h3>
+                </div>
+                <div class="status-container">
+                  <span class="status">S</span>
+                </div>
+              </div>
+              <div class="course-tags">
+                <span class="tag"><i class="fa-solid fa-user-graduate"></i> 40 Students</span>
+                <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: C+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="course-header">
+              <span class="course-tag">CMPS 350</span>
+              <span class="section-tag">Section L01</span>
+            </div>
+            <div class="course-completed-main">
+              <div class="course-grade">
+                <div>
+                  <h3>Web Development Fundamentals</h3>
+                </div>
+                <div class="status-container">
+                  <span class="status">S</span>
+                </div>
+              </div>
+              <div class="course-tags">
+                <span class="tag"><i class="fa-solid fa-user-graduate"></i> 34 Students</span>
+                <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: C</span>
               </div>
             </div>
           </div>
@@ -153,11 +222,15 @@
       <!-- CLASS SELECTED -->
       <div class="classes selected">
         <div class="class-header">
-          <div class="course">
+          <div class="course-tags-div">
             <span class="course-tag">CMPS 303</span>
-            <h1>Design & Analysis of Algorithms</h1>
+            <span class="section-tag">Section L01</span>
+            <h3>Design & Analysis of Algorithms</h3>
           </div>
-          <span class="section-tag">L01</span>
+          <div class="course-tags-div">
+            <span class="tag"><i class="fa-solid fa-user-graduate"></i> 35 Students</span>
+            <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
+          </div>
         </div>
 
         <div class="cards-container">
@@ -165,10 +238,9 @@
             <div class="student">
               <div class="student-grade">
                 <div>
-                  <h3>Clark Kent</h3>
+                  <h3>Peter Parker</h3>
                   <div>
-                    <span class="student-info email">Email</span>
-                    <span class="student-info">Final Grade</span>
+                    <span class="student-info email">peter@gmail.com</span>
                   </div>
                 </div>
                 <div class="dropdown">
@@ -198,8 +270,37 @@
                 <div>
                   <h3>Clark Kent</h3>
                   <div>
-                    <span class="student-info email">Email</span>
-                    <span class="student-info">Final Grade</span>
+                    <span class="student-info email">clark@gmail.com</span>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle">
+                    <span id="selectedOption">A</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-menu">
+                    <div>A</div>
+                    <div>B+</div>
+                    <div>B</div>
+                    <div>C+</div>
+                    <div>C</div>
+                    <div>D+</div>
+                    <div>D</div>
+                    <div>F</div>
+                    <div>I</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="student">
+              <div class="student-grade">
+                <div>
+                  <h3>Clark Kent</h3>
+                  <div>
+                    <span class="student-info email">clark@gmail.com</span>
                   </div>
                 </div>
                 <div class="dropdown">
@@ -222,6 +323,157 @@
               </div>
             </div>
           </div> 
+
+          <div class="card">
+            <div class="student">
+              <div class="student-grade">
+                <div>
+                  <h3>Clark Kent</h3>
+                  <div>
+                    <span class="student-info email">clark@gmail.com</span>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle">
+                    <span id="selectedOption">A</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-menu">
+                    <div>A</div>
+                    <div>B+</div>
+                    <div>B</div>
+                    <div>C+</div>
+                    <div>C</div>
+                    <div>D+</div>
+                    <div>D</div>
+                    <div>F</div>
+                    <div>I</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+          <div class="card">
+            <div class="student">
+              <div class="student-grade">
+                <div>
+                  <h3>Clark Kent</h3>
+                  <div>
+                    <span class="student-info email">clark@gmail.com</span>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle">
+                    <span id="selectedOption">A</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-menu">
+                    <div>A</div>
+                    <div>B+</div>
+                    <div>B</div>
+                    <div>C+</div>
+                    <div>C</div>
+                    <div>D+</div>
+                    <div>D</div>
+                    <div>F</div>
+                    <div>I</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+          <div class="card">
+            <div class="student">
+              <div class="student-grade">
+                <div>
+                  <h3>Clark Kent</h3>
+                  <div>
+                    <span class="student-info email">clark@gmail.com</span>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle">
+                    <span id="selectedOption">A</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-menu">
+                    <div>A</div>
+                    <div>B+</div>
+                    <div>B</div>
+                    <div>C+</div>
+                    <div>C</div>
+                    <div>D+</div>
+                    <div>D</div>
+                    <div>F</div>
+                    <div>I</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+          <div class="card">
+            <div class="student">
+              <div class="student-grade">
+                <div>
+                  <h3>Clark Kent</h3>
+                  <div>
+                    <span class="student-info email">clark@gmail.com</span>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle">
+                    <span id="selectedOption">A</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-menu">
+                    <div>A</div>
+                    <div>B+</div>
+                    <div>B</div>
+                    <div>C+</div>
+                    <div>C</div>
+                    <div>D+</div>
+                    <div>D</div>
+                    <div>F</div>
+                    <div>I</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+          <div class="card">
+            <div class="student">
+              <div class="student-grade">
+                <div>
+                  <h3>Clark Kent</h3>
+                  <div>
+                    <span class="student-info email">clark@gmail.com</span>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle">
+                    <span id="selectedOption">A</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-menu">
+                    <div>A</div>
+                    <div>B+</div>
+                    <div>B</div>
+                    <div>C+</div>
+                    <div>C</div>
+                    <div>D+</div>
+                    <div>D</div>
+                    <div>F</div>
+                    <div>I</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
         </div>
 
         <div class="submit-container">
@@ -231,6 +483,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
         <div class="top-half">
         <div class="contact-div">
@@ -305,5 +558,6 @@
     <script src="../scripts/scroll-up.js"></script>
     <script src="../scripts/dark-light-elements.js"></script>
     <script src="../scripts/student-home-page.js"></script>
+    <script src="../scripts/grades-submission.js"></script>
 </body>
 </html>

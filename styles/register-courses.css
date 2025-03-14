@@ -276,12 +276,16 @@ tbody tr td button:hover {
 
 
 .data.course-enrollment span {
-    height: 2.5rem;
-    width: 5rem;
-    padding: 0.5rem 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 1rem;
     border: 1px solid var(--clr-surface-a50);
+    text-align: center;
 }
+
 
 .course-status .status-badge {
     display: flex;
