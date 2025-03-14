@@ -87,57 +87,158 @@
         </button>
     </section>
     <main>
-        
+        <header class="create-header">
             <h1>Create New Class</h1>
-            <form id="createClassForm" class="form-col">
-                <ul>
-                    <li>
-                        <label for="courseId">Select Course:  </label>  
-                        <select id="courseId" name="courseId" class="input-field" required>
-                            <option id="courseId" name="courseId" value="xx"> </option>
-                            <!-- to be filled with js -->
-                        </select>
+        </header>
+
+        <section class="create-container">
+            <div class="create">
+                <h2>Create a Class</h2>
+                <form id="createClassForm" class="form-col">
+                    <ul>
+                        <li>
+                            <label for="courseId">Select Course:  </label>  
+                            <select id="courseId" name="courseId" class="input-field" required>
+                                <option id="courseId" name="courseId" value="xx"> </option>
+                                <!-- to be filled with js -->
+                            </select>
+                        
+                        </li>
+                        <li>
+                            <label for="classId">Class ID:</label>
+                            <input type="text" id="classId" name="classId" class="input-field" required>
+                        </li>
+                        <li>
+                            <label for="instructor">Instructor ID:</label>
+                            <input type="text" id="instructor" name="instructor" class="input-field" required>
+                        </li>
+                        <li>
+                            <label for="maxStudents">Maximum Students:</label>
+                            <input type="number" id="maxStudents" name="maxStudents" class="input-field" required>
+                        </li>
+                        <li>
+                            <label for="schedule">Schedule:</label>
+                            <input type="datetime-local" id="schedule" name="schedule" value="2025-01-1T5:30" min="2025-01-01T00:00" max="2025-06-14T00:00" class="input-field"/>
+                            <!-- takes one date and time, then we reproduce to make weekly -->
+                        </li>
+                        <li>
+                            Campus:
+                            <div class="input-field">
+                            <label>
+                                <input type="radio" name="campus" value="male" required> Male 
+                            </label>
+                            <label>
+                                <input type="radio" name="campus" value="female" required> Female 
+                            </label>
+                        </div>
+                        </li>
+                        <li>
+                            <button type="submit" class="input-submit">Create Class</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+
+            <div class="classes">
+                <table>
+                    <thead id="tableHead">
+                        <tr>
+                            <th colspan="8">
+                                <div class="search-bar-div">
+                                    <div class="search-bar">
+                                        <input type="text" id="searchBar" placeholder="Search by Course No, Name, or Instructor..." onkeyup="filterCourses()">
+                                        <button><i class="fa-solid fa-search"></i></button>
+                                    </div>
+                                    <div id="searchInfo" class="search-info" style="display: none;"></div> 
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="course-no">Course No.</th>
+                            <th class="course-name">Name</th>
+                            <th class="course-instructor">Instructor</th>
+                            <th class="course-section">Section</th>
+                            <th class="course-enrollment">Enrollment</th>
+                            <th class="course-status">Status</th>
+                            <th class="course-schedule">Schedule</th>
+                            <th class="course-action">Action</th>
+                        </tr>
+                    </thead>
                     
-                    </li>
-                    <li>
-                        <label for="classId">Class ID:</label>
-                        <input type="text" id="classId" name="classId" class="input-field" required>
-                    </li>
-                    <li>
-                        <label for="instructor">Instructor ID:</label>
-                        <input type="text" id="instructor" name="instructor" class="input-field" required>
-                    </li>
-                    <li>
-                        <label for="maxStudents">Maximum Students:</label>
-                        <input type="number" id="maxStudents" name="maxStudents" class="input-field" required>
-                    </li>
-                    <li>
-                        <label for="schedule">Schedule:</label>
-                        <input type="datetime-local" id="schedule" name="schedule" value="2025-01-1T5:30" min="2025-01-01T00:00" max="2025-06-14T00:00" class="input-field"/>
-                        <!-- takes one date and time, then we reproduce to make weekly -->
-                    </li>
-                    <li>
-                        Campus:
-                        <div class="input-field">
-                        <label>
-                            <input type="radio" name="campus" value="male" required> Male 
-                        </label>
-                        <label>
-                            <input type="radio" name="campus" value="female" required> Female 
-                        </label>
-                    </div>
-                    </li>
-                    <li>
-                        <button type="submit" class="input-submit">Create Class</button>
-                    </li>
-                </ul>
-            </form>
+                    <tbody id="data-output"></tbody>
+                </table>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="top-half">
+            <div class="contact-div">
+                <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="UniTrack Logo">
+                <div class="contact-texts">
+                    <h1>UniTrack</h1>
+                    <a href="mailto:contact@unitrack.com" class="text-link">contact@unitrack.com</a>
+                </div>
+                <div class="social-media-buttons">
+                    <div><i id="discord" class="fa-brands fa-discord"></i></div>
+                    <div><i id="github" class="fa-brands fa-github"></i></div>
+                    <div><i id="instagram" class="fa-brands fa-instagram"></i></div>
+                    <div><i id="coffee"class="fa fa-coffee"></i></div>
+                </div>
+            </div>
+
+            <div class="links-div">
+                <div class="links-content">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-book-open"></i> <a href="#register" class="text-link">Register Courses</a></li>
+                        <li><i class="fa-solid fa-trophy"></i> <a href="#milestones" class="text-link">Milestones</a></li>
+                        <li><i class="fa-solid fa-list-check"></i> <a href="#usecase3" class="text-link">Use Case 3</a></li>
+                        <li><i class="fa-solid fa-puzzle-piece"></i> <a href="#usecase4" class="text-link">Use Case 4</a></li>
+                        <li><i class="fa-solid fa-gears"></i> <a href="#usecase5" class="text-link">Use Case 5</a></li>
+                    </ul>
+                </div>
+            
+                <div class="links-content">
+                    <h3>Legal & Policies</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-scroll"></i> <a href="#terms-and-conditions" class="text-link">Terms & Conditions</a></li>
+                        <li><i class="fa-solid fa-user-shield"></i> <a href="#privacy-policy" class="text-link">Privacy Policy</a></li>
+                        <li><i class="fa-solid fa-shield-halved"></i> <a href="#data-protection" class="text-link">Data Protection</a></li>
+                    </ul>
+                </div>
+            
+                <div class="links-content">
+                    <h3>Others</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-question"></i> <a href="#help" class="text-link">Help & Support</a></li>
+                        <li><i class="fa-solid fa-university"></i> <a href="#location" class="text-link">Qatar University</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <hr class="hr">
+
+        <div class="bottom-half">
+            <div class="footer-info">
+                <span>Made with ♥️ & ☕️ by <a class="text-link dev-name" href="">@marcusmonteiro</a>, <a class="text-link dev-name" href="">@joshcalma</a>, <a class="text-link dev-name" href="">@mohdbashar</a>, & <a class="text-link dev-name" href="">@audrecaraig</a></span>
+                <div>
+                    <span>©2025 UniTrack</span>
+                    <p class="version-tag">v1.0.0</p>
+                </div>
+            </div>
+            <div class="unitrack-name">
+                <span>UniTrack</span>
+            </div>
+        </div>
+    </footer>
+
     <!-- copying external script to html for now -->
     <script src="../scripts/navbar.js"></script>
     <script src="../scripts/dark-light-elements.js"></script>
-
-    <script src="../scripts/dark-light-elements.js"></script>
+    <!-- <script src="../scripts/register-course.js"></script> -->
     <script src="../scripts/footer.js"></script>
     <script src="../scripts/scroll-up.js"></script>
     

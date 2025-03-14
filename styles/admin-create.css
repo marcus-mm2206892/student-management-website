@@ -311,7 +311,7 @@ tbody tr td button:hover {
     cursor: pointer;
 }
 
-.courses {
+.courses, .classes {
     position: relative;
     height: 100%;
     background-color: var(--clr-surface-a10);
@@ -323,11 +323,11 @@ tbody tr td button:hover {
     -ms-overflow-style: none; 
 }
 
-.courses::-webkit-scrollbar {
+.courses::-webkit-scrollbar, .classes::-webkit-scrollbar {
     display: none;
 }
 
-.courses::-webkit-scrollbar-thumb {
+.courses::-webkit-scrollbar-thumb, .courses::-webkit-scrollbar-thumb {
     visibility: visible;
 }
 
@@ -341,6 +341,64 @@ tbody tr td button:hover {
     border: 1px solid var(--clr-surface-a20);
     border-radius: 10px;
     align-self: stretch;
+}
+
+.search-bar-div {
+    background-color: var(--clr-surface-a10);
+    padding: 1rem;
+    border-bottom: 1px solid var(--clr-surface-a20);
+    text-align: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    width: 30rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--clr-contrast-a0);
+    padding: 0.5rem;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    min-width: 0;
+}
+
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--clr-contrast-a0);
+}
+
+.search-info {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--clr-contrast-a30);
+    margin-top: 0.5rem;
+}
+
+.search-bar i {
+    font-size: 0.75rem;
+    color: var(--clr-contrast-a0);
+    transition: color 0.3s ease;
+}
+
+.search-bar i:hover {
+    cursor: pointer;
 }
 
 
