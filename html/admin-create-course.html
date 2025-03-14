@@ -21,49 +21,86 @@
     </nav>
     <main>
         <h1>Create New Course</h1>
-        <form id="createClassForm" class="form-col">
-            <ul>
-                <li>
-                    <label for="courseName">Course Name:    </label>
-                    <input type="text" id="courseName" name="courseName" class="input-field" required>
-                </label>
-                </li>
-                <li>
-                    <label for="courseId">Course ID:</label>
-                    <input type="text" id="courseId" name="courseId" class="input-field" required>
-                </li>
-                <li>
-                    <label for="creditHours">Credit Hours:</label>
-                    <input type="number" id="creditHours" name="creditHours" class="input-field" required>
-                </li>
-                <li>
-                    <label for="description">Description: </label>
-                    <textarea id="description" name="description" class="input-field" required>
-                    </textarea>
-                </li>
-                <li>
-                    Prerequisites:
-                    <div class="input-field">
-                    <label for="prereqCourse">Prerequisite Course(s):</label>
-                        <select id="prereqCourse" name="prereqCourse">
-                            <option id="courseId" name="courseId" value="xx"> </option>
-                            <!-- to be filled with js -->
-                        </select><br>
-                    <!-- replace br later with css/js -->
-                    <label for="minGrade">Minimum Grade:</label>
-                    <select id="minGrade" name="minGrade">
-                        <option id="A" name="minGrade" value="A">A</option>
-                        <option id="B+" name="minGrade" value="B+">B+</option>
-                        <!-- to be filled with js -->
-                    </select><br>
+
+        <section class="create-container">
+            <div class="create">
+                <h2>Create a Course</h2>
+                <form id="createClassForm" class="form-col">
+                    <ul>
+                        <li>
+                            <label for="courseName">Course Name:    </label>
+                            <input type="text" id="courseName" name="courseName" class="input-field" required>
+                        </label>
+                        </li>
+                        <li>
+                            <label for="courseId">Course ID:</label>
+                            <input type="text" id="courseId" name="courseId" class="input-field" required>
+                        </li>
+                        <li>
+                            <label for="creditHours">Credit Hours:</label>
+                            <input type="number" id="creditHours" name="creditHours" class="input-field" required>
+                        </li>
+                        <li>
+                            <label for="description">Description: </label>
+                            <textarea id="description" name="description" class="input-field" required>
+                            </textarea>
+                        </li>
+                        <li>
+                            Prerequisites:
+                            <div class="input-field">
+                            <label for="prereqCourse">Prerequisite Course(s):</label>
+                                <select id="prereqCourse" name="prereqCourse">
+                                    <option id="courseId" name="courseId" value="xx"> </option>
+                                    <!-- to be filled with js -->
+                                </select><br>
+                            <!-- replace br later with css/js -->
+                            <label for="minGrade">Minimum Grade:</label>
+                            <select id="minGrade" name="minGrade">
+                                <option id="A" name="minGrade" value="A">A</option>
+                                <option id="B+" name="minGrade" value="B+">B+</option>
+                                <!-- to be filled with js -->
+                            </select><br>
+                            
+                        </div>
+                        </li>
+                        <li>
+                            <button type="submit" class="input-submit">Create Class</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+
+            <div class="courses">
+                <table>
+                    <thead id="tableHead">
+                        <tr>
+                            <th colspan="8"></th>
+                        </tr>
+                        <tr>
+                            <th class="course-no">Course No.</th>
+                            <th class="course-name">Name</th>
+                            <th class="course-instructor">Credit Hours</th>
+                            <th class="course-section">Description</th>
+                            <th class="course-enrollment">Preequisite Course(s)</th>
+                            <th class="course-enrollment">Minimum Grade</th>
+                        </tr>
+                    </thead>
                     
-                </div>
-                </li>
-                <li>
-                    <button type="submit" class="input-submit">Create Class</button>
-                </li>
-            </ul>
-        </form>
+                    <tbody id="data-output"></tbody>
+                </table>
+            </div>
+        </section>
+
+        
     </main>
+
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/dark-light-elements.js"></script>
+
+    <script src="../scripts/dark-light-elements.js"></script>
+    <script src="../scripts/footer.js"></script>
+    <script src="../scripts/scroll-up.js"></script>
+    
+    
 </body>
 </html>
