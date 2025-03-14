@@ -6,38 +6,80 @@ document.addEventListener("DOMContentLoaded", function () {
     const noResults = document.getElementById("noResults");
     const searchInfo = document.getElementById("searchInfo");
 
-    // define the columns in order of importance (least to most)
-    const columnClasses = [
-        "course-schedule",
-        "course-instructor",
-        "course-enrollment",
-        "course-section",
-        "course-name"
-    ];
+    // Fetch both JSON files
+    Promise.all([
+        fetch("../assets/data/courses.json").then(res => res.json()),
+        fetch("../assets/data/classes.json").then(res => res.json())
+    ])
+    .then(([courses, classes]) => {
+        console.log("Courses Loaded:", courses);
+        console.log("Classes Loaded:", classes);
 
-    // fetch and populate table
-    fetch("../assets/data/courses.json")
-        .then(response => response.json())
-        .then(allCourses => {
-            let out = "";
-            allCourses.forEach(course => {
-                out += `
-                <tr class="course-row">
-                   <td class="data course-no"><span>${course.courseId}</span></td>
-                    <td class="data course-name"><span>${course.courseName}</span></td>
-                    <td class="data course-instructor"><span>${course.instructor || "TBA"}</span></td>
-                    <td class="data course-section"><span>L01</span></td>
-                    <td class="data course-enrollment"><span>33/40</span></td>
-                    <td><p class="data status"><span>Not Approved</span></p></td>
-                    <td class="data course-schedule"><span>MON-WED</span></td>
-                    <td>
-                        <button><strong><span>Register</span></strong></button>
-                    </td>
-                </tr>`;
-            });
-            tableBody.innerHTML = out;
-            adjustTableColumns(); // ensure responsiveness after data is loaded
+        let out = "";
+        courses.forEach(course => {
+            let classDetails = classes.find(cls => course.currentClasses.includes(cls.classId));
+            let classStatus = classDetails ? classDetails.classStatus.toLowerCase() : "unknown";
+
+            let statusClass = "";
+            let buttonText = "";
+            let buttonDisabled = "";
+
+            switch (classStatus) {
+                case "open":
+                    statusClass = "status-approved";
+                    buttonText = "Register";
+                    buttonDisabled = "";
+                    break;
+                case "closed":
+                    statusClass = "status-rejected";
+                    buttonText = "N/A";
+                    buttonDisabled = "disabled";
+                    break;
+                case "pending":
+                    statusClass = "status-pending";
+                    buttonText = "Waitlist";
+                    buttonDisabled = "disabled";
+                    break;
+                default:
+                    statusClass = "status-default";
+                    buttonText = "N/A";
+                    buttonDisabled = "disabled";
+                    break;
+            }
+
+            out += `
+            <tr class="course-row">
+                <td class="data course-no"><span>${course.courseId}</span></td>
+                <td class="data course-name"><span>${course.courseName}</span></td>
+                <td class="data course-instructor"><span>${course.instructor || "TBA"}</span></td>
+                <td class="data course-section"><span>L01</span></td>
+                <td class="data course-enrollment"><span>${classDetails ? classDetails.enrollmentActual + "/" + classDetails.enrollmentMaximum : "0/0"}</span></td>
+                <td class="data course-status">
+                    <span class="status-badge ${statusClass}">
+                        <span class="status-circle"></span>
+                        ${classStatus.charAt(0).toUpperCase() + classStatus.slice(1)}
+                    </span>
+                </td>
+                <td class="data course-schedule"><span>MON-WED</span></td>
+                <td>
+                    <button class="course-button" ${buttonDisabled}>
+                        <strong><span>${buttonText}</span></strong>
+                    </button>
+                </td>
+            </tr>`;
         });
+
+        tableBody.innerHTML = out;
+        console.log("Courses successfully loaded into table.");
+
+        if (typeof adjustTableColumns === "function") {
+            adjustTableColumns();
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching course/class data:", error);
+        tableBody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: red;">Failed to load courses.</td></tr>`;
+    });
 
     // search functionality
     searchBar.addEventListener("input", function () {

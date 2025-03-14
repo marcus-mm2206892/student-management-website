@@ -1,72 +1,72 @@
 [
-    {
-      "classId": "1",
-      "courseId": "CMPS151",
-      "semester": "Spring 2025",
-      "instructionalMethods": "English",
-      "campus": "Male",
-      "enrollmentActual": "0",
-      "enrollmentMaximum": "40",
-      "classStatus": "closed"
-    },
-    {
-      "classId": "2",
-      "courseId": "CMPS251",
-      "semester": "Spring 2025",
-      "instructionalMethods": "English",
-      "campus": "Male",
-      "enrollmentActual": "0",
-      "enrollmentMaximum": "50",
-      "classStatus": "closed"
-    },
-    {
-      "classId": "3",
-      "courseId": "CMPS205",
-      "semester": "Spring 2025",
-      "instructionalMethods": "English",
-      "campus": "Male",
-      "enrollmentActual": "0",
-      "enrollmentMaximum": "35",
-      "classStatus": "closed"
-    },
-    {
-      "classId": "4",
-      "courseId": "MATH101",
-      "semester": "Spring 2025",
-      "instructionalMethods": "English",
-      "campus": "Male",
-      "enrollmentActual": "0",
-      "enrollmentMaximum": "45",
-      "classStatus": "closed"
-    },
-    {
-      "classId": "5",
-      "courseId": "CMPE261",
-      "semester": "Spring 2025",
-      "instructionalMethods": "English",
-      "campus": "Male",
-      "enrollmentActual": "0",
-      "enrollmentMaximum": "30",
-      "classStatus": "closed"
-    },
-    {
-      "classId": "6",
-      "courseId": "CMPS350",
-      "semester": "Spring 2025",
-      "instructionalMethods": "English",
-      "campus": "Male",
-      "enrollmentActual": "0",
-      "enrollmentMaximum": "40",
-      "classStatus": "closed"
-    },
-    {
-      "classId": "7",
-      "courseId": "CMPE264",
-      "semester": "Spring 2025",
-      "instructionalMethods": "English",
-      "campus": "Male",
-      "enrollmentActual": "0",
-      "enrollmentMaximum": "35",
-      "classStatus": "closed"
-    }
-  ]
+  {
+    "classId": "1",
+    "courseId": "CMPS151",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": "10",
+    "enrollmentMaximum": "40",
+    "classStatus": "open"
+  },
+  {
+    "classId": "2",
+    "courseId": "CMPS251",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": "50",
+    "enrollmentMaximum": "50",
+    "classStatus": "closed"
+  },
+  {
+    "classId": "3",
+    "courseId": "CMPS205",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": "5",
+    "enrollmentMaximum": "35",
+    "classStatus": "pending"
+  },
+  {
+    "classId": "4",
+    "courseId": "MATH101",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": "20",
+    "enrollmentMaximum": "45",
+    "classStatus": "open"
+  },
+  {
+    "classId": "5",
+    "courseId": "CMPE261",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": "15",
+    "enrollmentMaximum": "30",
+    "classStatus": "open"
+  },
+  {
+    "classId": "6",
+    "courseId": "CMPS350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": "40",
+    "enrollmentMaximum": "40",
+    "classStatus": "closed"
+  },
+  {
+    "classId": "7",
+    "courseId": "CMPE263",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": "35",
+    "enrollmentMaximum": "35",
+    "classStatus": "closed"
+  }
+]

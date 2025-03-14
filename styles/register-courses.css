@@ -269,8 +269,60 @@ tbody tr td button:hover {
     cursor: pointer;
 }
 
-.data.course-name span {
+.data.course-name, .data.course-section span {
     font-weight: 700;
+}
+
+
+
+.data.course-enrollment span {
+    height: 2.5rem;
+    width: 5rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--clr-surface-a50);
+}
+
+.course-status .status-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    background-color: var(--contrast-a0);
+    font-weight: bold;
+}
+
+.status-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-approved .status-circle {
+    background-color: rgb(50, 222, 50);
+}
+.status-pending .status-circle {
+    background-color: yellow;
+}
+.status-rejected .status-circle {
+    background-color: red;
+}
+
+.course-button {
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 0.7rem;
+    border: 0;
+    background-color: var(--clr-primary-a0);
+    color: var(--clr-contrast-a0);
+    cursor: pointer;
+}
+
+.course-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
 }
 
 
