@@ -1,0 +1,160 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-surface-a0);
+    background-image: url("../assets/imgs/unitrack-images/pattern-blue.png");
+    background-repeat: repeat;
+    color: var(--clr-contrast-a0);
+    font-family: "Inter", sans-serif;
+    font-size: 0.85rem;
+}
+
+.student-query {
+    min-height: calc(100vh - 53px);
+    max-width: 1200px;
+    margin: 53px auto 0 auto;
+    padding: 2rem;
+}
+
+.query-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+    background-color: var(--clr-surface-a10);
+    padding: 1rem;
+    margin: 0 auto 1rem;
+    border: 1px solid var(--clr-surface-a20);
+    border-radius: 10px;
+}
+
+.query-title {
+    font-size: 1.2rem;
+}
+
+#resultsCount {
+    font-size: 1rem;
+    color: var(--clr-contrast-a40);
+}
+
+.search-bar-div {
+    padding: 1rem;
+    text-align: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    width: 30rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--clr-contrast-a0);
+    padding: 0.5rem;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    min-width: 0;
+}
+
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--clr-contrast-a0);
+}
+
+.search-info {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--clr-contrast-a30);
+    margin-top: 0.5rem;
+}
+
+.search-bar i {
+    font-size: 0.75rem;
+    color: var(--clr-contrast-a0);
+    transition: color 0.3s ease;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* Course Card */
+.course-card {
+    background: var(--clr-surface-a10);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    background: var(--clr-primary-a10);
+}
+
+/* NO RESULTS FOUND */
+.no-results {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--clr-contrast-a40);
+    font-size: 1rem;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.dark-mode-svg {
+    width: 12rem;
+    height: 12rem;
+    display: block;
+}
+
+.light-mode-svg {
+    width: 12rem;
+    height: 12rem;
+    display: none;
+}
+
+/* Light mode styles */
+@media (prefers-color-scheme: light) {
+    .dark-mode-svg {
+        display: none;
+    }
+    .light-mode-svg {
+        display: block;
+    }
+}
+
+.no-results p {
+    font-size: 1rem;
+    color: var(--clr-contrast-a30);
+}

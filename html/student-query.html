@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniTrack | Search Results</title>
+
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/student-query.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/scroll-up.css">
+    <link rel="stylesheet" href="../styles/course-card-discover.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-user bordered-div">
+            <div class="nav-item">
+                <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
+                <span class="username">Lee Sanghyeok</span>
+                <i class="bx bx-chevron-down dropdown-icon"></i>
+            </div>
+        </div>
+
+        <div class="nav-bar-logo bordered-div">
+            <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="UniTrack Logo">
+        </div>
+
+        <div class="use-cases bordered-div">
+            <ul class="navbar-menu">
+                <div class="nav-item"><li><a href="#">Browse Courses</a></li></div>
+                <div class="nav-item"><li><a href="#">Register Courses</a></li></div>
+                <div class="nav-item"><li><a href="#">View Major</a></li></div>
+            </ul>
+            <button class="learningpath-btn">Learning Path</button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="student-query">
+        <div class="query-header">
+            <div class="query-top-header">
+                <p class="query-title">Results for <b id="searchQueryText">Mobile</b></p>
+                <span id="resultsCount">0 results</span>
+            </div>
+
+            <div class="search-bar-div">
+                <div class="search-bar">
+                    <input type="text" id="searchBar" placeholder="Search by Course No, Name, or Instructor..." onkeyup="filterCourses()">
+                    <button><i class="fa-solid fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <section id="resultsGrid" class="course-grid">
+            <div class="course-card">
+                <div class="course-image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="hover-text">Register Course</span>
+                    </div>
+                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+                </div>
+                <div class="course-info">
+                    <div class="course-header">
+                        <span class="course-tag"></i>GENG 200</span>
+                        <span class="semester">Fall 2025</span>
+                    </div>
+                    <h3>Probability & Statistics for Engineers</h3>
+                    <p class="course-subtitle">Master statistical methods and probability theory for engineering applications.</p>
+                    <div class="course-tags">
+                        <span class="tag"><i class="fa-solid fa-percent"></i> Probability</span>
+                        <span class="tag"><i class="fa-solid fa-chart-line"></i> Statistics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="hover-text">Register Course</span>
+                    </div>
+                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+                </div>
+                <div class="course-info">
+                    <div class="course-header">
+                        <span class="course-tag">MATH 231</span>
+                        <span class="semester">Fall 2025</span>
+                    </div>
+                    <h3>Linear Algebra</h3>
+                    <p class="course-subtitle">Explore vector spaces, matrices, and transformations used in computing.</p>
+                    <div class="course-tags">
+                        <span class="tag"><i class="fa-solid fa-table"></i> Matrices</span>
+                        <span class="tag"><i class="fa-solid fa-vector-square"></i> Vector Spaces</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="hover-text">Register Course</span>
+                    </div>
+                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+                </div>
+                <div class="course-info">
+                    <div class="course-header">
+                        <span class="course-tag">CMPS 205</span>
+                        <span class="semester">Fall 2025</span>
+                    </div>
+                    <h3>Discrete Structures</h3>
+                    <p class="course-subtitle">Study logic, combinatorics, and graph theory for computing applications.</p>
+                    <div class="course-tags">
+                        <span class="tag"><i class="fa-solid fa-brain"></i> Logic</span>
+                        <span class="tag"><i class="fa-solid fa-shapes"></i> Graph Theory</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="hover-text">Register Course</span>
+                    </div>
+                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+                </div>
+                <div class="course-info">
+                    <div class="course-header">
+                        <span class="course-tag">GENG 300</span>
+                        <span class="semester">Fall 2025</span>
+                    </div>
+                    <h3>Numerical Methods</h3>
+                    <p class="course-subtitle">Solve real-world mathematical problems using computational algorithms.</p>
+                    <div class="course-tags">
+                        <span class="tag"><i class="fa-solid fa-laptop-code"></i> Computation</span>
+                        <span class="tag"><i class="fa-solid fa-ruler"></i> Approximation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="hover-text">Register Course</span>
+                    </div>
+                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+                </div>
+                <div class="course-info">
+                    <div class="course-header">
+                        <span class="course-tag">CMPS 290</span>
+                        <span class="semester">Fall 2025</span>
+                    </div>
+                    <h3>Theory of Computation</h3>
+                    <p class="course-subtitle">Learn about automata theory, Turing machines, and computational complexity.</p>
+                    <div class="course-tags">
+                        <span class="tag"><i class="fa-solid fa-robot"></i> Automata</span>
+                        <span class="tag"><i class="fa-solid fa-code"></i> Computability</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="hover-text">Register Course</span>
+                    </div>
+                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+                </div>
+                <div class="course-info">
+                    <div class="course-header">
+                        <span class="course-tag">MATH 231</span>
+                        <span class="semester">Fall 2025</span>
+                    </div>
+                    <h3>Computational Geometry</h3>
+                    <p class="course-subtitle">Study algorithms for geometric computations in computer science.</p>
+                    <div class="course-tags">
+                        <span class="tag"><i class="fa-solid fa-shapes"></i> Geometry</span>
+                        <span class="tag"><i class="fa-solid fa-microchip"></i> Algorithms</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="end-of-results">End of Results</p>
+
+        </section>
+
+        <!-- No Results -->
+        <div id="noResults" class="no-results" style="display: none;">
+            <div class="no-results-icon">
+                <!-- Light Mode SVG -->
+                <svg class="light-mode-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <g id="search_x2C__magnifier_x2C__magnifying_x2C__emoji_x2C__happy">
+                        <circle cx="13" cy="13" r="11.5" stroke="#455A64" stroke-width="2" fill="none"></circle>
+                        <path d="M23.43 23.401L21.214 21.186M29.914 27.086l-3.5-3.5c-0.756-0.756-2.072-0.756-2.828 0C23.208 23.964 23 24.466 23 25s0.208 1.036 0.586 1.414l3.5 3.5c0.378 0.378 0.88 0.586 1.414 0.586s1.036-0.208 1.414-0.586S30.5 29.034 30.5 28.5 30.292 27.464 29.914 27.086z" stroke="#455A64" stroke-width="2" fill="none"></path>
+                        <path d="M12 14.521h2c0 0.55-0.45 1-1 1S12 15.07 12 14.521z" fill="#263238"></path>
+                        <path d="M17.5 13c0.27 0 0.5 0.23 0.5 0.5S17.77 14 17.5 14S17 13.77 17 13.5S17.23 13 17.5 13z" fill="#263238"></path>
+                        <path d="M8.5 13C8.77 13 9 13.23 9 13.5S8.77 14 8.5 14S8 13.77 8 13.5S8.23 13 8.5 13z" fill="#263238"></path>
+                    </g>
+                </svg>
+        
+                <!-- Dark Mode SVG -->
+                <svg class="dark-mode-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <g id="search_x2C__magnifier_x2C__magnifying_x2C__emoji_x2C__happy">
+                        <circle cx="13" cy="13" r="11.5" stroke="#ffffff" stroke-width="2" fill="none"></circle>
+                        <path d="M23.43 23.401L21.214 21.186M29.914 27.086l-3.5-3.5c-0.756-0.756-2.072-0.756-2.828 0C23.208 23.964 23 24.466 23 25s0.208 1.036 0.586 1.414l3.5 3.5c0.378 0.378 0.88 0.586 1.414 0.586s1.036-0.208 1.414-0.586S30.5 29.034 30.5 28.5 30.292 27.464 29.914 27.086z" stroke="#ffffff" stroke-width="2" fill="none"></path>
+                        <path d="M12 14.521h2c0 0.55-0.45 1-1 1S12 15.07 12 14.521z" fill="#ffffff"></path>
+                        <path d="M17.5 13c0.27 0 0.5 0.23 0.5 0.5S17.77 14 17.5 14S17 13.77 17 13.5S17.23 13 17.5 13z" fill="#ffffff"></path>
+                        <path d="M8.5 13C8.77 13 9 13.23 9 13.5S8.77 14 8.5 14S8 13.77 8 13.5S8.23 13 8.5 13z" fill="#ffffff"></path>
+                    </g>
+                </svg>
+            </div>
+            <p>Nothing found. Try searching for a course number, name, or instructor.</p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+     <!-- FOOTER-->
+    <footer class="footer">
+        <div class="top-half">
+            <div class="contact-div">
+                <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="UniTrack Logo">
+                <div class="contact-texts">
+                    <h1>UniTrack</h1>
+                    <a href="mailto:contact@unitrack.com" class="text-link">contact@unitrack.com</a>
+                </div>
+                <div class="social-media-buttons">
+                    <div><i id="discord" class="fa-brands fa-discord"></i></div>
+                    <div><i id="github" class="fa-brands fa-github"></i></div>
+                    <div><i id="instagram" class="fa-brands fa-instagram"></i></div>
+                    <div><i id="coffee"class="fa fa-coffee"></i></div>
+                </div>
+            </div>
+
+            <div class="links-div">
+                <div class="links-content">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-book-open"></i> <a href="#register" class="text-link">Register Courses</a></li>
+                        <li><i class="fa-solid fa-trophy"></i> <a href="#learningpath" class="text-link">Learning Path</a></li>
+                        <li><i class="fa-solid fa-list-check"></i> <a href="#usecase3" class="text-link">Use Case 3</a></li>
+                        <li><i class="fa-solid fa-puzzle-piece"></i> <a href="#usecase4" class="text-link">Use Case 4</a></li>
+                        <li><i class="fa-solid fa-gears"></i> <a href="#usecase5" class="text-link">Use Case 5</a></li>
+                    </ul>
+                </div>
+            
+                <div class="links-content">
+                    <h3>Legal & Policies</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-scroll"></i> <a href="#terms-and-conditions" class="text-link">Terms & Conditions</a></li>
+                        <li><i class="fa-solid fa-user-shield"></i> <a href="#privacy-policy" class="text-link">Privacy Policy</a></li>
+                        <li><i class="fa-solid fa-shield-halved"></i> <a href="#data-protection" class="text-link">Data Protection</a></li>
+                    </ul>
+                </div>
+            
+                <div class="links-content">
+                    <h3>Others</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-question"></i> <a href="#help" class="text-link">Help & Support</a></li>
+                        <li><i class="fa-solid fa-university"></i> <a href="#location" class="text-link">Qatar University</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <hr class="hr">
+
+        <div class="bottom-half">
+            <div class="footer-info">
+                <span>Made with ♥️ & ☕️ by <a class="text-link dev-name" href="">@marcusmonteiro</a>, <a class="text-link dev-name" href="">@joshcalma</a>, <a class="text-link dev-name" href="">@mohdbashar</a>, & <a class="text-link dev-name" href="">@audrecaraig</a></span>
+                <div>
+                    <span>©2025 UniTrack</span>
+                    <p class="version-tag">v1.0.0</p>
+                </div>
+            </div>
+            <div class="unitrack-name">
+                <span>UniTrack</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../scripts/student-query.js"></script>
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/footer.js"></script>
+    <script src="../scripts/scroll-up.js"></script>
+    <script src="../scripts/dark-light-elements.js"></script>
+</body>
+</html>
