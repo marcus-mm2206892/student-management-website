@@ -240,6 +240,8 @@ textarea{
     padding-bottom: 1rem;
     scroll-snap-type: x mandatory;
     scroll-padding: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
 }
 
 .create {
@@ -329,6 +331,17 @@ tbody tr td button:hover {
     visibility: visible;
 }
 
+.create-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 5rem 1rem 2rem;
+    background-color: var(--clr-surface-a10);
+    padding: 1rem;
+    border: 1px solid var(--clr-surface-a20);
+    border-radius: 10px;
+    align-self: stretch;
+}
 
 
 @media (max-width: 768px) {
