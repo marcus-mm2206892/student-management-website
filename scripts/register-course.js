@@ -8,10 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // define the columns in order of importance (least to most)
     const columnClasses = [
-        "course-schedule",   // Least important, remove first
+        "course-schedule",
         "course-instructor",
         "course-enrollment",
-        "course-section"
+        "course-section",
+        "course-name"
     ];
 
     // fetch and populate table
@@ -22,15 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
             allCourses.forEach(course => {
                 out += `
                 <tr class="course-row">
-                    <td class="course-no">${course.courseId}</td>
-                    <td class="course-name">${course.courseName}</td>
-                    <td class="course-instructor">${course.instructor || "TBA"}</td>
-                    <td class="course-section">L01</td>
-                    <td class="course-enrollment">33/40</td>
-                    <td><p class="status">Not Approved</p></td>
-                    <td class="course-schedule">MON-WED</td>
+                   <td class="data course-no"><span>${course.courseId}</span></td>
+                    <td class="data course-name"><span>${course.courseName}</span></td>
+                    <td class="data course-instructor"><span>${course.instructor || "TBA"}</span></td>
+                    <td class="data course-section"><span>L01</span></td>
+                    <td class="data course-enrollment"><span>33/40</span></td>
+                    <td><p class="data status"><span>Not Approved</span></p></td>
+                    <td class="data course-schedule"><span>MON-WED</span></td>
                     <td>
-                        <button><strong>Register</strong></button>
+                        <button><strong><span>Register</span></strong></button>
                     </td>
                 </tr>`;
             });
