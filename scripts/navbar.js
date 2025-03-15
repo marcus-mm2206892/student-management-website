@@ -7,16 +7,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebarOverlay = document.querySelector("#sidebarOverlay");
     const closeSidebar = document.querySelector("#closeSidebar");
     const navbar = document.querySelector(".navbar");
+
+    // links for navbar in desktop
     const browseNavItem = document.querySelector(".navbar-menu .nav-item:nth-child(1) a");
     const registerNavItem = document.querySelector(".navbar-menu .nav-item:nth-child(2) a");
-    const viewMajorNavItem = document.querySelector(".navbar-menu .nav-item:nth-child(3) a");
+    const viewProfileNavItem = document.querySelector(".navbar-menu .nav-item:nth-child(3) a");
 
-    // Dropdown functions
+    // links for sidebar in mobile
+    const sidebarBrowse = document.querySelector(".menu li:nth-child(1) a");
+    const sidebarRegister = document.querySelector(".menu li:nth-child(2) a");
+    const sidebarProfile = document.querySelector(".menu li:nth-child(3) a");
+    const sidebarLearningPath = document.querySelector(".menu li:nth-child(4) a");
+
+    // hide dropdown initially
     userDropdown.style.opacity = "0";
     userDropdown.style.transform = "translateY(-20px)";
     userDropdown.style.display = "none";
 
-    // Show dropdown
+    // show/hide dropdown
     userMenuButton.addEventListener("click", function () {
         if (userDropdown.style.display === "none" || userDropdown.style.opacity === "0") {
             userDropdown.style.display = "block";
@@ -33,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Hide dropdown when clicking outside
+    // close dropdown when clicked outside
     document.addEventListener("click", function (event) {
         if (!userDropdown.contains(event.target) && !userMenuButton.contains(event.target)) {
             userDropdown.style.opacity = "0";
@@ -44,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Hide dropdown when close button is clicked
+    // close dropdown on button click
     closeDropdown.addEventListener("click", function () {
         userDropdown.style.opacity = "0";
         userDropdown.style.transform = "translateY(-20px)";
@@ -53,18 +61,48 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 300);
     });
 
-    // Theme button functionality
-    const themeButtons = document.querySelectorAll(".theme-btn");
-
-    themeButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            themeButtons.forEach(btn => btn.classList.remove("active"));
-            this.classList.add("active");
-        });
+    // navigation for desktop
+    browseNavItem.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "student-query.html";
     });
 
-    // Sidebar functions
+    registerNavItem.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "register-course.html";
+    });
 
+    viewProfileNavItem.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "student-profile.html";
+    });
+
+    document.querySelector(".learningpath-btn").addEventListener("click", function() {
+        window.location.href = "learningpath.html";
+    });
+
+    // toggle sidebar navigation
+    sidebarBrowse.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "student-query.html";
+    });
+
+    sidebarRegister.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "register-course.html";
+    });
+
+    sidebarProfile.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "student-profile.html";
+    });
+
+    sidebarLearningPath.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "learningpath.html";
+    });
+
+    // toggle sidebar for mobile
     browseBtn.addEventListener("click", function (event) {
         event.stopPropagation();
         sidebar.classList.add("active");
@@ -72,12 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     closeSidebar.addEventListener("click", function () {
-        sidebar.classList.remove("active");
-        sidebarOverlay.classList.remove("active");
-    });
-    
-
-    sidebarOverlay.addEventListener("click", function () {
         sidebar.classList.remove("active");
         sidebarOverlay.classList.remove("active");
     });
@@ -98,29 +130,17 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "student-home-page.html";
     });
 
-    browseNavItem.addEventListener("click", function(event) {
-        event.preventDefault();
-        window.location.href = "student-query.html";
+    // toggle theme
+    const themeButtons = document.querySelectorAll(".theme-btn");
+
+    themeButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            themeButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+        });
     });
 
-    registerNavItem.addEventListener("click", function(event) {
-        event.preventDefault();
-        window.location.href = "register-course.html";
-    });
-
-    // viewMajorNavItem.addEventListener("click", function(event) {
-    //     event.preventDefault();
-    //     window.location.href = "view-major.html";
-    // });
-
-    document.querySelector(".learningpath-btn").addEventListener("click", function() {
-        window.location.href = "learningpath.html";
-    });
-
-    document.querySelector(".learningpath-btn").addEventListener("click", function() {
-        window.location.href = "learningpath.html";
-    });
-
+    // sign out
     document.querySelector(".signout-btn").addEventListener("click", function() {
         window.location.href = "index.html";
     });
