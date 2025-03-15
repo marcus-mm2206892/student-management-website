@@ -27,7 +27,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: 0.5rem;
+    gap: 1rem;
     background-color: var(--clr-surface-a10);
     padding: 1rem;
     margin: 0 auto 1rem;
@@ -45,7 +45,6 @@ body {
 }
 
 .search-bar-div {
-    padding: 1rem;
     text-align: center;
 }
 
@@ -56,7 +55,7 @@ body {
     border-radius: 20px;
     padding: 0.5rem 1rem;
     width: 30rem;
-    max-width: 100%;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -115,6 +114,26 @@ body {
     background: var(--clr-primary-a10);
 }
 
+.end-of-results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--clr-contrast-a0);
+    margin: 2rem 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.end-of-results::before,
+.end-of-results::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--clr-contrast-a30);
+    margin: 0 1rem;
+}
+
+
 /* NO RESULTS FOUND */
 .no-results {
     display: none;
@@ -144,6 +163,28 @@ body {
     display: none;
 }
 
+@media (max-width: 768px) {
+    .query-header {
+        flex-direction: column;
+    }
+
+    .query-top-header {
+        text-align: center;
+    }
+
+    .course-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search-bar {
+      width: 100%;
+    }
+
+    .search-bar-div {
+        width: 100%;
+    }
+}
+
 /* Light mode styles */
 @media (prefers-color-scheme: light) {
     .dark-mode-svg {
@@ -152,9 +193,23 @@ body {
     .light-mode-svg {
         display: block;
     }
+
+    .search-bar {
+        background-color: var(--clr-surface-a10);
+    }
+
+    .course-card:hover {
+    border: 1px solid var(--clr-primary-a0);
+    }
 }
 
 .no-results p {
     font-size: 1rem;
     color: var(--clr-contrast-a30);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
+    }
 }
