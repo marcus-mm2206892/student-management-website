@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Path | UniTrack</title>
+    <title>Student Home | UniTrack</title>
 
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/scroll-up.css">
-    <link rel="stylesheet" href="../styles/learningpath.css">
-    <link rel="stylesheet" href="../styles/course-card-view.css">
     <link rel="stylesheet" href="../styles/scrollbar.css">
+    <link rel="stylesheet" href="../styles/course-card-discover.css">
+    <link rel="stylesheet" href="../styles/student-profile.css">
 
 </head>
 
+<body>
+    
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="navbar-user bordered-div" id="userMenuButton">
@@ -74,18 +76,15 @@
     </div>
 
     <!-- USER DROPDOWN -->
-
-    <div class="user-dropdown" id="userDropdown">
+    <section class="user-dropdown" id="userDropdown">
         <div class="dropdown-header">
             <div class="top-header">
-                <!-- javascript image for user -->
-                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar"> 
+                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar">
                 <button class="close-btn" id="closeDropdown">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
                 
             </div>
-            <!-- javascript user details -->
             <div class="bottom-header">
                 <h4 class="dropdown-name">Lee Sanghyeok</h4>
                 <p class="dropdown-email">lee.sanghyeok@example.com</p>
@@ -125,225 +124,240 @@
                 <span class="theme-label">Dark</span>
             </div>
         </div>
-        
+
         <hr class="hr theme-signout">
     
         <button class="signout-btn">
             <i class="fa-solid fa-right-from-bracket"></i>
             Sign Out
         </button>
+    </section>
 
-    </div>
+    <!-- MAIN DISCOVER PAGE -->
+    <main class="student-profile">
 
-    <main class="learning-path">
-        <header class="learning-path-header">
-            <div class="learning-path-top-header">
-                <h1 class="learning-path-title">Track Your Learning Path</span></h1>
-                <span class="major-tag">BSc. Computer Science</span>
+        <section class="greetings">
+            <h2>Hello there, Lee Sanghyeok</h2>
+            <span>Track your course progress and learning in university.</span>
+        </section>
+
+        <section class="student-profile-left">
+
+            <section class="course-image-div">
+                <div class="course-image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-eye"></i>
+                        <span class="hover-text">View Course</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="credit-hours-card">
+                <div class="credit-hours-text">
+                    <h2>You are taking <strong>17 credit hours</strong> this semester.</h2>
+                </div>
+                <div class="credit-hours-image">
+                    <img src="../assets/imgs/unitrack-images/login-page-graphic.png" alt="Credit Hours Graphic">
+                </div>
+            </section>
+            
+
+            <section class="courses recommended-courses">
+                <div class="courses-header">
+                    <div class="courses-header-left">
+                        <h2>Current Courses</h2>
+                        <p>These are the courses that you are taking this semester.</p>
+                    </div>
+                    <div class="courses-header-right">
+                        <a href="#" class="browse-courses">
+                            Browse more courses <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="course-grid">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag">CMPS 303</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag"></i>CMPS 351</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Fundamentals of Database</h3>
+                            <p class="course-subtitle">Understand database design, SQL queries, and data management principles.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-table"></i> SQL</span>
+                                <span class="tag"><i class="fa-solid fa-server"></i> Data Management</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag"></i>CMPS 360</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Design and Analysis of Algorithms</h3>
+                            <p class="course-subtitle">Develop efficient algorithms and analyze their computational complexity.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-gears"></i> Complexity</span>
+                                <span class="tag"><i class="fa-solid fa-code"></i> Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag"></i>CMPS 405</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Operating Systems</h3>
+                            <p class="course-subtitle">Understand process management, memory allocation, and system security.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-memory"></i> Memory</span>
+                                <span class="tag"><i class="fa-solid fa-server"></i> Processes</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag"></i>CMPE 350</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Communication & Networks I</h3>
+                            <p class="course-subtitle">Explore networking protocols, data transmission, and security mechanisms.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-wifi"></i> Protocols</span>
+                                <span class="tag"><i class="fa-solid fa-shield-alt"></i> Security</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="hover-text">Register Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <span class="course-tag"></i>CMPS 310</span>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Software Engineering</h3>
+                            <p class="course-subtitle">Learn software development processes, design patterns, and best practices.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-code"></i> Development</span>
+                                <span class="tag"><i class="fa-solid fa-puzzle-piece"></i> Design Patterns</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <section class="student-profile-right">
+            <section class="about-me-div">
+                <h3>About Me</h3>
+                <div class="about-me-content">
+                    <img src="../assets/imgs/person.png" alt="User Avatar" class="about-me-avatar"> 
+                    <div class="about-me-content-right">
+                        <h2>Lee Sanghyeok</h2>
+                        <span>lee.sanghyeok@gmail.com</span>
+                        <span class="major-tag"></i>BsC. in Computer Science.</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="content-info-div">
+                <h3 class="content-info-attribute">Download Your Course Flowchart</h3>
+                <p class="content-info-paragraph attachment">
+                    <i class="fa-solid fa-file-pdf"></i> CMPS-2024-Flowchart.pdf
+                </p>
             </div>
-            <p class="learning-path-description">Monitor your course progress and stay on track with your degree.</p>
-        </header>
+
+            <div class="progress-card">
+                <h3 class="content-info-attribute">Your Progress to Graduation</h3>
+                
+                <div class="progress-content">
+                    <div class="progress-text">
+                        <p class="content-info-attribute total-tag">Completed 23 of 32 Total Courses</p>
+                        <p>You are also taking <span>5 courses</span> this semester</p>
+                    </div>
+                    
+                    <div class="progress-chart">
+                        <div class="pie-wrapper progress-66">
+                            <span class="label">66<span class="smaller">%</span></span>
+                            <div class="pie">
+                                <div class="left-side half-circle"></div>
+                                <div class="right-side half-circle"></div>
+                            </div>
+                            <div class="shadow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </section>
         
-    
-        <div class="learning-container">
-            <!-- Completed Section -->
-            <div class="category completed">
-                <div class="category-header">
-                    <h2><i class="fa-solid fa-circle-check"></i> Completed <span class="tracking-number">3 completed</span></h2>
-                    <p>Courses that have already been completed</p>
-                </div>
-                <div class="cards-container">
-                    
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                        </div>
-                        <div class="course-header">
-                            <span class="course-tag">CMPS 303</span>
-                            <span class="semester">Fall 2025</span>
-                        </div>
-                        <div class="course-completed-main">
-                            <div class="course-grade">
-                                <div class="letter-grade-container">
-                                    <span class="letter-grade">A</span>
-                                </div>
-                                <div>
-                                    <span class="final-grade">Final Grade</span>
-                                    <h3>Design & Analysis of Algorithms</h3>
-                                </div>
-                            </div>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                        </div>
-                        <div class="course-header">
-                            <span class="course-tag">CMPS 303</span>
-                            <span class="semester">Fall 2025</span>
-                        </div>
-                        <div class="course-completed-main">
-                            <div class="course-grade">
-                                <div class="letter-grade-container">
-                                    <span class="letter-grade">B+</span>
-                                </div>
-                                <div>
-                                    <span class="final-grade">Final Grade</span>
-                                    <h3>Data Structures</h3>
-                                </div>
-                            </div>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                        </div>
-                        <div class="course-header">
-                            <span class="course-tag">CMPS 405</span>
-                            <span class="semester">Fall 2025</span>
-                        </div>
-                        <div class="course-completed-main">
-                            <div class="course-grade">
-                                <div class="letter-grade-container">
-                                    <span class="letter-grade">A</span>
-                                </div>
-                                <div>
-                                    <span class="final-grade">Final Grade</span>
-                                    <h3>Operating Systems</h3>
-                                </div>
-                            </div>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-
-                </div>
-            </div>
-    
-            <!-- In Progress Section -->
-            <div class="category in-progress">
-                <div class="category-header">
-                    <h2><i class="fa-solid fa-circle-dot"></i> In Progress <span class="tracking-number">5 in progress</span></h2>
-                    <p>Courses being taken in the current semester</p>
-                </div>
-                <div class="cards-container">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
-                        </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag">CMPS 303</span>
-                                <span class="semester">Fall 2025</span>
-                            </div>
-                            <h3>Data Structures</h3>
-                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Pending Section -->
-            <div class="category pending">
-                <div class="category-header">
-                    <h2><i class="fa-solid fa-clock"></i> Pending <span class="tracking-number"> 14 courses left</span></h2>
-                    <p>Courses you need to complete before graduating</p>
-                </div>
-                <div class="cards-container">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
-                        </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag">CMPS 303</span>
-                                <span class="semester">Fall 2025</span>
-                            </div>
-                            <h3>Data Structures</h3>
-                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-    
-            <!-- Backlog Section -->
-            <div class="category backlog">
-                <div class="category-header">
-                    <h2><i class="fa-solid fa-circle-xmark"></i> Backlog <span class="tracking-number"> 4 left behind</span></h2>
-                    <p>Unfinished courses that need to be completed</p>
-                </div>
-                <div class="cards-container">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
-                        </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag">CMPS 303</span>
-                                <span class="semester">Fall 2025</span>
-                            </div>
-                            <h3>Data Structures</h3>
-                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <!-- Mobile View Navigation -->
-        <div class="mobile-nav">
-            <button id="prevCategory"><i class="fa-solid fa-arrow-left"></i></button>
-            <button id="nextCategory"><i class="fa-solid fa-arrow-right"></i></button>
-        </div>
+        
     </main>
-    
 
     <!-- FOOTER-->
     <footer class="footer">
@@ -414,7 +428,9 @@
     <script src="../scripts/footer.js"></script>
     <script src="../scripts/scroll-up.js"></script>
     <script src="../scripts/dark-light-elements.js"></script>
-    <script src="../scripts/learningpath.js"></script>
+    <script src="../scripts/student-major.js"></script>
+
+
 
 </body>
 </html>
