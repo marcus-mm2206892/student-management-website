@@ -17,13 +17,13 @@ body {
   margin: 53px auto 0 auto;
   padding: 2rem;
   width: 100%;
-  display: grid; /* Use grid layout */
-  gap: 1rem;
+  display: grid;
+  gap: 1.5rem;
   grid-template-columns: 2fr 1fr;
   grid-template-areas: 
     "greetings greetings"
     "student-profile-left student-profile-right";
-  align-items: start; /* Aligns items properly */
+  align-items: start;
 }
 
 
@@ -365,7 +365,7 @@ body {
   font-size: 1.2rem;
 }
 
-/* PROGRESS BAR */
+/* PROGRESS CARD */
 .progress-card {
   background: var(--clr-surface-a10);
   padding: 1rem;

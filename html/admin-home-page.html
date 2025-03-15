@@ -1,4 +1,3 @@
-<!-- Copied stud-home for now, will fix later-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,19 +12,20 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/scroll-up.css">
     <link rel="stylesheet" href="../styles/scrollbar.css">
-    <link rel="stylesheet" href="../styles/course-card-discover.css">
+    <link rel="stylesheet" href="../styles/course-card-instructor-admin.css">
     <link rel="stylesheet" href="../styles/admin-home-page.css">
 
 </head>
 
 <body>
+    
     <!-- NAVBAR -->
-     <nav class="navbar">
+    <nav class="navbar">
         <div class="navbar-user bordered-div" id="userMenuButton">
             <div class="nav-item">
-                <img src="../assets/imgs/user-icon-white.png" alt="User" class="nav-image user-avatar">
-                <span class="username">Welcome, Admin!</span>
-                
+                <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
+                <span class="username">Lee Sanghyeok</span>
+                <i class="bx bx-chevron-down dropdown-icon"></i>
             </div>
         </div>
 
@@ -35,117 +35,429 @@
 
         <div class="use-cases bordered-div">
             <ul class="navbar-menu">
-                <div class="nav-item"><li><a href="admin-home.html">Home <i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="admin-create-class.html">Create Class<i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="admin-create-course.html">Create Course<i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="admin-approve-class.html">Approve Class <i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="#">View Schedule<i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">Browse Courses</a></li></div>
+                <div class="nav-item"><li><a href="#">Register Courses</a></li></div>
+                <div class="nav-item"><li><a href="#">View Profile</a></li></div>
+            </ul>
+
+            <div class="mobile-menu">
+                <div class="nav-item">
+                    <button class="browse-btn">
+                        <i class="fa-solid fa-list"></i> Browse
+                    </button>
+                </div>
+            </div>
+
+            <button class="learningpath-btn">Learning Path</button>
+        </div>
+    </nav>
+
+    <!-- SIDEBAR FOR MOBILE -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <!-- Background Circle Elements -->
+        <div class="circle big-circle"></div>
+        <div class="circle small-circle"></div>
+    
+        <div>
+            <img class="unitrack-logo-text" src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="UniTrack Logo">
+            <ul class="menu">
+                <li><span class="hover-circle"></span><a href="#">Browse Courses</a></li>
+                <li><span class="hover-circle"></span><a href="#">Register Courses</a></li>
+                <li><span class="hover-circle"></span><a href="#">View Profile</a></li>
+                <li><span class="hover-circle"></span><a href="#">View Learning Path</a></li>
             </ul>
         </div>
-    </nav> 
-    <main><section class="courses recommended-courses">
-        <div class="main-header">
-            <div class="courses-header-left">
-                <h2>What would you like to do today?</h2>
+    </div>
+
+    <!-- USER DROPDOWN -->
+    <section class="user-dropdown" id="userDropdown">
+        <div class="dropdown-header">
+            <div class="top-header">
+                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar">
+                <button class="close-btn" id="closeDropdown">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
                 
             </div>
+            <div class="bottom-header">
+                <h4 class="dropdown-name">Lee Sanghyeok</h4>
+                <p class="dropdown-email">lee.sanghyeok@example.com</p>
+            </div>
+        </div>        
+        
+        <div class="dropdown-options">
+            <button class="dropdown-btn profile">
+                <div class="icon-box">
+                    <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon">
+                </div>
+                Profile
+            </button>
         </div>
-          
+        
+        <hr class="hr options-theme">
     
+        <div class="theme-toggle">
+            <div class="theme-option">
+                <button class="theme-btn active" id="systemMode">
+                        <i class="fa-solid fa-laptop"></i>
+                </button>
+                <span class="theme-label">System</span>
+            </div>
+        
+            <div class="theme-option">
+                <button class="theme-btn" id="lightMode">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <span class="theme-label">Light</span>
+            </div>
+        
+            <div class="theme-option">
+                <button class="theme-btn" id="darkMode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <span class="theme-label">Dark</span>
+            </div>
         </div>
-        <a href="admin-create-class.html">
-        <div class="course-grid">
-            <div class="course-card">
-                <div class="course-image">
-                    
-                   
-                </div>
-                <div class="course-info">
-                    <div class="course-header">
-                        <span class="course-tag">Add</span>
-                        <span class="semester">Fall 2025</span>
-                    </div>
-                    <h3>Create Class</h3>
-                    <p class="course-subtitle">Add a new class.</p>
-                    <div class="course-tags">
 
-                    </div>
-                </div>
-            </div></a>
-
-            <a href="admin-create-course.html">
-            <div class="course-card">
-                <div class="course-image">
-                </div>
-                <div class="course-info">
-                    <div class="course-header">
-                        <span class="course-tag"></i>Add</span>
-                        <span class="semester">Fall 2025</span>
-                    </div>
-                    <h3>Create Course</h3>
-                    <p class="course-subtitle">Add a new course.</p>
-                    <div class="course-tags">
-           
-                    </div>
-                </div>
-            </div></a>
-
-            <a href="admin-approve-class.html">
-            <div class="course-card">
-                <div class="course-image">
-        
-                </div>
-                <div class="course-info">
-                    <div class="course-header">
-                        <span class="course-tag"></i>Update</span>
-                        <span class="semester">Fall 2025</span>
-                    </div>
-                    <h3>Approve Current Classes</h3>
-                    <p class="course-subtitle">View all classes and check for approval.</p>
-                    <div class="course-tags">
-                        
-                    </div>
-                </div>
-            </div>
-        </a>
-          
-
-        <a href="admin-view-schedule.html">
-            <div class="course-card">
-                <div class="course-image">
-        
-                </div>
-                <div class="course-info">
-                    <div class="course-header">
-                        <span class="course-tag"></i>View</span>
-                        <span class="semester">Fall 2025</span>
-                    </div>
-                    <h3>View Schedule</h3>
-                    <p class="course-subtitle">Displays the schedule of all approved classes.</p>
-                    <div class="course-tags">
-                        
-                    </div>
-                </div>
-            </div>
-        </a>
+        <hr class="hr theme-signout">
+    
+        <button class="signout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+        </button>
     </section>
-    <section class="display-courses">
-        <div class="courses-header">
-            <div class="courses-header-left">
-                <h2>All Current Courses</h2>
-            </div>
-        </div>
-        <div class="course-grid">
-            <div class="course-card">
-                <!-- To be filled by JS, uses same code as student display courses -->
-            </div>
-        </div>
 
-           
-    </section>    
+    <!-- MAIN DISCOVER PAGE -->
+    <main class="admin-profile">
 
-    </main>
+        <section class="greetings">
+            <h2>Hello there, Admin</h2>
+            <span>Track the information about all the courses at your university</span>
+        </section>
+
+        <section class="admin-profile-left">
+
+            <section class="credit-hours-card">
+                <div class="credit-hours-text">
+                    <h2>You having <strong>6 pending</strong> courses awaiting for approval.</h2>
+                </div>
+                <div class="credit-hours-image">
+                    <img src="../assets/imgs/unitrack-images/login-page-graphic.png" alt="Credit Hours Graphic">
+                </div>
+            </section>
+            
+
+            <section class="courses pending-courses">
+                <div class="courses-header">
+                    <div class="courses-header-left">
+                        <h2>Pending Classes</h2>
+                        <p>Created classes that are awaiting for your approval</p>
+                    </div>
+                    <div class="courses-header-right">
+                        <a href="#" class="browse-courses">
+                            View all pending classes <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="course-grid">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 303</span>
+                                    <span class="section-tag">L01</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
     
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 351</span>
+                                    <span class="section-tag">L02</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Fundamentals of Database</h3>
+                            <p class="course-subtitle">Understand database design, SQL queries, and data management principles.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-table"></i> SQL</span>
+                                <span class="tag"><i class="fa-solid fa-server"></i> Data Management</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 360</span>
+                                    <span class="section-tag">L23</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Design and Analysis of Algorithms</h3>
+                            <p class="course-subtitle">Develop efficient algorithms and analyze their computational complexity.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-gears"></i> Complexity</span>
+                                <span class="tag"><i class="fa-solid fa-code"></i> Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 405</span>
+                                    <span class="section-tag">L52</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Operating Systems</h3>
+                            <p class="course-subtitle">Understand process management, memory allocation, and system security.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-memory"></i> Memory</span>
+                                <span class="tag"><i class="fa-solid fa-server"></i> Processes</span>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+            <section class="courses rejected-courses">
+                <div class="courses-header">
+                    <div class="courses-header-left">
+                        <h2>Rejected Classes</h2>
+                        <p>Review and verify the classes that you have rejected</p>
+                    </div>
+                    <div class="courses-header-right">
+                        <a href="#" class="browse-courses">
+                            View all rejected classes <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="course-grid">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 303</span>
+                                    <span class="section-tag">L01</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 351</span>
+                                    <span class="section-tag">L02</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Fundamentals of Database</h3>
+                            <p class="course-subtitle">Understand database design, SQL queries, and data management principles.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-table"></i> SQL</span>
+                                <span class="tag"><i class="fa-solid fa-server"></i> Data Management</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 360</span>
+                                    <span class="section-tag">L23</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Design and Analysis of Algorithms</h3>
+                            <p class="course-subtitle">Develop efficient algorithms and analyze their computational complexity.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-gears"></i> Complexity</span>
+                                <span class="tag"><i class="fa-solid fa-code"></i> Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 405</span>
+                                    <span class="section-tag">L52</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Operating Systems</h3>
+                            <p class="course-subtitle">Understand process management, memory allocation, and system security.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-memory"></i> Memory</span>
+                                <span class="tag"><i class="fa-solid fa-server"></i> Processes</span>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+        </section>
+
+        <section class="admin-profile-right">
+            <section class="about-me-div">
+                <h3>About Me</h3>
+                <div class="about-me-content">
+                    <img src="../assets/imgs/person.png" alt="User Avatar" class="about-me-avatar"> 
+                    <div class="about-me-content-right">
+                        <h2>Lee Sanghyeok</h2>
+                        <span>lee.sanghyeok@gmail.com</span>
+                        <span class="college-tag"></i>University Admin</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="university-info-div">
+                <h3>University Information</h3>
+
+                <div class="info-card approved-classes-total">
+                    <h3 class="content-info-attribute">Number of Approved Classes</h3>
+                    
+                    <div class="info-text">
+                        <h2 class="number-tag">56 of 140</h2>
+                        <p><span>40%</span> of all courses are approved</p>
+                    </div>
+                </div>
+
+                <div class="info-card pending-classes-total">
+                    <h3 class="content-info-attribute">Number of Pending Classes</h3>
+                    
+                    <div class="info-text">
+                        <h2 class="number-tag">26 of 140</h2>
+                        <p><span>18%</span> of all courses are pending</p>
+                    </div>
+                </div>
+
+                <div class="info-card rejected-classes-total">
+                    <h3 class="content-info-attribute">Number of Rejected Classes</h3>
+                    
+                    <div class="info-text">
+                        <h2 class="number-tag">58 of 140</h2>
+                        <p><span>42%</span> of all courses are rejected</p>
+                    </div>
+                </div>
+
+                <div class="info-card students-total">
+                    <h3 class="content-info-attribute">Total Students</h3>
+                    
+                    <div class="info-text">
+                        <h2 class="number-tag">1834</h2>
+                        <p><span>1834 students</span> are taking classes</p>
+                    </div>
+                </div>
+
+                <div class="info-card instructors-total">
+                    <h3 class="content-info-attribute">Total Instructors</h3>
+                    
+                    <div class="info-text">
+                        <h2 class="number-tag">193</h2>
+                        <p><span>193 instructors</span> are teaching classes</p>
+                    </div>
+                </div>
+
+                <div class="info-card majors-offered-total">
+                    <h3 class="content-info-attribute">Total Majors Offered</h3>
+                    
+                    <div class="info-text">
+                        <h2 class="number-tag">2 Majors</h2>
+                        <p>Comp. Science and Comp. Engineering are offered</p>
+                    </div>
+                </div>
+
+            </section>
+
+        </section>
+        
+        
+    </main>
 
     <!-- FOOTER-->
     <footer class="footer">
@@ -168,12 +480,11 @@
                 <div class="links-content">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><i class="fa-solid fa-gears"></i> <a href="admin-home.html" class="text-link">Home</a></li>
-                        <li><i class="fa-solid fa-book-open"></i> <a href="admin-create-class.html" class="text-link">Create Class</a></li>
-                        <li><i class="fa-solid fa-trophy"></i> <a href="admin-create-course.html" class="text-link">Create Course</a></li>
-                        <li><i class="fa-solid fa-list-check"></i> <a href="admin-home.html" class="text-link">Approve Classes</a></li>
-                        <li><i class="fa-solid fa-puzzle-piece"></i> <a href="admin-view-schedule.html" class="text-link">View Schedule</a></li>
-                        
+                        <li><i class="fa-solid fa-book-open"></i> <a href="#register" class="text-link">Register Courses</a></li>
+                        <li><i class="fa-solid fa-trophy"></i> <a href="#learningpath" class="text-link">Learning Path</a></li>
+                        <li><i class="fa-solid fa-list-check"></i> <a href="#usecase3" class="text-link">Use Case 3</a></li>
+                        <li><i class="fa-solid fa-puzzle-piece"></i> <a href="#usecase4" class="text-link">Use Case 4</a></li>
+                        <li><i class="fa-solid fa-gears"></i> <a href="#usecase5" class="text-link">Use Case 5</a></li>
                     </ul>
                 </div>
             
@@ -217,7 +528,7 @@
     <script src="../scripts/footer.js"></script>
     <script src="../scripts/scroll-up.js"></script>
     <script src="../scripts/dark-light-elements.js"></script>
-    <script src="../scripts/student-home-page.js"></script>
+    <script src="../scripts/admin-home-page.js"></script>
 
 
 
