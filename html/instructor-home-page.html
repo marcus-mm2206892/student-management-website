@@ -3,9 +3,476 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>instructor Home | UniTrack</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/scroll-up.css">
+    <link rel="stylesheet" href="../styles/scrollbar.css">
+    <link rel="stylesheet" href="../styles/course-card-instructor-admin.css">
+    <link rel="stylesheet" href="../styles/instructor-home-page.css">
+
 </head>
+
 <body>
     
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-user bordered-div" id="userMenuButton">
+            <div class="nav-item">
+                <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
+                <span class="username">Lee Sanghyeok</span>
+                <i class="bx bx-chevron-down dropdown-icon"></i>
+            </div>
+        </div>
+
+        <div class="nav-bar-logo bordered-div">
+            <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="User">
+        </div>
+
+        <div class="use-cases bordered-div">
+            <!-- javascript navbar for instructor/instructor/admin -->
+            <ul class="navbar-menu">
+                <div class="nav-item"><li><a href="#">Browse Courses</a></li></div>
+                <div class="nav-item"><li><a href="#">Register Courses</a></li></div>
+                <div class="nav-item"><li><a href="#">View Profile</a></li></div>
+            </ul>
+
+            <div class="mobile-menu">
+                <div class="nav-item">
+                    <button class="browse-btn">
+                        <i class="fa-solid fa-list"></i> Browse
+                    </button>
+                </div>
+            </div>
+
+            <button class="learningpath-btn">Learning Path</button>
+        </div>
+    </nav>
+
+    <!-- SIDEBAR FOR MOBILE -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <!-- Background Circle Elements -->
+        <div class="circle big-circle"></div>
+        <div class="circle small-circle"></div>
+    
+        <div>
+            <img class="unitrack-logo-text" src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="UniTrack Logo">
+            <ul class="menu">
+                <li><span class="hover-circle"></span><a href="#">Browse Courses</a></li>
+                <li><span class="hover-circle"></span><a href="#">Register Courses</a></li>
+                <li><span class="hover-circle"></span><a href="#">View Profile</a></li>
+                <li><span class="hover-circle"></span><a href="#">View Learning Path</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- USER DROPDOWN -->
+    <section class="user-dropdown" id="userDropdown">
+        <div class="dropdown-header">
+            <div class="top-header">
+                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar">
+                <button class="close-btn" id="closeDropdown">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                
+            </div>
+            <div class="bottom-header">
+                <h4 class="dropdown-name">Lee Sanghyeok</h4>
+                <p class="dropdown-email">lee.sanghyeok@example.com</p>
+            </div>
+        </div>        
+        
+        <div class="dropdown-options">
+            <button class="dropdown-btn profile">
+                <div class="icon-box">
+                    <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon">
+                </div>
+                Profile
+            </button>
+        </div>
+        
+        <hr class="hr options-theme">
+    
+        <div class="theme-toggle">
+            <div class="theme-option">
+                <button class="theme-btn active" id="systemMode">
+                        <i class="fa-solid fa-laptop"></i>
+                </button>
+                <span class="theme-label">System</span>
+            </div>
+        
+            <div class="theme-option">
+                <button class="theme-btn" id="lightMode">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <span class="theme-label">Light</span>
+            </div>
+        
+            <div class="theme-option">
+                <button class="theme-btn" id="darkMode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <span class="theme-label">Dark</span>
+            </div>
+        </div>
+
+        <hr class="hr theme-signout">
+    
+        <button class="signout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+        </button>
+    </section>
+
+    <!-- MAIN DISCOVER PAGE -->
+    <main class="instructor-profile">
+
+        <section class="greetings">
+            <h2>Hello there, Lee Sanghyeok</h2>
+            <span>Track the courses you are teaching at your university.</span>
+        </section>
+
+        <section class="instructor-profile-left">
+
+            <section class="credit-hours-card">
+                <div class="credit-hours-text">
+                    <h2>You are teaching <strong>6 classes</strong> and <strong>3 courses</strong> this semester.</h2>
+                </div>
+                <div class="credit-hours-image">
+                    <img src="../assets/imgs/unitrack-images/login-page-graphic.png" alt="Credit Hours Graphic">
+                </div>
+            </section>
+            
+
+            <section class="courses teaching-courses">
+                <div class="courses-header">
+                    <div class="courses-header-left">
+                        <h2>Current Teaching Classes</h2>
+                        <p>Ongoing classes that you are currently teaching</p>
+                    </div>
+                    <div class="courses-header-right">
+                        <a href="#" class="browse-courses">
+                            View all courses <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="course-grid">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 303</span>
+                                    <span class="section-tag">L01</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 351</span>
+                                    <span class="section-tag">L02</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Fundamentals of Database</h3>
+                            <p class="course-subtitle">Understand database design, SQL queries, and data management principles.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-table"></i> SQL</span>
+                                <span class="tag"><i class="fa-solid fa-server"></i> Data Management</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 360</span>
+                                    <span class="section-tag">L23</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Design and Analysis of Algorithms</h3>
+                            <p class="course-subtitle">Develop efficient algorithms and analyze their computational complexity.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-gears"></i> Complexity</span>
+                                <span class="tag"><i class="fa-solid fa-code"></i> Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 405</span>
+                                    <span class="section-tag">L52</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Operating Systems</h3>
+                            <p class="course-subtitle">Understand process management, memory allocation, and system security.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-memory"></i> Memory</span>
+                                <span class="tag"><i class="fa-solid fa-server"></i> Processes</span>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+            <section class="courses teaching-courses">
+                <div class="courses-header">
+                    <div class="courses-header-left">
+                        <h2>Submitted Class Grades</h2>
+                        <p>Review and verify the grades you have submitted for your students</p>
+                    </div>
+                    <div class="courses-header-right">
+                        <a href="#" class="browse-courses">
+                            Go to grades submission <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="course-grid">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 303</span>
+                                    <span class="section-tag">L01</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Data Structures</h3>
+                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 351</span>
+                                    <span class="section-tag">L02</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Fundamentals of Database</h3>
+                            <p class="course-subtitle">Understand database design, SQL queries, and data management principles.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-table"></i> SQL</span>
+                                <span class="tag"><i class="fa-solid fa-server"></i> Data Management</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 360</span>
+                                    <span class="section-tag">L23</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Design and Analysis of Algorithms</h3>
+                            <p class="course-subtitle">Develop efficient algorithms and analyze their computational complexity.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-gears"></i> Complexity</span>
+                                <span class="tag"><i class="fa-solid fa-code"></i> Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="hover-icon">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="hover-text">View Course</span>
+                            </div>
+                            <i class="fa-solid fa-turn-up top-right-icon"></i>
+                        </div>
+                        <div class="course-info">
+                            <div class="course-header">
+                                <div class="card-tags-div">
+                                    <span class="course-tag">CMPS 405</span>
+                                    <span class="section-tag">L52</span>
+                                </div>
+                                <span class="semester">Fall 2025</span>
+                            </div>
+                            <h3>Operating Systems</h3>
+                            <p class="course-subtitle">Understand process management, memory allocation, and system security.</p>
+                            <div class="course-tags">
+                                <span class="tag"><i class="fa-solid fa-memory"></i> Memory</span>
+                                <span class="tag"><i class="fa-solid fa-server"></i> Processes</span>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+        </section>
+
+        <section class="instructor-profile-right">
+            <section class="about-me-div">
+                <h3>About Me</h3>
+                <div class="about-me-content">
+                    <img src="../assets/imgs/person.png" alt="User Avatar" class="about-me-avatar"> 
+                    <div class="about-me-content-right">
+                        <h2>Lee Sanghyeok</h2>
+                        <span>lee.sanghyeok@gmail.com</span>
+                        <span class="department-tag"></i>CSE Department</span>
+                        <span class="college-tag"></i>College of Engineering</span>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+        
+    </main>
+
+    <!-- FOOTER-->
+    <footer class="footer">
+        <div class="top-half">
+            <div class="contact-div">
+                <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="UniTrack Logo">
+                <div class="contact-texts">
+                    <h1>UniTrack</h1>
+                    <a href="mailto:contact@unitrack.com" class="text-link">contact@unitrack.com</a>
+                </div>
+                <div class="social-media-buttons">
+                    <div><i id="discord" class="fa-brands fa-discord"></i></div>
+                    <div><i id="github" class="fa-brands fa-github"></i></div>
+                    <div><i id="instagram" class="fa-brands fa-instagram"></i></div>
+                    <div><i id="coffee"class="fa fa-coffee"></i></div>
+                </div>
+            </div>
+
+            <div class="links-div">
+                <div class="links-content">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-book-open"></i> <a href="#register" class="text-link">Register Courses</a></li>
+                        <li><i class="fa-solid fa-trophy"></i> <a href="#learningpath" class="text-link">Learning Path</a></li>
+                        <li><i class="fa-solid fa-list-check"></i> <a href="#usecase3" class="text-link">Use Case 3</a></li>
+                        <li><i class="fa-solid fa-puzzle-piece"></i> <a href="#usecase4" class="text-link">Use Case 4</a></li>
+                        <li><i class="fa-solid fa-gears"></i> <a href="#usecase5" class="text-link">Use Case 5</a></li>
+                    </ul>
+                </div>
+            
+                <div class="links-content">
+                    <h3>Legal & Policies</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-scroll"></i> <a href="#terms-and-conditions" class="text-link">Terms & Conditions</a></li>
+                        <li><i class="fa-solid fa-user-shield"></i> <a href="#privacy-policy" class="text-link">Privacy Policy</a></li>
+                        <li><i class="fa-solid fa-shield-halved"></i> <a href="#data-protection" class="text-link">Data Protection</a></li>
+                    </ul>
+                </div>
+            
+                <div class="links-content">
+                    <h3>Others</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-question"></i> <a href="#help" class="text-link">Help & Support</a></li>
+                        <li><i class="fa-solid fa-university"></i> <a href="#location" class="text-link">Qatar University</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <hr class="hr">
+
+        <div class="bottom-half">
+            <div class="footer-info">
+                <span>Made with ♥️ & ☕️ by <a class="text-link dev-name" href="">@marcusmonteiro</a>, <a class="text-link dev-name" href="">@joshcalma</a>, <a class="text-link dev-name" href="">@mohdbashar</a>, & <a class="text-link dev-name" href="">@audrecaraig</a></span>
+                <div>
+                    <span>©2025 UniTrack</span>
+                    <p class="version-tag">v1.0.0</p>
+                </div>
+            </div>
+            <div class="unitrack-name">
+                <span>UniTrack</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/footer.js"></script>
+    <script src="../scripts/scroll-up.js"></script>
+    <script src="../scripts/dark-light-elements.js"></script>
+    <script src="../scripts/instructor-home-page.js"></script>
+
+
+
 </body>
 </html>
