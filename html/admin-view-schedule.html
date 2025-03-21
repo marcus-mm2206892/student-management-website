@@ -14,18 +14,18 @@
     <link rel="stylesheet" href="../styles/scroll-up.css">
     <link rel="stylesheet" href="../styles/scrollbar.css">
     <link rel="stylesheet" href="../styles/course-card-discover.css">
-    <link rel="stylesheet" href="../styles/admin-home-page.css">
+    <link rel="stylesheet" href="../styles/admin-view-schedule.css">
 
 </head>
 
 <body>
     <!-- NAVBAR -->
-     <nav class="navbar">
+    <nav class="navbar">
         <div class="navbar-user bordered-div" id="userMenuButton">
             <div class="nav-item">
-                <img src="../assets/imgs/user-icon-white.png" alt="User" class="nav-image user-avatar">
-                <span class="username">Welcome, Admin!</span>
-                
+                <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
+                <span class="username">Lee Sanghyeok</span>
+                <i class="bx bx-chevron-down dropdown-icon"></i>
             </div>
         </div>
 
@@ -34,17 +34,210 @@
         </div>
 
         <div class="use-cases bordered-div">
+            <!-- javascript navbar for instructor/student/admin -->
             <ul class="navbar-menu">
-                <div class="nav-item"><li><a href="admin-home.html">Home <i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="admin-create-class.html">Create Class<i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="admin-create-course.html">Create Course<i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="admin-approve-class.html">Approve Class <i class="bx bx-chevron-down"></i></a></li></div>
-                <div class="nav-item"><li><a href="#">View Schedule<i class="bx bx-chevron-down"></i></a></li></div>
+                <div class="nav-item"><li><a href="#">Browse Courses</a></li></div>
+                <div class="nav-item"><li><a href="#">Register Courses</a></li></div>
+                <div class="nav-item"><li><a href="#">View Profile</a></li></div>
+            </ul>
+
+            <div class="mobile-menu">
+                <div class="nav-item">
+                    <button class="browse-btn">
+                        <i class="fa-solid fa-list"></i> Browse
+                    </button>
+                </div>
+            </div>
+
+            <button class="learningpath-btn">Learning Path</button>
+        </div>
+    </nav>
+
+    <!-- SIDEBAR FOR MOBILE -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <!-- Background Circle Elements -->
+        <div class="circle big-circle"></div>
+        <div class="circle small-circle"></div>
+    
+        <div>
+            <img class="unitrack-logo-text" src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="UniTrack Logo">
+            <ul class="menu">
+                <li><span class="hover-circle"></span><a href="#">Browse Courses</a></li>
+                <li><span class="hover-circle"></span><a href="#">Register Courses</a></li>
+                <li><span class="hover-circle"></span><a href="#">View Profile</a></li>
+                <li><span class="hover-circle"></span><a href="#">View Learning Path</a></li>
             </ul>
         </div>
-    </nav> 
-    <main>
+    </div>
+
+    <!-- USER DROPDOWN -->
+
+    <div class="user-dropdown" id="userDropdown">
+        <div class="dropdown-header">
+            <div class="top-header">
+                <!-- javascript image for user -->
+                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar"> 
+                <button class="close-btn" id="closeDropdown">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                
+            </div>
+            <!-- javascript user details -->
+            <div class="bottom-header">
+                <h4 class="dropdown-name">Lee Sanghyeok</h4>
+                <p class="dropdown-email">lee.sanghyeok@example.com</p>
+            </div>
+        </div>        
+        
+        <div class="dropdown-options">
+            <button class="dropdown-btn profile">
+                <div class="icon-box">
+                    <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon">
+                </div>
+                Profile
+            </button>
+        </div>
+        
+        <hr class="hr options-theme">
+    
+        <div class="theme-toggle">
+            <div class="theme-option">
+                <button class="theme-btn active" id="systemMode">
+                        <i class="fa-solid fa-laptop"></i>
+                </button>
+                <span class="theme-label">System</span>
+            </div>
+        
+            <div class="theme-option">
+                <button class="theme-btn" id="lightMode">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <span class="theme-label">Light</span>
+            </div>
+        
+            <div class="theme-option">
+                <button class="theme-btn" id="darkMode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <span class="theme-label">Dark</span>
+            </div>
+        </div>
+        
+        <hr class="hr theme-signout">
+    
+        <button class="signout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+        </button>
+
+    </div>
+
+    <main class="view-schedule">
+        <header class="view-schedule-header">
+            <div class="view-schedule-top-header">
+                <h1 class="view-schedule-title">View Registered Class Schedules</span></h1>
+                <div class="dropdown-div">
+                    <span class="dropdown-text">
+                    </span>                    
+                    <div class="dropdown class-dropdown">
+                        <div class="dropdown-toggle" onclick="toggleDropdown()">
+                            <span id="selectedOption">Select Course</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>CMPS 350</div>
+                            <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>MATH 100</div>
+                            <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>GENG 200</div>
+                            <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>GENG 329</div>
+                            <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>CMPS 321</div>
+                            <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>CMPS 260</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="view-schedule-description">Monitor all registered class schedules of all courses in the university.</p>
+        </header>
+        
+    
+        <div class="view-schedule-container">
+
+                <div class="modal-header">
+                    <div class="course-title-div">
+                        <h2 class="course-title">Web Development Fundamentals</h2>
+                        <div class="course-tags-div">
+                            <span class="course-tag">CMPS 350</span>
+                            <span class="section-tag">Section L01</span>
+                            <span class="crn-tag">CRN 21937</span>
+                        </div>
+                    </div>
+                    <div class="dropdown-div">
+                        <span class="dropdown-text">
+                            <i class="fas fa-info-circle"></i>
+                        </span>                    
+                        <div class="dropdown class-dropdown">
+                            <div class="dropdown-toggle" onclick="toggleDropdown()">
+                                <span id="selectedOption">Select Class</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <div onclick="selectOption('Class Schedule')"><i class="fas fa-calendar-alt"></i>CRN: 25832</div>
+                                <div onclick="selectOption('Class Schedule')"><i class="fas fa-calendar-alt"></i>CRN: 25432</div>
+                                <div onclick="selectOption('Class Schedule')"><i class="fas fa-calendar-alt"></i>CRN: 25365</div>
+                                <div onclick="selectOption('Class Schedule')"><i class="fas fa-calendar-alt"></i>CRN: 25541</div>
+                                <div onclick="selectOption('Class Schedule')"><i class="fas fa-calendar-alt"></i>CRN: 25398</div>
+                                <div onclick="selectOption('Class Schedule')"><i class="fas fa-calendar-alt"></i>CRN: 25511</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-content">
+                    <div id="Class Schedule" class="content-section">
+        
+                        <div class="content-info-div class-schedule-container">
+                            <div class="class-schedule">
+                                <h3 class="content-info-attribute">Class Schedule</h3>
+                                <div class="schedule">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <div class="schedule-info">
+                                        <div class="weekdays">
+                                            <span class="day active">S</span>
+                                            <span class="day">M</span>
+                                            <span class="day active">T</span>
+                                            <span class="day">W</span>
+                                            <span class="day">T</span>
+                                            <span class="day">F</span>
+                                            <span class="day">S</span>
+                                        </div>
+                                        <p class="date-range">01/19/2025 - 05/08/2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="content-info-div class-schedule-container">
+                        <div class="class-location">
+                            <h3 class="content-info-attribute">Class Location</h3>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div class="location-info">
+                                    <p class="time">08:00 AM - 08:50 AM</p>
+                                    <p class="location-text">H07 - College of Engineering | Room C105</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                    
+            </div>
     </main>
+    
 
     <!-- FOOTER-->
     <footer class="footer">
@@ -67,12 +260,11 @@
                 <div class="links-content">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><i class="fa-solid fa-gears"></i> <a href="admin-home.html" class="text-link">Home</a></li>
-                        <li><i class="fa-solid fa-book-open"></i> <a href="admin-create-class.html" class="text-link">Create Class</a></li>
-                        <li><i class="fa-solid fa-trophy"></i> <a href="admin-create-course.html" class="text-link">Create Course</a></li>
-                        <li><i class="fa-solid fa-list-check"></i> <a href="admin-home.html" class="text-link">Approve Classes</a></li>
-                        <li><i class="fa-solid fa-puzzle-piece"></i> <a href="admin-view-schedule.html" class="text-link">View Schedule</a></li>
-                        
+                        <li><i class="fa-solid fa-book-open"></i> <a href="#register" class="text-link">Register Courses</a></li>
+                        <li><i class="fa-solid fa-trophy"></i> <a href="#learningpath" class="text-link">Learning Path</a></li>
+                        <li><i class="fa-solid fa-list-check"></i> <a href="#usecase3" class="text-link">Use Case 3</a></li>
+                        <li><i class="fa-solid fa-puzzle-piece"></i> <a href="#usecase4" class="text-link">Use Case 4</a></li>
+                        <li><i class="fa-solid fa-gears"></i> <a href="#usecase5" class="text-link">Use Case 5</a></li>
                     </ul>
                 </div>
             
@@ -116,9 +308,7 @@
     <script src="../scripts/footer.js"></script>
     <script src="../scripts/scroll-up.js"></script>
     <script src="../scripts/dark-light-elements.js"></script>
-    <script src="../scripts/student-home-page.js"></script>
-
-
+    <script src="../scripts/admin-view-schedule.js"></script>
 
 </body>
 </html>
