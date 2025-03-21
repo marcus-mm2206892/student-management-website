@@ -286,7 +286,77 @@ body {
 }
 
 .content-section {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* INSTRUCTORS */
+.instructors-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--clr-surface-a20);
+  background: var(--clr-surface-a10);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.instructors-container:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--clr-surface-a0) 30%, #2a81bf 100%);
+  border: 1px solid var(--clr-contrast-a0);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.instructors-container h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--clr-contrast-a0);
+}
+
+.instructors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.instructor {
+  display: flex;
+  align-items: center;
+  background: var(--clr-surface-a20);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--clr-surface-a50);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.instructor i {
+  font-size: 1rem;
+  color: var(--clr-primary-a0);
+  margin-right: 1rem;
+}
+
+.instructor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.instructor-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-contrast-a0);
+}
+
+.instructor-description {
+  font-size: 0.75rem;
+  color: var(--clr-contrast-a40);
+  margin-top: 0.2rem;
 }
 
 /* CLASS SCHEDULE */
@@ -320,6 +390,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  justify-content: center;
 }
 
 .schedule, .location {

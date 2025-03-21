@@ -40,15 +40,17 @@ const courseData = {
   
   let currentCourse = null;
   
-  function toggleDropdown() {
-    this.parentElement.classList.toggle("active");
-    const menu = this.nextElementSibling;
-    if (menu.style.display === "block") {
-      menu.style.display = "none";
-    } else {
-      menu.style.display = "block";
+  function toggleDropdown(event) {
+    const dropdown = event.currentTarget.parentElement;
+    if (!dropdown) return;
+
+    dropdown.classList.toggle("active");
+
+    const menu = dropdown.querySelector(".dropdown-menu");
+    if (menu) {
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
     }
-  }
+}
   
   function selectOption(type, value) {
     if (type === 'course') {
