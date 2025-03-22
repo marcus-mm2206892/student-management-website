@@ -21,7 +21,7 @@ body {
 
 .view-schedule {
     height: calc(100vh - 53px);
-    margin: 50px auto 1rem auto;
+    margin: 53px auto 1rem auto;
     display: flex;
     flex-direction: column;
     overflow: hidden;

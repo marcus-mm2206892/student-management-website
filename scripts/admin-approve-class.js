@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         ${classStatus.charAt(0).toUpperCase() + classStatus.slice(1)}
                     </span>
                 </td>
-                <td class="data course-schedule"><span>MON-WED</span></td>
                 <td>
                     <select class="status-dropdown" data-course-id="${course.courseId}">
                         <option value="approved" ${classStatus === "open" ? "selected" : ""}>Approve</option>
@@ -145,20 +144,20 @@ document.addEventListener("DOMContentLoaded", function () {
             row.querySelectorAll("td").forEach(td => td.style.display = "");
         });
 
-        if (windowWidth < 1000) {
-            hideColumn("course-schedule");
-        }
-        if (windowWidth < 800) {
+        if (windowWidth < 820) {
             hideColumn("course-instructor");
         }
-        if (windowWidth < 650) {
+        if (windowWidth < 720) {
             hideColumn("course-enrollment");
         }
-        if (windowWidth < 550) {
+        if (windowWidth < 620) {
             hideColumn("course-section");
         }
-        if (windowWidth < 450) {
+        if (windowWidth < 530) {
             hideColumn("course-name");
+        }
+        if (windowWidth < 410) {
+            hideColumn("course-status");
         }
     }
 

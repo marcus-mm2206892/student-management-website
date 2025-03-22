@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         ${classStatus.charAt(0).toUpperCase() + classStatus.slice(1)}
                     </span>
                 </td>
-                <td class="data course-schedule"><span>MON-WED</span></td>
                 <td>
                     <button class="course-button" data-course-id=${course.courseId} ${buttonDisabled}>
                         <strong><span>${buttonText}</span></strong>
@@ -169,20 +168,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // hide the columns progressively based on screen width
-        if (windowWidth < 1000) {
-            hideColumn("course-schedule");
-        }
         if (windowWidth < 800) {
             hideColumn("course-instructor");
         }
-        if (windowWidth < 650) {
+        if (windowWidth < 700) {
             hideColumn("course-enrollment");
         }
-        if (windowWidth < 550) {
+        if (windowWidth < 600) {
             hideColumn("course-section");
         }
-        if (windowWidth < 450) {
+        if (windowWidth < 520) {
             hideColumn("course-name");
+        }
+        if (windowWidth < 400) {
+            hideColumn("course-status");
         }
     }
 
