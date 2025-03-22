@@ -15,6 +15,7 @@ body {
     background-color: var(--clr-surface-tonal-a10);
     background-repeat: repeat;
     background-size: cover;
+    font-family: "Inter", sans-serif;
 }
 
 .main-page {
@@ -94,6 +95,21 @@ body {
     font-size: 1rem;
 }
 
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 10px;
+    color: #aaa;
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 2;
+}
+
 .text-input {
     position: relative;
     width: 100%;
@@ -108,6 +124,13 @@ body {
     color: var(--clr-contrast-a0);
     font-size: 1.2rem;
 }
+
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
 
 .input-field::placeholder {
     color: var(--clr-contrast-a0);

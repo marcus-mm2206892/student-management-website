@@ -1,134 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UniTrack Navbar</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="../styles/theme.css">
-    <link rel="stylesheet" href="../styles/navbar.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/theme.css" />
+    <link rel="stylesheet" href="../styles/navbar.css" />
+  </head>
+  <body>
+    <!-- Injected Navbar -->
+    <div id="navbarContent"></div>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="navbar-user bordered-div" id="userMenuButton">
-            <div class="nav-item">
-                <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
-                <span class="username">Lee Sanghyeok</span>
-                <i class="bx bx-chevron-down dropdown-icon"></i>
-            </div>
-        </div>
-
-        <div class="nav-bar-logo bordered-div">
-            <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="User">
-        </div>
-
-        <div class="use-cases bordered-div">
-            <!-- javascript navbar for instructor/student/admin -->
-            <ul class="navbar-menu">
-                <div class="nav-item"><li><a href="#">Browse Courses</a></li></div>
-                <div class="nav-item"><li><a href="#">Register Courses</a></li></div>
-                <div class="nav-item"><li><a href="#">View Profile</a></li></div>
-            </ul>
-
-            <div class="mobile-menu">
-                <div class="nav-item">
-                    <button class="browse-btn">
-                        <i class="fa-solid fa-list"></i> Browse
-                    </button>
-                </div>
-            </div>
-
-            <button class="learningpath-btn">Learning Path</button>
-        </div>
-    </nav>
-
-    <!-- SIDEBAR FOR MOBILE -->
+    <!-- Sidebar & User Dropdown (shared between roles) -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    <div class="sidebar" id="sidebar">
-        <button class="close-btn" id="closeSidebar">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        
-        <div class="circle big-circle"></div>
-        <div class="circle small-circle"></div>
-    
-        <div>
-            <img class="unitrack-logo-text" src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="UniTrack Logo">
-            <ul class="menu">
-                <li><span class="hover-circle"></span><a href="#">Browse Courses</a></li>
-                <li><span class="hover-circle"></span><a href="#">Register Courses</a></li>
-                <li><span class="hover-circle"></span><a href="#">View Profile</a></li>
-                <li><span class="hover-circle"></span><a href="#">View Learning Path</a></li>
-            </ul>
-        </div>
-    </div>
+    <div class="sidebar" id="sidebar"></div>
+    <div class="user-dropdown" id="userDropdown"></div>
 
-    <!-- USER DROPDOWN -->
-
-    <div class="user-dropdown" id="userDropdown">
-        <div class="dropdown-header">
-            <div class="top-header">
-                <!-- javascript image for user -->
-                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar"> 
-                <button class="close-btn" id="closeDropdown">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                
-            </div>
-            <!-- javascript user details -->
-            <div class="bottom-header">
-                <h4 class="dropdown-name">Lee Sanghyeok</h4>
-                <p class="dropdown-email">lee.sanghyeok@example.com</p>
-            </div>
-        </div>        
-        
-        <div class="dropdown-options">
-            <button class="dropdown-btn profile">
-                <div class="icon-box">
-                    <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon">
-                </div>
-                Profile
-            </button>
-        </div>
-        
-        <hr class="hr options-theme">
-    
-        <div class="theme-toggle">
-            <div class="theme-option">
-                <button class="theme-btn active" id="systemMode">
-                        <i class="fa-solid fa-laptop"></i>
-                </button>
-                <span class="theme-label">System</span>
-            </div>
-        
-            <div class="theme-option">
-                <button class="theme-btn" id="lightMode">
-                    <i class="fa-solid fa-sun"></i>
-                </button>
-                <span class="theme-label">Light</span>
-            </div>
-        
-            <div class="theme-option">
-                <button class="theme-btn" id="darkMode">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                <span class="theme-label">Dark</span>
-            </div>
-        </div>
-        
-        <hr class="hr theme-signout">
-    
-        <button class="signout-btn">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Sign Out
-        </button>
-    </div>
-    
     <script src="../scripts/navbar.js"></script>
     <script src="../scripts/dark-light-elements.js"></script>
-</body>
+  </body>
 </html>

@@ -122,7 +122,7 @@
     transition: color 0.3s ease;
 }
 
-.learningpath-btn {
+.learningpath-btn, .viewgrades-btn, .classstatus-btn {
     background-color: var(--clr-primary-a0);
     color: white;
     font-size: 0.85rem;

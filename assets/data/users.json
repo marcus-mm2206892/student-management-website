@@ -1,86 +1,58 @@
 [
   {
-    "userType": 1,
-    "id": "stud1",
-    "username": "josh@gmail.com",
-    "password": "josh123",
+    "email": "josh@gmail.com",
     "firstName": "Josh",
-    "lastName":".",
-    "themePreference": "system",
-    "completedCourses":[
-      {"courseID":"CMPS151","grade":99},
-      {"courseID":"ARAB100","grade":99},
-      {"courseID":"MATH101","grade":99}
-  ]
+    "lastName": "Calma",
+    "password": "josh123",
+    "role": "student",
+    "themePreference": "system"
   },
   {
-    "userType": 1,
-    "id": "stud2",
-    "username": "marcus@gmail.com",
+    "email": "marcus@gmail.com",
+    "firstName": "Marcus",
+    "lastName": "Monteiro",
     "password": "marcus123",
-    "firstName":"Marcus",
-    "lastName":".",
-    "themePreference": "system",
-    "completedCourses":[
-      {"courseID":"CMPS151","grade":99},
-      {"courseID":"ARAB100","grade":99},
-      {"courseID":"MATH101","grade":99}
-  ]
-    
+    "role": "student",
+    "themePreference": "system"
   },
   {
-    "userType": 1,
-    "id": "stud3",
-    "username": "audre@gmail.com",
+    "email": "audre@gmail.com",
+    "firstName": "Audre",
+    "lastName": "Caraig",
     "password": "audre123",
-    "firstName":"Audre",
-    "lastName":"Caraig",
-    "themePreference": "system",
-    "completedCourses":[
-      {"courseID":"CMPS151","grade":35},
-      {"courseID":"ARAB100","grade":40},
-      {"courseID":"MATH101","grade":60}
-  ]
+    "role": "student",
+    "themePreference": "system"
   },
   {
-    "userType": 1,
-    "id": "stud4",
-    "username": "bashar@gmail.com",
-    "password": "bashar123",
-    "firstName": "Bashar",
-    "lastName":".",
-    "themePreference": "system",
-    "completedCourses":[
-            {"courseID":"CMPS151","grade":99},
-            {"courseID":"ARAB100","grade":99},
-            {"courseID":"MATH101","grade":99}
-        ]
+    "email": "mohdbashar@gmail.com",
+    "firstName": "Mohd",
+    "lastName": "Bashar",
+    "password": "mohd123",
+    "role": "student",
+    "themePreference": "system"
   },
   {
-    "userType":2,
-    "id":"inst1",
-    "username": "joe@gmail.com",
-    "password": "doe123",
-    "themePreference": "system",
-    "instructorId":"inst1",
-    "name":"John Doe",
-    "expertise":"Databases, Cybersecurity"
+    "email": "john@gmail.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "password": "john123",
+    "role": "instructor",
+    "themePreference": "system"
   },
   {
-    "userType":2,
-    "id":"inst2",
-    "themePreference": "system",
-    "username": "james@gmail.com",
+    "email": "james@gmail.com",
+    "firstName": "James",
+    "lastName": "Bond",
     "password": "james123",
-    "instructorId":"instructor2",
-    "name":"James Bond",
-    "expertise":"Digital Circuits, Artificial Intelligence"
+    "role": "instructor",
+    "themePreference": "system"
   },
   {
-    "userType": 3,
-    "id":"admin",
-    "themePreference": "system",
-    "username": "admin",
-    "password": "password"
+    "email": "admin@gmail.com",
+    "firstName": "Admin",
+    "lastName": "",
+    "password": "admin123",
+    "role": "admin",
+    "themePreference": "system"
   }
 ]

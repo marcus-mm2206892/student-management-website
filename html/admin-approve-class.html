@@ -14,128 +14,19 @@
     <link rel="stylesheet" href="../styles/scrollbar.css">
 </head>
 <body>
-    
     <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="navbar-user bordered-div" id="userMenuButton">
-            <div class="nav-item">
-                <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
-                <span class="username">Lee Sanghyeok</span>
-                <i class="bx bx-chevron-down dropdown-icon"></i>
-            </div>
-        </div>
+    <div id="navbarContent"></div>
 
-        <div class="nav-bar-logo bordered-div">
-            <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="User">
-        </div>
-
-        <div class="use-cases bordered-div">
-            <!-- javascript navbar for instructor/student/admin -->
-            <ul class="navbar-menu">
-                <div class="nav-item"><li><a href="#">Browse Courses</a></li></div>
-                <div class="nav-item"><li><a href="#">Register Courses</a></li></div>
-                <div class="nav-item"><li><a href="#">View Profile</a></li></div>
-            </ul>
-
-            <div class="mobile-menu">
-                <div class="nav-item">
-                    <button class="browse-btn">
-                        <i class="fa-solid fa-list"></i> Browse
-                    </button>
-                </div>
-            </div>
-
-            <button class="learningpath-btn">Learning Path</button>
-        </div>
-    </nav>
-
-    <!-- SIDEBAR FOR MOBILE -->
+    <!-- Sidebar & User Dropdown-->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    <div class="sidebar" id="sidebar">
-        <button class="close-btn" id="closeSidebar">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        
-        <div class="circle big-circle"></div>
-        <div class="circle small-circle"></div>
-    
-        <div>
-            <img class="unitrack-logo-text" src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="UniTrack Logo">
-            <ul class="menu">
-                <li><span class="hover-circle"></span><a href="#">Browse Courses</a></li>
-                <li><span class="hover-circle"></span><a href="#">Register Courses</a></li>
-                <li><span class="hover-circle"></span><a href="#">View Profile</a></li>
-                <li><span class="hover-circle"></span><a href="#">View Learning Path</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- USER DROPDOWN -->
-
-    <div class="user-dropdown" id="userDropdown">
-        <div class="dropdown-header">
-            <div class="top-header">
-                <!-- javascript image for user -->
-                <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar"> 
-                <button class="close-btn" id="closeDropdown">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                
-            </div>
-            <!-- javascript user details -->
-            <div class="bottom-header">
-                <h4 class="dropdown-name">Lee Sanghyeok</h4>
-                <p class="dropdown-email">lee.sanghyeok@example.com</p>
-            </div>
-        </div>        
-        
-        <div class="dropdown-options">
-            <button class="dropdown-btn profile">
-                <div class="icon-box">
-                    <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon">
-                </div>
-                Profile
-            </button>
-        </div>
-        
-        <hr class="hr options-theme">
-    
-        <div class="theme-toggle">
-            <div class="theme-option">
-                <button class="theme-btn active" id="systemMode">
-                        <i class="fa-solid fa-laptop"></i>
-                </button>
-                <span class="theme-label">System</span>
-            </div>
-        
-            <div class="theme-option">
-                <button class="theme-btn" id="lightMode">
-                    <i class="fa-solid fa-sun"></i>
-                </button>
-                <span class="theme-label">Light</span>
-            </div>
-        
-            <div class="theme-option">
-                <button class="theme-btn" id="darkMode">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                <span class="theme-label">Dark</span>
-            </div>
-        </div>
-        
-        <hr class="hr theme-signout">
-    
-        <button class="signout-btn">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Sign Out
-        </button>
-    </div>
+    <div class="sidebar" id="sidebar"></div>
+    <div class="user-dropdown" id="userDropdown"></div>
 
     <!-- MAIN CONTENT -->
     <main class="approve">
         <header class="approve-header">
             <div class="approve-top-header">
-                <h1 class="approve-title">View All Classes</h1>
+                <h1 class="approve-title">Class Status</h1>
             </div>
             <p class="approve-description">
                 Change and review the status of all classes for this semester.
@@ -203,69 +94,8 @@
         
     </main>
 
-    <footer class="footer">
-        <div class="top-half">
-            <div class="contact-div">
-                <img class="unitrack-logo" src="../assets/imgs/unitrack-images/unitrack-logo-blue.png" alt="UniTrack Logo">
-                <div class="contact-texts">
-                    <h1>UniTrack</h1>
-                    <a href="mailto:contact@unitrack.com" class="text-link">contact@unitrack.com</a>
-                </div>
-                <div class="social-media-buttons">
-                    <div><i id="discord" class="fa-brands fa-discord"></i></div>
-                    <div><i id="github" class="fa-brands fa-github"></i></div>
-                    <div><i id="instagram" class="fa-brands fa-instagram"></i></div>
-                    <div><i id="coffee"class="fa fa-coffee"></i></div>
-                </div>
-            </div>
-
-            <div class="links-div">
-                <div class="links-content">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-book-open"></i> <a href="#register" class="text-link">Register Courses</a></li>
-                        <li><i class="fa-solid fa-trophy"></i> <a href="#milestones" class="text-link">Milestones</a></li>
-                        <li><i class="fa-solid fa-list-check"></i> <a href="#usecase3" class="text-link">Use Case 3</a></li>
-                        <li><i class="fa-solid fa-puzzle-piece"></i> <a href="#usecase4" class="text-link">Use Case 4</a></li>
-                        <li><i class="fa-solid fa-gears"></i> <a href="#usecase5" class="text-link">Use Case 5</a></li>
-                    </ul>
-                </div>
-            
-                <div class="links-content">
-                    <h3>Legal & Policies</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-scroll"></i> <a href="#terms-and-conditions" class="text-link">Terms & Conditions</a></li>
-                        <li><i class="fa-solid fa-user-shield"></i> <a href="#privacy-policy" class="text-link">Privacy Policy</a></li>
-                        <li><i class="fa-solid fa-shield-halved"></i> <a href="#data-protection" class="text-link">Data Protection</a></li>
-                    </ul>
-                </div>
-            
-                <div class="links-content">
-                    <h3>Others</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-circle-question"></i> <a href="#help" class="text-link">Help & Support</a></li>
-                        <li><i class="fa-solid fa-university"></i> <a href="#location" class="text-link">Qatar University</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-        </div>
-
-        <hr class="hr">
-
-        <div class="bottom-half">
-            <div class="footer-info">
-                <span>Made with ♥️ & ☕️ by <a class="text-link dev-name" href="">@marcusmonteiro</a>, <a class="text-link dev-name" href="">@joshcalma</a>, <a class="text-link dev-name" href="">@mohdbashar</a>, & <a class="text-link dev-name" href="">@audrecaraig</a></span>
-                <div>
-                    <span>©2025 UniTrack</span>
-                    <p class="version-tag">v1.0.0</p>
-                </div>
-            </div>
-            <div class="unitrack-name">
-                <span>UniTrack</span>
-            </div>
-        </div>
-    </footer>
+    <!-- FOOTER -->
+    <div id="footerContent"></div>
 
     <script src="../scripts/navbar.js"></script>
     <script src="../scripts/dark-light-elements.js"></script>
