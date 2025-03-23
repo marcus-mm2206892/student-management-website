@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </span>
                 </td>
                 <td>
-                    <button class="course-button" data-course-id=${course.courseId} ${buttonDisabled}>
+                    <button class="course-button" data-classid=${classDetails.classId} ${buttonDisabled}>
                         <strong><span>${buttonText}</span></strong>
                     </button>
                 </td>
@@ -80,38 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
         tableBody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: red;">Failed to load courses.</td></tr>`;
     });
 
-    //Getting class info by clicking on register button
-
-    //1st way
-
-    document.querySelectorAll(".course-button").forEach(button => {
-        button.addEventListener("onclick", function () {
-            console.log("Button clicked!!!")
-            let courseId = this.getAttribute("data-course-id");
-            alert("You registered for course: " + courseId);
-        });
-    });
-    
-    //2nd alternative way
-
-    // document.getElementById("data-output").addEventListener("click", function (event) {
-    //     if (event.target.closest(".course-button")) {
-    //         let button = event.target.closest(".course-button");
-    //         let courseId = button.getAttribute("data-course-id");
-    //         alert("You registered for course: " + courseId);
-    //     }
-
-    //     //Get the user info, the class info and create the course enrollemnt object
-    //     const couseEnrollment = {
-    //         studentId : JSON.parse(localStorage.loggedInUser).studentID,
-    //         courseId : courseId,
-    //         status: '',
-    //         courseGrade: 0,
-    //         letterGrade: ""
-    //     }
-
-    //     console.log(couseEnrollment);
-    // });
 
     // search functionality
     searchBar.addEventListener("input", function () {
@@ -201,4 +169,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // initial call on page load
     adjustTableColumns();
+
+    document.addEventListener("click", function (event) {
+        if (event.target.closest(".course-button")) {
+            let button = event.target.closest(".course-button");
+            let courseId = button.getAttribute("data-classid");
+
+
+            //1. Check if the student has passed the pre-req
+
+            //2. Check if the course is open
+
+            //3. Create courseEnrollment object
+            alert(`You clicked Register for Course ID: ${courseId}`);
+        }
+    });
+    
 });
