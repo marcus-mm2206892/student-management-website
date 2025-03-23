@@ -553,6 +553,12 @@ body {
   }
 }
 
+@media (prefers-color-scheme: light) {
+  .course-image-div .course-image:hover {
+    border: 2px solid var(--clr-primary-a0);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   body {
       background-image: url("../assets/imgs/unitrack-images/pattern-white.png");

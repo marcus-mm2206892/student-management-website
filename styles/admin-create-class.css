@@ -252,6 +252,16 @@ input[type=number] {
     }
 }
 
+@media (prefers-color-scheme: light) {
+    .create-header {
+      background-color: var(--clr-surface-a0);
+    }
+  
+    .field-div p {
+      color: var(--clr-contrast-a50);
+    }
+  }
+
 @media (prefers-color-scheme: dark) {
   body {
     background-image: url("../assets/imgs/unitrack-images/pattern-white.png");

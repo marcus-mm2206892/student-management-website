@@ -161,7 +161,6 @@ footer .unitrack-logo {
 
 .text-link:hover {
   color: var(--clr-primary-a10);
-  font-weight: 600;
 }
 
 .text-link:hover::after {

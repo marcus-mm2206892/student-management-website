@@ -36,6 +36,7 @@ function renderStudentNavbar(user) {
   
         <div class="use-cases bordered-div">
           <ul class="navbar-menu">
+            <div class="nav-item"><li><a href="#">Explore</a></li></div>
             <div class="nav-item"><li><a href="#">Browse Courses</a></li></div>
             <div class="nav-item"><li><a href="#">Register Courses</a></li></div>
             <div class="nav-item"><li><a href="#">View Profile</a></li></div>
@@ -63,6 +64,7 @@ function renderStudentNavbar(user) {
         <div>
           <img class="unitrack-logo-text" src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="UniTrack Logo">
           <ul class="menu">
+            <li><span class="hover-circle"></span><a href="#">Explore</a></li>
             <li><span class="hover-circle"></span><a href="#">Browse Courses</a></li>
             <li><span class="hover-circle"></span><a href="#">Register Courses</a></li>
             <li><span class="hover-circle"></span><a href="#">View Profile</a></li>
@@ -138,7 +140,7 @@ function renderInstructorNavbar(user) {
           <div class="mobile-menu">
             <div class="nav-item">
               <button class="browse-btn">
-                <i class="fa-solid fa-list"></i> Menu
+                <i class="fa-solid fa-list"></i> Browse
               </button>
             </div>
           </div>
@@ -220,17 +222,16 @@ function renderAdminNavbar(user) {
   
         <div class="use-cases bordered-div">
           <ul class="navbar-menu">
-            <div class="nav-item"><li><a href="#">Dashboard</a></li></div>
-            <div class="nav-item"><li><a href="#">Browse Courses</a></li></div>
+            <div class="nav-item"><li><a href="#">Browse</a></li></div>
             <div class="nav-item"><li><a href="#">Create Course</a></li></div>
             <div class="nav-item"><li><a href="#">Create Class</a></li></div>
-            <div class="nav-item"><li><a href="#">View Schedule</a></li></div>
+            <div class="nav-item"><li><a href="#">View Schedules</a></li></div>
           </ul>
   
           <div class="mobile-menu">
             <div class="nav-item">
               <button class="browse-btn">
-                <i class="fa-solid fa-list"></i> Menu
+                <i class="fa-solid fa-list"></i> Browse
               </button>
             </div>
           </div>
@@ -247,11 +248,10 @@ function renderAdminNavbar(user) {
         <div>
           <img class="unitrack-logo-text" src="../assets/imgs/unitrack-images/unitrack-logo-text-white.png" alt="UniTrack Logo">
           <ul class="menu">
-            <li><span class="hover-circle"></span><a href="#">Dashboard</a></li>
             <li><span class="hover-circle"></span><a href="#">Browse Courses</a></li>
             <li><span class="hover-circle"></span><a href="#">Create Course</a></li>
             <li><span class="hover-circle"></span><a href="#">Create Class</a></li>
-            <li><span class="hover-circle"></span><a href="#">View Schedule</a></li>
+            <li><span class="hover-circle"></span><a href="#">View Schedules</a></li>
             <li><span class="hover-circle"></span><a href="#">Class Status</a></li>
           </ul>
         </div>
@@ -303,17 +303,23 @@ function setupStudentNavbarEvents() {
   document
     .querySelector(".navbar-menu .nav-item:nth-child(1) a")
     ?.addEventListener("click", () => {
-      window.location.href = "user-query.html";
+      window.location.href = "student-home-page.html";
     });
 
   document
     .querySelector(".navbar-menu .nav-item:nth-child(2) a")
     ?.addEventListener("click", () => {
-      window.location.href = "register-course.html";
+      window.location.href = "user-query.html";
     });
 
   document
     .querySelector(".navbar-menu .nav-item:nth-child(3) a")
+    ?.addEventListener("click", () => {
+      window.location.href = "register-course.html";
+    });
+
+  document
+    .querySelector(".navbar-menu .nav-item:nth-child(4) a")
     ?.addEventListener("click", () => {
       window.location.href = "student-profile.html";
     });
@@ -326,23 +332,30 @@ function setupStudentNavbarEvents() {
   document
     .querySelector(".menu li:nth-child(1) a")
     ?.addEventListener("click", () => {
-      window.location.href = "user-query.html";
+      window.location.href = "student-home-page.html";
     });
+
 
   document
     .querySelector(".menu li:nth-child(2) a")
     ?.addEventListener("click", () => {
-      window.location.href = "register-course.html";
+      window.location.href = "user-query.html";
     });
 
   document
     .querySelector(".menu li:nth-child(3) a")
     ?.addEventListener("click", () => {
-      window.location.href = "student-profile.html";
+      window.location.href = "register-course.html";
     });
 
   document
     .querySelector(".menu li:nth-child(4) a")
+    ?.addEventListener("click", () => {
+      window.location.href = "student-profile.html";
+    });
+
+  document
+    .querySelector(".menu li:nth-child(5) a")
     ?.addEventListener("click", () => {
       window.location.href = "learningpath.html";
     });
@@ -398,29 +411,23 @@ function setupAdminNavbarEvents() {
   document
     .querySelector(".navbar-menu .nav-item:nth-child(1) a")
     ?.addEventListener("click", () => {
-      window.location.href = "admin-home-page.html";
+      window.location.href = "user-query.html";
     });
 
   document
     .querySelector(".navbar-menu .nav-item:nth-child(2) a")
     ?.addEventListener("click", () => {
-      window.location.href = "user-query.html";
+      window.location.href = "admin-create-course.html";
     });
 
   document
     .querySelector(".navbar-menu .nav-item:nth-child(3) a")
     ?.addEventListener("click", () => {
-      window.location.href = "admin-create-course.html";
-    });
-
-  document
-    .querySelector(".navbar-menu .nav-item:nth-child(4) a")
-    ?.addEventListener("click", () => {
       window.location.href = "admin-create-class.html";
     });
 
   document
-    .querySelector(".navbar-menu .nav-item:nth-child(5) a")
+    .querySelector(".navbar-menu .nav-item:nth-child(4) a")
     ?.addEventListener("click", () => {
       window.location.href = "admin-view-schedule.html";
     });

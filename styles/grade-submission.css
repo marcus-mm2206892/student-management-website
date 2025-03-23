@@ -388,3 +388,20 @@ body {
     display: none;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  .grade-submission-top-header span {
+    background-color: var(--clr-surface-a10);
+  }
+  .grade-submission-header {
+    background-color: var(--clr-surface-a0);
+  }
+
+  .college-tag {
+    background-color: var(--clr-surface-a50);
+  }
+
+  .section-tag {
+    background-color: var(--clr-surface-a50);
+  }
+}

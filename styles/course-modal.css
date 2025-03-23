@@ -201,7 +201,7 @@ body {
 }
 
 .course-image:hover {
-    outline: 2px solid var(--clr-contrast-a0);
+    outline: 1px solid var(--clr-contrast-a0);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
@@ -287,5 +287,15 @@ body {
 @media (max-width: 768px) {
     .modal-header {
         flex-direction: column;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .course-image:hover {
+        outline: 1px solid var(--clr-primary-a0);
+    }
+
+    .modal-content {
+        background: var(--clr-surface-a10);
     }
 }

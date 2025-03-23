@@ -225,10 +225,6 @@ main {
 
 @media (prefers-color-scheme: light) {
   .search-bar {
-    background-color: var(--clr-surface-a10);
-  }
-
-  .course-card:hover {
-    border: 1px solid var(--clr-primary-a0);
+    background-color: var(--clr-surface-a20);
   }
 }

@@ -11,31 +11,31 @@ html {
 }
 
 body {
-    background-color: var(--clr-surface-a0);
-    background-image: url("../assets/imgs/unitrack-images/pattern-blue.png");
-    background-repeat: repeat;
-    color: var(--clr-contrast-a0);
-    font-family: "Inter", sans-serif;
-    font-size: 0.85rem;
+  background-color: var(--clr-surface-a0);
+  background-image: url("../assets/imgs/unitrack-images/pattern-blue.png");
+  background-repeat: repeat;
+  color: var(--clr-contrast-a0);
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
 }
 
 .view-schedule {
-    height: calc(100vh - 53px);
-    margin: 53px auto 1rem auto;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  height: calc(100vh - 53px);
+  margin: 53px auto 1rem auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .view-schedule-header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin: 1rem;
-    background-color: var(--clr-surface-a10);
-    padding: 1rem;
-    border: 1px solid var(--clr-surface-a20);
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem;
+  background-color: var(--clr-surface-a10);
+  padding: 1rem;
+  border: 1px solid var(--clr-surface-a20);
+  border-radius: 10px;
 }
 
 .view-schedule-top-header {
@@ -46,22 +46,22 @@ body {
 }
 
 .view-schedule-title {
-    text-align: left;
-    font-size: 1.8rem;
-    font-weight: 700;
-    flex: 2;
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 700;
+  flex: 2;
 }
 
 .major-tag {
-    font-size: 0.85rem;
-    background-color: var(--clr-primary-a0);
-    color: #f5f5f5;
-    padding: 0.25rem .5rem;
-    border-radius: 12px;
+  font-size: 0.85rem;
+  background-color: var(--clr-primary-a0);
+  color: #f5f5f5;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
 }
 
 .view-schedule-description {
-    color: var(--clr-contrast-a0);
+  color: var(--clr-contrast-a0);
 }
 
 .view-schedule-container {
@@ -78,39 +78,37 @@ body {
   margin: 0 auto;
 }
 
-
-
 @media (max-width: 768px) {
-    .view-schedule {
-        padding: 1rem 0;
-    }
-    .view-schedule-description{
-        display: none;
-    }
-    .view-schedule-container {
-        overflow-x: hidden;
-        scroll-snap-type: none;
-        flex-direction: column;
-        align-items: center;
-        scroll-padding: none;
-        padding: 0 1rem;
-    }
-    .view-schedule-top-header {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+  .view-schedule {
+    padding: 1rem 0;
+  }
+  .view-schedule-description {
+    display: none;
+  }
+  .view-schedule-container {
+    overflow-x: hidden;
+    scroll-snap-type: none;
+    flex-direction: column;
+    align-items: center;
+    scroll-padding: none;
+    padding: 0 1rem;
+  }
+  .view-schedule-top-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-    .view-schedule-title {
-        text-align: center;
-        font-size: 1.2rem;
-    }
+  .view-schedule-title {
+    text-align: center;
+    font-size: 1.2rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
-    }
+  body {
+    background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
   }
+}
 
 .modal-header {
   display: flex;
@@ -148,7 +146,9 @@ body {
   gap: 10px;
 }
 
-.course-tag, .section-tag, .crn-tag {
+.course-tag,
+.section-tag,
+.crn-tag {
   background: var(--clr-primary-a0);
   color: #f5f5f5;
   padding: 5px 10px;
@@ -272,7 +272,6 @@ body {
   border-color: var(--clr-primary-a20);
 }
 
-
 /* MODAL CONTENT */
 .modal-content {
   flex-grow: 1;
@@ -386,14 +385,16 @@ body {
   color: var(--clr-contrast-a0);
 }
 
-.class-schedule, .class-location {
+.class-schedule,
+.class-location {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   justify-content: center;
 }
 
-.schedule, .location {
+.schedule,
+.location {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -405,13 +406,15 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.schedule i, .location i {
+.schedule i,
+.location i {
   font-size: 1.2rem;
   color: var(--clr-primary-a0);
   padding-right: 0.5rem;
 }
 
-.schedule-info, .location-info {
+.schedule-info,
+.location-info {
   display: flex;
   flex-direction: column;
 }
@@ -458,24 +461,23 @@ body {
 }
 
 .search-dropdowns {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: auto;
 }
 
 .search-dropdowns input,
 .search-dropdowns select {
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--clr-surface-a20);
-    border-radius: 8px;
-    font-size: 0.85rem;
-    background-color: var(--clr-surface-a0);
-    color: var(--clr-contrast-a0);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--clr-surface-a20);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  background-color: var(--clr-surface-a0);
+  color: var(--clr-contrast-a0);
 }
 
 @media (max-width: 768px) {
-
   .modal-header {
     flex-direction: column;
   }
@@ -495,7 +497,6 @@ body {
   .content-section.class-details.active {
     grid-template-columns: 1fr;
   }
-  
 
   .dropdown-text {
     display: none;
@@ -507,6 +508,20 @@ body {
 
   .modal-btn {
     width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .view-schedule-header {
+    background-color: var(--clr-surface-a0);
+  }
+
+  .content-info-div {
+    background-color: var(--clr-surface-a0);
+  }
+  
+  .modal-content {
+    background: var(--clr-surface-a10);
   }
 }
 

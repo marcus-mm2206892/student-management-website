@@ -1,4 +1,3 @@
-
 html {
   overflow-x: hidden;
 }
@@ -20,12 +19,11 @@ body {
   display: grid; /* Use grid layout */
   gap: 1.5rem;
   grid-template-columns: 2fr 1fr;
-  grid-template-areas: 
+  grid-template-areas:
     "greetings greetings"
     "admin-profile-left admin-profile-right";
   align-items: start; /* Aligns items properly */
 }
-
 
 .admin-profile-left {
   grid-area: admin-profile-left;
@@ -79,7 +77,11 @@ body {
   left: 1rem;
   width: 2rem;
   height: 2rem;
-  background: linear-gradient(-45deg, rgba(5, 5, 6, 0.8), rgba(116, 116, 116, 0.8));
+  background: linear-gradient(
+    -45deg,
+    rgba(5, 5, 6, 0.8),
+    rgba(116, 116, 116, 0.8)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,16 +104,16 @@ body {
 
 @keyframes bounceIn {
   0% {
-      transform: translateY(-10px) translateX(10px);
-      opacity: 0;
+    transform: translateY(-10px) translateX(10px);
+    opacity: 0;
   }
   50% {
-      transform: translateY(2px) translateX(-2px);
-      opacity: 1;
+    transform: translateY(2px) translateX(-2px);
+    opacity: 1;
   }
   100% {
-      transform: translateY(0) translateX(0);
-      opacity: 1;
+    transform: translateY(0) translateX(0);
+    opacity: 1;
   }
 }
 
@@ -163,11 +165,7 @@ body {
 
 .credit-hours-card:hover {
   transform: translateY(-3px);
-  background: linear-gradient(
-    135deg,
-    var(--clr-surface-a0) 30%,
-    #2a81bf 100%
-  );
+  background: linear-gradient(135deg, var(--clr-surface-a0) 30%, #2a81bf 100%);
   border: 1px solid var(--clr-contrast-a0);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -242,7 +240,7 @@ body {
   display: inline-flex;
   align-items: right;
   justify-content: flex-end;
-  gap: .5rem;
+  gap: 0.5rem;
   text-decoration: none;
   font-weight: 600;
   color: var(--clr-primary-a0);
@@ -308,7 +306,8 @@ body {
   gap: 0.5rem;
 }
 
-.department-tag, .college-tag {
+.department-tag,
+.college-tag {
   color: #f5f5f5;
   padding: 5px 10px;
   border-radius: 5px;
@@ -382,7 +381,7 @@ body {
   width: 8.5rem;
   text-align: right;
   white-space: nowrap;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 .info-text p {
@@ -397,66 +396,80 @@ body {
   font-size: 1rem;
 }
 
-.info-text p span{
+.info-text p span {
   color: var(--clr-primary-a0);
 }
 
 @media (max-width: 768px) {
   .admin-profile {
-      grid-template-columns: 1fr;
-      grid-template-areas: 
-          "greetings"
-          "admin-profile-left"
-          "admin-profile-right";
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "greetings"
+      "admin-profile-left"
+      "admin-profile-right";
   }
 
-  .admin-profile-left, 
+  .admin-profile-left,
   .admin-profile-right {
-      width: 100%;
+    width: 100%;
   }
 
   .credit-hours-card {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .credit-hours-image img {
-      width: 16rem;
+    width: 16rem;
   }
 
   .info-content {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .info-text {
-      align-items: center;
+    align-items: center;
   }
 
   .about-me-content {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .about-me-avatar {
-      height: 5rem;
-      width: 5rem;
+    height: 5rem;
+    width: 5rem;
   }
 
   .course-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .browse-courses {
-      justify-content: center;
+    justify-content: center;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .course-image-div .course-image:hover {
+    border: 2px solid var(--clr-primary-a0);
+  }
+
+  .college-tag {
+    background-color: var(--clr-surface-a50);
+  }
+
+  .section-tag {
+    background-color: var(--clr-surface-a50);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-      background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
+    background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
   }
 }

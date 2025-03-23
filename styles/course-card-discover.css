@@ -12,10 +12,10 @@
   gap: 1rem;
   display: grid;
   grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+  grid-template-rows: auto auto;
 }
-.card{
-    display: flex;
+.card {
+  display: flex;
   background: var(--clr-surface-a10);
   padding: 1rem;
   position: relative;
@@ -29,9 +29,9 @@
 .course-card:hover {
   transform: translateY(-0.5rem); /* move card slightly up */
   background: linear-gradient(
-      135deg,
-      var(--clr-surface-a0) 30%,
-      #2a81bf 100%
+    135deg,
+    var(--clr-surface-a0) 30%,
+    #2a81bf 100%
   ); /* put a gradient background */
   border: 1px solid var(--clr-contrast-a0);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -48,20 +48,21 @@
   }
 }
 
-@media(prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
   .course-card:hover {
     background: linear-gradient(
-        135deg,
-        var(--clr-surface-a0) 30%,
-        #75a4c6 100%
+      135deg,
+      var(--clr-surface-a0) 30%,
+      #75a4c6 100%
     );
+    border: 1px solid var(--clr-primary-a0);
   }
 }
 
 /* COURSE IMAGE */
 .course-image {
   background: var(--clr-surface-tonal-a20);
-  aspect-ratio: 1 / 1; 
+  aspect-ratio: 1 / 1;
   border-radius: 5px;
   position: relative;
   width: 100%;
@@ -80,7 +81,11 @@
   left: 1rem;
   width: 2rem;
   height: 2rem;
-  background: linear-gradient(-45deg, rgba(5, 5, 6, 0.8), rgba(116, 116, 116, 0.8));
+  background: linear-gradient(
+    -45deg,
+    rgba(5, 5, 6, 0.8),
+    rgba(116, 116, 116, 0.8)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,7 +93,7 @@
   cursor: pointer;
 }
 
-.hover-icon i{
+.hover-icon i {
   color: #f5f5f5;
 }
 
@@ -235,19 +240,19 @@
 /* TAGS */
 .course-tags {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
 .tag {
   color: var(--clr-contrast-a0);
   border: 1px solid var(--clr-surface-a20);
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 12px;
   font-size: 0.7rem;
   display: flex;
   align-items: center;
-  gap: .25rem;
+  gap: 0.25rem;
 }
 
 .tag i {
