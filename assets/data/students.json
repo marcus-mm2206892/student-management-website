@@ -1,18 +1,38 @@
 [
     {
-        "studentID": "stud1",
-        "completedCourses":[
-            {"courseID":"CMPS151","grade":65},
-            {"courseID":"ARAB100","grade":70},
-            {"courseID":"MATH101","grade":70}
-        ]
+      "studentId": "S1001",
+      "email": "josh@gmail.com",
+      "college": "Engineering",
+      "department": "Computer Science",
+      "completedCourses": []
     },
     {
-        "studentID": "stud2",
-        "completedCourses":[
-            {"courseID":"CMPS151","grade":65},
-            {"courseID":"ARAB100","grade":70},
-            {"courseID":"MATH101","grade":70}
-        ]
+      "studentId": "S1002",
+      "email": "marcus@gmail.com",
+      "college": "Engineering",
+      "department": "Computer Science",
+      "completedCourses": ["CMPS151"]
+    },
+    {
+      "studentId": "S1003",
+      "email": "audre@gmail.com",
+      "college": "Engineering",
+      "department": "Computer Engineering",
+      "completedCourses": ["CMPS151", "CMPS205"]
+    },
+    {
+      "studentId": "S1004",
+      "email": "mohdbashar@gmail.com",
+      "college": "Engineering",
+      "department": "Computer Science",
+      "completedCourses": ["CMPS151"]
+    },
+    {
+      "studentId": "S1005",
+      "email": "james@gmail.com",
+      "college": "Engineering",
+      "department": "Computer Engineering",
+      "completedCourses": []
     }
-]
+  ]
+  
