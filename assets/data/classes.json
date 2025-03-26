@@ -5,8 +5,8 @@
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
-    "enrollmentActual": "10",
-    "enrollmentMaximum": "40",
+    "enrollmentActual": 40,
+    "enrollmentMaximum": 40,
     "classStatus": "open"
   },
   {
@@ -15,9 +15,9 @@
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
-    "enrollmentActual": "50",
-    "enrollmentMaximum": "50",
-    "classStatus": "closed"
+    "enrollmentActual": 12,
+    "enrollmentMaximum": 40,
+    "classStatus": "open"
   },
   {
     "classId": "3",
@@ -25,8 +25,8 @@
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
-    "enrollmentActual": "5",
-    "enrollmentMaximum": "35",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
     "classStatus": "pending"
   },
   {
@@ -35,8 +35,8 @@
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
-    "enrollmentActual": "20",
-    "enrollmentMaximum": "45",
+    "enrollmentActual": 20,
+    "enrollmentMaximum": 45,
     "classStatus": "open"
   },
   {
@@ -45,8 +45,8 @@
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
-    "enrollmentActual": "15",
-    "enrollmentMaximum": "30",
+    "enrollmentActual": 15,
+    "enrollmentMaximum": 30,
     "classStatus": "open"
   },
   {
@@ -55,8 +55,8 @@
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
-    "enrollmentActual": "40",
-    "enrollmentMaximum": "40",
+    "enrollmentActual": 40,
+    "enrollmentMaximum": 40,
     "classStatus": "closed"
   },
   {
@@ -65,8 +65,8 @@
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
-    "enrollmentActual": "35",
-    "enrollmentMaximum": "35",
+    "enrollmentActual": 35,
+    "enrollmentMaximum": 35,
     "classStatus": "closed"
   }
 ]

@@ -27,8 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
             switch (classStatus) {
                 case "open":
                     statusClass = "status-approved";
-                    buttonText = "Register";
-                    buttonDisabled = "";
+                    // Disabling register button if the class is full
+                    if (classDetails.enrollmentActual == classDetails.enrollmentMaximum){
+                        buttonDisabled = "disabled";
+                        buttonText = "Section Full";
+                    } else {
+                        buttonText = "Register";
+                        buttonDisabled = "";
+                    }
                     break;
                 case "closed":
                     statusClass = "status-rejected";
@@ -46,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     buttonDisabled = "disabled";
                     break;
             }
+
+
 
             out += `
             <tr class="course-row">
