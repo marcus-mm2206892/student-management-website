@@ -1,3 +1,8 @@
+// import fse from 'fs-extra';
+// import path from 'path';
+
+// courseEnrollementPath = path.join(process.cwd(), 'assets/data/courseEnrollments.json')
+
 document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById("searchBar");
     const tableHead = document.querySelector("#tableHead");
@@ -27,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Classes Loaded:", classes);
 
         let out = "";
-        courses.forEach(course => {
-            let classDetails = classes.find(cls => course.currentClasses.includes(cls.classId));
+        courses.forEach(course => {     //** Only gets 1 class per course, Need to be fixed later **
+            let classDetails = classes.find(cls => course.currentClasses.includes(cls.classId)); 
             let classStatus = classDetails ? classDetails.classStatus.toLowerCase() : "unknown";
 
             let statusClass = "";
@@ -195,33 +200,58 @@ document.addEventListener("DOMContentLoaded", function () {
             let courseId = button.getAttribute("data-courseid");
             let classId = button.getAttribute("data-classid");
 
-            //1. Check if the student has passed the pre-req for that course
-            const preRequesites = allCourses.find( c => c.courseId == courseId).prerequisites;
-            console.log(preRequesites);
+            handleCourseRegistration(courseId, classId);   
+        }
+    });
 
-            const user = JSON.parse(localStorage.loggedInUser);
+    function handleCourseRegistration(courseId, classId){
 
-            completedCourses = allStudents.find( s => s.email == user.email).completedCourses;
+        alert(`You clicked Register for Course ID: ${courseId}`);
 
-            console.log(completedCourses);
+        //1. Check if the student has passed the pre-req for that course
+        const preRequesites = allCourses.find( c => c.courseId == courseId).prerequisites;
+        console.log(preRequesites);
 
-            const passedPreReq = preRequesites.every( course => completedCourses.includes(course));
-            console.log(passedPreReq);
-            //Need to add more classes to
+        const user = JSON.parse(localStorage.loggedInUser);
 
-            //2. Check if the course is open (Done in frontend)
+        const student = allStudents.find( s => s.email == user.email)
 
-            //3. Check it there is available space in the class (Done in frontend)
+        completedCourses = student.completedCourses;
 
-            //4. Create courseEnrollment object
+        console.log(completedCourses);
+
+        const passedPreReq = preRequesites.every( course => completedCourses.includes(course));
+
+        //Need to add more classes to
+
+        //2. Check if the student has already enrolled in that course/section
+
+        //3. Create courseEnrollment object
+
+        if (passedPreReq) {
+            const courseEnrollment = {
+                studentId: student.studentId,
+                classId: classId,
+                course: courseId,  //Not in the class diagram
+                status: "Enrolled",
+                courseGrade: 0,
+                letterGrade: "NA"
+            }
+            console.log(courseEnrollment);
+
+            //fse.writeJSON(courseEnrollementPath, courseEnrollment);
 
             //      - Update the No of enrollement of the class
 
-            //      - Save it in the local storage, to be retireved later
+            //      - Save it in the a JSON file, to be retireved later
 
 
-            alert(`You clicked Register for Course ID: ${courseId}`);
+        } else {
+            alert(`The pre-requisite for the course ${courseId} has not been completed.`) //Do styling
         }
-    });
+
+
+
+    }
     
 });
