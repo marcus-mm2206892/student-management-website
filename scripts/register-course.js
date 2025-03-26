@@ -180,7 +180,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             //2. Check if the course is open
 
-            //3. Create courseEnrollment object
+            //3. Check it there is available space in the class
+
+            //4. Create courseEnrollment object
+
+            //      - Update the No of enrollement of the class
+
+            //      - Save it in the local storage, to be retireved later
+
+
             alert(`You clicked Register for Course ID: ${courseId}`);
         }
     });
