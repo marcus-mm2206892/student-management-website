@@ -6,6 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const noResults = document.getElementById("noResults");
     const searchInfo = document.getElementById("searchInfo");
 
+    let allCourses = [];
+    let allStudents = [];
+
+    //Fetching Students 
+    fetch("../assets/data/students.json")
+        .then(res => res.json())
+        .then(data => {
+            allStudents = data;
+        });
+
     // Fetch both JSON files
     Promise.all([
         fetch("../assets/data/courses.json").then(res => res.json()),
@@ -13,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ])
     .then(([courses, classes]) => {
         console.log("Courses Loaded:", courses);
+        allCourses = courses;
         console.log("Classes Loaded:", classes);
 
         let out = "";
@@ -69,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </span>
                 </td>
                 <td>
-                    <button class="course-button" data-classid=${classDetails.classId} ${buttonDisabled}>
+                    <button class="course-button" data-classid=${classDetails.classId} data-courseid=${course.courseId} ${buttonDisabled}>
                         <strong><span>${buttonText}</span></strong>
                     </button>
                 </td>
@@ -181,14 +192,26 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", function (event) {
         if (event.target.closest(".course-button")) {
             let button = event.target.closest(".course-button");
-            let courseId = button.getAttribute("data-classid");
+            let courseId = button.getAttribute("data-courseid");
+            let classId = button.getAttribute("data-classid");
 
+            //1. Check if the student has passed the pre-req for that course
+            const preRequesites = allCourses.find( c => c.courseId == courseId).prerequisites;
+            console.log(preRequesites);
 
-            //1. Check if the student has passed the pre-req
+            const user = JSON.parse(localStorage.loggedInUser);
 
-            //2. Check if the course is open
+            completedCourses = allStudents.find( s => s.email == user.email).completedCourses;
 
-            //3. Check it there is available space in the class
+            console.log(completedCourses);
+
+            const passedPreReq = preRequesites.every( course => completedCourses.includes(course));
+            console.log(passedPreReq);
+            //Need to add more classes to
+
+            //2. Check if the course is open (Done in frontend)
+
+            //3. Check it there is available space in the class (Done in frontend)
 
             //4. Create courseEnrollment object
 
