@@ -18,75 +18,79 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
         let out = "";
-        allCourses.forEach(course => {     //** Only gets 1 class per course, Need to be fixed later **
-            let classDetails = allClasses.find(cls => course.currentClasses.includes(cls.classId)); 
-            let classStatus = classDetails ? classDetails.classStatus.toLowerCase() : "unknown";
-
-            let statusClass = "";
-            let buttonText = "";
-            let buttonDisabled = "";
-
-            switch (classStatus) {
-                case "open":
-                    statusClass = "status-approved";
-                    // Disabling register button if the class is full
-                    if (classDetails.enrollmentActual == classDetails.enrollmentMaximum){
+        allCourses.forEach(course => {     
+            // Loop through all current classes for the course
+            course.currentClasses.forEach(classId => {
+                let classDetails = allClasses.find(cls => cls.classId == classId); 
+                let classStatus = classDetails ? classDetails.classStatus.toLowerCase() : "unknown";
+    
+                let statusClass = "";
+                let buttonText = "";
+                let buttonDisabled = "";
+    
+                switch (classStatus) {
+                    case "open":
+                        statusClass = "status-approved";
+                        // Disabling register button if the class is full
+                        if (classDetails.enrollmentActual == classDetails.enrollmentMaximum){
+                            buttonDisabled = "disabled";
+                            buttonText = "Section Full";
+                        } else {
+                            buttonText = "Register";
+                            buttonDisabled = "";
+                        }
+                        break;
+                    case "closed":
+                        statusClass = "status-rejected";
+                        buttonText = "N/A";
                         buttonDisabled = "disabled";
-                        buttonText = "Section Full";
-                    } else {
-                        buttonText = "Register";
-                        buttonDisabled = "";
-                    }
-                    break;
-                case "closed":
-                    statusClass = "status-rejected";
-                    buttonText = "N/A";
-                    buttonDisabled = "disabled";
-                    break;
-                case "pending":
-                    statusClass = "status-pending";
-                    buttonText = "Waitlist";
-                    buttonDisabled = "disabled";
-                    break;
-                default:
-                    statusClass = "status-default";
-                    buttonText = "N/A";
-                    buttonDisabled = "disabled";
-                    break;
-            }
-
-            out += `
-            <tr class="course-row">
-                <td class="data course-no"><span>${course.courseId}</span></td>
-                <td class="data course-name"><span>${course.courseName}</span></td>
-                <td class="data course-instructor"><span>${course.instructor || "TBA"}</span></td>
-                <td class="data course-section"><span>L01</span></td>
-                <td class="data course-enrollment"><span>${classDetails ? classDetails.enrollmentActual + "/" + classDetails.enrollmentMaximum : "0/0"}</span></td>
-                <td class="data course-status">
-                    <span class="status-badge ${statusClass}">
-                        <span class="status-circle"></span>
-                        ${classStatus.charAt(0).toUpperCase() + classStatus.slice(1)}
-                    </span>
-                </td>
-                <td>
-                    <button class="course-button" data-classid=${classDetails.classId} data-courseid=${course.courseId} ${buttonDisabled}>
-                        <strong><span>${buttonText}</span></strong>
-                    </button>
-                </td>
-            </tr>`;
+                        break;
+                    case "pending":
+                        statusClass = "status-pending";
+                        buttonText = "Waitlist";
+                        buttonDisabled = "disabled";
+                        break;
+                    default:
+                        statusClass = "status-default";
+                        buttonText = "N/A";
+                        buttonDisabled = "disabled";
+                        break;
+                }
+    
+                out += `
+                <tr class="course-row">
+                    <td class="data course-no"><span>${course.courseId}</span></td>
+                    <td class="data course-name"><span>${course.courseName}</span></td>
+                    <td class="data course-instructor"><span>${course.instructor || "TBA"}</span></td>
+                    <td class="data course-section"><span>${classDetails ? classDetails.classId : "N/A"}</span></td>
+                    <td class="data course-enrollment"><span>${classDetails ? classDetails.enrollmentActual + "/" + classDetails.enrollmentMaximum : "0/0"}</span></td>
+                    <td class="data course-status">
+                        <span class="status-badge ${statusClass}">
+                            <span class="status-circle"></span>
+                            ${classStatus.charAt(0).toUpperCase() + classStatus.slice(1)}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="course-button" data-classid=${classDetails.classId} data-courseid=${course.courseId} ${buttonDisabled}>
+                            <strong><span>${buttonText}</span></strong>
+                        </button>
+                    </td>
+                </tr>`;
+            });
         });
-
+    
         tableBody.innerHTML = out;
         console.log("Courses successfully loaded into table.");
-
+    
         if (typeof adjustTableColumns === "function") {
             adjustTableColumns();
         }
-        
-    } catch{
+    
+    } catch (error) {
         console.error("Error fetching course/class data:", error);
         tableBody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: red;">Failed to load courses.</td></tr>`;
     }
+    
 
     // search functionality
     searchBar.addEventListener("input", function () {
@@ -196,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //1. Check if the student has already enrolled in that course/section
 
-        const index = allEnrollments.findIndex( e => e.studentId == student.studentId && e.classId == classId);
+        const index = allEnrollments.findIndex( e => e.studentId == student.studentId && e.courseId == courseId);
 
         if (index != -1){
             alert(`ERROR: You are already Registered in a section the Course ID: ${courseId}`);
@@ -222,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 enrollmentId: Date.now(),
                 studentId: student.studentId,
                 classId: classId,
-                course: courseId,  //Not in the class diagram
+                courseId: courseId,  //Not in the class diagram
                 status: "Enrolled",
                 courseGrade: 0,
                 letterGrade: "NA"

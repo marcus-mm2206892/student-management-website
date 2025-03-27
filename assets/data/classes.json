@@ -68,5 +68,15 @@
     "enrollmentActual": 35,
     "enrollmentMaximum": 35,
     "classStatus": "closed"
+  },
+  {
+    "classId": "8",
+    "courseId": "CMPS251",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 39,
+    "enrollmentMaximum": 40,
+    "classStatus": "open"
   }
 ]
