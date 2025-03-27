@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    checkLocalStorage();
+    checkLocalStorage(); //Check if local storage exists in the browser
     // auto-login if "Remember Me" is enabled
     const rememberedUser = JSON.parse(localStorage.getItem("rememberedUser"));
     if (rememberedUser) {
@@ -22,11 +22,15 @@ function checkLocalStorage(){
     if (localStorage.courses 
         && localStorage.classes 
         && localStorage.students
-        && localStorage.users ) {
+        && localStorage.users 
+        && localStorage.courseEnrollments ) {
             console.log("Data in Local storage exists")
         } else {
             console.log("Initializing local storage from JSON")
             initializeLocalStorage();
+
+            //Intialize course enrollments
+            localStorage.setItem("courseEnrollments", JSON.stringify([]));
         }
 }
 

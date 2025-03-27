@@ -6,24 +6,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const noResults = document.getElementById("noResults");
     const searchInfo = document.getElementById("searchInfo");
 
-    let allCourses = [];
+    let allCourses = JSON.parse(localStorage.getItem("courses"));
+    let allClasses = JSON.parse(localStorage.getItem("classes"));
 
     //Fetching Students 
     let allStudents = JSON.parse(localStorage.getItem("students"));
+    
+    console.log("Courses Loaded:", allCourses);
 
-    // Fetch both JSON files
-    Promise.all([
-        fetch("../assets/data/courses.json").then(res => res.json()),
-        fetch("../assets/data/classes.json").then(res => res.json())
-    ])
-    .then(([courses, classes]) => {
-        console.log("Courses Loaded:", courses);
-        allCourses = courses;
-        console.log("Classes Loaded:", classes);
+    console.log("Classes Loaded:", allClasses);
 
+    try {
         let out = "";
-        courses.forEach(course => {     //** Only gets 1 class per course, Need to be fixed later **
-            let classDetails = classes.find(cls => course.currentClasses.includes(cls.classId)); 
+        allCourses.forEach(course => {     //** Only gets 1 class per course, Need to be fixed later **
+            let classDetails = allClasses.find(cls => course.currentClasses.includes(cls.classId)); 
             let classStatus = classDetails ? classDetails.classStatus.toLowerCase() : "unknown";
 
             let statusClass = "";
@@ -59,8 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     break;
             }
 
-
-
             out += `
             <tr class="course-row">
                 <td class="data course-no"><span>${course.courseId}</span></td>
@@ -88,12 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (typeof adjustTableColumns === "function") {
             adjustTableColumns();
         }
-    })
-    .catch(error => {
+        
+    } catch{
         console.error("Error fetching course/class data:", error);
         tableBody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: red;">Failed to load courses.</td></tr>`;
-    });
-
+    }
 
     // search functionality
     searchBar.addEventListener("input", function () {
@@ -196,31 +189,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function handleCourseRegistration(courseId, classId){
 
-        alert(`You clicked Register for Course ID: ${courseId}`);
+        const user = JSON.parse(localStorage.loggedInUser);
+        const student = allStudents.find( s => s.email == user.email)
+        const allEnrollments = JSON.parse(localStorage.getItem("courseEnrollments"));
+        console.log(allEnrollments);
 
-        //1. Check if the student has passed the pre-req for that course
-        const preRequesites = allCourses.find( c => c.courseId == courseId).prerequisites;
+        //1. Check if the student has already enrolled in that course/section
+
+        const index = allEnrollments.findIndex( e => e.studentId == student.studentId && e.classId == classId);
+
+        if (index != -1){
+            alert(`ERROR: You are already Registered in a section the Course ID: ${courseId}`);
+            return;
+        }
+
+        //2. Check if the student has passed the pre-req for that course
+        const preRequesites = allCourses.find( c => c.courseId == courseId ).prerequisites;
         console.log(preRequesites);
 
-        const user = JSON.parse(localStorage.loggedInUser);
-
-        const student = allStudents.find( s => s.email == user.email)
-
         completedCourses = student.completedCourses;
-
         console.log(completedCourses);
 
-        const passedPreReq = preRequesites.every( course => completedCourses.includes(course));
+        const passedPreReq = preRequesites.every( course => completedCourses.includes(course)); //Checking if pre-requisites are passed
         console.log(passedPreReq)
 
         //Need to add more classes
 
-        //2. Check if the student has already enrolled in that course/section
-
-        //3. Create courseEnrollment object
-
+        
         if (passedPreReq) {
+            //3. Create courseEnrollment object
             const courseEnrollment = {
+                enrollmentId: Date.now(),
                 studentId: student.studentId,
                 classId: classId,
                 course: courseId,  //Not in the class diagram
@@ -234,10 +233,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             //      - Save course enrollment and classes in the local storge
 
-            // allEnrollments = JSON.parse(localStorage.courseEnrollments);
-            // allEnrollments.push(courseEnrollment);
-            // localStorage.courseEnrollments = JSON.stringify(allEnrollments);
-
+            allEnrollments.push(courseEnrollment);
+            localStorage.setItem("courseEnrollments", JSON.stringify(allEnrollments));
 
         } else {
             alert(`The pre-requisite for the course ${courseId} has not been completed.`) //Do styling
