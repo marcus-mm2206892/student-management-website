@@ -234,11 +234,25 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(courseEnrollment);
 
             //      - Update the No of enrollement of the class
+            const updateClasses = allClasses.map(cls => {
+                if (cls.classId == classId) {
+                    return { ...cls, enrollmentActual: cls.enrollmentActual+1 }
+                } else {
+                    return cls;
+                }
+            });
+
+            console.log(updateClasses);
 
             //      - Save course enrollment and classes in the local storge
+            
+            localStorage.setItem("classes", JSON.stringify(updateClasses));
 
             allEnrollments.push(courseEnrollment);
             localStorage.setItem("courseEnrollments", JSON.stringify(allEnrollments));
+            alert(`Succesfully registered for class ${classId}, of course ${courseId}.`)
+
+            location.reload(); //Refresh the table
 
         } else {
             alert(`The pre-requisite for the course ${courseId} has not been completed.`) //Do styling
