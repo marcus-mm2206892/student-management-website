@@ -1,8 +1,3 @@
-// import fse from 'fs-extra';
-// import path from 'path';
-
-// courseEnrollementPath = path.join(process.cwd(), 'assets/data/courseEnrollments.json')
-
 document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById("searchBar");
     const tableHead = document.querySelector("#tableHead");
@@ -12,14 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInfo = document.getElementById("searchInfo");
 
     let allCourses = [];
-    let allStudents = [];
 
     //Fetching Students 
-    fetch("../assets/data/students.json")
-        .then(res => res.json())
-        .then(data => {
-            allStudents = data;
-        });
+    let allStudents = JSON.parse(localStorage.getItem("students"));
 
     // Fetch both JSON files
     Promise.all([
@@ -221,8 +211,9 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(completedCourses);
 
         const passedPreReq = preRequesites.every( course => completedCourses.includes(course));
+        console.log(passedPreReq)
 
-        //Need to add more classes to
+        //Need to add more classes
 
         //2. Check if the student has already enrolled in that course/section
 
@@ -239,19 +230,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             console.log(courseEnrollment);
 
-            //fse.writeJSON(courseEnrollementPath, courseEnrollment);
-
             //      - Update the No of enrollement of the class
 
-            //      - Save it in the a JSON file, to be retireved later
+            //      - Save course enrollment and classes in the local storge
+
+            // allEnrollments = JSON.parse(localStorage.courseEnrollments);
+            // allEnrollments.push(courseEnrollment);
+            // localStorage.courseEnrollments = JSON.stringify(allEnrollments);
 
 
         } else {
             alert(`The pre-requisite for the course ${courseId} has not been completed.`) //Do styling
         }
 
-
-
     }
     
 });
+

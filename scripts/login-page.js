@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    checkLocalStorage();
     // auto-login if "Remember Me" is enabled
     const rememberedUser = JSON.parse(localStorage.getItem("rememberedUser"));
     if (rememberedUser) {
@@ -16,6 +17,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+function checkLocalStorage(){
+    if (localStorage.courses 
+        && localStorage.classes 
+        && localStorage.students
+        && localStorage.users ) {
+            console.log("Data in Local storage exists")
+        } else {
+            console.log("Initializing local storage from JSON")
+            initializeLocalStorage();
+        }
+}
+
+function initializeLocalStorage() {
+    // Fetch all JSON files
+    Promise.all([
+        fetch("../assets/data/courses.json").then(res => res.json()),
+        fetch("../assets/data/classes.json").then(res => res.json()),
+        fetch("../assets/data/students.json").then(res => res.json()),
+        fetch("../assets/data/users.json").then(res => res.json()),
+    ])
+    .then(([courses, classes, students, users]) => {
+        localStorage.setItem("courses", JSON.stringify(courses));
+        localStorage.setItem("classes", JSON.stringify(classes));
+        localStorage.setItem("students", JSON.stringify(students));
+        localStorage.setItem("users", JSON.stringify(users));
+    })
+    .catch(error => {
+        console.error("Error fetching course/class data:", error);
+    });
+}
+
 
 
 function userVerification() {
