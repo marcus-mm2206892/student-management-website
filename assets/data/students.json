@@ -25,7 +25,7 @@
       "email": "mohdbashar@gmail.com",
       "college": "Engineering",
       "department": "Computer Science",
-      "completedCourses": ["CMPS151"]
+      "completedCourses": ["CMPS151", "CMPS205", "CMPS350"]
     },
     {
       "studentId": "S1005",

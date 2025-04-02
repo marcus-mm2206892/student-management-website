@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let allCourses = JSON.parse(localStorage.getItem("courses"));
     let allClasses = JSON.parse(localStorage.getItem("classes"));
-
-    //Fetching Students 
     let allStudents = JSON.parse(localStorage.getItem("students"));
     
     console.log("Courses Loaded:", allCourses);
@@ -191,6 +189,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    //When clicked, should display a modal about the class
+
+    document.addEventListener("click", function (event) {
+        if (event.target.closest(".course-row")) {
+            let row = event.target.closest(".course-row");
+           alert("Row clicked! ")  
+        }
+    });
+
+    
+
+
     function handleCourseRegistration(courseId, classId){
 
         const user = JSON.parse(localStorage.loggedInUser);
@@ -216,9 +226,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const passedPreReq = preRequesites.every( course => completedCourses.includes(course)); //Checking if pre-requisites are passed
         console.log(passedPreReq)
-
-        //Need to add more classes
-
         
         if (passedPreReq) {
             //3. Create courseEnrollment object
@@ -245,7 +252,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(updateClasses);
 
             //      - Save course enrollment and classes in the local storge
-            
             localStorage.setItem("classes", JSON.stringify(updateClasses));
 
             allEnrollments.push(courseEnrollment);
