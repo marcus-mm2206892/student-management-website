@@ -1,92 +1,1382 @@
 [
   {
     "classId": "1",
-    "courseId": "CMPS151",
+    "courseId": "CMPE364",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
-    "enrollmentActual": 40,
+    "enrollmentActual": 0,
     "enrollmentMaximum": 40,
-    "classStatus": "open"
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "8:00",
+      "endTime": "8:50"
+    }
   },
   {
     "classId": "2",
-    "courseId": "CMPS251",
+    "courseId": "CMPE364",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 12,
+    "campus": "Female",
+    "enrollmentActual": 0,
     "enrollmentMaximum": 40,
-    "classStatus": "open"
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "9:00",
+      "endTime": "9:50"
+    }
   },
   {
     "classId": "3",
-    "courseId": "CMPS205",
+    "courseId": "CMPE457",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "pending"
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "11:00",
+      "endTime": "11:50"
+    }
   },
   {
     "classId": "4",
-    "courseId": "MATH101",
+    "courseId": "CMPE457",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 20,
+    "campus": "Female",
+    "enrollmentActual": 0,
     "enrollmentMaximum": 45,
-    "classStatus": "open"
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "8:00",
+      "endTime": "9:15"
+    }
   },
   {
-    "classId": "5",
-    "courseId": "CMPE261",
+    "classId": "10",
+    "courseId": "CMPS 482",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 15,
+    "campus": "Female",
+    "enrollmentActual": 0,
     "enrollmentMaximum": 30,
-    "classStatus": "open"
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
   },
   {
-    "classId": "6",
-    "courseId": "CMPS350",
+    "classId": "11",
+    "courseId": "CMPS 482",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 38,
-    "enrollmentMaximum": 40,
-    "classStatus": "open"
-  },
-  {
-    "classId": "7",
-    "courseId": "CMPE263",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 35,
+    "campus": "Female",
+    "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "closed"
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
   },
   {
-    "classId": "8",
-    "courseId": "CMPS251",
+    "classId": "12",
+    "courseId": "CMPE 471",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
-    "enrollmentActual": 39,
-    "enrollmentMaximum": 40,
-    "classStatus": "open"
-  },
-  {
-    "classId": "9",
-    "courseId": "CMPS151",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 22,
+    "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open"
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "13",
+    "courseId": "CMPE 471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "14",
+    "courseId": "CMPS 497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "15",
+    "courseId": "CMPS 497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "16",
+    "courseId": "CMPE 457",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "17",
+    "courseId": "CMPE 457",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "18",
+    "courseId": "CMPS 497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "19",
+    "courseId": "CMPS 497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "20",
+    "courseId": "CMPE 483",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "21",
+    "courseId": "CMPE 483",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "22",
+    "courseId": "CMPS 485",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "23",
+    "courseId": "CMPS 485",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "24",
+    "courseId": "CMPS 380",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "25",
+    "courseId": "CMPS 380",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "26",
+    "courseId": "CMPS 405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "27",
+    "courseId": "CMPS 405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "28",
+    "courseId": "CMPS 497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "29",
+    "courseId": "CMPS 497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "30",
+    "courseId": "CMPE 471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "31",
+    "courseId": "CMPE 471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "32",
+    "courseId": "CMPS 360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "33",
+    "courseId": "CMPS 360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "34",
+    "courseId": "CMPS 350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "35",
+    "courseId": "CMPS 350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "36",
+    "courseId": "CMPS 405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "37",
+    "courseId": "CMPS 405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "38",
+    "courseId": "CMPS 405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "39",
+    "courseId": "CMPS 405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "40",
+    "courseId": "CMPS 350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "41",
+    "courseId": "CMPS 350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "42",
+    "courseId": "CMPS 350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "43",
+    "courseId": "CMPS 350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "44",
+    "courseId": "CMPS 350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "45",
+    "courseId": "CMPS 350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "46",
+    "courseId": "CMPE 364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "47",
+    "courseId": "CMPE 364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "48",
+    "courseId": "CMPE 364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "49",
+    "courseId": "CMPE 364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "50",
+    "courseId": "CMPE 364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "51",
+    "courseId": "CMPE 364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "52",
+    "courseId": "CMPE 476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "53",
+    "courseId": "CMPE 476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "54",
+    "courseId": "CMPS 405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "55",
+    "courseId": "CMPS 405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "56",
+    "courseId": "CMPE 457",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "57",
+    "courseId": "CMPE 457",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "58",
+    "courseId": "CMPE 476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "59",
+    "courseId": "CMPE 476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "60",
+    "courseId": "CMPE 457",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "61",
+    "courseId": "CMPE 457",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "62",
+    "courseId": "CMPS 497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "63",
+    "courseId": "CMPS 497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "64",
+    "courseId": "CMPE 471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "65",
+    "courseId": "CMPE 471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "66",
+    "courseId": "CMPE 476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "67",
+    "courseId": "CMPE 476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "68",
+    "courseId": "CMPE 476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "69",
+    "courseId": "CMPE 476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "70",
+    "courseId": "CMPE 476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "71",
+    "courseId": "CMPE 476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "72",
+    "courseId": "GENG 360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "73",
+    "courseId": "GENG 360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "74",
+    "courseId": "GENG 360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "75",
+    "courseId": "GENG 360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "76",
+    "courseId": "GENG 300",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "77",
+    "courseId": "GENG 300",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "78",
+    "courseId": "GENG 300",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "79",
+    "courseId": "GENG 300",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "80",
+    "courseId": "MATH 217",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "81",
+    "courseId": "MATH 217",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "82",
+    "courseId": "MATH 102",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "83",
+    "courseId": "MATH 102",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "84",
+    "courseId": "MATH 231",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "85",
+    "courseId": "MATH 231",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "86",
+    "courseId": "HIST 121",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "87",
+    "courseId": "HIST 121",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "88",
+    "courseId": "ENGL 202",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "89",
+    "courseId": "ENGL 202",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "90",
+    "courseId": "PHYS 193",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "91",
+    "courseId": "PHYS 193",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "92",
+    "courseId": "PHYS 194",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "93",
+    "courseId": "PHYS 194",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "94",
+    "courseId": "DAWA 111",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "95",
+    "courseId": "DAWA 111",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 40,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
+  },
+  {
+    "classId": "96",
+    "courseId": "MAGT 101",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "08:00",
+      "endTime": "09:15"
+    }
+  },
+  {
+    "classId": "97",
+    "courseId": "MAGT 101",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 30,
+    "classStatus": "pending",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "08:00",
+      "endTime": "08:50"
+    }
   }
 ]
