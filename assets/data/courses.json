@@ -114,13 +114,16 @@
     "subject": "Computer Science",
     "courseNumber": "251",
     "prerequisites": [
-
+      
     ],
     "majorsOffered": [
       "CMPS", "CMPE"
     ],
     "currentClasses": [
-
+      {
+        "courseId": "CMPS151",
+        "minGrade": "D"
+      }
     ],
     "description": "Fundamentals of object-oriented programming, object-oriented design, apply object oriented concepts such as abstraction, encapsulation, composition, inheritance, polymorphism, and interfaces. Graphical user interface and event-driven programming; exception handling; additional object-oriented features. The laboratory provides practical object-oriented programming experience.",
     "courseImage": "https://files.realpython.com/media/pcl-Class-Concepts-Object-Oriented-Programming-in-Python_Watermarked.cec519e31003.jpg"
@@ -150,7 +153,10 @@
     "subject": "Physics",
     "courseNumber": "192",
     "prerequisites": [
-      "PHYS191"
+      {
+        "courseId": "PHYS191",
+        "minGrade": "D"
+      }
     ],
     "majorsOffered": [
       "CMPS", "CMPE"
@@ -168,7 +174,10 @@
     "subject": "Mathematics",
     "courseNumber": "231",
     "prerequisites": [
-      "MATH101"
+      {
+        "courseId": "MATH101",
+        "minGrade": "D"
+      }
     ],
     "majorsOffered": [
       "CMPS", "CMPE"
@@ -186,7 +195,10 @@
     "subject": "Mathematics",
     "courseNumber": "102",
     "prerequisites": [
-      "MATH101"
+      {
+        "courseId": "MATH101",
+        "minGrade": "D"
+      }
     ],
     "majorsOffered": [
       "CMPS", "CMPE"
@@ -204,17 +216,18 @@
     "subject": "English",
     "courseNumber": "203",
     "prerequisites": [
-      "ENGL202"
+      {
+        "courseId": "ENGL202",
+        "minGrade": "D"
+      }
     ],
     "majorsOffered": [
       "CMPS", "CMPE"
     ],
-    "currentClasses": [
-
-    ],
+    "currentClasses": [],
     "description": "English 203 is an advanced academic writing course which provides an opportunity for students to learn and practice the skills needed for a guided university-level academic paper related to their field of study. The course emphasizes the development of academic writing skills as well as the ability to read and think critically. Students will learn to use the library and appropriate online resources to find and evaluate sources to inform, develop and support their ideas in term paper writing.",
     "courseImage": "https://spunout.ie/wp-content/uploads/2023/09/public_speaking-2.jpg"
-  },
+  },  
   {
     "courseId": "GENG107",
     "courseName": "Engineering Skills and Ethics",
