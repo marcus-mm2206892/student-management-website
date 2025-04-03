@@ -233,6 +233,10 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.field-div:last-child {
+    padding-bottom: 3rem;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -246,9 +250,6 @@ input[type=number] {
     }
     .field-div.schedule {
         flex-direction: column;
-    }
-    .field-div:last-child {
-        padding-bottom: 3rem;
     }
 }
 
