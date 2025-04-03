@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function selectOption(option) {
         document.querySelector("#selectedSubject").textContent = option;
+        document.querySelector("#selectedSubject").setAttribute("data-selected",true);
 
         document.querySelectorAll(".content-section").forEach(section => {
             section.classList.remove("active");
