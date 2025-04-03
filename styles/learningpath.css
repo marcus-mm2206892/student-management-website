@@ -75,7 +75,7 @@ body {
 
 .category {
     flex: 1;
-    min-width: 345px;
+    min-width: 400px;
     max-width: 25%;
     height: 100%;
     display: flex;

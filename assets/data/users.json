@@ -1,9 +1,9 @@
 [
   {
-    "email": "yousef.al-mansoori@qu.com",
-    "firstName": "Yousef",
-    "lastName": "Al-Mansoori",
-    "password": "yousef123",
+    "email": "marcus.monteiro@qu.com",
+    "firstName": "Marcus",
+    "lastName": "Monteiro",
+    "password": "marcus123",
     "role": "student",
     "gender": "male",
     "themePreference": "system",
