@@ -5,10 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
 
     const learningContainer = document.querySelector(".category.completed .cards-container");
+    const inProgressContainer = document.querySelector(".category.in-progress .cards-container");
 
     let allCourses = JSON.parse(localStorage.getItem("courses"));
     let allClasses = JSON.parse(localStorage.getItem("classes"));
     let allStudents = JSON.parse(localStorage.getItem("students"));
+    const allEnrollments = JSON.parse(localStorage.getItem("courseEnrollments"));
+
+    const user = JSON.parse(localStorage.loggedInUser);
+    const student = allStudents.find( s => s.email == user.email )
+    console.log(student);
 
     function updateVisibility() {
         if (window.innerWidth > 768) {
@@ -46,11 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //2. Fetch the completed coursess courses from Local storage
 
-        const user = JSON.parse(localStorage.loggedInUser);
-        const student = allStudents.find( s => s.email == user.email)
-        console.log(student);
-        const allEnrollments = JSON.parse(localStorage.getItem("courseEnrollments"));
-
         const courseIds = student.completedCourses; 
         console.log(courseIds);
 
@@ -67,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             out = ``
-            courseIds.forEach(c => {
+            completedCourses.forEach(c => {
                 out += courseCard(c);
             })
 
@@ -75,17 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
             learningContainer.innerHTML = out;
 
         } catch {
-
+            //Display error/empty message in the 'Completed' column
         }
 
-        
-
-        //3. Create a template
-
-        //4. Inject the template inside the div
+        //Display the Grades of completed courses
 
     }
 
+    //3. Create a course card template
     function courseCard(course) {
         return `
             <div class="course-card">
@@ -98,11 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="course-info">
                     <div class="course-header">
-                        <span class="course-tag">CMPS 303</span>
+                        <span class="course-tag">${course.courseId}</span>
                         <span class="semester">Fall 2025</span>
                     </div>
-                    <h3>Data Structures</h3>
-                    <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
+                    <h3>${course.courseName}</h3>
+                    <p class="course-subtitle">${course.description}</p>
                     <div class="course-tags">
                         <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
                         <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
@@ -113,5 +111,39 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
+    function renderInProgessCourses(){
+        console.log(allEnrollments)
+        inProgressIDs = [];
+        allEnrollments.forEach(enr => {
+            inProgressIDs.push(enr.courseId);
+        })
+        console.log(inProgressIDs)
+
+        inProgressCourses = []
+
+        inProgressIDs.forEach(c => {  //Initializing course objects
+            let crs = allCourses.find( cr => cr.courseId == c);
+            inProgressCourses.push(crs)
+        });
+
+        console.log(inProgressCourses)
+
+        try {
+            out = ``
+            inProgressCourses.forEach(c => {
+                out += courseCard(c);
+            })
+
+            //Inject the courses inside the div
+            inProgressContainer.innerHTML = out;
+
+        } catch {
+            //Display error/empty message in the 'Completed' column
+        }
+
+    }
+
     renderCompletedCourses();
+
+    renderInProgessCourses()
 });
