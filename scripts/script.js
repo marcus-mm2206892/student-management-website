@@ -3,20 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
     
     checkLoginStatus(); //check if user logged in
 
-    console.log("Scripts loaded");
+
 });
 
 function checkLoginStatus(){
     const user = JSON.parse(localStorage.getItem("loggedInUser"));
-    console.log(user);
+    
     if (!user) {
         // Redirect to login page if not logged in
         alert("Not logged in. Redirecting to login page.");
         window.location.href = "index.html";
     }
+    console.log("Hello " + user.firstName +"!");
 
 }
-
-// export function fetchCourses(){
-
-// }

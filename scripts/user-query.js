@@ -5,6 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchQueryText = document.getElementById("searchQueryText");
     const resultsCount = document.getElementById("resultsCount");
 
+    document.querySelectorAll(".fa-plus").forEach(button =>{
+        //redirects to register when plus button pressed
+        button.addEventListener("click",function(event){
+            event.stopPropagation();
+            window.location.href = "../html/register-course.html";
+        })
+    })
     // // Simulated search term (replace with actual query parameter later)
     // const query = "Mobile";
     // searchQueryText.innerHTML = query;
