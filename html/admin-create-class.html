@@ -45,16 +45,10 @@
                         </span>                    
                         <div class="dropdown class-dropdown">
                             <div class="dropdown-toggle">
-                                <span class="selectedOption">Select Course</span>
+                                <span class="selectedOption" id="selectedCourse">Select Course</span>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
-                            <div class="dropdown-menu">
-                                <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>CMPS 350</div>
-                                <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>MATH 100</div>
-                                <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>GENG 200</div>
-                                <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>GENG 329</div>
-                                <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>CMPS 321</div>
-                                <div onclick="selectOption('Course')"><i class="fas fa-calendar-alt"></i>CMPS 260</div>
+                            <div class="dropdown-menu" id="coursesDropdown">
                             </div>
                         </div>
                     </div>
@@ -69,7 +63,7 @@
                     <label for="instructors">Instructor(s)</label>
                     <div class="dropdown instructor-dropdown">
                       <div class="dropdown-toggle">
-                        <span class="selectedOption">Select Instructor(s)</span>
+                        <span class="selectedOption" id="selectedInstructor">Select Instructor(s)</span>
                         <i class="fas fa-chevron-down"></i>
                       </div>
                       <div class="dropdown-menu" id="instructorDropdownMenu">
@@ -138,12 +132,12 @@
                         </span>                    
                         <div class="dropdown class-dropdown">
                             <div class="dropdown-toggle">
-                                <span class="selectedOption">Select Campus</span>
+                                <span class="selectedOption" id="selectedCampus">Select Campus</span>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
-                            <div class="dropdown-menu">
-                                <div onclick="selectOption('Campus')"><i class="fas fa-calendar-alt"></i>Sunday, Tuesday, Thursday</div>
-                                <div onclick="selectOption('Campus')"><i class="fas fa-calendar-alt"></i>Monday, Wednesday</div>
+                            <div class="dropdown-menu" id="campusDropdownMenu">
+                                <div onclick="selectOptionCampus('Male')">Male</div>
+                                <div onclick="selectOptionCampus('Female')">Female</div>
                             </div>
                         </div>
                     </div>
@@ -166,6 +160,7 @@
     <script src="../scripts/dark-light-elements.js"></script>
     <script src="../scripts/footer.js"></script>
     <script src="../scripts/scroll-up.js"></script>
+    <script src="../scripts/admin-create-class.js"></script>
     
 </body>
 </html>

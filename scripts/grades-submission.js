@@ -47,6 +47,18 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
+  document.addEventListener("scroll", function () {
+    document.querySelectorAll(".dropdown-menu").forEach(menu => {
+        menu.style.display = "none";
+    });
+});
+
+    document.querySelector("#students").addEventListener("scroll", function () {
+        document.querySelectorAll(".dropdown-menu").forEach(menu => {
+            menu.style.display = "none";
+        });
+    });
+
   function adjustLayout() {
       let teachingDiv = document.querySelector(".classes.teaching");
       let selectedDiv = document.querySelector(".classes.selected");

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Class | UniTrack</title>
+    <title>Create Course | UniTrack</title>
     
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -41,7 +41,7 @@
                     <label for="subject">Subject</label>
                     <div class="dropdown class-dropdown">
                     <div class="dropdown-toggle">
-                        <span class="selectedOption">Select Subject</span>
+                        <span class="selectedOption" id="selectedSubject">Select Subject</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="dropdown-menu" id="subjectDropdown">
@@ -77,9 +77,6 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="dropdown-menu" id="prereqDropdown">
-                        <div onclick="addTag(this, 'prereq')">CMPS 205</div>
-                        <div onclick="addTag(this, 'prereq')">CMPE 300</div>
-                        <div onclick="addTag(this, 'prereq')">CMPS 101</div>
                     </div>
                     </div>
                     <div class="tag-container" id="selectedPrereqs"></div>
