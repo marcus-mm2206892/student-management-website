@@ -6,11 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const learningContainer = document.querySelector(".category.completed .cards-container");
     const inProgressContainer = document.querySelector(".category.in-progress .cards-container");
+    const pendingContainer = document.querySelector(".category.pending .cards-container");
 
     let allCourses = JSON.parse(localStorage.getItem("courses"));
     let allClasses = JSON.parse(localStorage.getItem("classes"));
     let allStudents = JSON.parse(localStorage.getItem("students"));
     const allEnrollments = JSON.parse(localStorage.getItem("courseEnrollments"));
+    const allMajors = JSON.parse(localStorage.getItem("majors"));
 
     const user = JSON.parse(localStorage.loggedInUser);
     const student = allStudents.find( s => s.email == user.email )
@@ -112,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderInProgessCourses(){
-        console.log(allEnrollments)
+        // console.log(allEnrollments)
         inProgressIDs = [];
         allEnrollments.forEach(enr => {
             inProgressIDs.push(enr.courseId);
@@ -144,10 +146,50 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderPendingCourses(){
+        const major = allMajors.find( m => m.majorName == student.department)  //The department attribute of the students is infered as major
+
+        const inprogress = [];
+        allEnrollments.forEach(enr => {
+            inprogress.push(enr.courseId);
+        })
+        console.log(inProgressIDs)
+
+        const required = major.requiredCourses;
+        const completed = student.completedCourses; 
+
+
+        console.log(required)
+        console.log(completed)
+
+        const difference1 = required.filter(item => !completed.includes(item));
+        const difference2 = difference1.filter(item => !inprogress.includes(item));
+
+
+        pendingCourses = []
+        difference2.forEach( crs => {
+            pendingCourses.push(allCourses.find( c => c.courseId == crs))
+        })
+
+        console.log(pendingCourses)
+
+        try {
+            out = ``
+            pendingCourses.forEach(c => {
+                out += courseCard(c);
+            })
+
+            //Inject the courses inside the div
+            pendingContainer.innerHTML = out;
+
+        } catch {
+            //Display error/empty message in the 'Pending' column
+        }
         
     }
 
     renderCompletedCourses();
 
     renderInProgessCourses()
+
+    renderPendingCourses()
 });
