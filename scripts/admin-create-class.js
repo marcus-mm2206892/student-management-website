@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(instructorNames);
 
         document.querySelector("#selectedInstructor").textContent = "Select Instructor(s)";
+        document.querySelector("#selectedInstructor").setAttribute("data-selected",false);
         
         document.querySelector("#instructorDropdownMenu").innerHTML = instructorNames.map(instructor =>
             `<div onclick="selectOptionInstructor('${instructor}')">${instructor}</div>`
@@ -55,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function selectOptionInstructor(option) {
         document.querySelector("#selectedInstructor").textContent = option;
+        document.querySelector("#selectedInstructor").setAttribute("data-selected",true);
 
         document.querySelectorAll(".content-section").forEach(section => {
             section.classList.remove("active");
@@ -80,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function selectOptionSchedType(option) {
         document.querySelector("#selectedSchedType").textContent = option;
+        document.querySelector("#selectedSchedType").setAttribute("data-selected",true);
 
         document.querySelectorAll(".content-section").forEach(section => {
             section.classList.remove("active");
@@ -98,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function selectStartTime(option) {
         document.querySelector("#selectedStartTime").textContent = option;
+        document.querySelector("#selectedStartTime").setAttribute("data-selected",true);
 
         document.querySelectorAll(".content-section").forEach(section => {
             section.classList.remove("active");
@@ -108,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function selectEndTime(option) {
         document.querySelector("#selectedEndTime").textContent = option;
+        document.querySelector("#selectedEndTime").setAttribute("data-selected",true);
 
         document.querySelectorAll(".content-section").forEach(section => {
             section.classList.remove("active");
@@ -118,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function selectOptionCampus(option) {
         document.querySelector("#selectedCampus").textContent = option;
+        document.querySelector("#selectedCampus").setAttribute("data-selected",true);
 
         document.querySelectorAll(".content-section").forEach(section => {
             section.classList.remove("active");
