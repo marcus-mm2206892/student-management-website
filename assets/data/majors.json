@@ -1,6 +1,6 @@
 [
   {
-    "majorId": "MJR1",
+    "majorId": "CMPS",
     "majorName": "Computer Science",
     "college": "Engineering",
     "department": "Computer Science",
@@ -41,7 +41,7 @@
     ]
   },
   {
-    "majorId": "MJR2",
+    "majorId": "CMPE",
     "majorName": "Computer Engineering",
     "college": "Engineering",
     "department": "Computer Engineering",
