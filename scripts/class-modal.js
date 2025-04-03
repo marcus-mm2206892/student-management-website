@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <div class="content-info-div">
                                 <h3 class="content-info-attribute">Course Syllabus</h3>
                                 <p class="content-info-paragraph attachment">
-                                    <i class="fa-solid fa-file-pdf"></i> CMPS-350-Syllabus.pdf
+                                    <i class="fa-solid fa-file-pdf"></i> Course-Syllabus.pdf
                                 </p>
                             </div>
                             
@@ -141,13 +141,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                         
                             <div class="content-info-div class-schedule-container">
-                                <div class="class-location">
-                                    <h3 class="content-info-attribute">Class Location</h3>
-                                    <div class="location">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                        <div class="location-info">
+                                <div class="class-time">
+                                    <h3 class="content-info-attribute">Class Timings</h3>
+                                    <div class="time">
+                                        <i class="fa-solid fa-clock"></i>
+                                        <div class="time-info">
                                             <p class="time">08:00 AM - 08:50 AM</p>
-                                            <p class="location-text">H07 - College of Engineering | Room C105</p>
                                         </div>
                                     </div>
                                 </div>
