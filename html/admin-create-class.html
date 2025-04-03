@@ -132,12 +132,12 @@
                         </span>                    
                         <div class="dropdown class-dropdown">
                             <div class="dropdown-toggle">
-                                <span class="selectedOption">Select Campus</span>
+                                <span class="selectedOption" id="selectedCampus">Select Campus</span>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
-                            <div class="dropdown-menu">
-                                <div onclick="selectOption('Campus')"><i class="fas fa-calendar-alt"></i>Sunday, Tuesday, Thursday</div>
-                                <div onclick="selectOption('Campus')"><i class="fas fa-calendar-alt"></i>Monday, Wednesday</div>
+                            <div class="dropdown-menu" id="campusDropdownMenu">
+                                <div onclick="selectOptionCampus('Male')">Male</div>
+                                <div onclick="selectOptionCampus('Female')">Female</div>
                             </div>
                         </div>
                     </div>

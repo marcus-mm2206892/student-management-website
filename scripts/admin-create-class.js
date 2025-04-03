@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let courseForm=document.querySelector('#create-course-form');
+    let classForm=document.querySelector('#create-class-form');
 
     // Fetch both JSON files
     Promise.all([
@@ -9,19 +9,38 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(([instructors, courses]) => {
         console.log("Instructors Loaded:", instructors);
         console.log("Courses Loaded:", courses);
-  
-        document.querySelector("#coursesDropdown").innerHTML = courses.map(course =>
-            `<div onclick="selectOptionCourse('${course.courseId}')"><i class="fas fa-calendar-alt"></i>${course.courseId}</div>`
-        ).join(' ');
 
-        document.querySelector("#instructorDropdownMenu").innerHTML = instructors.map(instructor =>
-            `<div onclick="selectOptionInstructor('${instructor.instructorId}')">${instructor.instructorId}</div>`
-        ).join(' ');
+        localStorage.setItem("instructors", JSON.stringify(instructors));
+        localStorage.setItem("courses", JSON.stringify(courses));
 
     })
 
+    let instructorsList = localStorage.getItem("instructors") ? JSON.parse(localStorage.getItem("instructors")) : [];
+        let coursesList = localStorage.getItem("courses") ? JSON.parse(localStorage.getItem("courses")) : [];
+  
+        document.querySelector("#coursesDropdown").innerHTML = coursesList.map(course =>
+            `<div onclick="selectOptionCourse('${course.courseId}')"><i class="fas fa-calendar-alt"></i>${course.courseId}</div>`
+        ).join(' ');
+
+
     function selectOptionCourse(option) {
         document.querySelector("#selectedCourse").textContent = option;
+
+        let wantedCourse = coursesList.find(c => c.courseId == option);
+        let subject = wantedCourse.subject;
+
+        document.querySelectorAll(".content-section").forEach(section => {
+            section.classList.remove("active");
+        });
+
+        document.querySelector("#instructorDropdownMenu").innerHTML = instructorsList.filter(i => i.department == subject).map(instructor =>
+            `<div onclick="selectOptionInstructor('${instructor.instructorId}')">${instructor.instructorId}</div>`
+        ).join(' ');
+        document.getElementById(option).classList.add("active");
+    }
+
+    function selectOptionInstructor(option) {
+        document.querySelector("#selectedInstructor").textContent = option;
 
         document.querySelectorAll(".content-section").forEach(section => {
             section.classList.remove("active");
@@ -30,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById(option).classList.add("active");
     }
 
-    function selectOptionInstructor(option) {
-        document.querySelector("#selectedInstructor").textContent = option;
+    function selectOptionCampus(option) {
+        document.querySelector("#selectedCampus").textContent = option;
 
         document.querySelectorAll(".content-section").forEach(section => {
             section.classList.remove("active");
@@ -68,4 +87,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.selectOptionCourse = selectOptionCourse;
     window.selectOptionInstructor = selectOptionInstructor;
+    window.selectOptionCampus = selectOptionCampus;
  })
