@@ -89,12 +89,12 @@
                             </span>                    
                             <div class="dropdown class-dropdown">
                                 <div class="dropdown-toggle">
-                                    <span class="selectedOption">Select Schedule Type</span>
+                                    <span class="selectedOption" id="selectedSchedType">Select Schedule Type</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </div>
                                 <div class="dropdown-menu">
-                                    <div onclick="selectOption('Schedule')"><i class="fas fa-calendar-alt"></i>Sunday, Tuesday, Thursday</div>
-                                    <div onclick="selectOption('Schedule')"><i class="fas fa-calendar-alt"></i>Monday, Wednesday</div>
+                                    <div onclick="selectOptionSchedType('Sunday, Tuesday, Thursday')"><i class="fas fa-calendar-alt"></i>Sunday, Tuesday, Thursday</div>
+                                    <div onclick="selectOption('Monday, Wednesday')"><i class="fas fa-calendar-alt"></i>Monday, Wednesday</div>
                                 </div>
                             </div>
                         </div>
@@ -103,10 +103,10 @@
                         <label for="timeDropdown">Start Time</label>
                         <div class="dropdown time-dropdown">
                           <div class="dropdown-toggle">
-                            <span class="selectedOption">Select Time</span>
+                            <span class="selectedOption" id="selectedStartTime">Select Time</span>
                             <i class="fas fa-chevron-down"></i>
                           </div>
-                          <div class="dropdown-menu" id="timeDropdownMenu">
+                          <div class="dropdown-menu" id="startTimeDropdownMenu">
                             <!-- JavaScript will populate this -->
                           </div>
                         </div>   
@@ -115,10 +115,10 @@
                         <label for="timeDropdown">End Time</label>
                         <div class="dropdown time-dropdown">
                           <div class="dropdown-toggle">
-                            <span class="selectedOption">Select Time</span>
+                            <span class="selectedOption" id="selectedEndTime">Select Time</span>
                             <i class="fas fa-chevron-down"></i>
                           </div>
-                          <div class="dropdown-menu" id="timeDropdownMenu">
+                          <div class="dropdown-menu" id="endTimeDropdownMenu">
                             <!-- JavaScript will populate this -->
                           </div>
                         </div>   
