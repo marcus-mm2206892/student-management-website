@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", function (event) {
         if (event.target.closest(".course-row")) {
             let row = event.target.closest(".course-row");
-           alert("Row clicked! ")  
+        //    alert("Row clicked! ")  
         }
     });
 

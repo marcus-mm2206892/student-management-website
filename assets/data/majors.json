@@ -1,30 +1,31 @@
 [
     {
-        "major": "Computer Science"
+      "majorId": "1",
+      "majorName": "Computer Science",
+      "college": "Engineering",
+      "department": "Computer Science",
+      "requiredCourses": ["CMPS151", "CMPS251", "CMPS205", "CMPS350", "CMPE263"]
     },
     {
-        "major": "Software Engineering"
+      "majorId": "2",
+      "majorName": "Computer Engineering",
+      "college": "Engineering",
+      "department": "Computer Engineering",
+      "requiredCourses": ["CMPS151", "CMPS251", "CMPS205", "CMPS350", "CMPE263", "CMPE261"]
     },
     {
-        "major": "Information Systems"
+      "majorId": "3",
+      "majorName": "Electrical Engineering",
+      "college": "Engineering",
+      "department": "Electrical Engineering",
+      "requiredCourses": []
     },
     {
-        "major": "Information Technology"
-    },
-    {
-        "major": "Electrical Engineering"
-    },
-    {
-        "major": "Mechanical Engineering"
-    },
-    {
-        "major": "Civil Engineering"
-    },
-    {
-        "major": "Chemical Engineering"
-    },
-    {
-        "major": "General Engineering"
+      "majorId": "4",
+      "majorName": "Mechanical Engineering",
+      "college": "Engineering",
+      "department": "Mechanical Engineering",
+      "requiredCourses": []
     }
-
-]
+  ]
+  

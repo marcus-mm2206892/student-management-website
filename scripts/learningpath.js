@@ -143,6 +143,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    function renderPendingCourses(){
+        
+    }
+
     renderCompletedCourses();
 
     renderInProgessCourses()
