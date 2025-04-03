@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let instructorNames = mappedUsers.map(user => `${user.firstName} ${user.lastName}`);
         console.log(instructorNames);
+
+        document.querySelector("#selectedInstructor").textContent = "Select Instructor(s)";
         
         document.querySelector("#instructorDropdownMenu").innerHTML = instructorNames.map(instructor =>
             `<div onclick="selectOptionInstructor('${instructor}')">${instructor}</div>`
