@@ -50,7 +50,7 @@
       "endTime": "09:50"
     },
     "instructors": [
-      "ahmed.bedawy@qu.com"
+      "ahmed.badawy@qu.com"
     ]
   },
   {
@@ -131,7 +131,7 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["fady.elhanal@gmail.com"]
+    "instructors": ["fady.elnahal@qu.com"]
   },
   {
     "classId": "25509",
@@ -307,7 +307,7 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["abdelkarrim.erradi@qu.com", "georges.younes@qu.com"]
+    "instructors": ["abdelkarim.erradi@qu.com", "georges.younes@qu.com"]
   },
   {
     "classId": "25520",
@@ -403,7 +403,7 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["rania.ibrahim@gmail.com"]
+    "instructors": ["rania.ibrahim@qu.com"]
   },
   {
     "classId": "25526",
@@ -419,7 +419,7 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["rania.ibrahim@gmail.com"]
+    "instructors": ["rania.ibrahim@qu.com"]
   },
   {
     "classId": "25527",
@@ -867,7 +867,7 @@
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["ahmed.bedawy@qu.com"]
+    "instructors": ["ahmed.badawy@qu.com"]
   },
   {
     "classId": "25555",
@@ -883,7 +883,7 @@
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["fady.elhanal@gmail.com", "mohamed.al-meer@gmail.com"]
+    "instructors": ["fady.elnahal@qu.com", "mohamed.al-meer@qu.com"]
   },
   {
     "classId": "25556",
@@ -915,7 +915,7 @@
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["abdelkarrim.erradi@qu.com", "abdullahi.hassen@qu.com"]
+    "instructors": ["abdelkarim.erradi@qu.com", "abdullahi.hassen@qu.com"]
   },
   {
     "classId": "25558",
@@ -1011,7 +1011,7 @@
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["abdelkarrim.erradi@qu.com","abdullahi.hassen@qu.com"]
+    "instructors": ["abdelkarim.erradi@qu.com","abdullahi.hassen@qu.com"]
   },
   {
     "classId": "25564",
@@ -1331,7 +1331,7 @@
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["fady.elhanal@gmail.com", "leila.gastli@qu.com"]
+    "instructors": ["fady.elnahal@qu.com", "leila.gastli@qu.com"]
   },
   {
     "classId": "25584",
@@ -1475,7 +1475,7 @@
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["ahmed.bedawy@qu.com"]
+    "instructors": ["ahmed.badawy@qu.com"]
   },
   {
     "classId": "25593",
