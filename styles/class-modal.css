@@ -524,14 +524,14 @@ body {
 }
 
 .class-schedule,
-.class-location {
+.class-time {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
 .schedule,
-.location {
+.time {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -544,14 +544,14 @@ body {
 }
 
 .schedule i,
-.location i {
+.time i {
   font-size: 1.2rem;
   color: var(--clr-primary-a0);
   padding-right: 0.5rem;
 }
 
 .schedule-info,
-.location-info {
+.time-info {
   display: flex;
   flex-direction: column;
 }
@@ -592,7 +592,7 @@ body {
   color: var(--clr-contrast-a0);
 }
 
-.location-text {
+.time-text {
   font-size: 0.8rem;
   color: var(--clr-contrast-a40);
 }

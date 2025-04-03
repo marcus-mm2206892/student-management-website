@@ -1,1382 +1,1736 @@
 [
   {
-    "classId": "25500",
-    "courseId": "CMPE364",
+    "classId": "25501",
+    "courseId": "CMPS482",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
     "classStatus": "open",
     "schedule": {
       "scheduleType": "STT",
-      "startTime": "8:00",
-      "endTime": "8:50"
-    }
-  },
-  {
-    "classId": "25501",
-    "courseId": "CMPE364",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "9:00",
-      "endTime": "9:50"
-    }
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": [
+      "qutaibah.malluhi@qu.com"
+    ]
   },
   {
     "classId": "25502",
-    "courseId": "CMPE457",
+    "courseId": "CMPS482",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
+    "campus": "Female",
+    "enrollmentActual": 5,
     "enrollmentMaximum": 35,
-    "classStatus": "pending",
+    "classStatus": "open",
     "schedule": {
       "scheduleType": "STT",
-      "startTime": "11:00",
-      "endTime": "11:50"
-    }
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": [
+      "qutaibah.malluhi@qu.com"
+    ]
   },
   {
     "classId": "25503",
+    "courseId": "CMPE471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": [
+      "ahmed.badawy@qu.com"
+    ]
+  },
+  {
+    "classId": "25504",
+    "courseId": "CMPE471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["tamer.elsayed@qu.com"]
+  },
+  {
+    "classId": "25505",
+    "courseId": "CMPS497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 6,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["salem.saeed@qu.com"]
+  },
+  {
+    "classId": "25506",
+    "courseId": "CMPS497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["tamer.elsayed@qu.com"]
+  },
+  {
+    "classId": "25507",
+    "courseId": "CMPE457",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["hela.chamkia@qu.com"]
+  },
+  {
+    "classId": "25508",
+    "courseId": "CMPE457",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["fady.elnahal@qu.com"]
+  },
+  {
+    "classId": "25509",
+    "courseId": "CMPE483",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["uvais.qidwai@qu.com"]
+  },
+  {
+    "classId": "25510",
+    "courseId": "CMPE483",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["uvais.qidwai@qu.com"]
+  },
+  {
+    "classId": "25511",
+    "courseId": "CMPS485",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["ihab.elaf@qu.com"]
+  },
+  {
+    "classId": "25512",
+    "courseId": "CMPS485",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["ihab.elaf@qu.com"]
+  },
+  {
+    "classId": "25513",
+    "courseId": "CMPS380",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["khaled.khan@qu.com"]
+  },
+  {
+    "classId": "25514",
+    "courseId": "CMPS380",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["khaled.khan@qu.com"]
+  },
+  {
+    "classId": "25515",
+    "courseId": "CMPS405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["aws.el-din@qu.com", "moutaz.saleh@qu.com"]
+  },
+  {
+    "classId": "25516",
+    "courseId": "CMPS405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 8,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["aws.el-din@qu.com", "moutaz.saleh@qu.com"]
+  },
+  {
+    "classId": "25517",
+    "courseId": "CMPS360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 8,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["tamer.elsayed@qu.com"]
+  },
+  {
+    "classId": "25518",
+    "courseId": "CMPS360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 8,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["tamer.elsayed@qu.com"]
+  },
+  {
+    "classId": "25519",
+    "courseId": "CMPS350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 5,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["abdelkarim.erradi@qu.com", "georges.younes@qu.com"]
+  },
+  {
+    "classId": "25520",
+    "courseId": "CMPS350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["mahmoud.barhamgi@qu.com", "georges.younes@qu.com"]
+  },
+  {
+    "classId": "25521",
+    "courseId": "CMPE364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["amal.al-masri@qu.com", "amelle.bedair@qu.com"]
+  },
+  {
+    "classId": "25522",
+    "courseId": "CMPE364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["khalid.abualsaud@qu.com", "amelle.bedair@qu.com"]
+  },
+  {
+    "classId": "25523",
+    "courseId": "CMPE476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["amelle.bedair@qu.com", "naveed.nawaz@qu.com"]
+  },
+  {
+    "classId": "25524",
+    "courseId": "CMPE476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["amelle.bedair@qu.com", "leila.gastli@qu.com"]
+  },
+  {
+    "classId": "25525",
+    "courseId": "GENG360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["rania.ibrahim@qu.com"]
+  },
+  {
+    "classId": "25526",
+    "courseId": "GENG360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["rania.ibrahim@qu.com"]
+  },
+  {
+    "classId": "25527",
+    "courseId": "GENG300",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["kim.donghyun@qu.com", "ahmed.ghannoum@qu.com"]
+  },
+  {
+    "classId": "25528",
+    "courseId": "GENG300",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["kim.donghyun@qu.com", "evangelos.plevris@qu.com"]
+  },
+  {
+    "classId": "25529",
+    "courseId": "MATH217",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["mohamed.ben.haj.rhouma@qu.com"]
+  },
+  {
+    "classId": "25530",
+    "courseId": "MATH217",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["mohamed.ben.haj.rhouma@qu.com"]
+  },
+  {
+    "classId": "25531",
+    "courseId": "MATH102",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["mustafa.el-sanfaz@qu.com"]
+  },
+  {
+    "classId": "25532",
+    "courseId": "MATH102",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["mustafa.el-sanfaz@qu.com"]
+  },
+  {
+    "classId": "25533",
+    "courseId": "MATH231",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["hussein.al-qassem@qu.com"]
+  },
+  {
+    "classId": "25534",
+    "courseId": "MATH231",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["hussein.al-qassem@qu.com"]
+  },
+  {
+    "classId": "25535",
+    "courseId": "HIST121",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["mohamed.tarig@qu.com"]
+  },
+  {
+    "classId": "25536",
+    "courseId": "HIST121",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["mohamed.tarig@qu.com"]
+  },
+  {
+    "classId": "25537",
+    "courseId": "ENGL202",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["fabia.grisalez@qu.com"]
+  },
+  {
+    "classId": "25538",
+    "courseId": "ENGL202",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["fabia.grisalez@qu.com"]
+  },
+  {
+    "classId": "25539",
+    "courseId": "PHYS193",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["hocine.merabet@qu.com"]
+  },
+  {
+    "classId": "25540",
+    "courseId": "PHYS193",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["hocine.merabet@qu.com"]
+  },
+  {
+    "classId": "25541",
+    "courseId": "PHYS194",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["essam.yasin@qu.com"]
+  },
+  {
+    "classId": "25542",
+    "courseId": "PHYS194",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["essam.yasin@qu.com"]
+  },
+  {
+    "classId": "25543",
+    "courseId": "DAWA111",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 7,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["lazhar.chaoiki@qu.com"]
+  },
+  {
+    "classId": "25544",
+    "courseId": "DAWA111",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 5,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["lazhar.chaoiki@qu.com"]
+  },
+  {
+    "classId": "25545",
+    "courseId": "MAGT101",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["dunia.ponce@qu.com"]
+  },
+  {
+    "classId": "25546",
+    "courseId": "MAGT101",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "09:00",
+      "endTime": "09:50"
+    },
+    "instructors": ["dunia.ponce@qu.com"]
+  },
+  {
+    "classId": "25547",
+    "courseId": "CMPS360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["tamer.elsayed@qu.com"]
+  },
+  {
+    "classId": "25548",
+    "courseId": "CMPS482",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["qutaibah.malluhi@qu.com"]
+  },
+  {
+    "classId": "25549",
+    "courseId": "CMPE471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["tamer.elsayed@qu.com"]
+  },
+  {
+    "classId": "25550",
+    "courseId": "CMPE483",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["uvais.qidwai@qu.com"]
+  },
+  {
+    "classId": "25551",
+    "courseId": "CMPS485",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["ihab.elaf@qu.com"]
+  },
+  {
+    "classId": "25552",
+    "courseId": "CMPS380",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["khaled.khan@qu.com"]
+  },
+  {
+    "classId": "25553",
+    "courseId": "CMPE483",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["uvais.qidwai@qu.com"]
+  },
+  {
+    "classId": "25554",
+    "courseId": "CMPE471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["ahmed.badawy@qu.com"]
+  },
+  {
+    "classId": "25555",
+    "courseId": "CMPE476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["fady.elnahal@qu.com", "mohamed.al-meer@qu.com"]
+  },
+  {
+    "classId": "25556",
+    "courseId": "CMPE364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["amal.al-masri@qu.com", "amelle.bedair@qu.com"]
+  },
+  {
+    "classId": "25557",
+    "courseId": "CMPS350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["abdelkarim.erradi@qu.com", "abdullahi.hassen@qu.com"]
+  },
+  {
+    "classId": "25558",
+    "courseId": "CMPS482",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["qutaibah.malluhi@qu.com"]
+  },
+  {
+    "classId": "25559",
+    "courseId": "CMPS350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["mahmoud.barhamgi@qu.com","abdullahi.hassen@qu.com"]
+  },
+  {
+    "classId": "25560",
+    "courseId": "CMPS497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["qutaibah.malluhi@qu.com"]
+  },
+  {
+    "classId": "25561",
+    "courseId": "CMPS350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["mahmoud.barhamgi@qu.com","georges.younes@qu.com"]
+  },
+  {
+    "classId": "25562",
+    "courseId": "CMPS380",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["khaled.khan@qu.com"]
+  },
+  {
+    "classId": "25563",
+    "courseId": "CMPS350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["abdelkarim.erradi@qu.com","abdullahi.hassen@qu.com"]
+  },
+  {
+    "classId": "25564",
+    "courseId": "CMPS360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["tamer.elsayed@qu.com"]
+  },
+  {
+    "classId": "25565",
+    "courseId": "CMPE483",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["uvais.qidwai@qu.com"]
+  },
+  {
+    "classId": "25566",
+    "courseId": "CMPE364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["khalid.abualsaud@qu.com", "amelle.bedair@qu.com"]
+  },
+  {
+    "classId": "25567",
+    "courseId": "CMPS405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["aws.el-din@qu.com", "moutaz.saleh@qu.com"]
+  },
+  {
+    "classId": "25568",
+    "courseId": "CMPS405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["heba.dawoud@qu.com", "loay.ismail@qu.com"]
+  },
+  {
+    "classId": "25569",
+    "courseId": "CMPS405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["heba.dawoud@qu.com", "loay.ismail@qu.com"]
+  },
+  {
+    "classId": "25570",
+    "courseId": "CMPS485",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["ihab.elaf@qu.com"]
+  },
+  {
+    "classId": "25571",
+    "courseId": "CMPS360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["tamer.elsayed@qu.com"]
+  },
+  {
+    "classId": "25572",
+    "courseId": "CMPS497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["qutaibah.malluhi@qu.com"]
+  },
+  {
+    "classId": "25573",
+    "courseId": "CMPS482",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["qutaibah.malluhi@qu.com"]
+  },
+  {
+    "classId": "25574",
+    "courseId": "CMPS497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["salem.saeed@qu.com"]
+  },
+  {
+    "classId": "25575",
+    "courseId": "CMPE364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["amal.al-masri@qu.com", "amelle.bedair@qu.com"]
+  },
+  {
+    "classId": "25576",
+    "courseId": "CMPS405",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["heba.dawoud@qu.com", "moutaz.saleh@qu.com"]
+  },
+  {
+    "classId": "25577",
+    "courseId": "CMPS360",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["tamer.elsayed@qu.com"]
+  },
+  {
+    "classId": "25578",
+    "courseId": "CMPS485",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["ihab.elaf@qu.com"]
+  },
+  {
+    "classId": "25579",
+    "courseId": "CMPS482",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["qutaibah.malluhi@qu.com"]
+  },
+  {
+    "classId": "25580",
+    "courseId": "CMPS380",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["khaled.khan@qu.com"]
+  },
+  {
+    "classId": "25581",
+    "courseId": "CMPS380",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["khaled.khan@qu.com"]
+  },
+  {
+    "classId": "25582",
+    "courseId": "CMPS350",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["mahmoud.barhamgi@qu.com", "abdullahi.hassen@qu.com"]
+  },
+  {
+    "classId": "25583",
+    "courseId": "CMPE476",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["fady.elnahal@qu.com", "leila.gastli@qu.com"]
+  },
+  {
+    "classId": "25584",
+    "courseId": "CMPE364",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["amal.al-masri@qu.com", "amelle.bedair@qu.com"]
+  },
+  {
+    "classId": "25585",
+    "courseId": "CMPS485",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["ihab.elaf@qu.com"]
+  },
+  {
+    "classId": "25586",
+    "courseId": "CMPS497",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["salem.saeed@qu.com"]
+  },
+  {
+    "classId": "25587",
     "courseId": "CMPE457",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Female",
     "enrollmentActual": 0,
-    "enrollmentMaximum": 45,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "8:00",
-      "endTime": "9:15"
-    }
-  },
-  {
-    "classId": "25504",
-    "courseId": "CMPS 482",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25505",
-    "courseId": "CMPS 482",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
     "enrollmentMaximum": 35,
     "classStatus": "open",
     "schedule": {
       "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25506",
-    "courseId": "CMPE 471",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25507",
-    "courseId": "CMPE 471",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25508",
-    "courseId": "CMPS 497",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25509",
-    "courseId": "CMPS 497",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25510",
-    "courseId": "CMPE 457",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25511",
-    "courseId": "CMPE 457",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25512",
-    "courseId": "CMPS 497",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25513",
-    "courseId": "CMPS 497",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25514",
-    "courseId": "CMPE 483",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25515",
-    "courseId": "CMPE 483",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25516",
-    "courseId": "CMPS 485",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25517",
-    "courseId": "CMPS 485",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25518",
-    "courseId": "CMPS 380",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25519",
-    "courseId": "CMPS 380",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25520",
-    "courseId": "CMPS 405",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25521",
-    "courseId": "CMPS 405",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25522",
-    "courseId": "CMPS 497",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25523",
-    "courseId": "CMPS 497",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25524",
-    "courseId": "CMPE 471",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25525",
-    "courseId": "CMPE 471",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25526",
-    "courseId": "CMPS 360",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25527",
-    "courseId": "CMPS 360",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25528",
-    "courseId": "CMPS 350",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25529",
-    "courseId": "CMPS 350",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25530",
-    "courseId": "CMPS 405",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25531",
-    "courseId": "CMPS 405",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25532",
-    "courseId": "CMPS 405",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25533",
-    "courseId": "CMPS 405",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25534",
-    "courseId": "CMPS 350",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25535",
-    "courseId": "CMPS 350",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25536",
-    "courseId": "CMPS 350",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25537",
-    "courseId": "CMPS 350",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25538",
-    "courseId": "CMPS 350",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25539",
-    "courseId": "CMPS 350",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25540",
-    "courseId": "CMPE 364",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25541",
-    "courseId": "CMPE 364",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25542",
-    "courseId": "CMPE 364",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25543",
-    "courseId": "CMPE 364",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25544",
-    "courseId": "CMPE 364",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25545",
-    "courseId": "CMPE 364",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25546",
-    "courseId": "CMPE 476",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25547",
-    "courseId": "CMPE 476",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25548",
-    "courseId": "CMPS 405",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25549",
-    "courseId": "CMPS 405",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25550",
-    "courseId": "CMPE 457",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25551",
-    "courseId": "CMPE 457",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25552",
-    "courseId": "CMPE 476",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25553",
-    "courseId": "CMPE 476",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25554",
-    "courseId": "CMPE 457",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25555",
-    "courseId": "CMPE 457",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25556",
-    "courseId": "CMPS 497",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25557",
-    "courseId": "CMPS 497",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25558",
-    "courseId": "CMPE 471",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25559",
-    "courseId": "CMPE 471",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25560",
-    "courseId": "CMPE 476",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25561",
-    "courseId": "CMPE 476",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25562",
-    "courseId": "CMPE 476",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25563",
-    "courseId": "CMPE 476",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25564",
-    "courseId": "CMPE 476",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25565",
-    "courseId": "CMPE 476",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25566",
-    "courseId": "GENG 360",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25567",
-    "courseId": "GENG 360",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25568",
-    "courseId": "GENG 360",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25569",
-    "courseId": "GENG 360",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25570",
-    "courseId": "GENG 300",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25571",
-    "courseId": "GENG 300",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25572",
-    "courseId": "GENG 300",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25573",
-    "courseId": "GENG 300",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25574",
-    "courseId": "MATH 217",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25575",
-    "courseId": "MATH 217",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25576",
-    "courseId": "MATH 102",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25577",
-    "courseId": "MATH 102",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25578",
-    "courseId": "MATH 231",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25579",
-    "courseId": "MATH 231",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25580",
-    "courseId": "HIST 121",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25581",
-    "courseId": "HIST 121",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25582",
-    "courseId": "ENGL 202",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25583",
-    "courseId": "ENGL 202",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25584",
-    "courseId": "PHYS 193",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25585",
-    "courseId": "PHYS 193",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Male",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25586",
-    "courseId": "PHYS 194",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25587",
-    "courseId": "PHYS 194",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 35,
-    "classStatus": "open",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["junaid.qadir@qu.com"]
   },
   {
     "classId": "25588",
-    "courseId": "DAWA 111",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
-  },
-  {
-    "classId": "25589",
-    "courseId": "DAWA 111",
-    "semester": "Spring 2025",
-    "instructionalMethods": "English",
-    "campus": "Female",
-    "enrollmentActual": 0,
-    "enrollmentMaximum": 40,
-    "classStatus": "pending",
-    "schedule": {
-      "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
-  },
-  {
-    "classId": "25590",
-    "courseId": "MAGT 101",
+    "courseId": "CMPS405",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "pending",
+    "classStatus": "open",
     "schedule": {
-      "scheduleType": "MW",
-      "startTime": "08:00",
-      "endTime": "09:15"
-    }
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["aws.el-din@qu.com", "moutaz.saleh@qu.com"]
   },
   {
-    "classId": "25591",
-    "courseId": "MAGT 101",
+    "classId": "25589",
+    "courseId": "CMPE364",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
     "campus": "Female",
     "enrollmentActual": 0,
-    "enrollmentMaximum": 30,
-    "classStatus": "pending",
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
     "schedule": {
       "scheduleType": "STT",
-      "startTime": "08:00",
-      "endTime": "08:50"
-    }
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["khalid.abualsaud@qu.com", "amelle.bedair@qu.com"]
+  },
+  {
+    "classId": "25590",
+    "courseId": "CMPE483",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["uvais.qidwai@qu.com"]
+  },
+  {
+    "classId": "25591",
+    "courseId": "CMPE457",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["junaid.qadir@qu.com"]
+  },
+  {
+    "classId": "25592",
+    "courseId": "CMPE471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["ahmed.badawy@qu.com"]
+  },
+  {
+    "classId": "25593",
+    "courseId": "CMPE471",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["tamer.elsayed@qu.com"]
+  },
+  {
+    "classId": "25594",
+    "courseId": "CMPE483",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["uvais.qidwai@qu.com"]
+  },
+  {
+    "classId": "25595",
+    "courseId": "MATH102",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["mustafa.el-sanfaz@qu.com"]
+  },
+  {
+    "classId": "25596",
+    "courseId": "MATH217",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["mohamed.ben.haj.rhouma@qu.com"]
+  },
+  {
+    "classId": "25597",
+    "courseId": "MATH231",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["hussein.al-qassem@qu.com"]
+  },
+  {
+    "classId": "25598",
+    "courseId": "MATH217",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["mohamed.ben.haj.rhouma@qu.com"]
+  },
+  {
+    "classId": "25599",
+    "courseId": "MATH231",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["hussein.al-qassem@qu.com"]
+  },
+  {
+    "classId": "25600",
+    "courseId": "MATH217",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["mohamed.ben.haj.rhouma@qu.com"]
+  },
+  {
+    "classId": "25601",
+    "courseId": "HIST121",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["mohamed.tarig@qu.com"]
+  },
+  {
+    "classId": "25602",
+    "courseId": "ENGL202",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["fabia.grisalez@qu.com"]
+  },
+  {
+    "classId": "25603",
+    "courseId": "PHYS194",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["essam.yasin@qu.com"]
+  },
+  {
+    "classId": "25604",
+    "courseId": "PHYS193",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["hocine.merabet@qu.com"]
+  },
+  {
+    "classId": "25605",
+    "courseId": "PHYS193",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["hocine.merabet@qu.com"]
+  },
+  {
+    "classId": "25606",
+    "courseId": "PHYS194",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["essam.yasin@qu.com"]
+  },
+  {
+    "classId": "25607",
+    "courseId": "DAWA111",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Female",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "STT",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["lazhar.chaoiki@qu.com"]
+  },
+  {
+    "classId": "25608",
+    "courseId": "MAGT101",
+    "semester": "Spring 2025",
+    "instructionalMethods": "English",
+    "campus": "Male",
+    "enrollmentActual": 0,
+    "enrollmentMaximum": 35,
+    "classStatus": "open",
+    "schedule": {
+      "scheduleType": "MW",
+      "startTime": "10:00",
+      "endTime": "10:50"
+    },
+    "instructors": ["dunia.ponce@qu.com"]
   }
 ]
