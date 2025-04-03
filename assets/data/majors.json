@@ -1,19 +1,212 @@
 [
-    {
-      "majorId": "1",
-      "majorName": "Computer Science",
-      "college": "Engineering",
-      "department": "Computer Science",
-      "requiredCourses": ["CMPS151", "CMPS251", "CMPS205", "CMPS350", "CMPE263"],
-      "abbr": "CMPS"
-    },
-    {
-      "majorId": "2",
-      "majorName": "Computer Engineering",
-      "college": "Engineering",
-      "department": "Computer Engineering",
-      "requiredCourses": ["CMPS151", "CMPS251", "CMPS205", "CMPS350", "CMPE263", "CMPE261"],
-      "abbr": "CMPE"
-    }
-  ]
-  
+  {
+    "studentId": "S1001",
+    "email": "yousef.al-mansoori@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1002",
+    "email": "daniel.smith@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1003",
+    "email": "takeshi.ito@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1004",
+    "email": "ahmad.zahran@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1005",
+    "email": "liam.johnson@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1006",
+    "email": "nico.weiss@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1007",
+    "email": "wei.zhang@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1008",
+    "email": "hassan.kareem@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1009",
+    "email": "arjun.patel@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1010",
+    "email": "ethan.williams@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1011",
+    "email": "omar.farouq@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1012",
+    "email": "kenji.tanaka@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1013",
+    "email": "miguel.santos@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1014",
+    "email": "ali.mubarak@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1015",
+    "email": "minh.nguyen@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1016",
+    "email": "layla.hassan@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1017",
+    "email": "emily.davis@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1018",
+    "email": "aisha.yousef@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1019",
+    "email": "hana.suzuki@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1020",
+    "email": "chloe.martin@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1021",
+    "email": "sara.al-sabah@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1022",
+    "email": "anika.sharma@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1023",
+    "email": "mariam.khalid@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1024",
+    "email": "isabella.garcia@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1025",
+    "email": "noor.fahmy@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1026",
+    "email": "sakura.yamamoto@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1027",
+    "email": "nora.hussein@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1028",
+    "email": "siti.aminah@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1029",
+    "email": "amira.rahman@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  },
+  {
+    "studentId": "S1030",
+    "email": "jasmine.lee@qu.com",
+    "college": "Engineering",
+    "department": "Computer Science",
+    "completedCourses": []
+  }
+]

@@ -1,6 +1,6 @@
 [
   {
-    "email": "yousef.al-mansoori@gmail.com",
+    "email": "yousef.al-mansoori@qu.com",
     "firstName": "Yousef",
     "lastName": "Al-Mansoori",
     "password": "yousef123",
@@ -10,7 +10,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "daniel.smith@gmail.com",
+    "email": "daniel.smith@qu.com",
     "firstName": "Daniel",
     "lastName": "Smith",
     "password": "daniel123",
@@ -20,7 +20,7 @@
     "profile-image": "assets/imgs/user-profile-images/male4.png"
   },
   {
-    "email": "takeshi.ito@gmail.com",
+    "email": "takeshi.ito@qu.com",
     "firstName": "Takeshi",
     "lastName": "Ito",
     "password": "takeshi123",
@@ -30,7 +30,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "ahmad.zahran@gmail.com",
+    "email": "ahmad.zahran@qu.com",
     "firstName": "Ahmad",
     "lastName": "Zahran",
     "password": "ahmad123",
@@ -40,7 +40,7 @@
     "profile-image": "assets/imgs/user-profile-images/male4.png"
   },
   {
-    "email": "liam.johnson@gmail.com",
+    "email": "liam.johnson@qu.com",
     "firstName": "Liam",
     "lastName": "Johnson",
     "password": "liam123",
@@ -50,7 +50,7 @@
     "profile-image": "assets/imgs/user-profile-images/male4.png"
   },
   {
-    "email": "nico.weiss@gmail.com",
+    "email": "nico.weiss@qu.com",
     "firstName": "Nico",
     "lastName": "Weiss",
     "password": "nico123",
@@ -60,7 +60,7 @@
     "profile-image": "assets/imgs/user-profile-images/male3.png"
   },
   {
-    "email": "wei.zhang@gmail.com",
+    "email": "wei.zhang@qu.com",
     "firstName": "Wei",
     "lastName": "Zhang",
     "password": "wei123",
@@ -70,7 +70,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "hassan.kareem@gmail.com",
+    "email": "hassan.kareem@qu.com",
     "firstName": "Hassan",
     "lastName": "Kareem",
     "password": "hassan123",
@@ -80,7 +80,7 @@
     "profile-image": "assets/imgs/user-profile-images/male4.png"
   },
   {
-    "email": "arjun.patel@gmail.com",
+    "email": "arjun.patel@qu.com",
     "firstName": "Arjun",
     "lastName": "Patel",
     "password": "arjun123",
@@ -90,7 +90,7 @@
     "profile-image": "assets/imgs/user-profile-images/male4.png"
   },
   {
-    "email": "ethan.williams@gmail.com",
+    "email": "ethan.williams@qu.com",
     "firstName": "Ethan",
     "lastName": "Williams",
     "password": "ethan123",
@@ -100,7 +100,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "omar.farouq@gmail.com",
+    "email": "omar.farouq@qu.com",
     "firstName": "Omar",
     "lastName": "Farouq",
     "password": "omar123",
@@ -110,7 +110,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "kenji.tanaka@gmail.com",
+    "email": "kenji.tanaka@qu.com",
     "firstName": "Kenji",
     "lastName": "Tanaka",
     "password": "kenji123",
@@ -120,7 +120,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "miguel.santos@gmail.com",
+    "email": "miguel.santos@qu.com",
     "firstName": "Miguel",
     "lastName": "Santos",
     "password": "miguel123",
@@ -130,7 +130,7 @@
     "profile-image": "assets/imgs/user-profile-images/male3.png"
   },
   {
-    "email": "ali.mubarak@gmail.com",
+    "email": "ali.mubarak@qu.com",
     "firstName": "Ali",
     "lastName": "Mubarak",
     "password": "ali123",
@@ -140,7 +140,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "minh.nguyen@gmail.com",
+    "email": "minh.nguyen@qu.com",
     "firstName": "Minh",
     "lastName": "Nguyen",
     "password": "minh123",
@@ -150,7 +150,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "layla.hassan@gmail.com",
+    "email": "layla.hassan@qu.com",
     "firstName": "Layla",
     "lastName": "Hassan",
     "password": "layla123",
@@ -160,7 +160,7 @@
     "profile-image": "assets/imgs/user-profile-images/female2.png"
   },
   {
-    "email": "emily.davis@gmail.com",
+    "email": "emily.davis@qu.com",
     "firstName": "Emily",
     "lastName": "Davis",
     "password": "emily123",
@@ -170,7 +170,7 @@
     "profile-image": "assets/imgs/user-profile-images/female1.png"
   },
   {
-    "email": "aisha.yousef@gmail.com",
+    "email": "aisha.yousef@qu.com",
     "firstName": "Aisha",
     "lastName": "Yousef",
     "password": "aisha123",
@@ -180,7 +180,7 @@
     "profile-image": "assets/imgs/user-profile-images/female1.png"
   },
   {
-    "email": "hana.suzuki@gmail.com",
+    "email": "hana.suzuki@qu.com",
     "firstName": "Hana",
     "lastName": "Suzuki",
     "password": "hana123",
@@ -190,7 +190,7 @@
     "profile-image": "assets/imgs/user-profile-images/female3.png"
   },
   {
-    "email": "chloe.martin@gmail.com",
+    "email": "chloe.martin@qu.com",
     "firstName": "Chloe",
     "lastName": "Martin",
     "password": "chloe123",
@@ -200,7 +200,7 @@
     "profile-image": "assets/imgs/user-profile-images/female3.png"
   },
   {
-    "email": "sara.al-sabah@gmail.com",
+    "email": "sara.al-sabah@qu.com",
     "firstName": "Sara",
     "lastName": "Al-Sabah",
     "password": "sara123",
@@ -210,7 +210,7 @@
     "profile-image": "assets/imgs/user-profile-images/female3.png"
   },
   {
-    "email": "anika.sharma@gmail.com",
+    "email": "anika.sharma@qu.com",
     "firstName": "Anika",
     "lastName": "Sharma",
     "password": "anika123",
@@ -220,7 +220,7 @@
     "profile-image": "assets/imgs/user-profile-images/female1.png"
   },
   {
-    "email": "mariam.khalid@gmail.com",
+    "email": "mariam.khalid@qu.com",
     "firstName": "Mariam",
     "lastName": "Khalid",
     "password": "mariam123",
@@ -230,7 +230,7 @@
     "profile-image": "assets/imgs/user-profile-images/female3.png"
   },
   {
-    "email": "isabella.garcia@gmail.com",
+    "email": "isabella.garcia@qu.com",
     "firstName": "Isabella",
     "lastName": "Garcia",
     "password": "isabella123",
@@ -240,7 +240,7 @@
     "profile-image": "assets/imgs/user-profile-images/female4.png"
   },
   {
-    "email": "noor.fahmy@gmail.com",
+    "email": "noor.fahmy@qu.com",
     "firstName": "Noor",
     "lastName": "Fahmy",
     "password": "noor123",
@@ -250,7 +250,7 @@
     "profile-image": "assets/imgs/user-profile-images/female4.png"
   },
   {
-    "email": "sakura.yamamoto@gmail.com",
+    "email": "sakura.yamamoto@qu.com",
     "firstName": "Sakura",
     "lastName": "Yamamoto",
     "password": "sakura123",
@@ -260,7 +260,7 @@
     "profile-image": "assets/imgs/user-profile-images/female2.png"
   },
   {
-    "email": "nora.hussein@gmail.com",
+    "email": "nora.hussein@qu.com",
     "firstName": "Nora",
     "lastName": "Hussein",
     "password": "nora123",
@@ -270,7 +270,7 @@
     "profile-image": "assets/imgs/user-profile-images/female1.png"
   },
   {
-    "email": "siti.aminah@gmail.com",
+    "email": "siti.aminah@qu.com",
     "firstName": "Siti",
     "lastName": "Aminah",
     "password": "siti123",
@@ -280,7 +280,7 @@
     "profile-image": "assets/imgs/user-profile-images/female2.png"
   },
   {
-    "email": "amira.rahman@gmail.com",
+    "email": "amira.rahman@qu.com",
     "firstName": "Amira",
     "lastName": "Rahman",
     "password": "amira123",
@@ -290,7 +290,7 @@
     "profile-image": "assets/imgs/user-profile-images/female2.png"
   },
   {
-    "email": "jasmine.lee@gmail.com",
+    "email": "jasmine.lee@qu.com",
     "firstName": "Jasmine",
     "lastName": "Lee",
     "password": "jasmine123",
@@ -300,7 +300,7 @@
     "profile-image": "assets/imgs/user-profile-images/female2.png"
   },
   {
-    "email": "qutaibah.malluhi@qataruniversity.com",
+    "email": "qutaibah.malluhi@qu.com",
     "firstName": "Qutaibah",
     "lastName": "Malluhi",
     "password": "qutaibahmalluhi123",
@@ -309,7 +309,7 @@
     "profile-image": "assets/imgs/user-profile-images/male3.png"
   },
   {
-    "email": "junaid.qadir@qataruniversity.com",
+    "email": "junaid.qadir@qu.com",
     "firstName": "Junaid",
     "lastName": "Qadir",
     "password": "junaidqadir123",
@@ -318,7 +318,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "saeed.salem@qataruniversity.com",
+    "email": "saeed.salem@qu.com",
     "firstName": "Saeed",
     "lastName": "Salem",
     "password": "saeedsalem123",
@@ -327,7 +327,7 @@
     "profile-image": "assets/imgs/user-profile-images/male4.png"
   },
   {
-    "email": "uvais.qidwai@qataruniversity.com",
+    "email": "uvais.qidwai@qu.com",
     "firstName": "Uvais",
     "lastName": "Qidwai",
     "password": "uvaisqidwai123",
@@ -336,7 +336,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "ihab.elaf@qataruniversity.com",
+    "email": "ihab.elaf@qu.com",
     "firstName": "Ihab",
     "lastName": "Elaf",
     "password": "ihabelaf123",
@@ -345,7 +345,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "khaled.khan@qataruniversity.com",
+    "email": "khaled.khan@qu.com",
     "firstName": "Khaled",
     "lastName": "Khan",
     "password": "khaledkhan123",
@@ -354,7 +354,7 @@
     "profile-image": "assets/imgs/user-profile-images/male4.png"
   },
   {
-    "email": "aws.el-din@qataruniversity.com",
+    "email": "aws.el-din@qu.com",
     "firstName": "Aws",
     "lastName": "El-Din",
     "password": "awsel-din123",
@@ -363,7 +363,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "tamer.elsayed@qataruniversity.com",
+    "email": "tamer.elsayed@qu.com",
     "firstName": "Tamer",
     "lastName": "Elsayed",
     "password": "tamerelsayed123",
@@ -372,7 +372,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "abdelkarim.erradi@qataruniversity.com",
+    "email": "abdelkarim.erradi@qu.com",
     "firstName": "Abdelkarim",
     "lastName": "Erradi",
     "password": "abdelkarimerradi123",
@@ -381,7 +381,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "heba.dawoud@qataruniversity.com",
+    "email": "heba.dawoud@qu.com",
     "firstName": "Heba",
     "lastName": "Dawoud",
     "password": "hebadawoud123",
@@ -390,7 +390,7 @@
     "profile-image": "assets/imgs/user-profile-images/female2.png"
   },
   {
-    "email": "loay.ismail@qataruniversity.com",
+    "email": "loay.ismail@qu.com",
     "firstName": "Loay",
     "lastName": "Ismail",
     "password": "loayismail123",
@@ -399,7 +399,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "mahmoud.barhamgi@qataruniversity.com",
+    "email": "mahmoud.barhamgi@qu.com",
     "firstName": "Mahmoud",
     "lastName": "Barhamgi",
     "password": "mahmoudbarhamgi123",
@@ -408,7 +408,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "abdullahi.hassen@qataruniversity.com",
+    "email": "abdullahi.hassen@qu.com",
     "firstName": "Abdullahi",
     "lastName": "Hassen",
     "password": "abdullahihassen123",
@@ -417,7 +417,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "georges.younes@qataruniversity.com",
+    "email": "georges.younes@qu.com",
     "firstName": "Georges",
     "lastName": "Younes",
     "password": "georgesyounes123",
@@ -426,7 +426,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "amal.al-masri@qataruniversity.com",
+    "email": "amal.al-masri@qu.com",
     "firstName": "Amal",
     "lastName": "Al-Masri",
     "password": "amalal-masri123",
@@ -435,7 +435,7 @@
     "profile-image": "assets/imgs/user-profile-images/female4.png"
   },
   {
-    "email": "khalid.abualsaud@qataruniversity.com",
+    "email": "khalid.abualsaud@qu.com",
     "firstName": "Khalid",
     "lastName": "Abualsaud",
     "password": "khalidabualsaud123",
@@ -444,7 +444,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "amelle.bedair@qataruniversity.com",
+    "email": "amelle.bedair@qu.com",
     "firstName": "Amelle",
     "lastName": "Bedair",
     "password": "amellebedair123",
@@ -453,7 +453,7 @@
     "profile-image": "assets/imgs/user-profile-images/female3.png"
   },
   {
-    "email": "moutaz.saleh@qataruniversity.com",
+    "email": "moutaz.saleh@qu.com",
     "firstName": "Moutaz",
     "lastName": "Saleh",
     "password": "moutazsaleh123",
@@ -462,7 +462,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "fady.elhanal@qataruniversity.com",
+    "email": "fady.elhanal@qu.com",
     "firstName": "Fady",
     "lastName": "Elhanal",
     "password": "fadyelhanal123",
@@ -471,7 +471,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "hela.chamkia@qataruniversity.com",
+    "email": "hela.chamkia@qu.com",
     "firstName": "Hela",
     "lastName": "Chamkia",
     "password": "helachamkia123",
@@ -480,7 +480,7 @@
     "profile-image": "assets/imgs/user-profile-images/female1.png"
   },
   {
-    "email": "ahmed.badawy@qataruniversity.com",
+    "email": "ahmed.badawy@qu.com",
     "firstName": "Ahmed",
     "lastName": "Badawy",
     "password": "ahmedbadawy123",
@@ -489,7 +489,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "naveed.nawaz@qataruniversity.com",
+    "email": "naveed.nawaz@qu.com",
     "firstName": "Naveed",
     "lastName": "Nawaz",
     "password": "naveednawaz123",
@@ -498,7 +498,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "leila.gastli@qataruniversity.com",
+    "email": "leila.gastli@qu.com",
     "firstName": "Leila",
     "lastName": "Gastli",
     "password": "leilagastli123",
@@ -507,7 +507,7 @@
     "profile-image": "assets/imgs/user-profile-images/female4.png"
   },
   {
-    "email": "mohamed.al-meer@qataruniversity.com",
+    "email": "mohamed.al-meer@qu.com",
     "firstName": "Mohamed",
     "lastName": "Al-Meer",
     "password": "mohamedal-meer123",
@@ -516,7 +516,7 @@
     "profile-image": "assets/imgs/user-profile-images/male3.png"
   },
   {
-    "email": "rania.ibrahim@qataruniversity.com",
+    "email": "rania.ibrahim@qu.com",
     "firstName": "Rania",
     "lastName": "Ibrahim",
     "password": "raniaibrahim123",
@@ -525,7 +525,7 @@
     "profile-image": "assets/imgs/user-profile-images/female2.png"
   },
   {
-    "email": "kim.donghyun@qataruniversity.com",
+    "email": "kim.donghyun@qu.com",
     "firstName": "Kim",
     "lastName": "Donghyun",
     "password": "kimdonghyun123",
@@ -534,7 +534,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "ahmed.ghannoum@qataruniversity.com",
+    "email": "ahmed.ghannoum@qu.com",
     "firstName": "Ahmed",
     "lastName": "Ghannoum",
     "password": "ahmedghannoum123",
@@ -543,7 +543,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "evangelos.plevris@qataruniversity.com",
+    "email": "evangelos.plevris@qu.com",
     "firstName": "Evangelos",
     "lastName": "Plevris",
     "password": "evangelosplevris123",
@@ -552,7 +552,7 @@
     "profile-image": "assets/imgs/user-profile-images/male3.png"
   },
   {
-    "email": "mohamed.ben.haj.rhouma@qataruniversity.com",
+    "email": "mohamed.ben.haj.rhouma@qu.com",
     "firstName": "Mohamed",
     "lastName": "Ben",
     "password": "mohamedbenhajrhouma123",
@@ -561,7 +561,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "mustafa.el-sanfaz@qataruniversity.com",
+    "email": "mustafa.el-sanfaz@qu.com",
     "firstName": "Mustafa",
     "lastName": "El-Sanfaz",
     "password": "mustafael-sanfaz123",
@@ -570,7 +570,7 @@
     "profile-image": "assets/imgs/user-profile-images/male2.png"
   },
   {
-    "email": "hussein.al-qassem@qataruniversity.com",
+    "email": "hussein.al-qassem@qu.com",
     "firstName": "Hussein",
     "lastName": "Al-Qassem",
     "password": "husseinal-qassem123",
@@ -579,7 +579,7 @@
     "profile-image": "assets/imgs/user-profile-images/male3.png"
   },
   {
-    "email": "mohamed.tarig@qataruniversity.com",
+    "email": "mohamed.tarig@qu.com",
     "firstName": "Mohamed",
     "lastName": "Tarig",
     "password": "mohamedtarig123",
@@ -588,7 +588,7 @@
     "profile-image": "assets/imgs/user-profile-images/male3.png"
   },
   {
-    "email": "fabia.grisalez@qataruniversity.com",
+    "email": "fabia.grisalez@qu.com",
     "firstName": "Fabia",
     "lastName": "Grisalez",
     "password": "fabiagrisalez123",
@@ -597,7 +597,7 @@
     "profile-image": "assets/imgs/user-profile-images/female3.png"
   },
   {
-    "email": "essam.yasin@qataruniversity.com",
+    "email": "essam.yasin@qu.com",
     "firstName": "Essam",
     "lastName": "Yasin",
     "password": "essamyasin123",
@@ -606,7 +606,7 @@
     "profile-image": "assets/imgs/user-profile-images/male3.png"
   },
   {
-    "email": "hocine.merabet@qataruniversity.com",
+    "email": "hocine.merabet@qu.com",
     "firstName": "Hocine",
     "lastName": "Merabet",
     "password": "hocinemerabet123",
@@ -615,7 +615,7 @@
     "profile-image": "assets/imgs/user-profile-images/male1.png"
   },
   {
-    "email": "lazhar.chaoiki@qataruniversity.com",
+    "email": "lazhar.chaoiki@qu.com",
     "firstName": "Lazhar",
     "lastName": "Chaoiki",
     "password": "lazharchaoiki123",
@@ -624,7 +624,7 @@
     "profile-image": "assets/imgs/user-profile-images/male3.png"
   },
   {
-    "email": "dunia.ponce@qataruniversity.com",
+    "email": "dunia.ponce@qu.com",
     "firstName": "Dunia",
     "lastName": "Ponce",
     "password": "duniaponce123",
@@ -633,7 +633,7 @@
     "profile-image": "assets/imgs/user-profile-images/female3.png"
   },
   {
-    "email": "admin@gmail.com",
+    "email": "admin@qu.com",
     "firstName": "Admin",
     "lastName": "",
     "password": "admin123",

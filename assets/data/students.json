@@ -11,21 +11,21 @@
       "email": "marcus@gmail.com",
       "college": "Engineering",
       "department": "Computer Science",
-      "completedCourses": ["CMPS151"]
+      "completedCourses": []
     },
     {
       "studentId": "S1003",
       "email": "audre@gmail.com",
       "college": "Engineering",
       "department": "Computer Engineering",
-      "completedCourses": ["CMPS151", "CMPS205"]
+      "completedCourses": []
     },
     {
       "studentId": "S1004",
       "email": "mohdbashar@gmail.com",
       "college": "Engineering",
       "department": "Computer Science",
-      "completedCourses": ["CMPS151", "CMPS205", "CMPS350"]
+      "completedCourses": []
     },
     {
       "studentId": "S1005",
