@@ -1,4 +1,4 @@
- document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     let courseForm=document.querySelector('#create-course-form');
 
     // Fetch both JSON files
@@ -9,9 +9,9 @@
     .then(([majors, courses]) => {
         console.log("Majors Loaded:", majors);
         console.log("Courses Loaded:", courses);
-
+        
         document.querySelector("#subjectDropdown").innerHTML = majors.map(major =>
-            `<div onclick="selectOption('Subject')"><i class="fas fa-book"></i>${major.majorName}</div>`
+            `<div onclick="selectOption('${major.majorName}')"><i class="fas fa-book"></i>${major.majorName}</div>`
         ).join(' ');
 
         document.querySelector("#prereqDropdown").innerHTML = courses.map(course =>
@@ -23,7 +23,15 @@
         ).join(' ');
     })
 
+    function selectOption(option) {
+        document.querySelector("#selectedSubject").textContent = option;
 
+        document.querySelectorAll(".content-section").forEach(section => {
+            section.classList.remove("active");
+        });
+
+        document.getElementById(option).classList.add("active");
+    }
 
     document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
         toggle.addEventListener("click", function (event) {
@@ -42,6 +50,12 @@
                 dropdownMenu.style.setProperty("--dropdown-top", `${rect.bottom}px`);
                 dropdownMenu.style.setProperty("--dropdown-left", `${rect.left}px`);
             }
+        });
+    });
+
+    document.addEventListener("click", function () {
+        document.querySelectorAll(".dropdown-menu").forEach(menu => {
+            menu.style.display = "none";
         });
     });
 
@@ -66,4 +80,6 @@
         localStorage.courses = JSON.stringify(allCourses);
         courseForm.reset();
     })
+
+    window.selectOption = selectOption;
  })
