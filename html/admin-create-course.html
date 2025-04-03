@@ -44,11 +44,7 @@
                         <span class="selectedOption">Select Subject</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="dropdown-menu">
-                        <div onclick="selectOption('Subject')"><i class="fas fa-book"></i>Computer Science</div>
-                        <div onclick="selectOption('Subject')"><i class="fas fa-book"></i>Computer Engineering</div>
-                        <div onclick="selectOption('Subject')"><i class="fas fa-book"></i>General Engineering</div>
-                        <div onclick="selectOption('Subject')"><i class="fas fa-book"></i>Mathematics</div>
+                    <div class="dropdown-menu" id="subjectDropdown">
                     </div>
                     </div>
                 </div>
@@ -97,8 +93,6 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="dropdown-menu" id="majorsDropdown">
-                        <div onclick="addTag(this, 'major')">Computer Science</div>
-                        <div onclick="addTag(this, 'major')">Computer Engineering</div>
                     </div>
                     </div>
                     <div class="tag-container" id="selectedMajors"></div>

@@ -4,28 +4,16 @@
       "majorName": "Computer Science",
       "college": "Engineering",
       "department": "Computer Science",
-      "requiredCourses": ["CMPS151", "CMPS251", "CMPS205", "CMPS350", "CMPE263"]
+      "requiredCourses": ["CMPS151", "CMPS251", "CMPS205", "CMPS350", "CMPE263"],
+      "abbr": "CMPS"
     },
     {
       "majorId": "2",
       "majorName": "Computer Engineering",
       "college": "Engineering",
       "department": "Computer Engineering",
-      "requiredCourses": ["CMPS151", "CMPS251", "CMPS205", "CMPS350", "CMPE263", "CMPE261"]
-    },
-    {
-      "majorId": "3",
-      "majorName": "Electrical Engineering",
-      "college": "Engineering",
-      "department": "Electrical Engineering",
-      "requiredCourses": []
-    },
-    {
-      "majorId": "4",
-      "majorName": "Mechanical Engineering",
-      "college": "Engineering",
-      "department": "Mechanical Engineering",
-      "requiredCourses": []
+      "requiredCourses": ["CMPS151", "CMPS251", "CMPS205", "CMPS350", "CMPE263", "CMPE261"],
+      "abbr": "CMPE"
     }
   ]
   
