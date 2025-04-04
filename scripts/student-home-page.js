@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Page loaded");
     let allCourses = JSON.parse(localStorage.getItem("courses"));
     const searchBar = document.querySelector(".search-bar");
+    const recomendedContainer = document.querySelector(".user-query .course-grid");
 
     document.querySelectorAll(".fa-plus").forEach(button => { 
         //redirects to registerhtml when button pressed
@@ -25,6 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "../html/user-query.html";
         })
     })
+
+    function renderRecomended(){
+
+    }
     
 });
 
