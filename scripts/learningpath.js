@@ -49,6 +49,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateVisibility();
 
+        // Create a course card template
+        function courseCard(course) {
+            return `
+                <div class="course-card">
+                    <div class="course-image">
+                        <div class="hover-icon">
+                            <i class="fa-solid fa-plus"></i>
+                            <span class="hover-text">Register Course</span>
+                        </div>
+                        <i class="fa-solid fa-turn-up top-right-icon"></i>
+                    </div>
+                    <div class="course-info">
+                        <div class="course-header">
+                            <span class="course-tag">${course.courseId}</span>
+                            <span class="semester">Fall 2025</span>
+                        </div>
+                        <h3>${course.courseName}</h3>
+                        <p class="course-subtitle">${course.description}</p>
+                        <div class="course-tags">
+                            <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
+                            <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+    
+            `;
+        }
+    
+        function courseCardWithGrades(course, grade) {
+            return `
+    
+                <div class="course-card">
+                <div class="course-image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="hover-text">Register Course</span>
+                    </div>
+                </div>
+                <div class="course-header">
+                    <span class="course-tag">${course.courseId}</span>
+                    <span class="semester">Spring 2025</span>
+                </div>
+                <div class="course-completed-main">
+                    <div class="course-grade">
+                        <div class="letter-grade-container">
+                            <span class="letter-grade">${grade}</span>
+                        </div>
+                        <div>
+                            <span class="final-grade">Final Grade</span>
+                            <h3>${course.courseName}</h3>
+                        </div>
+                    </div>
+                    <div class="course-tags">
+                        ${course.majorsOffered
+                        .map(
+                        (major) => `
+                        <span class="tag"><i class="fa-solid ${
+                        major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
+                        }"></i> ${major}</span>
+                    `
+                        )
+                        .join("")}
+                    </div>
+                </div>
+            </div>
+            
+            `;
+        }
+
     function renderCompletedCourses() {
         //1. Target the the completed container
 
@@ -82,78 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
             //Display error/empty message in the 'Completed' column
         }
 
-        //Display the Grades of completed courses
+        const inProgressSpan = document.querySelector(".category.completed .tracking-number");
+        inProgressSpan.textContent = `${completedCourses.length} completed`;
 
     }
 
-    //3. Create a course card template
-    function courseCard(course) {
-        return `
-            <div class="course-card">
-                <div class="course-image">
-                    <div class="hover-icon">
-                        <i class="fa-solid fa-plus"></i>
-                        <span class="hover-text">Register Course</span>
-                    </div>
-                    <i class="fa-solid fa-turn-up top-right-icon"></i>
-                </div>
-                <div class="course-info">
-                    <div class="course-header">
-                        <span class="course-tag">${course.courseId}</span>
-                        <span class="semester">Fall 2025</span>
-                    </div>
-                    <h3>${course.courseName}</h3>
-                    <p class="course-subtitle">${course.description}</p>
-                    <div class="course-tags">
-                        <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                        <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-                    </div>
-                </div>
-            </div>
-
-        `;
-    }
-
-    function courseCardWithGrades(course, grade) {
-        return `
-
-            <div class="course-card">
-            <div class="course-image">
-                <div class="hover-icon">
-                    <i class="fa-solid fa-plus"></i>
-                    <span class="hover-text">Register Course</span>
-                </div>
-            </div>
-            <div class="course-header">
-                <span class="course-tag">${course.courseId}</span>
-                <span class="semester">Spring 2025</span>
-            </div>
-            <div class="course-completed-main">
-                <div class="course-grade">
-                    <div class="letter-grade-container">
-                        <span class="letter-grade">${grade}</span>
-                    </div>
-                    <div>
-                        <span class="final-grade">Final Grade</span>
-                        <h3>${course.courseName}</h3>
-                    </div>
-                </div>
-                <div class="course-tags">
-                    ${course.majorsOffered
-                    .map(
-                    (major) => `
-                    <span class="tag"><i class="fa-solid ${
-                    major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
-                    }"></i> ${major}</span>
-                `
-                    )
-                    .join("")}
-                </div>
-            </div>
-        </div>
-        
-        `;
-    }
 
     function renderInProgessCourses(){
         
@@ -181,6 +183,9 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch {
             //Display error/empty message in the 'Completed' column
         }
+
+        const inProgressSpan = document.querySelector(".category.in-progress .tracking-number");
+        inProgressSpan.textContent = `${inProgressCourses.length} courses are in progress`;
 
     }
 
@@ -219,6 +224,10 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch {
             //Display error/empty message in the 'Pending' column
         }
+
+
+        const inProgressSpan = document.querySelector(".category.pending .tracking-number");
+        inProgressSpan.textContent = `${pendingCourses.length} courses are pending`;
         
     }
 
