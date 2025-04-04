@@ -18,13 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
 // ---------- STUDENT NAVBAR HTML ----------
 function renderStudentNavbar(user) {
   document.getElementById("navbarContent").innerHTML = `
       <nav class="navbar">
         <div class="navbar-user bordered-div" id="userMenuButton">
           <div class="nav-item">
-            <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
+            <img src=${"../"+user["profile-image"]} alt="User" class="nav-image user-avatar">
             <span class="username">${user.firstName} ${user.lastName}</span>
             <i class="bx bx-chevron-down dropdown-icon"></i>
           </div>
@@ -76,7 +77,7 @@ function renderStudentNavbar(user) {
       <div class="user-dropdown" id="userDropdown">
         <div class="dropdown-header">
           <div class="top-header">
-            <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar"> 
+            <img src="${"../"+user["profile-image"]}" alt="User Avatar" class="dropdown-avatar"> 
             <button class="close-btn" id="closeDropdown">
               <i class="fa-solid fa-xmark"></i>
             </button>
@@ -89,7 +90,7 @@ function renderStudentNavbar(user) {
         <div class="dropdown-options">
           <button class="dropdown-btn profile">
             <div class="icon-box">
-              <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon">
+              <img src="${"../"+user["profile-image"]}" alt="User Icon" class="profile-icon">
             </div>
             Profile
           </button>
@@ -121,7 +122,7 @@ function renderInstructorNavbar(user) {
       <nav class="navbar">
         <div class="navbar-user bordered-div" id="userMenuButton">
           <div class="nav-item">
-            <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
+            <img src="${"../"+user["profile-image"]}" alt="User" class="nav-image user-avatar">
             <span class="username">${user.firstName} ${user.lastName}</span>
             <i class="bx bx-chevron-down dropdown-icon"></i>
           </div>
@@ -167,7 +168,7 @@ function renderInstructorNavbar(user) {
       <div class="user-dropdown" id="userDropdown">
         <div class="dropdown-header">
           <div class="top-header">
-            <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar"> 
+            <img src="${"../"+user["profile-image"]}" alt="User Avatar" class="dropdown-avatar"> 
             <button class="close-btn" id="closeDropdown"><i class="fa-solid fa-xmark"></i></button>
           </div>
           <div class="bottom-header">
@@ -210,7 +211,7 @@ function renderAdminNavbar(user) {
       <nav class="navbar">
         <div class="navbar-user bordered-div" id="userMenuButton">
           <div class="nav-item">
-            <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
+            <img src="${"../"+user["profile-image"]}" alt="User" class="nav-image user-avatar">
             <span class="username">${user.firstName} ${user.lastName}</span>
             <i class="bx bx-chevron-down dropdown-icon"></i>
           </div>
@@ -260,7 +261,7 @@ function renderAdminNavbar(user) {
       <div class="user-dropdown" id="userDropdown">
         <div class="dropdown-header">
           <div class="top-header">
-            <img src="../assets/imgs/person.png" alt="User Avatar" class="dropdown-avatar"> 
+            <img src="${"../"+user["profile-image"]}" alt="User Avatar" class="dropdown-avatar"> 
             <button class="close-btn" id="closeDropdown"><i class="fa-solid fa-xmark"></i></button>
           </div>
           <div class="bottom-header">

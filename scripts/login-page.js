@@ -8,6 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector(".input-submit").addEventListener("click", userVerification);
 
+    document.querySelectorAll(".input-field").forEach(input=>{
+        input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            userVerification();
+        }
+    });
+    });
+    
     // Remove error and red border while typing
     document.querySelectorAll(".input-field").forEach(input => {
         input.addEventListener("input", () => {
@@ -40,13 +48,18 @@ function initializeLocalStorage() {
         fetch("../assets/data/courses.json").then(res => res.json()),
         fetch("../assets/data/classes.json").then(res => res.json()),
         fetch("../assets/data/students.json").then(res => res.json()),
+        fetch("../assets/data/instructors.json").then(res => res.json()),
+        fetch("../assets/data/admins.json").then(res => res.json()),
         fetch("../assets/data/users.json").then(res => res.json()),
         fetch("../assets/data/majors.json").then(res => res.json()),
+        
     ])
-    .then(([courses, classes, students, users, majors]) => {
+    .then(([courses, classes, students,instructors,admins, users, majors]) => {
         localStorage.setItem("courses", JSON.stringify(courses));
         localStorage.setItem("classes", JSON.stringify(classes));
         localStorage.setItem("students", JSON.stringify(students));
+        localStorage.setItem("instructors", JSON.stringify(instructors));
+        localStorage.setItem("admins", JSON.stringify(admins));
         localStorage.setItem("users", JSON.stringify(users));
         localStorage.setItem("majors", JSON.stringify(majors));
     })
