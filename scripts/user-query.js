@@ -51,15 +51,15 @@ document.addEventListener("DOMContentLoaded", function () {
               <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${
                 course.creditHours
               } ${creditHoursText}</span>
-              ${course.majorsOffered
+
+                ${course.majorsOffered
                 .map(
-                  (major) => `
+                (major) => `
                 <span class="tag"><i class="fa-solid ${
-                  major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
-                }"></i> ${major}</span>
-              `
-                )
+                major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
+                }"></i> ${major == "CMPS" ? 'CS' : 'CE'}</span>`)
                 .join("")}
+
             </div>
           </div>
         </div>

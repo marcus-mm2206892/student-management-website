@@ -67,10 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <h3>${course.courseName}</h3>
                         <p class="course-subtitle">${course.description}</p>
-                        <div class="course-tags">
-                            <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                            <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-                        </div>
+                    <div class="course-tags">
+                        ${course.majorsOffered
+                        .map(
+                        (major) => `
+                        <span class="tag"><i class="fa-solid ${
+                        major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
+                        }"></i> ${major == "CMPS" ? 'CS' : 'CE'}</span>`)
+                        .join("")}
+                    </div>
                     </div>
                 </div>
     
@@ -107,9 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         (major) => `
                         <span class="tag"><i class="fa-solid ${
                         major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
-                        }"></i> ${major}</span>
-                    `
-                        )
+                        }"></i> ${major == "CMPS" ? 'CS' : 'CE'}</span>`)
                         .join("")}
                     </div>
                 </div>
