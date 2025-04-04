@@ -84,17 +84,27 @@ document.addEventListener("DOMContentLoaded", function () {
     function attachDropdownListeners() {
         document.querySelectorAll(".status-dropdown").forEach(dropdown => {
             dropdown.addEventListener("change", function () {
-
-                console.log(`Before Update: ` + allClasses.find(cls => cls.classId == classId))
                 const selectedStatus = this.value;
                 const classId = this.getAttribute("data-classId");
+                
+                console.log(`Before Update: ` + allClasses.find(cls => cls.classId == classId))
+
                 console.log(`Class ID: ${classId} | New Status: ${selectedStatus}`);
+                let status;
+                switch (selectedStatus) {
+                    case 'approved':
+                        status = "open";
+                    case 'pending':
+                        status = "pending";
+                    case 'rejected':
+                        status = "closed";
+                }
 
                 // Change the status of the class
                 // Update classes.json
                 allClasses = allClasses.map((cls) => {
                     if (cls.classId == classId) {
-                    return { ...cls, classStatus: selectedStatus};
+                    return { ...cls, classStatus: status};
                     }
                     return cls;
                 });
