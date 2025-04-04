@@ -7,7 +7,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Page loaded");
     const allCourses = JSON.parse(localStorage.getItem("courses"));
-    const searchBar = document.querySelector(".search-bar");
+    const searchBar = document.querySelector("#searchBar");
     const allUsers = JSON.parse(localStorage.getItem("users"));
     const user = JSON.parse(localStorage.loggedInUser);
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    function renderRecomended(){
+    function renderRecomended(query = ""){
         const recommendedCoursesGrid = document.querySelector(".recommended-courses .course-grid");
         //1. Find courses according to user major
         const major = user.department == "Computer Science" ? "CMPS" : "CMPE";
@@ -62,8 +62,17 @@ document.addEventListener("DOMContentLoaded", function () {
         //2. Insert them in recommended
 
 
+        query = query.trim().toLowerCase();
+       
+        const matchedCourses = recommendedCourses.filter(
+          (course) =>
+            course.courseName.toLowerCase().includes(query) ||
+            course.courseId.toLowerCase().includes(query) ||
+            (course.instructors || []).join(" ").toLowerCase().includes(query)
+        );
+
         out = ``
-        recommendedCourses.forEach(c => {
+        matchedCourses.forEach(c => {
             out += courseTemplate(c);
         })
         //Inject the courses inside the div
@@ -71,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    function renderSupplementary() {
+    function renderSupplementary(query = "") {
         const supplementaryGrid = document.querySelector(".supplementary-courses .course-grid");
     
         const completedIds = user.completedCourses.map(c => c.courseId);
@@ -80,9 +89,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const supplementaryCourses = allCourses.filter(course => 
             !completedIds.includes(course.courseId) && !course.majorsOffered.includes(userMajor)
         );
+
+        query = query.trim().toLowerCase();
+       
+        const matchedCourses = supplementaryCourses.filter(
+          (course) =>
+            course.courseName.toLowerCase().includes(query) ||
+            course.courseId.toLowerCase().includes(query) ||
+            (course.instructors || []).join(" ").toLowerCase().includes(query)
+        );
     
         let out = "";
-        supplementaryCourses.forEach(course => {
+        matchedCourses.forEach(course => {
             out += courseTemplate(course);
         });
         supplementaryGrid.innerHTML = out;
@@ -92,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const csElectives = ["CMPS497", "CMPS482", "CMPS485", "CMPS493"];
     const ceElectives = ["CMPE457", "CMPE476", "CMPE483", "CMPE498"];
 
-    function renderElectives() {
+    function renderElectives(query = "") {
         const electiveGrid = document.querySelector(".elective-courses .course-grid");
         const completedIds = user.completedCourses.map(c => c.courseId);
     
@@ -101,9 +119,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const electiveCourses = allCourses.filter(course => 
             electives.includes(course.courseId) && !completedIds.includes(course.courseId)
         );
+
+        query = query.trim().toLowerCase();
+
+        const matchedCourses = electiveCourses.filter(
+            (course) =>
+              course.courseName.toLowerCase().includes(query) ||
+              course.courseId.toLowerCase().includes(query) ||
+              (course.instructors || []).join(" ").toLowerCase().includes(query)
+          );
     
         let out = "";
-        electiveCourses.forEach(course => {
+        matchedCourses.forEach(course => {
             out += courseTemplate(course);
         });
         electiveGrid.innerHTML = out;
@@ -143,6 +170,13 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
     }
+
+    searchBar.addEventListener("input", () => {
+        const query = searchBar.value;
+        renderRecomended(query);
+        renderSupplementary(query);
+        renderElectives(query);
+      });
     
 });
 
