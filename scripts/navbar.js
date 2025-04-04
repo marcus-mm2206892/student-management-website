@@ -24,7 +24,7 @@ function renderStudentNavbar(user) {
       <nav class="navbar">
         <div class="navbar-user bordered-div" id="userMenuButton">
           <div class="nav-item">
-            <img src="../assets/imgs/person.png" alt="User" class="nav-image user-avatar">
+            <img src=${"../"+user.profile_image} alt="User" class="nav-image user-avatar">
             <span class="username">${user.firstName} ${user.lastName}</span>
             <i class="bx bx-chevron-down dropdown-icon"></i>
           </div>
