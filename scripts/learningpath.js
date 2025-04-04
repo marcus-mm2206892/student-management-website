@@ -54,14 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //2. Fetch the completed coursess courses from Local storage
 
-        const courseIds = student.completedCourses; 
-        console.log(courseIds);
+        const completed = student.completedCourses; 
+        console.log(completed);
 
 
         const completedCourses = [];
 
-        courseIds.forEach(c => {  //Initializing course objects
-            let crs = allCourses.find( cr => cr.courseId == c);
+        completed.forEach(c => {  //Initializing course objects
+            let crs = allCourses.find( cr => cr.courseId == c.courseId);
             completedCourses.push(crs)
         });
 
@@ -71,7 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             out = ``
             completedCourses.forEach(c => {
-                out += courseCard(c);
+                const grade = completed.find( crs => crs.courseId == c.courseId).letterGrade;
+                out += courseCardWithGrades(c, grade);
             })
 
             //Inject the courses inside the div
@@ -113,18 +114,56 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
+    function courseCardWithGrades(course, grade) {
+        return `
+
+            <div class="course-card">
+            <div class="course-image">
+                <div class="hover-icon">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="hover-text">Register Course</span>
+                </div>
+            </div>
+            <div class="course-header">
+                <span class="course-tag">${course.courseId}</span>
+                <span class="semester">Spring 2025</span>
+            </div>
+            <div class="course-completed-main">
+                <div class="course-grade">
+                    <div class="letter-grade-container">
+                        <span class="letter-grade">${grade}</span>
+                    </div>
+                    <div>
+                        <span class="final-grade">Final Grade</span>
+                        <h3>${course.courseName}</h3>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    ${course.majorsOffered
+                    .map(
+                    (major) => `
+                    <span class="tag"><i class="fa-solid ${
+                    major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
+                    }"></i> ${major}</span>
+                `
+                    )
+                    .join("")}
+                </div>
+            </div>
+        </div>
+        
+        `;
+    }
+
     function renderInProgessCourses(){
-        // console.log(allEnrollments)
-        inProgressIDs = [];
-        allEnrollments.forEach(enr => {
-            inProgressIDs.push(enr.courseId);
-        })
-        console.log(inProgressIDs)
+        
+        inprogress = student.semesterEnrollment.classes
+        console.log(inprogress)
 
         inProgressCourses = []
 
-        inProgressIDs.forEach(c => {  //Initializing course objects
-            let crs = allCourses.find( cr => cr.courseId == c);
+        inprogress.forEach(c => {  //Initializing course objects
+            let crs = allCourses.find( cr => cr.courseId == c.courseId);
             inProgressCourses.push(crs)
         });
 
@@ -146,31 +185,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderPendingCourses(){
-        const major = allMajors.find( m => m.majorName == student.department)  //The department attribute of the students is infered as major
+        const required = allMajors.find( m => m.majorName == student.department).requiredCourses  //The department attribute of the students is infered as major
+        console.log(required)  // Required courses
 
-        const inprogress = [];
-        allEnrollments.forEach(enr => {
-            inprogress.push(enr.courseId);
-        })
-        console.log(inProgressIDs)
-
-        const required = major.requiredCourses;
-        const completed = student.completedCourses; 
+        const completed = student.completedCourses.map( cc => cc.courseId); // Completed Courses
+        console.log(completed); 
 
 
-        console.log(required)
-        console.log(completed)
+        inprogress = student.semesterEnrollment.classes.map( ip => ip.courseId); // Curren courses
+        console.log(inprogress)
 
         const difference1 = required.filter(item => !completed.includes(item));
         const difference2 = difference1.filter(item => !inprogress.includes(item));
 
+        console.log(difference2)
 
         pendingCourses = []
         difference2.forEach( crs => {
             pendingCourses.push(allCourses.find( c => c.courseId == crs))
         })
 
-        console.log(pendingCourses)
+    
 
         try {
             out = ``
