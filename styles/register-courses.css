@@ -258,6 +258,7 @@ tbody tr td button:hover {
   height: 10px;
   border-radius: 50%;
   display: inline-block;
+  background-color: var(--clr-primary-a0);
 }
 
 .status-approved .status-circle {
@@ -271,7 +272,7 @@ tbody tr td button:hover {
 }
 
 .course-button {
-  width: 5rem;
+  width: 6rem;
   height: 2.5rem;
   border-radius: 0.7rem;
   border: 0;
@@ -283,6 +284,16 @@ tbody tr td button:hover {
 .course-button:disabled {
   background-color: gray;
   cursor: not-allowed;
+}
+
+.registered-button {
+  background-color: rgb(12, 168, 12);
+  color: white;
+  transition: 0.2s;
+}
+
+.registered-button:hover {
+  background-color: rgb(23, 208, 23);
 }
 
 @media (prefers-color-scheme: light) {

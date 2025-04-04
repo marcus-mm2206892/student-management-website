@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
     }
 
-    function openModal(title = "Alert", description = "Something happened.") {
+    function openAlertModal(title = "Alert", description = "Something happened.") {
         if (!document.getElementById("alertModal")) {
             document.body.insertAdjacentHTML("beforeend", createAlertModal(title, description));
             setupAlertModalEvents();
@@ -47,5 +47,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Expose globally
-    window.openModal = openModal;
+    window.openAlertModal = openAlertModal;
 });

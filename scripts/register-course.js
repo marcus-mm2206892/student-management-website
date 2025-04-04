@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
   try {
     let out = "";
 
+    const user = JSON.parse(localStorage.loggedInUser);
+    const student = allStudents.find((s) => s.email == user.email);
+    const enrolledClasses = student.semesterEnrollment?.classes || [];
+
     allClasses.sort((a, b) => b.enrollmentActual - a.enrollmentActual);
     allClasses.forEach((classItem) => {
       let course = allCourses.find((c) => c.courseId === classItem.courseId);
@@ -33,35 +37,45 @@ document.addEventListener("DOMContentLoaded", function () {
           })
           .join("<br>") || "TBA";
       const status = classItem.classStatus?.toLowerCase() || "unknown";
+      const isAlreadyEnrolled = enrolledClasses.some(
+        (enrolled) => enrolled.classId === classItem.classId
+      );
 
       let statusClass = "";
       let buttonText = "";
       let buttonDisabled = "";
+      let buttonStyle = "";
+      let buttonClass = "";
 
-      switch (status) {
-        case "open":
-          statusClass = "status-approved";
-          if (classItem.enrollmentActual >= classItem.enrollmentMaximum) {
+      if (isAlreadyEnrolled) {
+        buttonText = "Unregister";
+        buttonClass = isAlreadyEnrolled ? "registered-button" : "";
+      } else {
+        switch (status) {
+          case "open":
+            statusClass = "status-approved";
+            if (classItem.enrollmentActual >= classItem.enrollmentMaximum) {
+              buttonDisabled = "disabled";
+              buttonText = "Full";
+            } else {
+              buttonText = "Register";
+            }
+            break;
+          case "closed":
+            statusClass = "status-rejected";
+            buttonText = "N/A";
             buttonDisabled = "disabled";
-            buttonText = "Full";
-          } else {
-            buttonText = "Register";
-          }
-          break;
-        case "closed":
-          statusClass = "status-rejected";
-          buttonText = "N/A";
-          buttonDisabled = "disabled";
-          break;
-        case "pending":
-          statusClass = "status-pending";
-          buttonText = "Closed";
-          buttonDisabled = "disabled";
-          break;
-        default:
-          statusClass = "status-default";
-          buttonText = "N/A";
-          buttonDisabled = "disabled";
+            break;
+          case "pending":
+            statusClass = "status-pending";
+            buttonText = "Closed";
+            buttonDisabled = "disabled";
+            break;
+          default:
+            statusClass = "status-default";
+            buttonText = "N/A";
+            buttonDisabled = "disabled";
+        }
       }
 
       out += `
@@ -80,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </span>
       </td>
       <td>
-        <button class="course-button"
+        <button class="course-button ${buttonClass}"
           data-classid="${classItem.classId}"
           data-courseid="${course.courseId}"
           ${buttonDisabled}>
@@ -224,76 +238,165 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleCourseRegistration(courseId, classId) {
     const user = JSON.parse(localStorage.loggedInUser);
     const student = allStudents.find((s) => s.email == user.email);
-    const allEnrollments = JSON.parse(
-      localStorage.getItem("courseEnrollments")
+    const allEnrollments =
+      JSON.parse(localStorage.getItem("courseEnrollments")) || [];
+    const course = allCourses.find((c) => c.courseId == courseId);
+    const classObj = allClasses.find((cls) => cls.classId == classId);
+    const userInfo = allUsers.find((u) => u.email == user.email);
+    const isMale = userInfo.gender === "male";
+
+    const semester = student.semesterEnrollment?.semester || "Spring 2025";
+    const currentClasses = student.semesterEnrollment?.classes || [];
+    const completedCourses = student.completedCourses.map((c) => c.courseId);
+
+    const isAlreadyEnrolled = currentClasses.some(
+      (cls) => cls.classId == classId
     );
-    console.log(allEnrollments);
-
-    //1. Check if the student has already enrolled in that course/section
-
-    const index = allEnrollments.findIndex(
-      (e) => e.studentId == student.studentId && e.courseId == courseId
+    const isSameCourseEnrolled = currentClasses.some(
+      (cls) => cls.courseId == courseId
     );
 
-    if (index != -1) {
-      alert(
-        `ERROR: You are already Registered in a section the Course ID: ${courseId}`
+    const enrolledCourseCredits = currentClasses.reduce((sum, c) => {
+      const course = allCourses.find((co) => co.courseId == c.courseId);
+      return sum + (course?.creditHour || 0);
+    }, 0);
+
+    const courseCredit = course?.creditHour || 0;
+    const totalAfterAdd = enrolledCourseCredits + courseCredit;
+
+    // 1. Gender-based Campus Restriction
+    if (isMale && classObj.campus?.toLowerCase() === "female") {
+      openAlertModal(
+        "Campus Restriction",
+        "This class is offered on the Female campus. Please register in a section available for Male students."
       );
       return;
     }
 
-    //2. Check if the student has passed the pre-req for that course
-    const preRequesites = allCourses.find(
-      (c) => c.courseId == courseId
-    ).prerequisites;
-    console.log(preRequesites);
-
-    completedCourses = student.completedCourses;
-    console.log(completedCourses);
-
-    const passedPreReq = preRequesites.every((course) =>
-      completedCourses.includes(course)
-    ); //Checking if pre-requisites are passed
-    console.log(passedPreReq);
-
-    if (passedPreReq) {
-      //3. Create courseEnrollment object
-      const courseEnrollment = {
-        enrollmentId: Date.now(),
-        studentId: student.studentId,
-        classId: classId,
-        courseId: courseId, //Not in the class diagram
-        status: "Enrolled",
-        courseGrade: 0,
-        letterGrade: "NA",
-      };
-      console.log(courseEnrollment);
-
-      //      - Update the No of enrollement of the class
-      const updateClasses = allClasses.map((cls) => {
-        if (cls.classId == classId) {
-          return { ...cls, enrollmentActual: cls.enrollmentActual + 1 };
-        } else {
-          return cls;
-        }
-      });
-
-      console.log(updateClasses);
-
-      //      - Save course enrollment and classes in the local storge
-      localStorage.setItem("classes", JSON.stringify(updateClasses));
-
-      allEnrollments.push(courseEnrollment);
-      localStorage.setItem("courseEnrollments", JSON.stringify(allEnrollments));
-      alert(
-        `Succesfully registered for class ${classId}, of course ${courseId}.`
+    if (!isMale && classObj.campus?.toLowerCase() === "male") {
+      openAlertModal(
+        "Campus Restriction",
+        "This class is offered on the Male campus. Please register in a section available for Female students."
       );
-
-      location.reload(); //Refresh the table
-    } else {
-      alert(
-        `The pre-requisite for the course ${courseId} has not been completed.`
-      ); //Do styling
+      return;
     }
+
+    // 2. Already Enrolled -> Offer to Unregister
+    if (isAlreadyEnrolled) {
+      openAlertModal(
+        "Unregister?",
+        `You are already enrolled in this class (${courseId}). Do you want to unregister?`
+      );
+      document.querySelector(".ok-btn").addEventListener("click", () => {
+        student.semesterEnrollment.classes = currentClasses.filter(
+          (c) => c.classId != classId
+        );
+
+        allClasses = allClasses.map((cls) => {
+          if (cls.classId == classId) {
+            return {
+              ...cls,
+              enrollmentActual: Math.max(0, cls.enrollmentActual - 1),
+            };
+          }
+          return cls;
+        });
+
+        localStorage.setItem("students", JSON.stringify(allStudents));
+        localStorage.setItem("classes", JSON.stringify(allClasses));
+
+        location.reload();
+      });
+      return;
+    }
+
+    // 3. Prerequisite Check
+    const prerequisites = course?.prerequisites || [];
+    const completedCourseIds = completedCourses.map((c) => c.courseId);
+    const passedPreReq = prerequisites.every((prereq) => {
+      const requiredCourseId =
+        typeof prereq === "string" ? prereq : prereq.courseId;
+      const minGrade = typeof prereq === "object" ? prereq.minGrade : "D";
+
+      const completed = student.completedCourses.find(
+        (c) => c.courseId === requiredCourseId
+      );
+      if (!completed) return false;
+
+      // grade comparison
+      const gradeScale = [
+        "A",
+        "A-",
+        "B+",
+        "B",
+        "B-",
+        "C+",
+        "C",
+        "C-",
+        "D+",
+        "D",
+        "F",
+      ];
+      const studentGradeIndex = gradeScale.indexOf(completed.letterGrade);
+      const requiredGradeIndex = gradeScale.indexOf(minGrade);
+
+      return studentGradeIndex <= requiredGradeIndex; // higher index = worse grade
+    });
+
+    if (!passedPreReq) {
+      openAlertModal(
+        "Missing Prerequisites",
+        `You must complete the prerequisite courses before enrolling in ${courseId}.`
+      );
+      return;
+    }
+
+    // 4. Credit Hour Cap
+    if (totalAfterAdd > 18) {
+      openAlertModal(
+        "Credit Hour Limit",
+        `Registering in this course would exceed your 18 credit hour limit. You currently have ${enrolledCourseCredits} hours.`
+      );
+      return;
+    }
+
+    // Register the class
+    const courseEnrollment = {
+      enrollmentId: Date.now(),
+      studentId: student.studentId,
+      classId: classId,
+      courseId: courseId,
+      status: "Enrolled",
+      courseGrade: 0,
+      letterGrade: "NA",
+    };
+
+    // Update classes.json
+    allClasses = allClasses.map((cls) => {
+      if (cls.classId == classId) {
+        return { ...cls, enrollmentActual: cls.enrollmentActual + 1 };
+      }
+      return cls;
+    });
+
+    // Update semesterEnrollment
+    student.semesterEnrollment.classes.push({
+      classId: classId,
+      courseId: courseId,
+      gradeStatus: "ungraded",
+      letterGrade: "N/A",
+    });
+
+    // Save everything
+    allEnrollments.push(courseEnrollment);
+    localStorage.setItem("students", JSON.stringify(allStudents));
+    localStorage.setItem("classes", JSON.stringify(allClasses));
+    localStorage.setItem("courseEnrollments", JSON.stringify(allEnrollments));
+
+    openAlertModal(
+      "Registration Successful",
+      `You have been enrolled in class ${classId} of course ${courseId}.`
+    );
+    setTimeout(() => location.reload(), 1200);
   }
 });
