@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const noResults = document.getElementById("noResults");
     const searchQueryText = document.getElementById("searchQueryText");
     const resultsCount = document.getElementById("resultsCount");
+    const coursesContainer = document.querySelector(".user-query .course-grid");
+
+    let allCourses = JSON.parse(localStorage.getItem("courses"));
 
     document.querySelectorAll(".fa-plus").forEach(button =>{
         //redirects to register when plus button pressed
@@ -12,6 +15,59 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "../html/register-course.html";
         })
     })
+
+
+    function renderCourses(){
+        console.log(allCourses)
+
+        try {
+            out = ``
+            allCourses.forEach(c => {
+                out += courseTemplate(c);
+            })
+
+            //Inject the courses inside the div
+            coursesContainer.innerHTML = out;
+
+        } catch {
+            //Display error/empty message in the container
+        }
+    }
+
+    renderCourses()
+
+    // <img src="${course.courseImage}" alt="Course Image">
+
+    function courseTemplate(course) {
+        return `
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="${course.courseImage}" alt="Course Image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="hover-text">Register Course</span>
+                    </div>
+                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+                </div>
+                <div class="course-info">
+                    <div class="course-header">
+                        <span class="course-tag"></i>${course.courseId}</span>
+                        <span class="semester">Fall 2025</span>
+                    </div>
+                    <h3>${course.courseName}</h3>
+                    <p class="course-subtitle">${course.description}</p>
+                    <div class="course-tags">
+                        <span class="tag"><i class="fa-solid fa-percent"></i> Probability</span>
+                        <span class="tag"><i class="fa-solid fa-chart-line"></i> Statistics</span>
+                    </div>
+                </div>
+            </div>
+        
+        `;
+    }
+
+
+
     // // Simulated search term (replace with actual query parameter later)
     // const query = "Mobile";
     // searchQueryText.innerHTML = query;
