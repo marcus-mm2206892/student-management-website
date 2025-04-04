@@ -8,14 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let allCourses = JSON.parse(localStorage.getItem("courses"));
     let allClasses = JSON.parse(localStorage.getItem("classes"));
+    let allUsers = JSON.parse(localStorage.getItem("users"));
+    allClasses.sort((a, b) => a.enrollmentActual - b.enrollmentActual);  // Display empty classse sat first
 
     console.log(allClasses)
 
     try {
         let out = "";
-        allCourses.forEach(course => {
-            let classDetails = allClasses   .find(cls => course.currentClasses.includes(cls.classId));
-            let classStatus = classDetails ? classDetails.classStatus.toLowerCase() : "unknown";
+        allClasses.forEach((classItem) => {
+            let course = allCourses.find((crs) => crs.courseId == classItem.courseId);
+            if (!course) return;
+            let classStatus = classItem ? classItem.classStatus.toLowerCase() : "unknown";
 
             let statusClass = "";
             switch (classStatus) {
@@ -33,13 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
                     break;
             }
 
+            let instructorNames =
+            (classItem.instructors || [])
+              .map((email) => {
+                const user = allUsers.find((u) => u.email === email);
+                return user ? `${user.firstName} ${user.lastName}` : email;
+              })
+              .join("<br>") || "TBA";
+
             out += `
             <tr class="course-row">
                 <td class="data course-no"><span>${course.courseId}</span></td>
                 <td class="data course-name"><span>${course.courseName}</span></td>
-                <td class="data course-instructor"><span>${course.instructor || "TBA"}</span></td>
-                <td class="data course-section"><span>L01</span></td>
-                <td class="data course-enrollment"><span>${classDetails ? classDetails.enrollmentActual + "/" + classDetails.enrollmentMaximum : "0/0"}</span></td>
+                <td class="data course-instructor"><span>${instructorNames|| "TBA"}</span></td>
+                <td class="data course-section"><span>${classItem.section}</span></td>
+                <td class="data course-enrollment"><span>${classItem ? classItem.enrollmentActual + "/" + classItem.enrollmentMaximum : "0/0"}</span></td>
                 <td class="data course-status">
                     <span class="status-badge ${statusClass}">
                         <span class="status-circle"></span>
@@ -47,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </span>
                 </td>
                 <td>
-                    <select class="status-dropdown" data-course-id="${course.courseId}">
+                    <select class="status-dropdown" data-classId="${classItem.classId}">
                         <option value="approved" ${classStatus === "open" ? "selected" : ""}>Approve</option>
                         <option value="pending" ${classStatus === "pending" ? "selected" : ""}>Pending</option>
                         <option value="rejected" ${classStatus === "closed" ? "selected" : ""}>Rejected</option>
@@ -73,9 +84,25 @@ document.addEventListener("DOMContentLoaded", function () {
     function attachDropdownListeners() {
         document.querySelectorAll(".status-dropdown").forEach(dropdown => {
             dropdown.addEventListener("change", function () {
+
+                console.log(`Before Update: ` + allClasses.find(cls => cls.classId == classId))
                 const selectedStatus = this.value;
-                const courseId = this.getAttribute("data-course-id");
-                console.log(`Course ID: ${courseId} | New Status: ${selectedStatus}`);
+                const classId = this.getAttribute("data-classId");
+                console.log(`Class ID: ${classId} | New Status: ${selectedStatus}`);
+
+                // Change the status of the class
+                // Update classes.json
+                allClasses = allClasses.map((cls) => {
+                    if (cls.classId == classId) {
+                    return { ...cls, classStatus: selectedStatus};
+                    }
+                    return cls;
+                });
+
+                console.log(`After Update: ` + allClasses.find(cls => cls.classId == classId))
+
+                //Save everything
+                localStorage.setItem("classes", JSON.stringify(allClasses));
 
                 const row = this.closest("tr");
                 const statusBadge = row.querySelector(".status-badge");
