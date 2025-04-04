@@ -1,108 +1,154 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const searchBar = document.getElementById("searchBar");
-    const resultsGrid = document.getElementById("resultsGrid");
-    const noResults = document.getElementById("noResults");
-    const searchQueryText = document.getElementById("searchQueryText");
-    const resultsCount = document.getElementById("resultsCount");
-    const coursesContainer = document.querySelector(".user-query .course-grid");
+  const searchBar = document.querySelector("#searchBar");
+  const resultsGrid = document.querySelector("#resultsGrid");
+  const noResults = document.querySelector("#noResults");
+  const failedToLoad = document.querySelector("#failedToLoad");
+  const searchQueryText = document.querySelector("#searchQueryText");
+  const resultsCount = document.querySelector("#resultsCount");
+  const endOfResultsSpan = document.querySelector(".end-of-results");
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  const userRole = loggedInUser?.role || "student";
 
-    let allCourses = JSON.parse(localStorage.getItem("courses"));
+  let allCourses = JSON.parse(localStorage.getItem("courses") || "[]");
 
-    document.querySelectorAll(".fa-plus").forEach(button =>{
-        //redirects to register when plus button pressed
-        button.addEventListener("click",function(event){
-            event.stopPropagation();
-            window.location.href = "../html/register-course.html";
-        })
-    })
+  // If data failed to load
+  if (!Array.isArray(allCourses) || allCourses.length === 0) {
+    resultsGrid.style.display = "none";
+    endOfResultsSpan.style.display = "none";
+    failedToLoad.style.display = "flex";
+    return;
+  }
 
+  function courseTemplate(course) {
+    const creditHoursText =
+      course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
 
-    function renderCourses(){
-        console.log(allCourses)
+    const hoverIconHTML =
+      userRole === "student"
+        ? `
+    <div class="hover-icon" onclick="window.location.href='../html/register-course.html'">
+      <i class="fa-solid fa-plus"></i>
+      <span class="hover-text">Register Course</span>
+    </div>
+  `
+        : "";
 
-        try {
-            out = ``
-            allCourses.forEach(c => {
-                out += courseTemplate(c);
-            })
-
-            //Inject the courses inside the div
-            coursesContainer.innerHTML = out;
-
-        } catch {
-            //Display error/empty message in the container
-        }
-    }
-
-
-    renderCourses()
-
-    //Need to fix the search filtering
-
-    function courseTemplate(course) {
-        const creditHoursText = course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
-        
-        return `
-            <div class="course-card">
-                <div class="course-image">
-                    <img src="${course.courseImage}" alt="Course Image">
-                    <div class="hover-icon">
-                        <i class="fa-solid fa-plus"></i>
-                        <span class="hover-text">Register Course</span>
-                    </div>
-                    <i class="fa-solid fa-turn-up top-right-icon"></i>
-                </div>
-                <div class="course-info">
-                    <div class="course-header">
-                        <span class="course-tag"></i>${course.courseId}</span>
-                        <span class="semester">Fall 2025</span>
-                    </div>
-                    <h3>${course.courseName}</h3>
-                    <p class="course-subtitle">${course.description}</p>
-                    <div class="course-tags">
-                        <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${course.creditHours} ${creditHoursText} </span>
-                         ${course.majorsOffered.map(major => `
-                        <span class="tag"><i class="fa-solid ${major === 'CMPE' ? 'fa-microchip' : 'fa-laptop-code'}"></i> ${major}</span>
-                        `).join('')}
-                    </div>
-                </div>
+    return `
+        <div class="course-card">
+          <div class="course-image">
+            <img src="${course.courseImage}" alt="Course Image">
+            ${hoverIconHTML}
+            <i class="fa-solid fa-turn-up top-right-icon"></i>
+          </div>
+          <div class="course-info">
+            <div class="course-header">
+              <span class="course-tag">${course.courseId}</span>
+              <span class="semester">Spring 2025</span>
             </div>
-        
-        `;
+            <h3>${course.courseName}</h3>
+            <p class="course-subtitle">${course.description}</p>
+            <div class="course-tags">
+              <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${
+                course.creditHours
+              } ${creditHoursText}</span>
+              ${course.majorsOffered
+                .map(
+                  (major) => `
+                <span class="tag"><i class="fa-solid ${
+                  major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
+                }"></i> ${major}</span>
+              `
+                )
+                .join("")}
+            </div>
+          </div>
+        </div>
+      `;
+  }
+
+  document.addEventListener("click", function (event) {
+    const courseCard = event.target.closest(".course-card");
+    if (courseCard) {
+      const courseId = courseCard
+        .querySelector(".course-tag")
+        ?.textContent.trim();
+      if (courseId && window.openCourseModal) {
+        openCourseModal(courseId);
+      }
     }
+  });
 
+  function renderCourses(query = "") {
+    query = query.trim().toLowerCase();
 
+    // Update heading
+    searchQueryText.innerHTML = query ? `“${query}”` : "All Courses";
 
-    // // Simulated search term (replace with actual query parameter later)
-    // const query = "Data";
-    // searchQueryText.innerHTML = query;
+    const matchedCourses = allCourses.filter(
+      (course) =>
+        course.courseName.toLowerCase().includes(query) ||
+        course.courseId.toLowerCase().includes(query) ||
+        (course.instructors || []).join(" ").toLowerCase().includes(query)
+    );
 
-    // fetch("../assets/data/courses.json")
-    // .then(res => res.json())
-    // .then(courses => {
-    //     let results = courses.filter(course => 
-    //         course.courseName.toLowerCase().includes(query.toLowerCase()) ||
-    //         course.courseId.toLowerCase().includes(query.toLowerCase())
-    //     );
+    resultsCount.textContent = `${matchedCourses.length} result${
+      matchedCourses.length !== 1 ? "s" : ""
+    }`;
 
-    //     if (results.length === 0) {
-    //         noResults.style.display = "block";
-    //         resultsGrid.style.display = "none";
-    //         resultsCount.innerHTML = "0 results";
-    //     } else {
-    //         noResults.style.display = "none";
-    //         resultsGrid.style.display = "grid";
-    //         resultsCount.innerHTML = `${results.length} results`;
+    if (matchedCourses.length === 0) {
+      noResults.style.display = "flex";
+      failedToLoad.style.display = "none";
+      resultsGrid.innerHTML = "";
+      resultsGrid.style.display = "none";
+      endOfResultsSpan.style.display = "none";
+    } else {
+      noResults.style.display = "none";
+      failedToLoad.style.display = "none";
+      resultsGrid.innerHTML = matchedCourses.map(courseTemplate).join("");
+      resultsGrid.style.display = "grid";
+      endOfResultsSpan.style.display = "flex";
+    }
+  }
 
-    //         let output = results.map(course => `
-    //             ${courseTemplate(course)}
-    //         `).join("");
+  // Initial render
+  renderCourses();
 
-    //         resultsGrid.innerHTML = output;
-    //     }
-    // });
-
-    // searchBar.addEventListener("input", function () {
-    //     window.location.href = `student-query.html?q=${searchBar.value}`;
-    // });
+  // Live search
+  searchBar.addEventListener("input", () => {
+    const query = searchBar.value;
+    renderCourses(query);
+  });
 });
+
+// // Simulated search term (replace with actual query parameter later)
+// const query = "Data";
+// searchQueryText.innerHTML = query;
+
+// fetch("../assets/data/courses.json")
+// .then(res => res.json())
+// .then(courses => {
+//     let results = courses.filter(course =>
+//         course.courseName.toLowerCase().includes(query.toLowerCase()) ||
+//         course.courseId.toLowerCase().includes(query.toLowerCase())
+//     );
+
+//     if (results.length === 0) {
+//         noResults.style.display = "block";
+//         resultsGrid.style.display = "none";
+//         resultsCount.innerHTML = "0 results";
+//     } else {
+//         noResults.style.display = "none";
+//         resultsGrid.style.display = "grid";
+//         resultsCount.innerHTML = `${results.length} results`;
+
+//         let output = results.map(course => `
+//             ${courseTemplate(course)}
+//         `).join("");
+
+//         resultsGrid.innerHTML = output;
+//     }
+// });
+
+// searchBar.addEventListener("input", function () {
+//     window.location.href = `student-query.html?q=${searchBar.value}`;
+// });

@@ -33,7 +33,6 @@
   justify-content: center;
   width: 100px;
   height: 100px;
-  background: var(--clr-surface-a10);
   border-radius: 50%;
   margin-bottom: 1rem;
 }

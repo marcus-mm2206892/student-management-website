@@ -127,6 +127,9 @@ body {
   margin: 2rem 0;
   position: relative;
   white-space: nowrap;
+
+  width: 100%;
+  text-align: center; 
 }
 
 .end-of-results::before,

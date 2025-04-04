@@ -1,5 +1,5 @@
-const container = document.querySelector("#noResults");
-container.innerHTML = `
+const noResultsContainer = document.querySelector("#noResults");
+noResultsContainer.innerHTML = `
   <!-- show this if the search has no results -->
           <div class="no-results-icon">
             <!-- Light Mode SVG -->

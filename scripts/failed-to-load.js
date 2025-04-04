@@ -1,5 +1,5 @@
-const container = document.querySelector("#failedToLoad");
-container.innerHTML = `
+const failedToLoadContainer = document.querySelector("#failedToLoad");
+failedToLoadContainer.innerHTML = `
   <!-- show this if there are no errors -->
           <div class="failed-to-load-icon">
             <!-- Light Mode SVG -->

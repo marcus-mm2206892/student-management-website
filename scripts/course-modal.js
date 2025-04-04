@@ -1,88 +1,116 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    function createCourseModal() {
-        return `
-            <div id="courseModal" class="modal">
-                <div class="modal-popup">
-                    <button class="close-btn close-modal">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-
-                    <div class="course-image">
-                        <div class="hover-icon">
-                            <i class="fa-solid fa-eye"></i>
-                            <span class="hover-text">View Course</span>
-                        </div>
-                    </div>
-
-                    <div class="modal-content">
-                        <div class="course-title-div">
-                            <h2 class="course-title">Web Development Fundamentals</h2>
-                            <div class="course-tags-div">
-                                <span class="course-tag">CMPS 350</span>
-                            </div>
-                        </div>
-
-                        <div class="course-info">
-                            <p class="content-info-text subject"><i class="fa-solid fa-book"></i> Computer Science</p>
-                            <p class="content-info-text credit-hours"><i class="fa-solid fa-clock"></i> 3 Credit Hours</p>
-                        </div>
-
-                        <div class="course-description">
-                            <h3 class="content-info-attribute">What You'll Learn</h3>
-                            <p class="content-info-paragraph description">
-                                Concepts, protocols and enabling technologies related to the development of modern web applications. Fundamentals of designing and developing dynamic and interactive web applications using HTML and related standards, scripting languages, client-side and server-side programming. Hands-on Lab to design and develop Web applications.
-                            </p>
-                        </div>
-
-                        <div class="prerequisite-courses">
-                            <h3 class="content-info-attribute">Prerequisites</h3>
-                            <div class="prerequisite-tags">
-                                <span class="course-tag">CMPS 151</span>
-                                <span class="course-tag">CMPS 251</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="register-btn" onclick="goToRegistration()">Go to Registration</button>
-                </div>
+    function createCourseModal(course, userRole) {
+      const creditHoursText = course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
+      const prerequisites = (course.prerequisites || [])
+        .map(p => typeof p === "string" ? p : p.courseId)
+        .map(p => `<span class="course-tag">${p}</span>`)
+        .join("") || "<span>None</span>";
+  
+      // Button logic
+      let registrationButton = "";
+      if (userRole === "admin") {
+        registrationButton = `<button class="register-btn" onclick="goToClassStatus()">Go to Class Status</button>`;
+      } else if (userRole !== "instructor") {
+        registrationButton = `<button class="register-btn" onclick="goToRegistration()">Go to Registration</button>`;
+      }
+  
+      return `
+        <div id="courseModal" class="modal">
+          <div class="modal-popup">
+            <button class="close-btn close-modal">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+  
+            <div class="course-image">
+              <img src="${course.courseImage || '../assets/imgs/default-course.jpg'}" alt="Course Image">
+              <div class="hover-icon">
+                <i class="fa-solid fa-eye"></i>
+                <span class="hover-text">View Course</span>
+              </div>
             </div>
-        `;
+  
+            <div class="modal-content">
+              <div class="course-title-div">
+                <h2 class="course-title">${course.courseName}</h2>
+                <div class="course-tags-div">
+                  <span class="course-tag">${course.courseId}</span>
+                </div>
+              </div>
+  
+              <div class="course-info">
+                <p class="content-info-text subject"><i class="fa-solid fa-book"></i> ${course.subject || "Unknown"}</p>
+                <p class="content-info-text credit-hours"><i class="fa-solid fa-clock"></i> ${course.creditHours} ${creditHoursText}</p>
+              </div>
+  
+              <div class="course-description">
+                <h3 class="content-info-attribute">What You'll Learn</h3>
+                <p class="content-info-paragraph description">
+                  ${course.description || "No description available."}
+                </p>
+              </div>
+  
+              <div class="prerequisite-courses">
+                <h3 class="content-info-attribute">Prerequisites</h3>
+                <div class="prerequisite-tags">${prerequisites}</div>
+              </div>
+            </div>
+  
+            ${registrationButton}
+          </div>
+        </div>
+      `;
     }
-
-    function openModal() {
-        if (!document.getElementById("courseModal")) {
-            document.body.insertAdjacentHTML("beforeend", createCourseModal());
-            setupModalEvents();
-        }
-        document.querySelector("#courseModal").style.display = "flex";
+  
+    function openCourseModal(courseId) {
+      const courses = JSON.parse(localStorage.getItem("courses") || "[]");
+      const course = courses.find(c => c.courseId === courseId);
+      const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+      const userRole = loggedInUser?.role || "student";
+  
+      if (!course) {
+        console.warn("Course not found:", courseId);
+        return;
+      }
+  
+      // Remove existing modal if any
+      const existing = document.getElementById("courseModal");
+      if (existing) existing.remove();
+  
+      document.body.insertAdjacentHTML("beforeend", createCourseModal(course, userRole));
+      setupModalEvents();
+  
+      document.querySelector("#courseModal").style.display = "flex";
     }
-
+  
     function closeModal() {
-        const modal = document.querySelector("#courseModal");
-        if (modal) {
-            modal.style.opacity = "0";
-            setTimeout(() => modal.remove(), 300);
-        }
+      const modal = document.querySelector("#courseModal");
+      if (modal) {
+        modal.style.opacity = "0";
+        setTimeout(() => modal.remove(), 300);
+      }
     }
-
+  
     function setupModalEvents() {
-        document.querySelectorAll(".close-modal").forEach(button => {
-            button.addEventListener("click", closeModal);
-        });
-
-        document.querySelector("#courseModal").addEventListener("click", function (event) {
-            if (event.target === this) {
-                closeModal();
-            }
-        });
+      document.querySelectorAll(".close-modal").forEach(button => {
+        button.addEventListener("click", closeModal);
+      });
+  
+      document.querySelector("#courseModal").addEventListener("click", function (event) {
+        if (event.target === this) closeModal();
+      });
     }
-
+  
     function goToRegistration() {
-        window.location.href = "register-course.html";
+      window.location.href = "register-course.html";
     }
-
-    // Expose functions globally
-    window.openModal = openModal;
+  
+    function goToClassStatus() {
+      window.location.href = "admin-approve-class.html";
+    }
+  
+    // Global exposure
+    window.openCourseModal = openCourseModal;
     window.goToRegistration = goToRegistration;
-});
+    window.goToClassStatus = goToClassStatus;
+  });
+  

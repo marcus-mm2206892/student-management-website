@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .join(" ");
       const creditHours = parseInt(courseFormObject["creditHours"]);
       const description = courseFormObject["description"];
+      const imageUrl = courseFormObject["imageUrl"];
   
       const prereqs = Array.from(document.querySelectorAll("#selectedPrereqs span")).map(s => s.dataset.value);
       const majors = Array.from(document.querySelectorAll("#selectedMajors span")).map(s => s.dataset.value);
@@ -132,7 +133,8 @@ document.addEventListener("DOMContentLoaded", function () {
         creditHours,
         prerequisites: prereqs,
         majorsOffered: majors,
-        description
+        description,
+        imageUrl: imageUrl
       };
   
       const existingCourses = JSON.parse(localStorage.getItem("courses") || "[]");
