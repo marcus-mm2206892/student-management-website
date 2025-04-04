@@ -4,29 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const courses = JSON.parse(localStorage.getItem("courses"));
     const classes = JSON.parse(localStorage.getItem("classes"));
     const users = JSON.parse(localStorage.getItem("users"));
-    const instructorsData = JSON.parse(localStorage.getItem("instructors"));
-
     const course = courses.find((c) => c.courseId === courseId);
     const courseClass = classes.find((cls) => cls.courseId === courseId);
 
-    // Helper function to convert 24hr to 12hr format
-    function to12Hour(timeStr) {
-      const [hour, minute] = timeStr.split(":").map(Number);
-      const ampm = hour >= 12 ? "PM" : "AM";
-      const hour12 = hour % 12 || 12;
-      return `${hour12}:${minute.toString().padStart(2, "0")} ${ampm}`;
-    }
-
-    // Get schedule times and convert if available
-    const startTime = courseClass?.schedule?.startTime
-      ? to12Hour(courseClass.schedule.startTime)
-      : "TBA";
-
-    const endTime = courseClass?.schedule?.endTime
-      ? to12Hour(courseClass.schedule.endTime)
-      : "TBA";
-
-    const scheduleType = courseClass?.schedule?.scheduleType || "TBA";
+    const instructorsData = JSON.parse(localStorage.getItem("instructors"));
 
     const instructors = (courseClass?.instructors || [])
       .map((email) => {
@@ -55,19 +36,38 @@ document.addEventListener("DOMContentLoaded", function () {
       )
       .join("");
 
-      function generateWeekdaySpans(scheduleType) {
-        const allDays = ["S", "M", "T", "W", "T", "F", "S"];
-        const uniqueDays = ["S", "M", "T", "W", "T", "F", "SAT"];
-        const activeSet = new Set(scheduleType.split(""));
-      
-        return allDays
-          .map((day, index) => {
-            const matchChar = uniqueDays[index];
-            const isActive = activeSet.has(matchChar);
-            return `<span class="day${isActive ? " active" : ""}">${day}</span>`;
-          })
-          .join("");
-      }
+    // Helper function to convert 24hr to 12hr format
+    function to12Hour(timeStr) {
+      const [hour, minute] = timeStr.split(":").map(Number);
+      const ampm = hour >= 12 ? "PM" : "AM";
+      const hour12 = hour % 12 || 12;
+      return `${hour12}:${minute.toString().padStart(2, "0")} ${ampm}`;
+    }
+
+    // Get schedule times and convert if available
+    const startTime = courseClass?.schedule?.startTime
+      ? to12Hour(courseClass.schedule.startTime)
+      : "TBA";
+
+    const endTime = courseClass?.schedule?.endTime
+      ? to12Hour(courseClass.schedule.endTime)
+      : "TBA";
+
+    const scheduleType = courseClass?.schedule?.scheduleType || "TBA";
+
+    function generateWeekdaySpans(scheduleType) {
+    const allDays = ["S", "M", "T", "W", "T", "F", "S"];
+    const uniqueDays = ["S", "M", "T", "W", "T", "F", "SAT"];
+    const activeSet = new Set(scheduleType.split(""));
+    
+    return allDays
+        .map((day, index) => {
+        const matchChar = uniqueDays[index];
+        const isActive = activeSet.has(matchChar);
+        return `<span class="day${isActive ? " active" : ""}">${day}</span>`;
+        })
+        .join("");
+    }
       
 
     const modalHTML = `
@@ -362,11 +362,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function selectOption(option) {
     document.querySelector("#selectedOption").textContent = option;
+  
+    closeDropdown();
+  
     document
       .querySelectorAll(".content-section")
       .forEach((section) => section.classList.remove("active"));
+  
     document.getElementById(option).classList.add("active");
   }
+  
 
   window.toggleDropdown = toggleDropdown;
   window.openDropdown = openDropdown;
