@@ -8,11 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Page loaded");
     const allCourses = JSON.parse(localStorage.getItem("courses"));
     const searchBar = document.querySelector(".search-bar");
-    //const recomendedContainer = document.querySelector(".courses.recommended-courses .course-grid");
-    const recommendedCoursesGrid = document.querySelector(".recommended-courses .course-grid");
-
-    
-
     const allUsers = JSON.parse(localStorage.getItem("users"));
     const user = JSON.parse(localStorage.loggedInUser);
 
@@ -33,7 +28,22 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
+    
+    document.addEventListener("click", function (event) {
+        const courseCard = event.target.closest(".course-card");
+        if (courseCard) {
+        const courseId = courseCard
+            .querySelector(".course-tag")
+            ?.textContent.trim();
+        if (courseId && window.openCourseModal) {
+            openCourseModal(courseId);
+        }
+        }
+    });
+
+
     function renderRecomended(){
+        const recommendedCoursesGrid = document.querySelector(".recommended-courses .course-grid");
         //1. Find courses according to user major
         const major = user.department == "Computer Science" ? "CMPS" : "CMPE";
         console.log(major)
@@ -51,16 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //2. Insert them in recommended
 
-        try {
-            out = ``
-            recommendedCourses.forEach(c => {
-                out += courseTemplate(c);
-            })
-            //Inject the courses inside the div
-            recommendedCoursesGrid.innerHTML = out;
-        } catch {
-            //Display error/empty message in the 'Pending' column
-        }
+
+        out = ``
+        recommendedCourses.forEach(c => {
+            out += courseTemplate(c);
+        })
+        //Inject the courses inside the div
+        recommendedCoursesGrid.innerHTML = out;
 
     }
 
@@ -141,28 +148,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-// adding HTML here for reference:
-/*
-<div class="course-card">
-    <div class="course-image">
-        <div class="hover-icon">
-            <i class="fa-solid fa-plus"></i>
-            <span class="hover-text">Register Course</span>
-        </div>
-        <i class="fa-solid fa-turn-up top-right-icon"></i>
-    </div>
-    <div class="course-info">
-        <div class="course-header">
-            <span class="course-tag">CMPS 303</span>
-            <span class="semester">Fall 2025</span>
-        </div>
-        <h3>Data Structures</h3>
-        <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
-        <div class="course-tags">
-            <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-            <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-        </div>
-    </div>
-</div>
-*/
