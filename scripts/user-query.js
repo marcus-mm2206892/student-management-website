@@ -34,11 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
     renderCourses()
 
     // <img src="${course.courseImage}" alt="Course Image">
 
     function courseTemplate(course) {
+        const creditHoursText = course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
+        
         return `
             <div class="course-card">
                 <div class="course-image">
@@ -57,8 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3>${course.courseName}</h3>
                     <p class="course-subtitle">${course.description}</p>
                     <div class="course-tags">
-                        <span class="tag"><i class="fa-solid fa-percent"></i> Probability</span>
-                        <span class="tag"><i class="fa-solid fa-chart-line"></i> Statistics</span>
+                        <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${course.creditHours} ${creditHoursText} </span>
+                         ${course.majorsOffered.map(major => `
+                        <span class="tag"><i class="fa-solid ${major === 'CMPE' ? 'fa-microchip' : 'fa-laptop-code'}"></i> ${major}</span>
+                        `).join('')}
                     </div>
                 </div>
             </div>
