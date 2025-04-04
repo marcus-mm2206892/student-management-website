@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const searchBar = document.getElementById("searchBar");
+    const searchBar = document.querySelectorAll("#searchBar");
     const tableHead = document.querySelector("#tableHead");
     const tableHeadRow = tableHead.querySelectorAll("tr")[1]; // second row (actual column headers)
-    const tableBody = document.getElementById("data-output");
-    const noResults = document.getElementById("noResults");
-    const searchInfo = document.getElementById("searchInfo");
+    const tableBody = document.querySelector("#data-output");
+    const searchInfo = document.querySelector("#searchInfo");
+    const registerTable = document.querySelector(".register-table");
 
     let allCourses = JSON.parse(localStorage.getItem("courses"));
     let allClasses = JSON.parse(localStorage.getItem("classes"));
@@ -86,7 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     } catch (error) {
         console.error("Error fetching course/class data:", error);
-        tableBody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: red;">Failed to load courses.</td></tr>`;
+        failedToLoad.style.display = "flex";
+        registerTable.style.display = "none";
     }
     
 
