@@ -64,7 +64,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    renderRecomended()
+    function renderSupplementary() {
+        const supplementaryGrid = document.querySelector(".supplementary-courses .course-grid");
+    
+        const completedIds = user.completedCourses.map(c => c.courseId);
+        const userMajor = user.department === "Computer Science" ? "CMPS" : "CMPE";
+    
+        const supplementaryCourses = allCourses.filter(course => 
+            !completedIds.includes(course.courseId) && !course.majorsOffered.includes(userMajor)
+        );
+    
+        let out = "";
+        supplementaryCourses.forEach(course => {
+            out += courseTemplate(course);
+        });
+        supplementaryGrid.innerHTML = out;
+    }
+    
+
+    const csElectives = ["CMPS497", "CMPS482", "CMPS485", "CMPS493"];
+    const ceElectives = ["CMPE457", "CMPE476", "CMPE483", "CMPE498"];
+
+    function renderElectives() {
+        const electiveGrid = document.querySelector(".elective-courses .course-grid");
+        const completedIds = user.completedCourses.map(c => c.courseId);
+    
+        const electives = user.department === "Computer Science" ? csElectives : ceElectives;
+    
+        const electiveCourses = allCourses.filter(course => 
+            electives.includes(course.courseId) && !completedIds.includes(course.courseId)
+        );
+    
+        let out = "";
+        electiveCourses.forEach(course => {
+            out += courseTemplate(course);
+        });
+        electiveGrid.innerHTML = out;
+    }
+    
+
+    renderRecomended();
+    renderSupplementary();
+    renderElectives();
 
     function courseTemplate(course){
         const creditHoursText = course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
@@ -81,9 +122,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="course-info">
                     <div class="course-header">
                         <span class="course-tag">${course.courseId}</span>
-                        <span class="semester">Fall 2025</span>
+                        <span class="semester">Spring 2025</span>
                     </div>
-                    <h3>Data Structures</h3>
+                    <h3>${course.courseName}</h3>
                     <p class="course-subtitle">${course.description}</p>
                      <div class="course-tags">
                         <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${course.creditHours} ${creditHoursText} </span>
