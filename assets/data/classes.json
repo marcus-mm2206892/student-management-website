@@ -1376,7 +1376,7 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "pending",
+    "classStatus": "open",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
@@ -1644,10 +1644,10 @@
     "courseId": "CMPS497",
     "semester": "Spring 2025",
     "instructionalMethods": "English",
-    "campus": "Male",
+    "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "pending",
+    "classStatus": "open",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
@@ -1656,7 +1656,7 @@
     "instructors": [
       "salem.saeed@qu.com"
     ],
-    "section": "L05"
+    "section": "L52"
   },
   {
     "classId": "25587",

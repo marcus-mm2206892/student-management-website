@@ -229,11 +229,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //when clicked, should display a modal about the class
   document.addEventListener("click", function (event) {
-    if (event.target.closest(".course-row")) {
-      let row = event.target.closest(".course-row");
-      //    alert("Row clicked! ")
+    if (event.target.closest(".course-no")) {
+      const courseId = event.target.closest(".course-no").innerText.trim();
+      if (window.openClassModal) {
+        window.openClassModal(courseId);
+      } else {
+        console.warn("Class modal not initialized");
+      }
     }
   });
+  
 
   function handleCourseRegistration(courseId, classId) {
     const user = JSON.parse(localStorage.loggedInUser);
@@ -258,10 +263,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const enrolledCourseCredits = currentClasses.reduce((sum, c) => {
       const course = allCourses.find((co) => co.courseId == c.courseId);
-      return sum + (course?.creditHour || 0);
+      return sum + (course?.creditHours || 0);
     }, 0);
 
-    const courseCredit = course?.creditHour || 0;
+    const courseCredit = course?.creditHours || 0;
     const totalAfterAdd = enrolledCourseCredits + courseCredit;
 
     // 1. Gender-based Campus Restriction
@@ -281,7 +286,24 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 2. Already Enrolled -> Offer to Unregister
+    // 2. Duplicate Course Enrollment Check
+    if (isSameCourseEnrolled) {
+      const existingClass = currentClasses.find(
+        (cls) => cls.courseId === courseId
+      );
+      const existingClassObj = allClasses.find(
+        (cls) => cls.classId === existingClass.classId
+      );
+      const sectionName = existingClassObj?.section || "another section";
+
+      openAlertModal(
+        "Already Enrolled in Course",
+        `You are already enrolled in ${courseId} section ${sectionName}. You cannot register for multiple sections of the same course.`
+      );
+      return;
+    }
+
+    // 3. Already Enrolled -> Offer to Unregister
     if (isAlreadyEnrolled) {
       openAlertModal(
         "Unregister?",
@@ -310,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 3. Prerequisite Check
+    // 4. Prerequisite Check
     const prerequisites = course?.prerequisites || [];
     const completedCourseIds = completedCourses.map((c) => c.courseId);
     const passedPreReq = prerequisites.every((prereq) => {
@@ -351,7 +373,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 4. Credit Hour Cap
+    // 5. Credit Hour Cap
+
     if (totalAfterAdd > 18) {
       openAlertModal(
         "Credit Hour Limit",
