@@ -15,7 +15,8 @@
     },
     "instructors": [
       "qutaibah.malluhi@qu.com"
-    ]
+    ],
+    "section": "L01"
   },
   {
     "classId": "25502",
@@ -33,7 +34,8 @@
     },
     "instructors": [
       "qutaibah.malluhi@qu.com"
-    ]
+    ],
+    "section": "L51"
   },
   {
     "classId": "25503",
@@ -43,7 +45,7 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
@@ -51,7 +53,8 @@
     },
     "instructors": [
       "ahmed.badawy@qu.com"
-    ]
+    ],
+    "section": "L01"
   },
   {
     "classId": "25504",
@@ -61,13 +64,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["tamer.elsayed@qu.com"]
+    "instructors": [
+      "tamer.elsayed@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25505",
@@ -83,7 +89,10 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["salem.saeed@qu.com"]
+    "instructors": [
+      "salem.saeed@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25506",
@@ -99,7 +108,10 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["tamer.elsayed@qu.com"]
+    "instructors": [
+      "tamer.elsayed@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25507",
@@ -115,7 +127,10 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["hela.chamkia@qu.com"]
+    "instructors": [
+      "hela.chamkia@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25508",
@@ -131,7 +146,10 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["fady.elnahal@qu.com"]
+    "instructors": [
+      "fady.elhanal@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25509",
@@ -141,13 +159,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["uvais.qidwai@qu.com"]
+    "instructors": [
+      "uvais.qidwai@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25510",
@@ -157,13 +178,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["uvais.qidwai@qu.com"]
+    "instructors": [
+      "uvais.qidwai@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25511",
@@ -173,13 +197,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["ihab.elaf@qu.com"]
+    "instructors": [
+      "ihab.elaf@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25512",
@@ -189,13 +216,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["ihab.elaf@qu.com"]
+    "instructors": [
+      "ihab.elaf@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25513",
@@ -205,13 +235,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["khaled.khan@qu.com"]
+    "instructors": [
+      "khaled.khan@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25514",
@@ -221,13 +254,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["khaled.khan@qu.com"]
+    "instructors": [
+      "khaled.khan@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25515",
@@ -243,7 +279,11 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["aws.el-din@qu.com", "moutaz.saleh@qu.com"]
+    "instructors": [
+      "aws.el-din@qu.com",
+      "moutaz.saleh@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25516",
@@ -259,7 +299,11 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["aws.el-din@qu.com", "moutaz.saleh@qu.com"]
+    "instructors": [
+      "aws.el-din@qu.com",
+      "moutaz.saleh@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25517",
@@ -275,7 +319,10 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["tamer.elsayed@qu.com"]
+    "instructors": [
+      "tamer.elsayed@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25518",
@@ -291,7 +338,10 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["tamer.elsayed@qu.com"]
+    "instructors": [
+      "tamer.elsayed@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25519",
@@ -307,7 +357,11 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["abdelkarim.erradi@qu.com", "georges.younes@qu.com"]
+    "instructors": [
+      "abdelkarim.erradi@qu.com",
+      "georges.younes@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25520",
@@ -323,7 +377,11 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["mahmoud.barhamgi@qu.com", "georges.younes@qu.com"]
+    "instructors": [
+      "mahmoud.barhamgi@qu.com",
+      "georges.younes@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25521",
@@ -339,7 +397,11 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["amal.al-masri@qu.com", "amelle.bedair@qu.com"]
+    "instructors": [
+      "amal.al-masri@qu.com",
+      "amelle.bedair@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25522",
@@ -355,7 +417,11 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["khalid.abualsaud@qu.com", "amelle.bedair@qu.com"]
+    "instructors": [
+      "khalid.abualsaud@qu.com",
+      "amelle.bedair@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25523",
@@ -371,7 +437,11 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["amelle.bedair@qu.com", "naveed.nawaz@qu.com"]
+    "instructors": [
+      "amelle.bedair@qu.com",
+      "naveed.nawaz@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25524",
@@ -387,7 +457,11 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["amelle.bedair@qu.com", "leila.gastli@qu.com"]
+    "instructors": [
+      "amelle.bedair@qu.com",
+      "leila.gastli@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25525",
@@ -403,7 +477,10 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["rania.ibrahim@qu.com"]
+    "instructors": [
+      "rania.ibrahim@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25526",
@@ -419,7 +496,10 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["rania.ibrahim@qu.com"]
+    "instructors": [
+      "rania.ibrahim@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25527",
@@ -435,7 +515,11 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["kim.donghyun@qu.com", "ahmed.ghannoum@qu.com"]
+    "instructors": [
+      "kim.donghyun@qu.com",
+      "ahmed.ghannoum@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25528",
@@ -451,7 +535,11 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["kim.donghyun@qu.com", "evangelos.plevris@qu.com"]
+    "instructors": [
+      "kim.donghyun@qu.com",
+      "evangelos.plevris@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25529",
@@ -461,13 +549,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["mohamed.ben.haj.rhouma@qu.com"]
+    "instructors": [
+      "mohamed.ben.haj.rhouma@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25530",
@@ -477,13 +568,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["mohamed.ben.haj.rhouma@qu.com"]
+    "instructors": [
+      "mohamed.ben.haj.rhouma@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25531",
@@ -493,13 +587,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["mustafa.el-sanfaz@qu.com"]
+    "instructors": [
+      "mustafa.el-sanfaz@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25532",
@@ -509,13 +606,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["mustafa.el-sanfaz@qu.com"]
+    "instructors": [
+      "mustafa.el-sanfaz@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25533",
@@ -525,13 +625,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["hussein.al-qassem@qu.com"]
+    "instructors": [
+      "hussein.al-qassem@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25534",
@@ -541,13 +644,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["hussein.al-qassem@qu.com"]
+    "instructors": [
+      "hussein.al-qassem@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25535",
@@ -557,13 +663,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["mohamed.tarig@qu.com"]
+    "instructors": [
+      "mohamed.tarig@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25536",
@@ -573,13 +682,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["mohamed.tarig@qu.com"]
+    "instructors": [
+      "mohamed.tarig@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25537",
@@ -589,13 +701,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["fabia.grisalez@qu.com"]
+    "instructors": [
+      "fabia.grisalez@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25538",
@@ -605,13 +720,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["fabia.grisalez@qu.com"]
+    "instructors": [
+      "fabia.grisalez@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25539",
@@ -621,13 +739,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["hocine.merabet@qu.com"]
+    "instructors": [
+      "hocine.merabet@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25540",
@@ -637,13 +758,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["hocine.merabet@qu.com"]
+    "instructors": [
+      "hocine.merabet@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25541",
@@ -653,13 +777,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["essam.yasin@qu.com"]
+    "instructors": [
+      "essam.yasin@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25542",
@@ -669,13 +796,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["essam.yasin@qu.com"]
+    "instructors": [
+      "essam.yasin@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25543",
@@ -691,7 +821,10 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["lazhar.chaoiki@qu.com"]
+    "instructors": [
+      "lazhar.chaoiki@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25544",
@@ -707,7 +840,10 @@
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["lazhar.chaoiki@qu.com"]
+    "instructors": [
+      "lazhar.chaoiki@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25545",
@@ -717,13 +853,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["dunia.ponce@qu.com"]
+    "instructors": [
+      "dunia.ponce@qu.com"
+    ],
+    "section": "L01"
   },
   {
     "classId": "25546",
@@ -733,13 +872,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
       "endTime": "09:50"
     },
-    "instructors": ["dunia.ponce@qu.com"]
+    "instructors": [
+      "dunia.ponce@qu.com"
+    ],
+    "section": "L51"
   },
   {
     "classId": "25547",
@@ -749,13 +891,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["tamer.elsayed@qu.com"]
+    "instructors": [
+      "tamer.elsayed@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25548",
@@ -765,13 +910,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["qutaibah.malluhi@qu.com"]
+    "instructors": [
+      "qutaibah.malluhi@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25549",
@@ -781,13 +929,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["tamer.elsayed@qu.com"]
+    "instructors": [
+      "tamer.elsayed@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25550",
@@ -797,13 +948,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["uvais.qidwai@qu.com"]
+    "instructors": [
+      "uvais.qidwai@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25551",
@@ -813,13 +967,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["ihab.elaf@qu.com"]
+    "instructors": [
+      "ihab.elaf@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25552",
@@ -829,13 +986,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["khaled.khan@qu.com"]
+    "instructors": [
+      "khaled.khan@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25553",
@@ -845,13 +1005,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["uvais.qidwai@qu.com"]
+    "instructors": [
+      "uvais.qidwai@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25554",
@@ -861,13 +1024,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["ahmed.badawy@qu.com"]
+    "instructors": [
+      "ahmed.badawy@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25555",
@@ -877,13 +1043,17 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["fady.elnahal@qu.com", "mohamed.al-meer@qu.com"]
+    "instructors": [
+      "fady.elhanal@qu.com",
+      "mohamed.al-meer@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25556",
@@ -893,13 +1063,17 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["amal.al-masri@qu.com", "amelle.bedair@qu.com"]
+    "instructors": [
+      "amal.al-masri@qu.com",
+      "amelle.bedair@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25557",
@@ -909,13 +1083,17 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["abdelkarim.erradi@qu.com", "abdullahi.hassen@qu.com"]
+    "instructors": [
+      "abdelkarim.erradi@qu.com",
+      "abdullahi.hassen@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25558",
@@ -925,13 +1103,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["qutaibah.malluhi@qu.com"]
+    "instructors": [
+      "qutaibah.malluhi@qu.com"
+    ],
+    "section": "L03"
   },
   {
     "classId": "25559",
@@ -941,13 +1122,17 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["mahmoud.barhamgi@qu.com","abdullahi.hassen@qu.com"]
+    "instructors": [
+      "mahmoud.barhamgi@qu.com",
+      "abdullahi.hassen@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25560",
@@ -957,13 +1142,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["qutaibah.malluhi@qu.com"]
+    "instructors": [
+      "qutaibah.malluhi@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25561",
@@ -973,13 +1161,17 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["mahmoud.barhamgi@qu.com","georges.younes@qu.com"]
+    "instructors": [
+      "mahmoud.barhamgi@qu.com",
+      "georges.younes@qu.com"
+    ],
+    "section": "L54"
   },
   {
     "classId": "25562",
@@ -989,13 +1181,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["khaled.khan@qu.com"]
+    "instructors": [
+      "khaled.khan@qu.com"
+    ],
+    "section": "L03"
   },
   {
     "classId": "25563",
@@ -1005,13 +1200,17 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["abdelkarim.erradi@qu.com","abdullahi.hassen@qu.com"]
+    "instructors": [
+      "abdelkarim.erradi@qu.com",
+      "abdullahi.hassen@qu.com"
+    ],
+    "section": "L55"
   },
   {
     "classId": "25564",
@@ -1021,13 +1220,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["tamer.elsayed@qu.com"]
+    "instructors": [
+      "tamer.elsayed@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25565",
@@ -1037,13 +1239,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["uvais.qidwai@qu.com"]
+    "instructors": [
+      "uvais.qidwai@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25566",
@@ -1053,13 +1258,17 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["khalid.abualsaud@qu.com", "amelle.bedair@qu.com"]
+    "instructors": [
+      "khalid.abualsaud@qu.com",
+      "amelle.bedair@qu.com"
+    ],
+    "section": "L03"
   },
   {
     "classId": "25567",
@@ -1069,13 +1278,17 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["aws.el-din@qu.com", "moutaz.saleh@qu.com"]
+    "instructors": [
+      "aws.el-din@qu.com",
+      "moutaz.saleh@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25568",
@@ -1085,13 +1298,17 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["heba.dawoud@qu.com", "loay.ismail@qu.com"]
+    "instructors": [
+      "heba.dawoud@qu.com",
+      "loay.ismail@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25569",
@@ -1101,13 +1318,17 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["heba.dawoud@qu.com", "loay.ismail@qu.com"]
+    "instructors": [
+      "heba.dawoud@qu.com",
+      "loay.ismail@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25570",
@@ -1117,13 +1338,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["ihab.elaf@qu.com"]
+    "instructors": [
+      "ihab.elaf@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25571",
@@ -1133,13 +1357,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["tamer.elsayed@qu.com"]
+    "instructors": [
+      "tamer.elsayed@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25572",
@@ -1149,13 +1376,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["qutaibah.malluhi@qu.com"]
+    "instructors": [
+      "qutaibah.malluhi@qu.com"
+    ],
+    "section": "L03"
   },
   {
     "classId": "25573",
@@ -1165,13 +1395,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["qutaibah.malluhi@qu.com"]
+    "instructors": [
+      "qutaibah.malluhi@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25574",
@@ -1181,13 +1414,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["salem.saeed@qu.com"]
+    "instructors": [
+      "salem.saeed@qu.com"
+    ],
+    "section": "L04"
   },
   {
     "classId": "25575",
@@ -1197,13 +1433,17 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["amal.al-masri@qu.com", "amelle.bedair@qu.com"]
+    "instructors": [
+      "amal.al-masri@qu.com",
+      "amelle.bedair@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25576",
@@ -1213,13 +1453,17 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["heba.dawoud@qu.com", "moutaz.saleh@qu.com"]
+    "instructors": [
+      "heba.dawoud@qu.com",
+      "moutaz.saleh@qu.com"
+    ],
+    "section": "L03"
   },
   {
     "classId": "25577",
@@ -1229,13 +1473,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["tamer.elsayed@qu.com"]
+    "instructors": [
+      "tamer.elsayed@qu.com"
+    ],
+    "section": "L54"
   },
   {
     "classId": "25578",
@@ -1245,13 +1492,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["ihab.elaf@qu.com"]
+    "instructors": [
+      "ihab.elaf@qu.com"
+    ],
+    "section": "L03"
   },
   {
     "classId": "25579",
@@ -1261,13 +1511,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["qutaibah.malluhi@qu.com"]
+    "instructors": [
+      "qutaibah.malluhi@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25580",
@@ -1277,13 +1530,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["khaled.khan@qu.com"]
+    "instructors": [
+      "khaled.khan@qu.com"
+    ],
+    "section": "L04"
   },
   {
     "classId": "25581",
@@ -1293,13 +1549,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["khaled.khan@qu.com"]
+    "instructors": [
+      "khaled.khan@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25582",
@@ -1309,13 +1568,17 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["mahmoud.barhamgi@qu.com", "abdullahi.hassen@qu.com"]
+    "instructors": [
+      "mahmoud.barhamgi@qu.com",
+      "abdullahi.hassen@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25583",
@@ -1325,13 +1588,17 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["fady.elnahal@qu.com", "leila.gastli@qu.com"]
+    "instructors": [
+      "fady.elhanal@qu.com",
+      "leila.gastli@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25584",
@@ -1341,13 +1608,17 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["amal.al-masri@qu.com", "amelle.bedair@qu.com"]
+    "instructors": [
+      "amal.al-masri@qu.com",
+      "amelle.bedair@qu.com"
+    ],
+    "section": "L04"
   },
   {
     "classId": "25585",
@@ -1357,13 +1628,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["ihab.elaf@qu.com"]
+    "instructors": [
+      "ihab.elaf@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25586",
@@ -1373,13 +1647,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["salem.saeed@qu.com"]
+    "instructors": [
+      "salem.saeed@qu.com"
+    ],
+    "section": "L05"
   },
   {
     "classId": "25587",
@@ -1389,13 +1666,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["junaid.qadir@qu.com"]
+    "instructors": [
+      "junaid.qadir@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25588",
@@ -1405,13 +1685,17 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["aws.el-din@qu.com", "moutaz.saleh@qu.com"]
+    "instructors": [
+      "aws.el-din@qu.com",
+      "moutaz.saleh@qu.com"
+    ],
+    "section": "L04"
   },
   {
     "classId": "25589",
@@ -1421,13 +1705,17 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["khalid.abualsaud@qu.com", "amelle.bedair@qu.com"]
+    "instructors": [
+      "khalid.abualsaud@qu.com",
+      "amelle.bedair@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25590",
@@ -1437,13 +1725,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["uvais.qidwai@qu.com"]
+    "instructors": [
+      "uvais.qidwai@qu.com"
+    ],
+    "section": "L03"
   },
   {
     "classId": "25591",
@@ -1453,13 +1744,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["junaid.qadir@qu.com"]
+    "instructors": [
+      "junaid.qadir@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25592",
@@ -1469,13 +1763,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["ahmed.badawy@qu.com"]
+    "instructors": [
+      "ahmed.badawy@qu.com"
+    ],
+    "section": "L03"
   },
   {
     "classId": "25593",
@@ -1485,13 +1782,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["tamer.elsayed@qu.com"]
+    "instructors": [
+      "tamer.elsayed@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25594",
@@ -1501,13 +1801,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["uvais.qidwai@qu.com"]
+    "instructors": [
+      "uvais.qidwai@qu.com"
+    ],
+    "section": "L04"
   },
   {
     "classId": "25595",
@@ -1517,13 +1820,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["mustafa.el-sanfaz@qu.com"]
+    "instructors": [
+      "mustafa.el-sanfaz@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25596",
@@ -1533,13 +1839,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["mohamed.ben.haj.rhouma@qu.com"]
+    "instructors": [
+      "mohamed.ben.haj.rhouma@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25597",
@@ -1549,13 +1858,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["hussein.al-qassem@qu.com"]
+    "instructors": [
+      "hussein.al-qassem@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25598",
@@ -1565,13 +1877,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["mohamed.ben.haj.rhouma@qu.com"]
+    "instructors": [
+      "mohamed.ben.haj.rhouma@qu.com"
+    ],
+    "section": "L03"
   },
   {
     "classId": "25599",
@@ -1581,13 +1896,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["hussein.al-qassem@qu.com"]
+    "instructors": [
+      "hussein.al-qassem@qu.com"
+    ],
+    "section": "L53"
   },
   {
     "classId": "25600",
@@ -1597,13 +1915,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["mohamed.ben.haj.rhouma@qu.com"]
+    "instructors": [
+      "mohamed.ben.haj.rhouma@qu.com"
+    ],
+    "section": "L04"
   },
   {
     "classId": "25601",
@@ -1613,13 +1934,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["mohamed.tarig@qu.com"]
+    "instructors": [
+      "mohamed.tarig@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25602",
@@ -1629,13 +1953,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["fabia.grisalez@qu.com"]
+    "instructors": [
+      "fabia.grisalez@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25603",
@@ -1645,13 +1972,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["essam.yasin@qu.com"]
+    "instructors": [
+      "essam.yasin@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25604",
@@ -1661,13 +1991,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["hocine.merabet@qu.com"]
+    "instructors": [
+      "hocine.merabet@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25605",
@@ -1677,13 +2010,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["hocine.merabet@qu.com"]
+    "instructors": [
+      "hocine.merabet@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25606",
@@ -1693,13 +2029,16 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["essam.yasin@qu.com"]
+    "instructors": [
+      "essam.yasin@qu.com"
+    ],
+    "section": "L02"
   },
   {
     "classId": "25607",
@@ -1709,13 +2048,16 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["lazhar.chaoiki@qu.com"]
+    "instructors": [
+      "lazhar.chaoiki@qu.com"
+    ],
+    "section": "L52"
   },
   {
     "classId": "25608",
@@ -1725,12 +2067,15 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
       "endTime": "10:50"
     },
-    "instructors": ["dunia.ponce@qu.com"]
+    "instructors": [
+      "dunia.ponce@qu.com"
+    ],
+    "section": "L02"
   }
 ]

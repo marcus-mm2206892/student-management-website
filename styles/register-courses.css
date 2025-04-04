@@ -90,7 +90,11 @@ body {
   padding: 1rem;
   border-bottom: 1px solid var(--clr-surface-a20);
   text-align: center;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
+
 .search-bar {
   display: flex;
   align-items: center;
