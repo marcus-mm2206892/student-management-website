@@ -11,7 +11,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "qutaibah.malluhi@qu.com"
@@ -30,7 +30,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "qutaibah.malluhi@qu.com"
@@ -49,7 +49,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "ahmed.badawy@qu.com"
@@ -68,7 +68,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "tamer.elsayed@qu.com"
@@ -87,7 +87,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "salem.saeed@qu.com"
@@ -106,7 +106,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "tamer.elsayed@qu.com"
@@ -125,7 +125,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "hela.chamkia@qu.com"
@@ -144,7 +144,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "fady.elhanal@qu.com"
@@ -163,7 +163,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "uvais.qidwai@qu.com"
@@ -182,7 +182,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "uvais.qidwai@qu.com"
@@ -201,7 +201,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "ihab.elaf@qu.com"
@@ -220,7 +220,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "ihab.elaf@qu.com"
@@ -239,7 +239,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "khaled.khan@qu.com"
@@ -258,7 +258,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "khaled.khan@qu.com"
@@ -277,7 +277,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "aws.el-din@qu.com",
@@ -297,7 +297,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "aws.el-din@qu.com",
@@ -317,7 +317,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "tamer.elsayed@qu.com"
@@ -336,7 +336,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "tamer.elsayed@qu.com"
@@ -355,7 +355,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "abdelkarim.erradi@qu.com",
@@ -375,7 +375,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "mahmoud.barhamgi@qu.com",
@@ -395,7 +395,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "amal.al-masri@qu.com",
@@ -415,7 +415,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "khalid.abualsaud@qu.com",
@@ -435,7 +435,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "amelle.bedair@qu.com",
@@ -455,7 +455,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "amelle.bedair@qu.com",
@@ -475,7 +475,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "rania.ibrahim@qu.com"
@@ -494,7 +494,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "rania.ibrahim@qu.com"
@@ -513,7 +513,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "kim.donghyun@qu.com",
@@ -533,7 +533,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "kim.donghyun@qu.com",
@@ -553,7 +553,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "mohamed.ben.haj.rhouma@qu.com"
@@ -572,7 +572,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "mohamed.ben.haj.rhouma@qu.com"
@@ -591,7 +591,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "mustafa.el-sanfaz@qu.com"
@@ -610,7 +610,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "mustafa.el-sanfaz@qu.com"
@@ -629,7 +629,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "hussein.al-qassem@qu.com"
@@ -648,7 +648,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "hussein.al-qassem@qu.com"
@@ -667,7 +667,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "mohamed.tarig@qu.com"
@@ -686,7 +686,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "mohamed.tarig@qu.com"
@@ -705,7 +705,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "fabia.grisalez@qu.com"
@@ -724,7 +724,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "fabia.grisalez@qu.com"
@@ -743,7 +743,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "hocine.merabet@qu.com"
@@ -762,7 +762,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "hocine.merabet@qu.com"
@@ -781,7 +781,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "essam.yasin@qu.com"
@@ -800,7 +800,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "essam.yasin@qu.com"
@@ -819,7 +819,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "lazhar.chaoiki@qu.com"
@@ -838,7 +838,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "lazhar.chaoiki@qu.com"
@@ -857,7 +857,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "dunia.ponce@qu.com"
@@ -876,7 +876,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "09:00",
-      "endTime": "09:50"
+      "endTime": "10:00"
     },
     "instructors": [
       "dunia.ponce@qu.com"
@@ -895,7 +895,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "tamer.elsayed@qu.com"
@@ -914,7 +914,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "qutaibah.malluhi@qu.com"
@@ -933,7 +933,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "tamer.elsayed@qu.com"
@@ -952,7 +952,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "uvais.qidwai@qu.com"
@@ -971,7 +971,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "ihab.elaf@qu.com"
@@ -990,7 +990,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "khaled.khan@qu.com"
@@ -1009,7 +1009,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "uvais.qidwai@qu.com"
@@ -1028,7 +1028,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "ahmed.badawy@qu.com"
@@ -1047,7 +1047,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "fady.elhanal@qu.com",
@@ -1067,7 +1067,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "amal.al-masri@qu.com",
@@ -1087,7 +1087,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "abdelkarim.erradi@qu.com",
@@ -1107,7 +1107,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "qutaibah.malluhi@qu.com"
@@ -1126,7 +1126,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "mahmoud.barhamgi@qu.com",
@@ -1146,7 +1146,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "qutaibah.malluhi@qu.com"
@@ -1165,7 +1165,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "mahmoud.barhamgi@qu.com",
@@ -1185,7 +1185,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "khaled.khan@qu.com"
@@ -1204,7 +1204,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "abdelkarim.erradi@qu.com",
@@ -1224,7 +1224,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "tamer.elsayed@qu.com"
@@ -1243,7 +1243,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "uvais.qidwai@qu.com"
@@ -1262,7 +1262,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "khalid.abualsaud@qu.com",
@@ -1282,7 +1282,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "aws.el-din@qu.com",
@@ -1302,7 +1302,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "heba.dawoud@qu.com",
@@ -1322,7 +1322,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "heba.dawoud@qu.com",
@@ -1342,7 +1342,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "ihab.elaf@qu.com"
@@ -1361,7 +1361,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "tamer.elsayed@qu.com"
@@ -1380,7 +1380,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "qutaibah.malluhi@qu.com"
@@ -1399,7 +1399,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "qutaibah.malluhi@qu.com"
@@ -1418,7 +1418,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "salem.saeed@qu.com"
@@ -1437,7 +1437,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "amal.al-masri@qu.com",
@@ -1457,7 +1457,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "heba.dawoud@qu.com",
@@ -1477,7 +1477,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "tamer.elsayed@qu.com"
@@ -1496,7 +1496,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "ihab.elaf@qu.com"
@@ -1515,7 +1515,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "qutaibah.malluhi@qu.com"
@@ -1534,7 +1534,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "khaled.khan@qu.com"
@@ -1553,7 +1553,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "khaled.khan@qu.com"
@@ -1572,7 +1572,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "mahmoud.barhamgi@qu.com",
@@ -1592,7 +1592,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "fady.elhanal@qu.com",
@@ -1612,7 +1612,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "amal.al-masri@qu.com",
@@ -1632,7 +1632,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "ihab.elaf@qu.com"
@@ -1651,7 +1651,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "salem.saeed@qu.com"
@@ -1670,7 +1670,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "junaid.qadir@qu.com"
@@ -1689,7 +1689,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "aws.el-din@qu.com",
@@ -1709,7 +1709,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "khalid.abualsaud@qu.com",
@@ -1729,7 +1729,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "uvais.qidwai@qu.com"
@@ -1748,7 +1748,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "junaid.qadir@qu.com"
@@ -1767,7 +1767,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "ahmed.badawy@qu.com"
@@ -1786,7 +1786,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "tamer.elsayed@qu.com"
@@ -1805,7 +1805,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "uvais.qidwai@qu.com"
@@ -1824,7 +1824,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "mustafa.el-sanfaz@qu.com"
@@ -1843,7 +1843,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "mohamed.ben.haj.rhouma@qu.com"
@@ -1862,7 +1862,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "hussein.al-qassem@qu.com"
@@ -1881,7 +1881,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "mohamed.ben.haj.rhouma@qu.com"
@@ -1900,7 +1900,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "hussein.al-qassem@qu.com"
@@ -1919,7 +1919,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "mohamed.ben.haj.rhouma@qu.com"
@@ -1938,7 +1938,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "mohamed.tarig@qu.com"
@@ -1957,7 +1957,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "fabia.grisalez@qu.com"
@@ -1976,7 +1976,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "essam.yasin@qu.com"
@@ -1995,7 +1995,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "hocine.merabet@qu.com"
@@ -2014,7 +2014,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "hocine.merabet@qu.com"
@@ -2033,7 +2033,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "essam.yasin@qu.com"
@@ -2052,7 +2052,7 @@
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "lazhar.chaoiki@qu.com"
@@ -2071,7 +2071,7 @@
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
-      "endTime": "10:50"
+      "endTime": "11:00"
     },
     "instructors": [
       "dunia.ponce@qu.com"
