@@ -6,17 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const noResults = document.getElementById("noResults");
     const searchInfo = document.getElementById("searchInfo");
 
-    Promise.all([
-        fetch("../assets/data/courses.json").then(res => res.json()),
-        fetch("../assets/data/classes.json").then(res => res.json())
-    ])
-    .then(([courses, classes]) => {
-        console.log("Courses Loaded:", courses);
-        console.log("Classes Loaded:", classes);
+    let allCourses = JSON.parse(localStorage.getItem("courses"));
+    let allClasses = JSON.parse(localStorage.getItem("classes"));
 
+    console.log(allClasses)
+
+    try {
         let out = "";
-        courses.forEach(course => {
-            let classDetails = classes.find(cls => course.currentClasses.includes(cls.classId));
+        allCourses.forEach(course => {
+            let classDetails = allClasses   .find(cls => course.currentClasses.includes(cls.classId));
             let classStatus = classDetails ? classDetails.classStatus.toLowerCase() : "unknown";
 
             let statusClass = "";
@@ -66,11 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (typeof adjustTableColumns === "function") {
             adjustTableColumns();
         }
-    })
-    .catch(error => {
+
+      } catch (error) {
         console.error("Error fetching course/class data:", error);
         tableBody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: red;">Failed to load courses.</td></tr>`;
-    });
+    }
 
     function attachDropdownListeners() {
         document.querySelectorAll(".status-dropdown").forEach(dropdown => {
@@ -93,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Searchbar query funcitonality
     searchBar.addEventListener("input", function () {
         let searchQuery = searchBar.value.toLowerCase().trim();
         let rows = document.querySelectorAll(".course-row");

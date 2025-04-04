@@ -79,30 +79,30 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       out += `
-    <tr class="course-row">
-      <td class="data course-no"><span>${course.courseId}</span></td>
-      <td class="data course-name"><span>${course.courseName}</span></td>
-      <td class="data course-instructor"><span>${instructorNames}</span></td>
-      <td class="data course-section"><span>${classItem.section}</span></td>
-      <td class="data course-enrollment"><span>${classItem.enrollmentActual}/${
-        classItem.enrollmentMaximum
-      }</span></td>
-      <td class="data course-status">
-        <span class="status-badge ${statusClass}">
-          <span class="status-circle"></span>
-          ${status.charAt(0).toUpperCase() + status.slice(1)}
-        </span>
-      </td>
-      <td>
-        <button class="course-button ${buttonClass}"
-          data-classid="${classItem.classId}"
-          data-courseid="${course.courseId}"
-          ${buttonDisabled}>
-          <strong><span>${buttonText}</span></strong>
-        </button>
-      </td>
-    </tr>
-  `;
+        <tr class="course-row">
+          <td class="data course-no"><span>${course.courseId}</span></td>
+          <td class="data course-name"><span>${course.courseName}</span></td>
+          <td class="data course-instructor"><span>${instructorNames}</span></td>
+          <td class="data course-section"><span>${classItem.section}</span></td>
+          <td class="data course-enrollment"><span>${classItem.enrollmentActual}/${
+            classItem.enrollmentMaximum
+          }</span></td>
+          <td class="data course-status">
+            <span class="status-badge ${statusClass}">
+              <span class="status-circle"></span>
+              ${status.charAt(0).toUpperCase() + status.slice(1)}
+            </span>
+          </td>
+          <td>
+            <button class="course-button ${buttonClass}"
+              data-classid="${classItem.classId}"
+              data-courseid="${course.courseId}"
+              ${buttonDisabled}>
+              <strong><span>${buttonText}</span></strong>
+            </button>
+          </td>
+        </tr>
+      `;
     });
 
     tableBody.innerHTML = out;
