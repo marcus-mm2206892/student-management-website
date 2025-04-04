@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderCourses()
 
-    // <img src="${course.courseImage}" alt="Course Image">
+    //Need to fix the search filtering
 
     function courseTemplate(course) {
         const creditHoursText = course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // // Simulated search term (replace with actual query parameter later)
-    // const query = "Mobile";
+    // const query = "Data";
     // searchQueryText.innerHTML = query;
 
     // fetch("../assets/data/courses.json")
@@ -95,10 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //         resultsCount.innerHTML = `${results.length} results`;
 
     //         let output = results.map(course => `
-    //             <div class="course-card">
-    //                 <h3>${course.courseName}</h3>
-    //                 <p>${course.courseId} - ${course.instructor || "TBA"}</p>
-    //             </div>
+    //             ${courseTemplate(course)}
     //         `).join("");
 
     //         resultsGrid.innerHTML = output;
