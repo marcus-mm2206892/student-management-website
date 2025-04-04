@@ -8,6 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector(".input-submit").addEventListener("click", userVerification);
 
+    document.querySelectorAll(".input-field").forEach(input=>{
+        input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            userVerification();
+        }
+    });
+    });
+    
     // Remove error and red border while typing
     document.querySelectorAll(".input-field").forEach(input => {
         input.addEventListener("input", () => {
