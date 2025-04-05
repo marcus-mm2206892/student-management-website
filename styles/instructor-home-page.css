@@ -50,6 +50,7 @@ body {
   border-radius: 8px;
 }
 
+
 .course-image-div .course-image {
   background: var(--clr-surface-tonal-a20);
   position: relative;
@@ -262,7 +263,7 @@ body {
   transform: translate(4px, 5px);
 }
 
-.course-grid {
+.course-grid, .course-grid2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
@@ -373,7 +374,7 @@ body {
     width: 5rem;
   }
 
-  .course-grid {
+  .course-grid, .course-grid2 {
     grid-template-columns: 1fr;
   }
 

@@ -1,11 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
     const user = JSON.parse(localStorage.getItem("loggedInUser"));
-    renderStudentProfile(user);
-
+    const courses = JSON.parse(localStorage.getItem("courses"));
+    const majors = JSON.parse(localStorage.getItem("majors"));
+    
+    renderStudentProfile(user,courses,majors);
+    
+    renderCurrentCourses(user,courses);
 });
 
-function renderStudentProfile(user){
-    const creditHours = user.semesterEnrollment.classes.length * 3;// I'm gonna lie by saying each class is 3 cred hours 
+function renderStudentProfile(user,courses,majors){
+    let creditHours = 0;
+    user.semesterEnrollment.classes.forEach(userClass => {
+        courses.find(course=>{
+            if (course.courseId === userClass.courseId){
+                creditHours += course.creditHours;     
+            }
+        })
+    });
+    const completedCourses = user.completedCourses.length;
+    let totalCourses = 0;
+    let percentCompleted = 0;
+    majors.map(major=>{if(major.majorName === user.department){
+        totalCourses = major.requiredCourses.length;
+        percentCompleted = Math.round(completedCourses / totalCourses *100);
+    }});
+    
     document.querySelector(".student-profile").innerHTML = `
      <section class="greetings">
             <h2>Hello there, ${user.firstName} ${user.lastName}</h2>
@@ -40,143 +59,13 @@ function renderStudentProfile(user){
                         <p>These are the courses that you are taking this semester.</p>
                     </div>
                     <div class="courses-header-right">
-                        <a href="#" class="browse-courses">
+                        <a href="../html/user-query.html" class="browse-courses">
                             Browse more courses <i class="fa-solid fa-chevron-right"></i>
                         </a>
                     </div>
                 </div>
                 <div class="course-grid">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
-                        </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag">CMPS 303</span>
-                                <span class="semester">Fall 2025</span>
-                            </div>
-                            <h3>Data Structures</h3>
-                            <p class="course-subtitle">Learn how to organize, store, and manipulate data efficiently.</p>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-laptop-code"></i> Programming</span>
-                                <span class="tag"><i class="fa-solid fa-database"></i> Algorithms</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
-                        </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag"></i>CMPS 351</span>
-                                <span class="semester">Fall 2025</span>
-                            </div>
-                            <h3>Fundamentals of Database</h3>
-                            <p class="course-subtitle">Understand database design, SQL queries, and data management principles.</p>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-table"></i> SQL</span>
-                                <span class="tag"><i class="fa-solid fa-server"></i> Data Management</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
-                        </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag"></i>CMPS 360</span>
-                                <span class="semester">Fall 2025</span>
-                            </div>
-                            <h3>Design and Analysis of Algorithms</h3>
-                            <p class="course-subtitle">Develop efficient algorithms and analyze their computational complexity.</p>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-gears"></i> Complexity</span>
-                                <span class="tag"><i class="fa-solid fa-code"></i> Optimization</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
-                        </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag"></i>CMPS 405</span>
-                                <span class="semester">Fall 2025</span>
-                            </div>
-                            <h3>Operating Systems</h3>
-                            <p class="course-subtitle">Understand process management, memory allocation, and system security.</p>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-memory"></i> Memory</span>
-                                <span class="tag"><i class="fa-solid fa-server"></i> Processes</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
-                        </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag"></i>CMPE 350</span>
-                                <span class="semester">Fall 2025</span>
-                            </div>
-                            <h3>Data Communication & Networks I</h3>
-                            <p class="course-subtitle">Explore networking protocols, data transmission, and security mechanisms.</p>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-wifi"></i> Protocols</span>
-                                <span class="tag"><i class="fa-solid fa-shield-alt"></i> Security</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="course-card">
-                        <div class="course-image">
-                            <div class="hover-icon">
-                                <i class="fa-solid fa-plus"></i>
-                                <span class="hover-text">Register Course</span>
-                            </div>
-                            <i class="fa-solid fa-turn-up top-right-icon"></i>
-                        </div>
-                        <div class="course-info">
-                            <div class="course-header">
-                                <span class="course-tag"></i>CMPS 310</span>
-                                <span class="semester">Fall 2025</span>
-                            </div>
-                            <h3>Software Engineering</h3>
-                            <p class="course-subtitle">Learn software development processes, design patterns, and best practices.</p>
-                            <div class="course-tags">
-                                <span class="tag"><i class="fa-solid fa-code"></i> Development</span>
-                                <span class="tag"><i class="fa-solid fa-puzzle-piece"></i> Design Patterns</span>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </section>
 
@@ -207,13 +96,13 @@ function renderStudentProfile(user){
                 
                 <div class="progress-content">
                     <div class="progress-text">
-                        <p class="content-info-attribute total-tag">Completed ${user.completedCourses.length} of 32 Total Courses</p>
-                        <p>You are also taking <span>${creditHours/3} courses</span> this semester</p>
+                        <p class="content-info-attribute total-tag">Completed ${completedCourses} of ${totalCourses} Total Courses</p>
+                        <p>You are also taking <span>${user.semesterEnrollment.classes.length} courses</span> this semester</p>
                     </div>
                     
                     <div class="progress-chart">
                         <div class="pie-wrapper progress-66">
-                            <span class="label">66<span class="smaller">%</span></span>
+                            <span class="label">${percentCompleted}<span class="smaller">%</span></span>
                             <div class="pie">
                                 <div class="left-side half-circle"></div>
                                 <div class="right-side half-circle"></div>
@@ -228,4 +117,53 @@ function renderStudentProfile(user){
         </section>
         
     `;
+}
+
+function renderCurrentCourses(user,courses){
+    const courseGrid = document.querySelector(".course-grid");
+    let creditHours = 0;
+    user.semesterEnrollment.classes.forEach(userClass => {
+        courses.find(course=>{
+            if (course.courseId === userClass.courseId){
+                creditHours += course.creditHours;     
+            }
+        })
+    }); //copied from studprof cuz defined variables wrong lolol
+    
+    let out = "";
+    user.semesterEnrollment.classes.forEach(userClass => {
+        courses.map(course=>{
+            //todo: addeventlistener
+            if (course.courseId === userClass.courseId){
+                const creditHoursText = course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
+                out += `
+                <div class="course-card">
+                <div class="course-image">
+                    <img src="${course.courseImage}" alt="Course Image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="hover-text">Register Course</span>
+                    </div>
+                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+                </div>
+                <div class="course-info">
+                    <div class="course-header">
+                        <span class="course-tag">${course.courseId}</span>
+                        <span class="semester">Spring 2025</span>
+                    </div>
+                    <h3>${course.courseName}</h3>
+                    <p class="course-subtitle">${course.description}</p>
+                     <div class="course-tags">
+                        <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${course.creditHours} ${creditHoursText} </span>
+                         ${course.majorsOffered.map(major => `
+                        <span class="tag"><i class="fa-solid ${major === 'CMPE' ? 'fa-microchip' : 'fa-laptop-code'}"></i> ${major}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+                `    
+            }
+        })
+    });
+    courseGrid.innerHTML = out;
 }
