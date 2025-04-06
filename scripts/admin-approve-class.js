@@ -87,21 +87,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 const selectedStatus = this.value;
                 const classId = this.getAttribute("data-classId");
                 
-                console.log(`Before Update: ` + allClasses.find(cls => cls.classId == classId))
+                console.log(allClasses.find(cls => cls.classId == classId))
 
                 console.log(`Class ID: ${classId} | New Status: ${selectedStatus}`);
                 let status;
                 switch (selectedStatus) {
                     case 'approved':
                         status = "open";
+                        break;
                     case 'pending':
                         status = "pending";
+                        break;
                     case 'rejected':
                         status = "closed";
+                        break;
                 }
-
+                console.log(status);
                 // Change the status of the class
-                // Update classes.json
+                // Update classes in local storgae
                 allClasses = allClasses.map((cls) => {
                     if (cls.classId == classId) {
                     return { ...cls, classStatus: status};
@@ -109,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     return cls;
                 });
 
-                console.log(`After Update: ` + allClasses.find(cls => cls.classId == classId))
+                console.log(allClasses.find(cls => cls.classId == classId))
 
                 //Save everything
                 localStorage.setItem("classes", JSON.stringify(allClasses));
