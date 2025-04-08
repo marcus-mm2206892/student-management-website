@@ -11,8 +11,6 @@
 
   allCourses = allCourses.filter( crs => crs.currentClasses.length > 0); //Only display courses that have classes
 
-  //renderCourseDD();
-  //selectOption('course', allCourses[0].courseId); // Selects the first course by default
 
   let currentCourseId = null;
   
@@ -27,6 +25,8 @@
         menu.style.display = (menu.style.display === "block") ? "none" : "block";
     }
 }
+  renderCourseDD();
+  selectOption('course', allCourses[0].courseId); // Selects the first course by default
   
   function selectOption(type, value) {
     if (type === 'course') {
@@ -55,11 +55,13 @@
   
       if (courseClasses.length) { 
         const firstClass = allClasses.find( cls => cls.classId == courseClasses[0]);  // Auto select the first class of the course, by default
+        document.getElementById("selectedCRNOption").textContent = "CRN: " + courseClasses[0];
         updateSchedule(firstClass);
       }
     }
   
     if (type === 'class') {
+      document.getElementById("selectedCRNOption").textContent =  "CRN: " + value;
       const selectedClass = allClasses.find( cls => cls.classId == value);
       console.log(selectedClass);
       document.querySelector(".section-tag").textContent = selectedClass?.section || '';
@@ -131,8 +133,7 @@
   
     // Update time/location
     const locationInfo = locationContainer.querySelector(".location-info");
-    locationInfo.querySelector(".time").textContent = `${cls.schedule.startTime} - ${cls.schedule.endTime}`;
-    locationInfo.querySelector(".location-text").textContent = "H07 - College of Engineering | Room C105";
+    locationInfo.querySelector(".time").textContent = `${cls.schedule.startTime} - ${cls.schedule.endTime} AM`;
   }
   
   // Attach toggleDropdown dynamically to both dropdowns
@@ -170,5 +171,5 @@
     courseDD.innerHTML = out;
   }
 
-  renderCourseDD();
+  // renderCourseDD();
 
