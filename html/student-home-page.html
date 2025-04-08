@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="../styles/course-card-discover.css" />
     <link rel="stylesheet" href="../styles/student-home-page.css" />
     <link rel="stylesheet" href="../styles/course-modal.css" />
+    <link rel="stylesheet" href="../styles/no-results.css" />
+    <link rel="stylesheet" href="../styles/empty-content.css" />
   </head>
 
   <body>
@@ -60,6 +62,8 @@
           </div>
         </div>
         <div class="course-grid"></div>
+        <div class="empty-content" id="recommendedEmpty"></div>
+        <div class="no-results" id="studentHomeError" style="display: none;"></div>
       </section>
 
       <!-- Supplementary Courses -->
@@ -79,6 +83,8 @@
           </div>
         </div>
         <div class="course-grid"></div>
+        <div class="empty-content" id="supplementaryEmpty"></div>
+        <div class="no-results" id="studentHomeError" style="display: none;"></div>
       </section>
 
       <section class="courses elective-courses">
@@ -97,6 +103,8 @@
           </div>
         </div>
         <div class="course-grid"></div>
+        <div class="empty-content" id="electivesEmpty"></div>
+        <div class="no-results" id="studentHomeError" style="display: none;"></div>
       </section>
 
       <button class="more-btn">Browse All Courses</button>
@@ -112,5 +120,7 @@
     <script src="../scripts/dark-light-elements.js"></script>
     <script src="../scripts/student-home-page.js"></script>
     <script src="../scripts/course-modal.js"></script>
+    <script src="../scripts/no-results.js"></script>
+    <script src="../scripts/empty-content.js"></script>
   </body>
 </html>

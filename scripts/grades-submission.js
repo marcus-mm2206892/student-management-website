@@ -1,151 +1,207 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const user = JSON.parse(localStorage.loggedInUser);
+  const user = JSON.parse(localStorage.loggedInUser);
 
-    Promise.all([
-        fetch("../assets/data/classes.json").then(res => res.json()),
-        fetch("../assets/data/instructors.json").then(res => res.json()),
-        fetch("../assets/data/students.json").then(res => res.json()),
-        fetch("../assets/data/courses.json").then(res => res.json())
-      ])
-        .then(([classes, instructors, students, courses]) => {
-            const instructor = instructors.find(i => i.email == user.email);
-            
-            let instructorClasses = [];
+  let classes = [],
+    instructors = [],
+    students = [],
+    courses = [],
+    users = [];
 
-            classes.forEach(c => {
-            if (c.instructors.some(i => i == instructor.email)) {
-                instructorClasses.push(c);
-            }
-        })
+  Promise.all([
+    fetch("../assets/data/classes.json").then((res) => res.json()),
+    fetch("../assets/data/instructors.json").then((res) => res.json()),
+    fetch("../assets/data/students.json").then((res) => res.json()),
+    fetch("../assets/data/courses.json").then((res) => res.json()),
+    fetch("../assets/data/users.json").then((res) => res.json()),
+  ]).then(
+    ([classesData, instructorsData, studentsData, coursesData, usersData]) => {
+      classes = classesData;
+      instructors = instructorsData;
+      students = studentsData;
+      courses = coursesData;
+      users = usersData;
 
-            console.log(instructorClasses);
+      const instructor = instructors.find((i) => i.email === user.email);
+      const instructorClasses = classes.filter((c) =>
+        c.instructors.includes(instructor.email)
+      );
 
-            let instructorClassesWithName = instructorClasses.map(ic => {
-                const course = courses.find(course => course.courseId === ic.courseId);
-                return { ...ic, courseName: course.courseName};
-            })
+      const instructorClassesWithName = instructorClasses.map((ic) => {
+        const course = courses.find(
+          (course) => course.courseId === ic.courseId
+        );
+        return { ...ic, courseName: course?.courseName || "Unnamed Course" };
+      });
 
-            console.log(instructorClassesWithName);
-            
+      document.querySelector(
+        "#no-of-classes"
+      ).innerHTML = `<span>${instructorClasses.length} Classes</span>`;
 
-            document.querySelector("#no-of-classes").innerHTML =
-            `<span>${instructorClasses.length} Classes</span>`
-
-            document.querySelector("#current-teaching-classes").innerHTML =
-            instructorClassesWithName.map(ic => `<div class="card">
-            <div class="course-header">
-              <span class="course-tag">${ic.courseId}</span>
-              <span class="section-tag">${ic.section}</span>
+      const currentTeaching = document.querySelector(
+        "#current-teaching-classes"
+      );
+      currentTeaching.innerHTML = instructorClassesWithName
+        .map(
+          (ic) => `
+        <div class="card" data-classid="${ic.classId}" data-courseid="${ic.courseId}" data-section="${ic.section}" data-coursename="${ic.courseName}">
+          <div class="course-header">
+            <span class="course-tag">${ic.courseId}</span>
+            <span class="section-tag">${ic.section}</span>
+          </div>
+          <div class="course-completed-main">
+            <div class="course-grade">
+              <div><h3>${ic.courseName}</h3></div>
+              <div class="status-container"><span class="status">S</span></div>
             </div>
-            <div class="course-completed-main">
-              <div class="course-grade">
+            <div class="course-tags">
+              <span class="tag"><i class="fa-solid fa-user-graduate"></i> ${ic.enrollmentActual}</span>
+              <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
+            </div>
+          </div>
+        </div>
+      `
+        )
+        .join("");
+
+      // Listener to handle class card click and load students
+      currentTeaching.addEventListener("click", function (event) {
+        const card = event.target.closest(".card");
+        if (!card) return;
+
+        const classId = card.dataset.classid;
+        const courseId = card.dataset.courseid;
+        const section = card.dataset.section;
+        const courseName = card.dataset.coursename;
+
+        renderStudentsForClass(classId, courseId, courseName, section);
+      });
+    }
+  );
+
+  function renderStudentsForClass(classId, courseId, courseName, section) {
+    const selectedContainer = document.querySelector(".classes.selected");
+
+    const enrolledStudents = students.filter((student) =>
+      student.semesterEnrollment?.classes?.some(
+        (cls) => cls.classId === classId
+      )
+    );
+
+    const studentCards = enrolledStudents
+      .map((student) => {
+        const userProfile = users.find((u) => u.email === student.email);
+        const savedGrade = localStorage.getItem(student.email) || "A";
+
+        return `
+          <div class="card">
+            <div class="student">
+              <div class="student-grade">
                 <div>
-                  <h3>${ic.courseName}</h3>
+                  <h3>${userProfile?.firstName || "Unknown"} ${
+          userProfile?.lastName || ""
+        }</h3>
+                  <div><span class="student-info email">${
+                    student.email
+                  }</span></div>
                 </div>
-                <div class="status-container">
-                  <span class="status">S</span>
+                <div class="dropdown">
+                  <div class="dropdown-toggle">
+                    <span id="selectedOption">${savedGrade}</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-menu">
+                    ${["A", "B+", "B", "C+", "C", "D+", "D", "F", "I"]
+                      .map((g) => `<div>${g}</div>`)
+                      .join("")}
+                  </div>
                 </div>
-              </div>
-              <div class="course-tags">
-                <span class="tag"><i class="fa-solid fa-user-graduate"></i> ${ic.enrollmentActual}</span>
-                <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
               </div>
             </div>
-          </div>`).join("");
+          </div>`;
+      })
+      .join("");
 
-            let instructorClassIDs = instructorClasses.map(ic => ic.classId);
-            console.log(instructorClassIDs);
+    selectedContainer.innerHTML = `
+      <div class="class-header">
+        <div class="course-tags-div">
+          <span class="course-tag">${courseId}</span>
+          <span class="section-tag">Section ${section}</span>
+          <h3>${courseName}</h3>
+        </div>
+        <div class="course-tags-div">
+          <span class="tag"><i class="fa-solid fa-user-graduate"></i> ${enrolledStudents.length} Students</span>
+          <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
+        </div>
+      </div>
+  
+      <div class="cards-container" id="students">
+        ${studentCards}
+      </div>
+  
+      <div class="submit-container">
+        <button class="submit-btn">Submit Grades</button>
+      </div>
+    `;
 
-            
+    initializeDropdownListeners();
+  }
 
-        });
-
-    
-
-  document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+  function initializeDropdownListeners() {
+    document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
       toggle.addEventListener("click", function (event) {
-          event.stopPropagation();
-          let dropdownMenu = this.nextElementSibling;
-          let rect = this.getBoundingClientRect();
-
-          document.querySelectorAll(".dropdown-menu").forEach(menu => {
-              if (menu !== dropdownMenu) menu.style.display = "none";
-          });
-
-          let isOpen = dropdownMenu.style.display === "block";
-          dropdownMenu.style.display = isOpen ? "none" : "block";
-
-          if (!isOpen) {
-              dropdownMenu.style.setProperty("--dropdown-top", `${rect.bottom}px`);
-              dropdownMenu.style.setProperty("--dropdown-left", `${rect.left}px`);
-          }
-      });
-  });
-
-  document.querySelectorAll(".dropdown-menu div").forEach(option => {
-      option.addEventListener("click", function () {
-          let selectedText = this.textContent;
-          let dropdownToggle = this.closest(".dropdown").querySelector("#selectedOption");
-
-          dropdownToggle.textContent = selectedText;
-
-          let email = this.closest(".student-grade").querySelector(".student-info.email").textContent;
-          localStorage.setItem(email, selectedText);
-
-          this.closest(".dropdown-menu").style.display = "none";
-      });
-  });
-
-  document.querySelectorAll(".dropdown-toggle #selectedOption").forEach(span => {
-      let email = span.closest(".student-grade").querySelector(".student-info.email").textContent;
-      let savedGrade = localStorage.getItem(email);
-      if (savedGrade) {
-          span.textContent = savedGrade;
-      }
-  });
-
-  document.addEventListener("click", function () {
-      document.querySelectorAll(".dropdown-menu").forEach(menu => {
-          menu.style.display = "none";
-      });
-  });
-
-  document.addEventListener("scroll", function () {
-    document.querySelectorAll(".dropdown-menu").forEach(menu => {
-        menu.style.display = "none";
-    });
-});
-
-    document.querySelector("#students").addEventListener("scroll", function () {
-        document.querySelectorAll(".dropdown-menu").forEach(menu => {
-            menu.style.display = "none";
+        event.stopPropagation();
+        let dropdownMenu = this.nextElementSibling;
+        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+          if (menu !== dropdownMenu) menu.style.display = "none";
         });
+        dropdownMenu.style.display =
+          dropdownMenu.style.display === "block" ? "none" : "block";
+      });
     });
 
+    document.querySelectorAll(".dropdown-menu div").forEach((option) => {
+      option.addEventListener("click", function () {
+        const selectedText = this.textContent;
+        const dropdownToggle =
+          this.closest(".dropdown").querySelector("#selectedOption");
+        dropdownToggle.textContent = selectedText;
+
+        const email = this.closest(".student-grade").querySelector(
+          ".student-info.email"
+        ).textContent;
+        localStorage.setItem(email, selectedText);
+
+        this.closest(".dropdown-menu").style.display = "none";
+      });
+    });
+
+    // Global hide on click outside
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+        menu.style.display = "none";
+      });
+    });
+
+    document.querySelector("#students").addEventListener("scroll", () => {
+      document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+        menu.style.display = "none";
+      });
+    });
+  }
+
+  // Adjust layout on resize
   function adjustLayout() {
-      let teachingDiv = document.querySelector(".classes.teaching");
-      let selectedDiv = document.querySelector(".classes.selected");
-      if (window.innerWidth <= 768) {
-          teachingDiv.style.height = "auto";
-          selectedDiv.style.height = `calc(100vh - ${teachingDiv.offsetHeight}px - 2rem)`;
-      } else {
-          teachingDiv.style.height = "100%";
-          selectedDiv.style.height = "100%";
-      }
+    const teachingDiv = document.querySelector(".classes.teaching");
+    const selectedDiv = document.querySelector(".classes.selected");
+    if (window.innerWidth <= 768) {
+      teachingDiv.style.height = "auto";
+      selectedDiv.style.height = `calc(100vh - ${teachingDiv.offsetHeight}px - 2rem)`;
+    } else {
+      teachingDiv.style.height = "100%";
+      selectedDiv.style.height = "100%";
+    }
   }
 
   adjustLayout();
   window.addEventListener("resize", adjustLayout);
-
-  document.querySelector(".dropdown-toggle").addEventListener("click", function () {
-      let dropdownMenu = document.querySelector(".teaching-menu");
-      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
-  });
-
-  document.querySelectorAll(".teaching-menu div").forEach(option => {
-      option.addEventListener("click", function () {
-          document.querySelector(".dropdown-toggle").textContent = this.textContent;
-          document.querySelector(".teaching-menu").style.display = "none";
-      });
-  });
 });

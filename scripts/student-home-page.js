@@ -41,29 +41,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const recommendedCoursesGrid = document.querySelector(
       ".recommended-courses .course-grid"
     );
-    //1. Find courses according to user major
+    const recommendedEmpty = document.querySelector("#recommendedEmpty");
+    const errorElement = document.querySelector("#studentHomeError");
+  
+    // 1. Handle loading error
+    if (!allCourses || !Array.isArray(allCourses)) {
+      recommendedCoursesGrid.style.display = "none";
+      recommendedEmpty.style.display = "none";
+      errorElement.style.display = "flex";
+      return;
+    }
+  
+    // 2. Get student major
     const major = user.department == "Computer Science" ? "CMPS" : "CMPE";
-    console.log(major);
-
+  
+    // 3. Get courses matching major
     const majorCourses = allCourses.filter((c) =>
       c.majorsOffered.includes(major)
     );
-    console.log(majorCourses);
-
-    //2. Filter completed courses
-
-    const completedCoursesId = user.completedCourses.map((c) => c.courseId);
-
-    console.log(completedCoursesId);
-
+  
+    // 4. Exclude completed courses
+    const completedCoursesId = (user.completedCourses || []).map((c) => c.courseId);
     const recommendedCourses = majorCourses.filter(
       (c) => !completedCoursesId.includes(c.courseId)
     );
-
-    //2. Insert them in recommended
-
+  
+    // 5. Filter by search query
     query = query.trim().toLowerCase();
-
     const matchedCourses = recommendedCourses
       .filter(
         (course) =>
@@ -72,31 +76,56 @@ document.addEventListener("DOMContentLoaded", function () {
           (course.instructors || []).join(" ").toLowerCase().includes(query)
       )
       .slice(0, 6);
-
-    out = ``;
+  
+    // 6. Handle empty state
+    if (matchedCourses.length === 0) {
+      recommendedCoursesGrid.innerHTML = "";
+      recommendedCoursesGrid.style.display = "none";
+      recommendedEmpty.style.display = "flex";
+      errorElement.style.display = "none";
+      return;
+    }
+  
+    // 7. Show results
+    recommendedEmpty.style.display = "none";
+    errorElement.style.display = "none";
+    recommendedCoursesGrid.style.display = "grid";
+  
+    let out = "";
     matchedCourses.forEach((c) => {
       out += courseTemplate(c);
     });
-    //Inject the courses inside the div
     recommendedCoursesGrid.innerHTML = out;
-  }
+  }  
 
   function renderSupplementary(query = "") {
     const supplementaryGrid = document.querySelector(
       ".supplementary-courses .course-grid"
     );
-
-    const completedIds = user.completedCourses.map((c) => c.courseId);
+    const supplementaryEmpty = document.querySelector("#supplementaryEmpty");
+    const errorElement = document.querySelector("#studentHomeError");
+  
+    // 1. Handle loading error
+    if (!allCourses || !Array.isArray(allCourses)) {
+      supplementaryGrid.style.display = "none";
+      supplementaryEmpty.style.display = "none";
+      errorElement.style.display = "flex";
+      return;
+    }
+  
+    // 2. Get student major and completed courses
+    const completedIds = (user.completedCourses || []).map((c) => c.courseId);
     const userMajor = user.department === "Computer Science" ? "CMPS" : "CMPE";
-
+  
+    // 3. Get courses outside of student's major
     const supplementaryCourses = allCourses.filter(
       (course) =>
         !completedIds.includes(course.courseId) &&
         !course.majorsOffered.includes(userMajor)
     );
-
+  
+    // 4. Filter by search query
     query = query.trim().toLowerCase();
-
     const matchedCourses = supplementaryCourses
       .filter(
         (course) =>
@@ -105,13 +134,28 @@ document.addEventListener("DOMContentLoaded", function () {
           (course.instructors || []).join(" ").toLowerCase().includes(query)
       )
       .slice(0, 6);
-
+  
+    // 5. Handle empty state
+    if (matchedCourses.length === 0) {
+      supplementaryGrid.innerHTML = "";
+      supplementaryGrid.style.display = "none";
+      supplementaryEmpty.style.display = "flex";
+      errorElement.style.display = "none";
+      return;
+    }
+  
+    // 6. Show results
+    supplementaryEmpty.style.display = "none";
+    errorElement.style.display = "none";
+    supplementaryGrid.style.display = "grid";
+  
     let out = "";
     matchedCourses.forEach((course) => {
       out += courseTemplate(course);
     });
     supplementaryGrid.innerHTML = out;
   }
+  
 
   const csElectives = ["CMPS497", "CMPS482", "CMPS485", "CMPS493"];
   const ceElectives = ["CMPE457", "CMPE476", "CMPE483", "CMPE498"];
@@ -120,19 +164,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const electiveGrid = document.querySelector(
       ".elective-courses .course-grid"
     );
-    const completedIds = user.completedCourses.map((c) => c.courseId);
-
+    const electivesEmpty = document.querySelector("#electivesEmpty");
+    const errorElement = document.querySelector("#studentHomeError");
+  
+    // 1. Handle loading error
+    if (!allCourses || !Array.isArray(allCourses)) {
+      electiveGrid.style.display = "none";
+      electivesEmpty.style.display = "none";
+      errorElement.style.display = "flex";
+      return;
+    }
+  
+    // 2. Get elective course list based on major
+    const completedIds = (user.completedCourses || []).map((c) => c.courseId);
     const electives =
       user.department === "Computer Science" ? csElectives : ceElectives;
-
+  
+    // 3. Get elective courses not completed
     const electiveCourses = allCourses.filter(
       (course) =>
         electives.includes(course.courseId) &&
         !completedIds.includes(course.courseId)
     );
-
+  
+    // 4. Filter by search query
     query = query.trim().toLowerCase();
-
     const matchedCourses = electiveCourses
       .filter(
         (course) =>
@@ -141,13 +197,27 @@ document.addEventListener("DOMContentLoaded", function () {
           (course.instructors || []).join(" ").toLowerCase().includes(query)
       )
       .slice(0, 6);
-
+  
+    // 5. Handle empty state
+    if (matchedCourses.length === 0) {
+      electiveGrid.innerHTML = "";
+      electiveGrid.style.display = "none";
+      electivesEmpty.style.display = "flex";
+      errorElement.style.display = "none";
+      return;
+    }
+  
+    // 6. Show results
+    electivesEmpty.style.display = "none";
+    errorElement.style.display = "none";
+    electiveGrid.style.display = "grid";
+  
     let out = "";
     matchedCourses.forEach((course) => {
       out += courseTemplate(course);
     });
     electiveGrid.innerHTML = out;
-  }
+  }  
 
   renderRecomended();
   renderSupplementary();
