@@ -167,6 +167,9 @@ input[type="number"] {
   box-shadow: 0 4px 0.5rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
   z-index: 1000;
+  max-height: 200px; 
+  overflow-y: auto;
+  overflow-x: hidden; 
 }
 
 .dropdown-menu div {
