@@ -70,7 +70,6 @@ body {
     padding-bottom: 1rem;
     scroll-snap-type: x mandatory;
     scroll-padding: 1rem;
-    justify-content: center;
 }
 
 
@@ -205,7 +204,6 @@ body {
         align-items: center;
         scroll-padding: none;
         padding: 0 1rem;
-        justify-content: center;
     }
 
     .category {
