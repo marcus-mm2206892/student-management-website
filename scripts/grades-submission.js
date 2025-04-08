@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch("../assets/data/classes.json").then(res => res.json()),
         fetch("../assets/data/instructors.json").then(res => res.json()),
         fetch("../assets/data/students.json").then(res => res.json()),
-        fetch("../assets/data/courses.json").then(res => res.json)
+        fetch("../assets/data/courses.json").then(res => res.json())
       ])
         .then(([classes, instructors, students, courses]) => {
             const instructor = instructors.find(i => i.email == user.email);
@@ -20,13 +20,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             console.log(instructorClasses);
 
+            let instructorClassesWithName = instructorClasses.map(ic => {
+                const course = courses.find(course => course.courseId === ic.courseId);
+                return { ...ic, courseName: course.courseName};
+            })
 
+            console.log(instructorClassesWithName);
+            
 
             document.querySelector("#no-of-classes").innerHTML =
             `<span>${instructorClasses.length} Classes</span>`
 
             document.querySelector("#current-teaching-classes").innerHTML =
-            instructorClasses.map(ic => `<div class="card">
+            instructorClassesWithName.map(ic => `<div class="card">
             <div class="course-header">
               <span class="course-tag">${ic.courseId}</span>
               <span class="section-tag">${ic.section}</span>
@@ -34,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="course-completed-main">
               <div class="course-grade">
                 <div>
-                  <h3>Design & Analysis of Algorithms</h3>
+                  <h3>${ic.courseName}</h3>
                 </div>
                 <div class="status-container">
                   <span class="status">S</span>
@@ -47,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>`).join("");
 
-            instructorClassIDs = instructorClasses.map(ic => ic.classId);
+            let instructorClassIDs = instructorClasses.map(ic => ic.classId);
             console.log(instructorClassIDs);
 
             
