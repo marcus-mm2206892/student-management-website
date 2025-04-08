@@ -44,7 +44,6 @@ main {
   margin-bottom: 10px;
   max-width: 30rem;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
 .hero h1 span {
@@ -52,60 +51,13 @@ main {
   transition: color 0.2s ease-in-out;
 }
 
-.hero h1 span:hover {
-  color: var(--clr-primary-a0);
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: .25rem 1rem;
-  width: 24rem;
-  margin: 0 auto;
-}
-
-.search-bar input {
-  flex-grow: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: var(--clr-contrast-a0);
-  padding: .5rem 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: 0;
-}
-
-.search-bar input::placeholder {
+.cycle-text {
   color: var(--clr-contrast-a40);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
+  transition: color 0.5s ease-in-out;
 }
 
-
-.search-bar button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--clr-contrast-a0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-bar i {
-  font-size: 0.75rem;
-  color: var(--clr-contrast-a0);
-  transition: color 0.3s ease;
-}
-
-.search-bar i:hover {
-  cursor: pointer;
+.cycle-text.active {
+  color: var(--clr-primary-a0);
 }
 
 

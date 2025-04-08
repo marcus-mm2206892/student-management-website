@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
     function createAlertModal(title, description) {
         return `
-            <div id="alertModal" class="modal">
-                <div class="modal-popup">
+            <div id="alertModal" class="alert-modal">
+                <div class="alert-modal-popup">
                     <button class="close-btn close-alert-modal">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
 
-                    <div class="modal-content">
+                    <div class="alert-modal-content">
                         <h2 class="alert-title">${title}</h2>
                         <p class="alert-description">${description}</p>
                     </div>
 
-                    <button class="register-btn ok-btn">OK</button>
+                    <button class="alert-register-btn ok-btn">OK</button>
                 </div>
             </div>
         `;

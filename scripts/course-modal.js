@@ -26,10 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
             <div class="course-image">
               <img src="${course.courseImage || '../assets/imgs/default-course.jpg'}" alt="Course Image">
-              <div class="hover-icon">
-                <i class="fa-solid fa-eye"></i>
-                <span class="hover-text">View Course</span>
-              </div>
             </div>
   
             <div class="modal-content">

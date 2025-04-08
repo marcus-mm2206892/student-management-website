@@ -8,7 +8,7 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-.modal {
+.alert-modal {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -21,7 +21,7 @@ body {
     align-items: center;
 }
 
-.modal-popup {
+.alert-modal-popup {
     position: relative;
     background: var(--clr-surface-a0);
     width: 90%;
@@ -36,7 +36,7 @@ body {
     animation: bounceIn 0.3s ease-out;
 }
 
-.modal-content {
+.alert-modal-content {
     text-align: flex-start;
     color: var(--clr-contrast-a0);
 }
