@@ -110,12 +110,7 @@
       "CMPS",
       "CMPE"
     ],
-    "currentClasses": [
-      {
-        "courseId": "CMPS151",
-        "minGrade": "D"
-      }
-    ],
+    "currentClasses": [],
     "description": "Fundamentals of object-oriented programming, object-oriented design, apply object oriented concepts such as abstraction, encapsulation, composition, inheritance, polymorphism, and interfaces. Graphical user interface and event-driven programming; exception handling; additional object-oriented features. The laboratory provides practical object-oriented programming experience.",
     "courseImage": "https://files.realpython.com/media/pcl-Class-Concepts-Object-Oriented-Programming-in-Python_Watermarked.cec519e31003.jpg"
   },
