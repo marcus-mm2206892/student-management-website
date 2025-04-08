@@ -45,10 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
               </div>
             </div>
-          </div>`);
+          </div>`).join("");
 
             instructorClassIDs = instructorClasses.map(ic => ic.classId);
             console.log(instructorClassIDs);
+
+            
 
         });
 
