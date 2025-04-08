@@ -6,6 +6,8 @@
   
   let allCourses = JSON.parse(localStorage.getItem("courses"));
   let allClasses = JSON.parse(localStorage.getItem("classes"));
+  let allUsers = JSON.parse(localStorage.getItem("users"));
+  let allInstructors = JSON.parse(localStorage.getItem("instructors"));
 
   allCourses = allCourses.filter( crs => crs.currentClasses.length > 0); //Only display courses that have classes
 
@@ -79,6 +81,23 @@
     const locationContainer = document.querySelector(".class-location");
     document.querySelector(".section-tag").textContent = cls.section || ''; // Set the CRN and section of the class in the modal header
     document.querySelector(".crn-tag").textContent = `CRN ${cls.classId}`;
+
+    // Update the instructor information
+
+    const instructorsContainer = document.querySelector(".instructors-list");
+    const instructorEmails = cls.instructors;
+
+    // console.log(instructorEmails);
+    out = ``;
+    instructorEmails.forEach( instructorEmail => {
+      const instructor = allInstructors.find( ins => ins.email == instructorEmail);
+      const user = allUsers.find( usr => usr.email == instructorEmail )
+      out += instructorTemplate(instructor, user);
+    })
+
+    instructorsContainer.innerHTML = out;
+
+
   
     // Update schedule days
     const weekdays = scheduleContainer.querySelector(".weekdays");
@@ -128,6 +147,18 @@
     return `<div onclick="selectOption('class')"><i class="fas fa-calendar-alt"></i>CRN: ${classId}</div>`;
   }
 
+  function instructorTemplate(instructor, user) {
+    return `
+      <div class="instructor">
+          <i class="fa-solid fa-user"></i>
+          <div class="instructor-info">
+              <span class="instructor-name">${user.firstName} ${user.lastName}</span>
+              <span class="instructor-description">Professor at College of ${instructor.college}, ${instructor.department}</span>
+          </div>
+      </div>  
+    `;   
+  }
+
   function renderCourseDD(){
     const courseDD = document.querySelector(".view-schedule-header .dropdown-menu");
     out = ``;
@@ -139,17 +170,5 @@
     courseDD.innerHTML = out;
   }
 
-  function renderClassesDD() {
-    const classDD = document.querySelector(".view-schedule-container .dropdown-menu");
-    out = ``;
+  renderCourseDD();
 
-    allClasses.forEach(classItem => {
-      out += classDdTemplate(classItem.classId);
-    })
-  
-    classDD.innerHTML = out;
-  }
-
-  renderCourseDD()
-
-  // renderClassesDD()

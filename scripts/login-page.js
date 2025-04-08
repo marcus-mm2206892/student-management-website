@@ -55,7 +55,7 @@ function initializeLocalStorage() {
         fetch("../assets/data/majors.json").then(res => res.json()),
         
     ])
-    .then(([courses, classes, students,instructors,admins, users, majors]) => {
+    .then(([courses, classes, students, instructors, admins, users, majors]) => {
         localStorage.setItem("courses", JSON.stringify(courses));
         localStorage.setItem("classes", JSON.stringify(classes));
         localStorage.setItem("students", JSON.stringify(students));
