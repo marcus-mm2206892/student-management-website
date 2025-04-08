@@ -56,6 +56,10 @@ body {
   border: 1px solid var(--clr-contrast-a0);
 }
 
+#no-of-classes{
+  align-self: center;
+}
+
 .classes-container {
   display: flex;
   width: 100%;

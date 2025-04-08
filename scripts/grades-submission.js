@@ -1,4 +1,59 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const user = JSON.parse(localStorage.loggedInUser);
+
+    Promise.all([
+        fetch("../assets/data/classes.json").then(res => res.json()),
+        fetch("../assets/data/instructors.json").then(res => res.json()),
+        fetch("../assets/data/students.json").then(res => res.json()),
+        fetch("../assets/data/courses.json").then(res => res.json)
+      ])
+        .then(([classes, instructors, students, courses]) => {
+            const instructor = instructors.find(i => i.email == user.email);
+            
+            let instructorClasses = [];
+
+            classes.forEach(c => {
+            if (c.instructors.some(i => i == instructor.email)) {
+                instructorClasses.push(c);
+            }
+        })
+
+            console.log(instructorClasses);
+
+
+
+            document.querySelector("#no-of-classes").innerHTML =
+            `<span>${instructorClasses.length} Classes</span>`
+
+            document.querySelector("#current-teaching-classes").innerHTML =
+            instructorClasses.map(ic => `<div class="card">
+            <div class="course-header">
+              <span class="course-tag">${ic.courseId}</span>
+              <span class="section-tag">${ic.section}</span>
+            </div>
+            <div class="course-completed-main">
+              <div class="course-grade">
+                <div>
+                  <h3>Design & Analysis of Algorithms</h3>
+                </div>
+                <div class="status-container">
+                  <span class="status">S</span>
+                </div>
+              </div>
+              <div class="course-tags">
+                <span class="tag"><i class="fa-solid fa-user-graduate"></i> ${ic.enrollmentActual}</span>
+                <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
+              </div>
+            </div>
+          </div>`);
+
+            instructorClassIDs = instructorClasses.map(ic => ic.classId);
+            console.log(instructorClassIDs);
+
+        });
+
+    
+
   document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
       toggle.addEventListener("click", function (event) {
           event.stopPropagation();
