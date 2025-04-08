@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //2. Insert them in recommended
 
-
         query = query.trim().toLowerCase();
        
         const matchedCourses = recommendedCourses.filter(
@@ -69,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
             course.courseName.toLowerCase().includes(query) ||
             course.courseId.toLowerCase().includes(query) ||
             (course.instructors || []).join(" ").toLowerCase().includes(query)
-        );
+        ).slice(0, 6);
 
         out = ``
         matchedCourses.forEach(c => {
@@ -97,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
             course.courseName.toLowerCase().includes(query) ||
             course.courseId.toLowerCase().includes(query) ||
             (course.instructors || []).join(" ").toLowerCase().includes(query)
-        );
+        ).slice(0, 6);
     
         let out = "";
         matchedCourses.forEach(course => {
@@ -127,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
               course.courseName.toLowerCase().includes(query) ||
               course.courseId.toLowerCase().includes(query) ||
               (course.instructors || []).join(" ").toLowerCase().includes(query)
-          );
+          ).slice(0, 6);
     
         let out = "";
         matchedCourses.forEach(course => {

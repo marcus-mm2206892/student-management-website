@@ -186,7 +186,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10rem;
+  width: 12rem;
   margin-top: 20px;
   padding: 10px 20px;
   border: none;
@@ -195,10 +195,11 @@ main {
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
+  transition: 0.2s;
 }
 
 .more-btn:hover {
-  background: var(--clr-primary-a10);
+  background: var(--clr-primary-a20);
 }
 
 
