@@ -53,9 +53,10 @@ function initializeLocalStorage() {
         fetch("../assets/data/admins.json").then(res => res.json()),
         fetch("../assets/data/users.json").then(res => res.json()),
         fetch("../assets/data/majors.json").then(res => res.json()),
+        fetch("../assets/data/subjects.json").then(res =>res.json())
         
     ])
-    .then(([courses, classes, students, instructors, admins, users, majors]) => {
+    .then(([courses, classes, students, instructors, admins, users, majors, subjects]) => {
         localStorage.setItem("courses", JSON.stringify(courses));
         localStorage.setItem("classes", JSON.stringify(classes));
         localStorage.setItem("students", JSON.stringify(students));
@@ -63,6 +64,7 @@ function initializeLocalStorage() {
         localStorage.setItem("admins", JSON.stringify(admins));
         localStorage.setItem("users", JSON.stringify(users));
         localStorage.setItem("majors", JSON.stringify(majors));
+        localStorage.setItem("subjects", JSON.stringify(subjects));
     })
     .catch(error => {
         console.error("Error fetching course/class data:", error);

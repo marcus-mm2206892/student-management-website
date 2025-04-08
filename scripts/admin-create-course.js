@@ -4,18 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
     Promise.all([
       fetch("../assets/data/majors.json").then(res => res.json()),
       fetch("../assets/data/courses.json").then(res => res.json()),
-      fetch("../assets/data/instructors.json").then(res => res.json())
+      fetch("../assets/data/subjects.json").then(res => res.json())
     ])
-      .then(([majors, courses, instructors]) => {
-        // 1. Populate Subject Dropdown from instructors' expertise
-        const subjectSet = new Set();
-        instructors.forEach(instr => {
-          if (Array.isArray(instr.expertise)) {
-            instr.expertise.forEach(subject => subjectSet.add(subject.trim()));
-          }
-        });
-        const subjects = Array.from(subjectSet).sort();
-        document.querySelector("#subjectDropdown").innerHTML = subjects
+      .then(([majors, courses, subjects]) => {
+        // 1. Populate Subject Dropdown
+        console.log(subjects);
+
+        const subjectNames = subjects.map(s => s.subject);
+        document.querySelector("#subjectDropdown").innerHTML = subjectNames
           .map(subject =>
             `<div onclick="selectOption('${subject}')"><i class="fas fa-book"></i>${subject}</div>`
           ).join('');
@@ -124,9 +120,13 @@ document.addEventListener("DOMContentLoaded", function () {
         openAlertModal("Missing Majors", "Please select at least one major.");
         return;
       }
-  
+
+      const subjects = JSON.parse(localStorage.getItem("subjects")) || "[]";
+      const index = subjects.findIndex(s => s.subject === subject);
+      const subjectCode = subjects[index].code;
+
       const course = {
-        courseId: `${subject}${courseNumber}`,
+        courseId: `${subjectCode}${courseNumber}`,
         courseName,
         subject,
         courseNumber,
@@ -139,6 +139,13 @@ document.addEventListener("DOMContentLoaded", function () {
   
       const existingCourses = JSON.parse(localStorage.getItem("courses") || "[]");
       existingCourses.push(course);
+      const existingCoursesIds = existingCourses.map(c => c.courseid);
+
+      if (existingCoursesIds.findIndex(cid => cid === course.courseId)) {
+        openAlertModal("Course ID already exists", "Please enter a different course number.");
+        return;
+      }
+      
       localStorage.setItem("courses", JSON.stringify(existingCourses));
   
       openAlertModal("Success", "Course created successfully!");
