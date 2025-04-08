@@ -6,7 +6,22 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCurrentCourses(user, courses, classes);
     renderSubmittedGrades(user, courses, classes);
   });
-  
+
+  document.addEventListener("click", function (event) {
+    const courseCard = event.target.closest(".course-card");
+//  todo: should be opening course modal
+    if (courseCard) {
+    const courseId = courseCard
+        .querySelector(".course-tag")
+        ?.textContent.trim();
+    if (courseId && window.openCourseModal) {
+        openCourseModal(courseId);
+    }
+    }
+});
+
+
+
   function renderInstructorHome(user, courses, classes) {
     const classCount = user.teachingClasses.length;
     let coursesTaught = [];

@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (userRole !== "instructor") {
         registrationButton = `<button class="register-btn" onclick="goToRegistration()">Go to Registration</button>`;
       }
+      else{
+        registrationButton = `<button class="register-btn" onclick="goToGrading()">Go to Grading</button>`;
+      }
   
       return `
         <div id="courseModal" class="modal">
@@ -65,7 +68,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const courses = JSON.parse(localStorage.getItem("courses") || "[]");
       const course = courses.find(c => c.courseId === courseId);
       const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+      
       const userRole = loggedInUser?.role || "student";
+      console.log("running");
   
       if (!course) {
         console.warn("Course not found:", courseId);
@@ -80,6 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
       setupModalEvents();
   
       document.querySelector("#courseModal").style.display = "flex";
+      
+    }
+    
+    function openClassModal(classId) {
+      const classes = JSON.parse(localStorage.getItem("classes") || "[]");
+      const courseClass = classes.find(clss => clss.classId === classId);
+      openCourseModal(courseClass.courseId);
+    
     }
   
     function closeModal() {
@@ -107,10 +120,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function goToClassStatus() {
       window.location.href = "admin-approve-class.html";
     }
+    function goToGrading(){
+      window.location.href = "instructor-grades-submission.html";
+    }
   
     // Global exposure
     window.openCourseModal = openCourseModal;
+    window.openClassModal = openClassModal;
     window.goToRegistration = goToRegistration;
+    window.goToGrading = goToGrading;
     window.goToClassStatus = goToClassStatus;
   });
   

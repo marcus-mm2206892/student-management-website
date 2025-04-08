@@ -10,10 +10,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function renderStudentProfile(user,courses,majors){
     let creditHours = 0;
+    let pendingHours = 0;
+    //need to add new attribute to semesterEnrollment to show if class is pending or open
     user.semesterEnrollment.classes.forEach(userClass => {
         courses.find(course=>{
-            if (course.courseId === userClass.courseId){
-                creditHours += course.creditHours;     
+            if (course.courseId === userClass.courseId){ //currently comparing null
+                if (userClass.classStatus === "open"){
+                    creditHours += course.creditHours;
+                } else{
+                    pendingHours += course.creditHours;
+                    
+                }
             }
         })
     });
@@ -35,16 +42,17 @@ function renderStudentProfile(user,courses,majors){
 
             <section class="course-image-div">
                 <div class="course-image">
+                 <embed src = "../assets/major-files/2024-${user.department==="Computer Science"?"cs":"ce"}-flowchart.pdf#toolbar=0" type="application/pdf" / width="100%" height="100%" />
                     <div class="hover-icon">
                         <i class="fa-solid fa-eye"></i>
-                        <span class="hover-text">View Course</span>
+                        <span class="hover-text">View Syllabus</span>
                     </div>
                 </div>
             </section>
 
             <section class="credit-hours-card">
                 <div class="credit-hours-text">
-                    <h2>You are taking <strong>${creditHours} credit hours</strong> this semester.</h2>
+                    <h2>You are taking <strong>${creditHours} credit hours</strong> this semester with <strong>${pendingHours} credits hours</strong> waiting to be approved.</h2>
                 </div>
                 <div class="credit-hours-image">
                     <img src="../assets/imgs/unitrack-images/login-page-graphic.png" alt="Credit Hours Graphic">

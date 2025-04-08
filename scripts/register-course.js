@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <tr class="course-row">
           <td class="data course-no"><span>${course.courseId}</span></td>
           <td class="data course-name"><span>${course.courseName}</span></td>
+          <td class="data course-campus"><span>${classItem.campus==="Female"?"F":"M"}</span></td>
           <td class="data course-instructor"><span>${instructorNames}</span></td>
           <td class="data course-section"><span>${classItem.section}</span></td>
           <td class="data course-enrollment"><span>${classItem.enrollmentActual}/${
