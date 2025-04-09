@@ -15,27 +15,39 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("../assets/data/users.json").then((res) => res.json()),
   ]).then(
     ([classesData, instructorsData, studentsData, coursesData, usersData]) => {
-      classes = classesData;
-      instructors = instructorsData;
-      students = studentsData;
-      courses = coursesData;
-      users = usersData;
+      classes = JSON.parse(localStorage.classes) || classesData;
+      instructors = JSON.parse(localStorage.instructors) || instructorsData;
+      students = JSON.parse(localStorage.students) || studentsData;
+      courses = JSON.parse(localStorage.courses) || coursesData;
+      users = JSON.parse(localStorage.users) || usersData;
 
       const instructor = instructors.find((i) => i.email === user.email);
       const instructorClasses = classes.filter((c) =>
         c.instructors.includes(instructor.email)
       );
 
-      const instructorClassesWithName = instructorClasses.map((ic) => {
+      console.log(instructorClasses);
+
+      const openInstructorClasses = instructorClasses.filter((ic) => {
+        return ic.classStatus === "open" || ic.classStatus === "completed";
+      })
+
+      console.log(openInstructorClasses)
+
+      const instructorClassesWithName = openInstructorClasses.map((oic) => {
         const course = courses.find(
-          (course) => course.courseId === ic.courseId
+          (course) => course.courseId === oic.courseId
         );
-        return { ...ic, courseName: course?.courseName || "Unnamed Course" };
+        let submitted = "S"
+        if (oic.classStatus === "open") { submitted = "P"}
+        return { ...oic, courseName: course?.courseName || "Unnamed Course", submitted: submitted };
       });
+
+      console.log(instructorClassesWithName);
 
       document.querySelector(
         "#no-of-classes"
-      ).innerHTML = `<span>${instructorClasses.length} Classes</span>`;
+      ).innerHTML = `<span>${openInstructorClasses.length} Classes</span>`;
 
       const currentTeaching = document.querySelector(
         "#current-teaching-classes"
@@ -43,23 +55,23 @@ document.addEventListener("DOMContentLoaded", function () {
       currentTeaching.innerHTML = instructorClassesWithName
         .map(
           (ic) => `
-        <div class="card" data-classid="${ic.classId}" data-courseid="${ic.courseId}" data-section="${ic.section}" data-coursename="${ic.courseName}">
-          <div class="course-header">
-            <span class="course-tag">${ic.courseId}</span>
-            <span class="section-tag">${ic.section}</span>
-          </div>
-          <div class="course-completed-main">
-            <div class="course-grade">
-              <div><h3>${ic.courseName}</h3></div>
-              <div class="status-container"><span class="status">S</span></div>
+            <div class="card" data-classid="${ic.classId}" data-courseid="${ic.courseId}" data-section="${ic.section}" data-coursename="${ic.courseName}" data-section="${ic.status}">
+              <div class="course-header">
+                <span class="course-tag">${ic.courseId}</span>
+                <span class="section-tag">${ic.section}</span>
+              </div>
+              <div class="course-completed-main">
+                <div class="course-grade">
+                  <div><h3>${ic.courseName}</h3></div>
+                  <div class="status-container"><span class="status">${ic.submitted}</span></div>
+                </div>
+                <div class="course-tags">
+                  <span class="tag"><i class="fa-solid fa-user-graduate"></i> ${ic.enrollmentActual}</span>
+                  <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
+                </div>
+              </div>
             </div>
-            <div class="course-tags">
-              <span class="tag"><i class="fa-solid fa-user-graduate"></i> ${ic.enrollmentActual}</span>
-              <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
-            </div>
-          </div>
-        </div>
-      `
+        ` 
         )
         .join("");
 
@@ -90,11 +102,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const studentCards = enrolledStudents
       .map((student) => {
         const userProfile = users.find((u) => u.email === student.email);
-        const savedGrade = localStorage.getItem(student.email) || "A";
+        const studentClass = student.semesterEnrollment.classes.find(c => c.classId === classId);
+        console.log(studentClass.letterGrade);
+
+        let savedGrade = studentClass.letterGrade
+        if (savedGrade === "N/A") {
+          savedGrade = "A";
+        }
+        
+        // const savedGrade = localStorage.getItem(student.email) || "A";
 
         return `
           <div class="card">
-            <div class="student">
+            <div class="student" data-id="${student.studentId}">
               <div class="student-grade">
                 <div>
                   <h3>${userProfile?.firstName || "Unknown"} ${
@@ -188,6 +208,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  function submitGrades() {}
 
   // Adjust layout on resize
   function adjustLayout() {

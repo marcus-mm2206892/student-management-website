@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
           ).join('');
   
         // 2. Populate prerequisites dropdown
-        document.querySelector("#prereqDropdown").innerHTML = courses
+        let prereqCourses = JSON.parse(localStorage.courses) || courses;
+        document.querySelector("#prereqDropdown").innerHTML = prereqCourses
           .map(course => `<div onclick="addTag(this, 'prereq')">${course.courseId}</div>`)
           .join('');
   
