@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     courses = [],
     users = [];
 
+  let studentGrades=[];
+
   Promise.all([
     fetch("../assets/data/classes.json").then((res) => res.json()),
     fetch("../assets/data/instructors.json").then((res) => res.json()),
@@ -91,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   function renderStudentsForClass(classId, courseId, courseName, section) {
+    studentGrades = [];
     const selectedContainer = document.querySelector(".classes.selected");
 
     const enrolledStudents = students.filter((student) =>
@@ -102,19 +105,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const studentCards = enrolledStudents
       .map((student) => {
         const userProfile = users.find((u) => u.email === student.email);
+
+        const studentGrade = {studentId: student.studentId, email: student.email};
+        studentGrades.push(studentGrade);
+        console.log(studentGrades);
+
         const studentClass = student.semesterEnrollment.classes.find(c => c.classId === classId);
         console.log(studentClass.letterGrade);
 
         let savedGrade = studentClass.letterGrade
         if (savedGrade === "N/A") {
-          savedGrade = "A";
+          savedGrade = "Give a Grade";
         }
         
         // const savedGrade = localStorage.getItem(student.email) || "A";
 
         return `
           <div class="card">
-            <div class="student" data-id="${student.studentId}">
+            <div class="student" data-student-id="${student.studentId}">
               <div class="student-grade">
                 <div>
                   <h3>${userProfile?.firstName || "Unknown"} ${
@@ -209,7 +217,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function submitGrades() {}
+  function submitGrades(classId, enrolledStudents){
+    enrolledStudents.map(student => {
+      const grade = JSON.parse(localStorage.getItem(student.email));
+
+      const selectedClass = student.semesterEnrollment.classes.find(studentClass => studentClass.classId === classId);
+      selectedClass.letterGrade = grade;
+      selectedClass.gradeStatus = "graded";
+
+      // const enrolledClasses = student.classes.filter(studentClass => studentClass.classId != classId);
+      // student.classes = enrolledClasses;
+
+      student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
+    })
+  }
 
   // Adjust layout on resize
   function adjustLayout() {
