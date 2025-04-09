@@ -125,11 +125,11 @@ document.addEventListener("DOMContentLoaded", function () {
             ${major === "CMPS" ? "CS" : "CE"}
           </span>`).join("")}
       `;
-  
+          //couldn't find the conflict in css, fixed using inline
       output += `
         <div class="course-card" onclick="window.openClassModal('${cls.classId}')">
           <div class="course-image">
-            <img src="../assets/imgs/unitrack-images/course-default.png" alt="Course Image">
+           <img src="${course.courseImage}" alt="Course Image" style="width:100%; height:100%; object-fit:cover;"> 
             <div class="hover-icon">
               <i class="fa-solid fa-eye"></i>
               <span class="hover-text">View Class</span>
@@ -157,9 +157,10 @@ document.addEventListener("DOMContentLoaded", function () {
   
   function renderSubmittedGrades(user, courses, classes) {
     const grid = document.querySelector(".course-grid2");
-    const submitted = user.teachingClasses
-      .map(id => classes.find(c => c.classId === id && c.gradesSubmitted)) // assuming property exists
-      .filter(Boolean);
+    const submitted = user.gradedClasses.map(
+      id => classes.find(c => c.classId ===id)
+    )
+    console.log(submitted);
   
     if (submitted.length === 0) {
       grid.innerHTML = `<span class="end-of-results">All Done! No Classes Found.</span>`;
@@ -184,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
       output += `
         <div class="course-card" onclick="window.openClassModal('${cls.classId}')">
           <div class="course-image">
-            <img src="../assets/imgs/unitrack-images/course-default.png" alt="Course Image">
+            <img src="${course.courseImage}" alt="Course Image" style="width:100%; height:100%; object-fit:cover;"> 
             <div class="hover-icon">
               <i class="fa-solid fa-eye"></i>
               <span class="hover-text">View Class</span>

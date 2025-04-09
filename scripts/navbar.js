@@ -441,31 +441,31 @@ function setupAdminNavbarEvents() {
   document
     .querySelector(".menu li:nth-child(1) a")
     ?.addEventListener("click", () => {
-      window.location.href = "admin-home-page.html";
+      window.location.href = "user-query.html";
     });
 
   document
     .querySelector(".menu li:nth-child(2) a")
     ?.addEventListener("click", () => {
-      window.location.href = "user-query.html";
+      window.location.href = "admin-create-course.html";
     });
 
   document
     .querySelector(".menu li:nth-child(3) a")
     ?.addEventListener("click", () => {
-      window.location.href = "admin-create-course.html";
+      window.location.href = "admin-create-class.html";
     });
 
   document
     .querySelector(".menu li:nth-child(4) a")
     ?.addEventListener("click", () => {
-      window.location.href = "admin-create-class.html";
+      window.location.href = "admin-view-schedule.html";
     });
 
   document
     .querySelector(".menu li:nth-child(5) a")
     ?.addEventListener("click", () => {
-      window.location.href = "admin-view-schedule.html";
+      window.location.href = "admin-approve-class.html";
     });
 
   document

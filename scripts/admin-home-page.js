@@ -24,6 +24,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function renderAdminHome(user, courses, classes) {
     const pendingClasses = classes.filter(c => c.classStatus === "pending");
+    const approvedClasses = classes.filter(c => c.classStatus === "open");
+    const closedClasses = classes.filter(c => c.classStatus === "closed");
+    const students = JSON.parse(localStorage.getItem("students"));
+    const instructors = JSON.parse(localStorage.getItem("instructors"));
+    const totalClasses = classes.length;
+    const majors = JSON.parse(localStorage.getItem("majors"));
+    let majorsOffered = []; 
+    majors.map(major => {
+      majorsOffered.push(major.majorName)
+    });
+    majorsText = majorsOffered.join(", ");
+    console.log(majorsText);
     console.log(pendingClasses);
   
     const pendingCoursesText = pendingClasses.length === 1 ? "course" : "courses";
@@ -55,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <p>Created classes that are awaiting for your approval</p>
                     </div>
                     <div class="courses-header-right">
-                        <a href="#" class="browse-courses">
+                        <a href="user-query.html" class="browse-courses">
                             View all classes <i class="fa-solid fa-chevron-right"></i>
                         </a>
                     </div>
@@ -71,10 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
             <section class="about-me-div">
                 <h3>About Me</h3>
                 <div class="about-me-content">
-                    <img src="../assets/imgs/person.png" alt="User Avatar" class="about-me-avatar"> 
+                    <img src="../${"../"+user["profile-image"]}" alt="User Avatar" class="about-me-avatar"> 
                     <div class="about-me-content-right">
-                        <h2>Lee Sanghyeok</h2>
-                        <span>lee.sanghyeok@gmail.com</span>
+                        <h2>${user.firstName} ${user.lastName}</h2>
+                        <span>${user.email}</span>
                         <span class="college-tag"></i>University Admin</span>
                     </div>
                 </div>
@@ -87,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3 class="content-info-attribute">Number of Approved Classes</h3>
                     
                     <div class="info-text">
-                        <h2 class="number-tag">56 of 140</h2>
-                        <p><span>40%</span> of all courses are approved</p>
+                        <h2 class="number-tag">${approvedClasses.length} of ${totalClasses}</h2>
+                        <p><span>${Math.round((approvedClasses.length/totalClasses)*100)}%</span> of all courses are approved</p>
                     </div>
                 </div>
 
@@ -96,8 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3 class="content-info-attribute">Number of Pending Classes</h3>
                     
                     <div class="info-text">
-                        <h2 class="number-tag">26 of 140</h2>
-                        <p><span>18%</span> of all courses are pending</p>
+                        <h2 class="number-tag">${pendingClasses.length} of ${totalClasses}</h2>
+                        <p><span>${Math.round((pendingClasses.length/totalClasses)*100)}%</span> of all courses are pending</p>
                     </div>
                 </div>
 
@@ -105,8 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3 class="content-info-attribute">Number of Rejected Classes</h3>
                     
                     <div class="info-text">
-                        <h2 class="number-tag">58 of 140</h2>
-                        <p><span>42%</span> of all courses are rejected</p>
+                        <h2 class="number-tag">${closedClasses.length} of ${totalClasses}</h2>
+                        <p><span>${Math.round((closedClasses.length/totalClasses)*100)}%</span> of all courses are rejected</p>
                     </div>
                 </div>
 
@@ -114,8 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3 class="content-info-attribute">Total Students</h3>
                     
                     <div class="info-text">
-                        <h2 class="number-tag">1834</h2>
-                        <p><span>1834 students</span> are taking classes</p>
+                        <h2 class="number-tag">${students.length}</h2>
+                        <p><span>${students.length} students</span> are taking classes</p>
                     </div>
                 </div>
 
@@ -123,8 +135,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3 class="content-info-attribute">Total Instructors</h3>
                     
                     <div class="info-text">
-                        <h2 class="number-tag">193</h2>
-                        <p><span>193 instructors</span> are teaching classes</p>
+                        <h2 class="number-tag">${instructors.length}</h2>
+                        <p><span>${instructors.length} instructors</span> are teaching classes</p>
                     </div>
                 </div>
 
@@ -132,8 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3 class="content-info-attribute">Total Majors Offered</h3>
                     
                     <div class="info-text">
-                        <h2 class="number-tag">2 Majors</h2>
-                        <p>Comp. Science and Comp. Engineering are offered</p>
+                        <h2 class="number-tag">${majors.length} Majors</h2>
+                        <p>${majorsText} ${majors.length<=1?"is":"are"} offered</p>
                     </div>
                 </div>
 
@@ -167,11 +179,11 @@ document.addEventListener("DOMContentLoaded", function () {
             ${major === "CMPS" ? "CS" : "CE"}
           </span>`).join("")}
       `;
-  
+          //couldn't find the conflict in css, fixed using inline
       output += `
         <div class="course-card" onclick="window.openClassModal('${cls.classId}')">
           <div class="course-image">
-            <img src="../assets/imgs/unitrack-images/course-default.png" alt="Course Image">
+            <img src="${course.courseImage}" alt="Course Image" style="width:100%; height:100%; object-fit:cover;"> 
             <div class="hover-icon">
               <i class="fa-solid fa-eye"></i>
               <span class="hover-text">View Class</span>
