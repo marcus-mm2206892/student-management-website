@@ -228,6 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       student.classes = enrolledClasses;
       student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
+
     })
   }
 
