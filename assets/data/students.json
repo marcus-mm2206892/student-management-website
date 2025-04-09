@@ -20,12 +20,6 @@
           "letterGrade": "N/A"
         },
         {
-          "classId": "25519",
-          "courseId": "CMPS350",
-          "gradeStatus": "ungraded",
-          "letterGrade": "N/A"
-        },
-        {
           "classId": "25501",
           "courseId": "CMPS482",
           "gradeStatus": "ungraded",

@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let user = JSON.parse(localStorage.getItem("loggedInUser"));
-    user.semesterEnrollment.classes = []; // Clear classes to simulate "no current courses"
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
-    
+  let user = JSON.parse(localStorage.getItem("loggedInUser"));
   const courses = JSON.parse(localStorage.getItem("courses"));
   const majors = JSON.parse(localStorage.getItem("majors"));
 
@@ -200,10 +197,18 @@ function renderCurrentCourses(user, courses) {
   if (out.trim() === "") {
     courseGrid.innerHTML = "";
     courseGrid.style.display = "none";
+
     emptyContent.style.display = "flex";
+    emptyContent.innerHTML = "";
+
+    if (typeof renderEmptyContent === "function") {
+      renderEmptyContent();
+    }
   } else {
-    emptyContent.style.display = "none";
-    courseGrid.style.display = "grid";
     courseGrid.innerHTML = out;
+    courseGrid.style.display = "grid";
+  
+    emptyContent.style.display = "none";
+    emptyContent.innerHTML = "";
   }
 }
