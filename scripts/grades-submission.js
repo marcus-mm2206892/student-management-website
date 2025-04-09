@@ -221,14 +221,14 @@ document.addEventListener("DOMContentLoaded", function () {
     enrolledStudents.map(student => {
       const grade = JSON.parse(localStorage.getItem(student.email));
 
-      const selectedClass = student.classes.find(studentClass => studentClass.classId === classId);
+      const selectedClass = student.semesterEnrollment.classes.find(studentClass => studentClass.classId === classId);
       selectedClass.letterGrade = grade;
+      selectedClass.gradeStatus = "graded";
 
       // const enrolledClasses = student.classes.filter(studentClass => studentClass.classId != classId);
+      // student.classes = enrolledClasses;
 
-      student.classes = enrolledClasses;
       student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
-
     })
   }
 
