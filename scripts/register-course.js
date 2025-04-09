@@ -16,110 +16,110 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Classes Loaded:", allClasses);
 
   console.log("Users Loaded:", allUsers);
-
+  
   //2. When admin Closes a section, it should automatically unregister the student if he has been registered
+  renderClasses(allClasses);
+  function renderClasses(allClasses){
+    try {
+      let out = "";
+      const user = JSON.parse(localStorage.loggedInUser);
+      const student = allStudents.find((s) => s.email == user.email);
+      const enrolledClasses = student.semesterEnrollment?.classes || [];
 
-  try {
-    let out = "";
+      allClasses.sort((a, b) => b.enrollmentActual - a.enrollmentActual);
+      allClasses.forEach((classItem) => {
+        let course = allCourses.find((c) => c.courseId === classItem.courseId);
+        if (!course) return;
 
-    const user = JSON.parse(localStorage.loggedInUser);
-    const student = allStudents.find((s) => s.email == user.email);
-    const enrolledClasses = student.semesterEnrollment?.classes || [];
+        const instructorNames =
+          (classItem.instructors || [])
+            .map((email) => {
+              const user = allUsers.find((u) => u.email === email);
+              return user ? `${user.firstName} ${user.lastName}` : email;
+            })
+            .join("<br>") || "TBA";
+        const status = classItem.classStatus?.toLowerCase() || "unknown";
+        const isAlreadyEnrolled = enrolledClasses.some(
+          (enrolled) => enrolled.classId === classItem.classId
+        );
 
-    allClasses.sort((a, b) => b.enrollmentActual - a.enrollmentActual);
-    allClasses.forEach((classItem) => {
-      let course = allCourses.find((c) => c.courseId === classItem.courseId);
-      if (!course) return;
+        let statusClass = "";
+        let buttonText = "";
+        let buttonDisabled = "";
+        let buttonStyle = "";
+        let buttonClass = "";
 
-      const instructorNames =
-        (classItem.instructors || [])
-          .map((email) => {
-            const user = allUsers.find((u) => u.email === email);
-            return user ? `${user.firstName} ${user.lastName}` : email;
-          })
-          .join("<br>") || "TBA";
-      const status = classItem.classStatus?.toLowerCase() || "unknown";
-      const isAlreadyEnrolled = enrolledClasses.some(
-        (enrolled) => enrolled.classId === classItem.classId
-      );
-
-      let statusClass = "";
-      let buttonText = "";
-      let buttonDisabled = "";
-      let buttonStyle = "";
-      let buttonClass = "";
-
-      if (isAlreadyEnrolled) {
-        buttonText = "Unregister";
-        buttonClass = isAlreadyEnrolled ? "registered-button" : "";
-      } else {
-        switch (status) {
-          case "open":
-            statusClass = "status-approved";
-            if (classItem.enrollmentActual >= classItem.enrollmentMaximum) {
+        if (isAlreadyEnrolled) {
+          buttonText = "Unregister";
+          buttonClass = isAlreadyEnrolled ? "registered-button" : "";
+        } else {
+          switch (status) {
+            case "open":
+              statusClass = "status-approved";
+              if (classItem.enrollmentActual >= classItem.enrollmentMaximum) {
+                buttonDisabled = "disabled";
+                buttonText = "Full";
+              } else {
+                buttonText = "Register";
+              }
+              break;
+            case "closed":
+              statusClass = "status-rejected";
+              buttonText = "N/A";
               buttonDisabled = "disabled";
-              buttonText = "Full";
-            } else {
-              buttonText = "Register";
-            }
-            break;
-          case "closed":
-            statusClass = "status-rejected";
-            buttonText = "N/A";
-            buttonDisabled = "disabled";
-            break;
-          case "pending":
-            statusClass = "status-pending";
-            buttonText = "Waitlist";
-            buttonDisabled = "Register";
-            break;
-          default:
-            statusClass = "status-default";
-            buttonText = "N/A";
-            buttonDisabled = "disabled";
+              break;
+            case "pending":
+              statusClass = "status-pending";
+              buttonText = "Waitlist";
+              buttonDisabled = "Register";
+              break;
+            default:
+              statusClass = "status-default";
+              buttonText = "N/A";
+              buttonDisabled = "disabled";
+          }
         }
+
+        out += `
+          <tr class="course-row">
+            <td class="data course-no"><span>${course.courseId}</span></td>
+            <td class="data course-name"><span>${course.courseName}</span></td>
+            <td class="data course-campus"><span>${classItem.campus==="Female"?"F":"M"}</span></td>
+            <td class="data course-instructor"><span>${instructorNames}</span></td>
+            <td class="data course-section"><span>${classItem.section}</span></td>
+            <td class="data course-enrollment"><span>${classItem.enrollmentActual}/${
+              classItem.enrollmentMaximum
+            }</span></td>
+            <td class="data course-status">
+              <span class="status-badge ${statusClass}">
+                <span class="status-circle"></span>
+                ${status.charAt(0).toUpperCase() + status.slice(1)}
+              </span>
+            </td>
+            <td>
+              <button class="course-button ${buttonClass}"
+                data-classid="${classItem.classId}"
+                data-courseid="${course.courseId}"
+                ${buttonDisabled}>
+                <strong><span>${buttonText}</span></strong>
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+      tableBody.innerHTML = out;
+      
+
+      console.log("Courses successfully loaded into table.");
+
+      if (typeof adjustTableColumns === "function") {
+        adjustTableColumns();
       }
-
-      out += `
-        <tr class="course-row">
-          <td class="data course-no"><span>${course.courseId}</span></td>
-          <td class="data course-name"><span>${course.courseName}</span></td>
-          <td class="data course-campus"><span>${classItem.campus==="Female"?"F":"M"}</span></td>
-          <td class="data course-instructor"><span>${instructorNames}</span></td>
-          <td class="data course-section"><span>${classItem.section}</span></td>
-          <td class="data course-enrollment"><span>${classItem.enrollmentActual}/${
-            classItem.enrollmentMaximum
-          }</span></td>
-          <td class="data course-status">
-            <span class="status-badge ${statusClass}">
-              <span class="status-circle"></span>
-              ${status.charAt(0).toUpperCase() + status.slice(1)}
-            </span>
-          </td>
-          <td>
-            <button class="course-button ${buttonClass}"
-              data-classid="${classItem.classId}"
-              data-courseid="${course.courseId}"
-              ${buttonDisabled}>
-              <strong><span>${buttonText}</span></strong>
-            </button>
-          </td>
-        </tr>
-      `;
-    });
-
-    tableBody.innerHTML = out;
-
-    console.log("Courses successfully loaded into table.");
-
-    if (typeof adjustTableColumns === "function") {
-      adjustTableColumns();
-    }
-  } catch (error) {
-    console.error("Error fetching course/class data:", error);
-    failedToLoad.style.display = "flex";
-    registerTable.style.display = "none";
-  }
+    } catch (error) {
+      console.error("Error fetching course/class data:", error);
+      failedToLoad.style.display = "flex";
+      registerTable.style.display = "none";
+    }}
 
   // search functionality
   searchBar.addEventListener("input", function () {
@@ -425,4 +425,31 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     setTimeout(() => location.reload(), 1200);
   }
+       // sorting Status
+       const statusOrders = [
+        ['open', 'pending', 'closed'],
+        ['pending', 'closed', 'open'],
+        ['closed', 'open', 'pending']
+      ];
+      
+    document.querySelector(".course-status").addEventListener("click", () => {
+        const timesClicked = JSON.parse(localStorage.getItem("timesClicked"))??0;
+        if(timesClicked===0){
+            localStorage.setItem("timesClicked",1);
+        }
+        
+        const currentOrder = statusOrders[timesClicked % 3];
+        const currentPriority = Object.fromEntries(
+            currentOrder.map((status, index) => [status, index + 1])
+        );
+
+        allClasses.sort((a, b) => { // not sure why this isn't sorting when it's exactly the same as admin
+            const aPriority = currentPriority[a.classStatus];
+            const bPriority = currentPriority[b.classStatus];
+            return aPriority - bPriority;
+        });
+        console.log(currentOrder); 
+        localStorage.setItem("timesClicked", timesClicked+1);
+        renderClasses(allClasses);
+    });
 });
