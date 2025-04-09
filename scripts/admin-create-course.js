@@ -136,15 +136,16 @@ document.addEventListener("DOMContentLoaded", function () {
         description,
         imageUrl: imageUrl
       };
-  
-      const existingCourses = JSON.parse(localStorage.getItem("courses") || "[]");
-      existingCourses.push(course);
-      const existingCoursesIds = existingCourses.map(c => c.courseid);
 
-      if (existingCoursesIds.findIndex(cid => cid === course.courseId)) {
+      console.log(course);
+      const existingCourses = JSON.parse(localStorage.getItem("courses") || "[]");
+      const existingCoursesIds = existingCourses.map(c => c.courseId);
+
+      if (existingCoursesIds.findIndex(cid => cid === course.courseId) != -1) {
         openAlertModal("Course ID already exists", "Please enter a different course number.");
         return;
       }
+      existingCourses.push(course);
       
       localStorage.setItem("courses", JSON.stringify(existingCourses));
   
