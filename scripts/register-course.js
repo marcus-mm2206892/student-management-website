@@ -17,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Users Loaded:", allUsers);
 
-  //1. Unregister Button Not working
-
   //2. When admin Closes a section, it should automatically unregister the student if he has been registered
 
   try {
