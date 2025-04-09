@@ -52,6 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isAlreadyEnrolled) {
         buttonText = "Unregister";
         buttonClass = isAlreadyEnrolled ? "registered-button" : "";
+
+        const isWaitlisted = classItem.classStatus?.toLowerCase() === "pending";
+
+        buttonText = isWaitlisted ? "Unwaitlist" : "Unregister";
       } else {
         switch (status) {
           case "open":
@@ -71,7 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
           case "pending":
             statusClass = "status-pending";
             buttonText = "Waitlist";
-            buttonDisabled = "Register";
+            buttonDisabled = "";
+            buttonClass = "waitlist-button";
             break;
           default:
             statusClass = "status-default";
@@ -84,12 +89,14 @@ document.addEventListener("DOMContentLoaded", function () {
         <tr class="course-row">
           <td class="data course-no"><span>${course.courseId}</span></td>
           <td class="data course-name"><span>${course.courseName}</span></td>
-          <td class="data course-campus"><span>${classItem.campus==="Female"?"F":"M"}</span></td>
+          <td class="data course-campus"><span>${
+            classItem.campus === "Female" ? "F" : "M"
+          }</span></td>
           <td class="data course-instructor"><span>${instructorNames}</span></td>
           <td class="data course-section"><span>${classItem.section}</span></td>
-          <td class="data course-enrollment"><span>${classItem.enrollmentActual}/${
-            classItem.enrollmentMaximum
-          }</span></td>
+          <td class="data course-enrollment"><span>${
+            classItem.enrollmentActual
+          }/${classItem.enrollmentMaximum}</span></td>
           <td class="data course-status">
             <span class="status-badge ${statusClass}">
               <span class="status-circle"></span>
@@ -241,13 +248,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-  
 
   function handleCourseRegistration(courseId, classId) {
     const user = JSON.parse(localStorage.loggedInUser);
     const student = allStudents.find((s) => s.email == user.email);
-    const allEnrollments =
-      JSON.parse(localStorage.getItem("courseEnrollments")) || [];
     const course = allCourses.find((c) => c.courseId == courseId);
     const classObj = allClasses.find((cls) => cls.classId == classId);
     const userInfo = allUsers.find((u) => u.email == user.email);
@@ -289,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 2. Already Enrolled -> Offer to Unregister
+    // Already Enrolled -> Offer to Unregister
     if (isAlreadyEnrolled) {
       openAlertModal(
         "Unregister?",
@@ -318,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 3. Duplicate Course Enrollment Check
+    // Duplicate Course Enrollment Check
     if (isSameCourseEnrolled) {
       const existingClass = currentClasses.find(
         (cls) => cls.courseId === courseId
@@ -335,7 +339,36 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 4. Prerequisite Check
+    // Handle Waitlist Registration (pending)
+    if (classObj.classStatus.toLowerCase() === "pending") {
+      // push to enrollment without prerequisite/credit checks
+
+      allClasses = allClasses.map((cls) => {
+        if (cls.classId == classId) {
+          return { ...cls, enrollmentActual: cls.enrollmentActual + 1 };
+        }
+        return cls;
+      });
+
+      student.semesterEnrollment.classes.push({
+        classId: classId,
+        courseId: courseId,
+        gradeStatus: "ungraded",
+        letterGrade: "N/A",
+      });
+
+      localStorage.setItem("students", JSON.stringify(allStudents));
+      localStorage.setItem("classes", JSON.stringify(allClasses));
+
+      openAlertModal(
+        "Waitlist Successful",
+        `You have been added to the waitlist for class ${classId} of course ${courseId}.`
+      );
+      setTimeout(() => location.reload(), 5000); // wait 5 seconds
+      return;
+    }
+
+    // Prerequisite Check
     const prerequisites = course?.prerequisites || [];
     const completedCourseIds = completedCourses.map((c) => c.courseId);
     const passedPreReq = prerequisites.every((prereq) => {
@@ -376,7 +409,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 5. Credit Hour Cap
+    // Credit Hour Cap
 
     if (totalAfterAdd > 18) {
       openAlertModal(
@@ -385,17 +418,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       return;
     }
-
-    // Register the class
-    const courseEnrollment = {
-      enrollmentId: Date.now(),
-      studentId: student.studentId,
-      classId: classId,
-      courseId: courseId,
-      status: "Enrolled",
-      courseGrade: 0,
-      letterGrade: "NA",
-    };
 
     // Update classes.json
     allClasses = allClasses.map((cls) => {
@@ -414,15 +436,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Save everything
-    allEnrollments.push(courseEnrollment);
     localStorage.setItem("students", JSON.stringify(allStudents));
     localStorage.setItem("classes", JSON.stringify(allClasses));
-    localStorage.setItem("courseEnrollments", JSON.stringify(allEnrollments));
 
     openAlertModal(
       "Registration Successful",
       `You have been enrolled in class ${classId} of course ${courseId}.`
     );
-    setTimeout(() => location.reload(), 1200);
+    setTimeout(() => location.reload(), 5000);
   }
 });
