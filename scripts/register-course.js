@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
             break;
           case "pending":
             statusClass = "status-pending";
-            buttonText = "Closed";
-            buttonDisabled = "disabled";
+            buttonText = "Waitlist";
+            buttonDisabled = "Register";
             break;
           default:
             statusClass = "status-default";
