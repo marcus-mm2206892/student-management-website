@@ -212,4 +212,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("resize", adjustTableColumns);
     adjustTableColumns();
+
+    document.addEventListener("click", function (event) {
+        if (event.target.closest(".course-no")) {
+          const courseId = event.target.closest(".course-no").innerText.trim();
+          console.log("Clicked "+ courseId)
+          if (window.openClassModal) {
+            window.openClassModal(courseId);
+          } else {
+            console.warn("Class modal not initialized");
+          }
+        }
+      });
+
 });

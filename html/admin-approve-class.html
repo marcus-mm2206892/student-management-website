@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniTrack | Register Courses</title>
+    <title>UniTrack | Validating Courses</title>
     <link rel="stylesheet" href="../styles/theme.css">
     <link rel="stylesheet" href="../styles/admin-approve-class.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/scroll-up.css">
     <link rel="stylesheet" href="../styles/scrollbar.css">
+    <link rel="stylesheet" href="../styles/class-modal.css">
 </head>
 <body>
     <!-- NAVBAR -->
@@ -50,6 +51,7 @@
                     </tr>
                     <tr>
                         <th class="course-no">Course No.</th>
+                        <div id="modalContainer"></div>
                         <th class="course-name">Name</th>
                         <th class="course-instructor">Instructor</th>
                         <th class="course-section">Section</th>
@@ -107,6 +109,8 @@
 
     <script src="../scripts/admin-approve-class.js"></script>
     <script src="../scripts/scroll-up.js"></script>
+
+    <script src="../scripts/class-modal.js"></script>
     
 </body>
 </html>
