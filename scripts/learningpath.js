@@ -6,16 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const learningContainer = document.querySelector(".category.completed .cards-container");
     const inProgressContainer = document.querySelector(".category.in-progress .cards-container");
-    const pendingContainer = document.querySelector(".category.pending .cards-container");
+    const scheduledContainer = document.querySelector(".category.scheduled .cards-container");
+    const upcomingContainer = document.querySelector(".category.upcoming .cards-container");
 
     let allCourses = JSON.parse(localStorage.getItem("courses"));
     let allClasses = JSON.parse(localStorage.getItem("classes"));
     let allStudents = JSON.parse(localStorage.getItem("students"));
-    const allEnrollments = JSON.parse(localStorage.getItem("courseEnrollments"));
     const allMajors = JSON.parse(localStorage.getItem("majors"));
 
     const user = JSON.parse(localStorage.loggedInUser);
-    const student = allStudents.find( s => s.email == user.email )
+    const student = allStudents.find(s => s.email == user.email);
     console.log(student);
 
     function updateVisibility() {
@@ -46,46 +46,37 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     window.addEventListener("resize", updateVisibility);
-
     updateVisibility();
 
-        // Create a course card template
-        function courseCard(course) {
-            return `
-                <div class="course-card">
-                    <div class="course-image">
-                        <div class="hover-icon">
-                            <i class="fa-solid fa-plus"></i>
-                            <span class="hover-text">Register Course</span>
-                        </div>
-                        <i class="fa-solid fa-turn-up top-right-icon"></i>
+    function courseCard(course) {
+        return `
+            <div class="course-card">
+                <div class="course-image">
+                    <div class="hover-icon">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="hover-text">Register Course</span>
                     </div>
-                    <div class="course-info">
-                        <div class="course-header">
-                            <span class="course-tag">${course.courseId}</span>
-                            <span class="semester">Fall 2025</span>
-                        </div>
-                        <h3>${course.courseName}</h3>
-                        <p class="course-subtitle">${course.description}</p>
+                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+                </div>
+                <div class="course-info">
+                    <div class="course-header">
+                        <span class="course-tag">${course.courseId}</span>
+                        <span class="semester">Fall 2025</span>
+                    </div>
+                    <h3>${course.courseName}</h3>
+                    <p class="course-subtitle">${course.description}</p>
                     <div class="course-tags">
-                        ${course.majorsOffered
-                        .map(
-                        (major) => `
-                        <span class="tag"><i class="fa-solid ${
-                        major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
-                        }"></i> ${major == "CMPS" ? 'CS' : 'CE'}</span>`)
-                        .join("")}
-                    </div>
+                        ${course.majorsOffered.map(major => `
+                            <span class="tag"><i class="fa-solid ${major === "CMPE" ? "fa-microchip" : "fa-laptop-code"}"></i> ${major == "CMPS" ? 'CS' : 'CE'}</span>`).join("")}
                     </div>
                 </div>
-    
-            `;
-        }
-    
-        function courseCardWithGrades(course, grade) {
-            return `
-    
-                <div class="course-card">
+            </div>
+        `;
+    }
+
+    function courseCardWithGrades(course, grade) {
+        return `
+            <div class="course-card">
                 <div class="course-image">
                     <div class="hover-icon">
                         <i class="fa-solid fa-plus"></i>
@@ -107,136 +98,89 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     </div>
                     <div class="course-tags">
-                        ${course.majorsOffered
-                        .map(
-                        (major) => `
-                        <span class="tag"><i class="fa-solid ${
-                        major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
-                        }"></i> ${major == "CMPS" ? 'CS' : 'CE'}</span>`)
-                        .join("")}
+                        ${course.majorsOffered.map(major => `
+                            <span class="tag"><i class="fa-solid ${major === "CMPE" ? "fa-microchip" : "fa-laptop-code"}"></i> ${major == "CMPS" ? 'CS' : 'CE'}</span>`).join("")}
                     </div>
                 </div>
             </div>
-            
-            `;
-        }
-
-    function renderCompletedCourses() {
-        //1. Target the the completed container
-
-        //2. Fetch the completed coursess courses from Local storage
-
-        const completed = student.completedCourses; 
-        console.log(completed);
-
-
-        const completedCourses = [];
-
-        completed.forEach(c => {  //Initializing course objects
-            let crs = allCourses.find( cr => cr.courseId == c.courseId);
-            completedCourses.push(crs)
-        });
-
-        console.log(completedCourses)
-
-
-        try {
-            out = ``
-            completedCourses.forEach(c => {
-                const grade = completed.find( crs => crs.courseId == c.courseId).letterGrade;
-                out += courseCardWithGrades(c, grade);
-            })
-
-            //Inject the courses inside the div
-            learningContainer.innerHTML = out;
-
-        } catch {
-            //Display error/empty message in the 'Completed' column
-        }
-
-        const inProgressSpan = document.querySelector(".category.completed .tracking-number");
-        inProgressSpan.textContent = `${completedCourses.length} completed`;
-
+        `;
     }
 
-
-    function renderInProgessCourses(){
-        
-        inprogress = student.semesterEnrollment.classes
-        console.log(inprogress)
-
-        inProgressCourses = []
-
-        inprogress.forEach(c => {  //Initializing course objects
-            let crs = allCourses.find( cr => cr.courseId == c.courseId);
-            inProgressCourses.push(crs)
-        });
-
-        console.log(inProgressCourses)
+    function renderCompletedCourses() {
+        const completed = student.completedCourses;
+        const completedCourses = completed.map(c => allCourses.find(cr => cr.courseId == c.courseId));
 
         try {
-            out = ``
-            inProgressCourses.forEach(c => {
-                out += courseCard(c);
-            })
-
-            //Inject the courses inside the div
-            inProgressContainer.innerHTML = out;
-
+            let out = ``;
+            completedCourses.forEach(c => {
+                const grade = completed.find(crs => crs.courseId == c.courseId).letterGrade;
+                out += courseCardWithGrades(c, grade);
+            });
+            learningContainer.innerHTML = out;
         } catch {
-            //Display error/empty message in the 'Completed' column
+            // Handle error state
         }
+
+        const completedSpan = document.querySelector(".category.completed .tracking-number");
+        completedSpan.textContent = `${completedCourses.length} completed`;
+    }
+
+    function renderInProgessCourses() {
+        const openClasses = student.semesterEnrollment.classes.filter(cls => {
+            const classDetails = allClasses.find(c => c.classId == cls.classId);
+            return classDetails && classDetails.classStatus === "open";
+        });
+
+        const inProgressCourses = openClasses.map(cls => allCourses.find(course => course.courseId == cls.courseId));
+
+        try {
+            let out = ``;
+            inProgressCourses.forEach(c => out += courseCard(c));
+            inProgressContainer.innerHTML = out;
+        } catch {}
 
         const inProgressSpan = document.querySelector(".category.in-progress .tracking-number");
         inProgressSpan.textContent = `${inProgressCourses.length} courses are in progress`;
-
     }
 
-    function renderPendingCourses(){
-        const required = allMajors.find( m => m.majorName == student.department).requiredCourses  //The department attribute of the students is infered as major
-        console.log(required)  // Required courses
+    function renderScheduledCourses() {
+        const pendingClasses = student.semesterEnrollment.classes.filter(cls => {
+            const classDetails = allClasses.find(c => c.classId == cls.classId);
+            return classDetails && classDetails.classStatus === "pending";
+        });
 
-        const completed = student.completedCourses.map( cc => cc.courseId); // Completed Courses
-        console.log(completed); 
-
-
-        inprogress = student.semesterEnrollment.classes.map( ip => ip.courseId); // Curren courses
-        console.log(inprogress)
-
-        const difference1 = required.filter(item => !completed.includes(item));
-        const difference2 = difference1.filter(item => !inprogress.includes(item));
-
-        console.log(difference2)
-
-        pendingCourses = []
-        difference2.forEach( crs => {
-            pendingCourses.push(allCourses.find( c => c.courseId == crs))
-        })
-
-    
+        const scheduledCourses = pendingClasses.map(cls => allCourses.find(course => course.courseId == cls.courseId));
 
         try {
-            out = ``
-            pendingCourses.forEach(c => {
-                out += courseCard(c);
-            })
+            let out = ``;
+            scheduledCourses.forEach(c => out += courseCard(c));
+            scheduledContainer.innerHTML = out;
+        } catch {}
 
-            //Inject the courses inside the div
-            pendingContainer.innerHTML = out;
+        const scheduledSpan = document.querySelector(".category.scheduled .tracking-number");
+        scheduledSpan.textContent = `${scheduledCourses.length} scheduled`;
+    }
 
-        } catch {
-            //Display error/empty message in the 'Pending' column
-        }
+    function renderUpcomingCourses() {
+        const required = allMajors.find(m => m.majorName == student.department).requiredCourses;
+        const completed = student.completedCourses.map(cc => cc.courseId);
+        const current = student.semesterEnrollment.classes.map(ip => ip.courseId);
 
+        const upcomingCourseIds = required.filter(courseId => !completed.includes(courseId) && !current.includes(courseId));
+        const upcomingCourses = upcomingCourseIds.map(crsId => allCourses.find(c => c.courseId == crsId));
 
-        const inProgressSpan = document.querySelector(".category.pending .tracking-number");
-        inProgressSpan.textContent = `${pendingCourses.length} courses are pending`;
-        
+        try {
+            let out = ``;
+            upcomingCourses.forEach(c => out += courseCard(c));
+            upcomingContainer.innerHTML = out;
+        } catch {}
+
+        const upcomingSpan = document.querySelector(".category.upcoming .tracking-number");
+        upcomingSpan.textContent = `${upcomingCourses.length} courses are upcoming`;
     }
 
     renderCompletedCourses();
-
-    renderInProgessCourses()
-
-    renderPendingCourses()
+    renderInProgessCourses();
+    renderScheduledCourses();
+    renderUpcomingCourses();
 });
