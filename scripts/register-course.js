@@ -291,24 +291,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 2. Duplicate Course Enrollment Check
-    if (isSameCourseEnrolled) {
-      const existingClass = currentClasses.find(
-        (cls) => cls.courseId === courseId
-      );
-      const existingClassObj = allClasses.find(
-        (cls) => cls.classId === existingClass.classId
-      );
-      const sectionName = existingClassObj?.section || "another section";
-
-      openAlertModal(
-        "Already Enrolled in Course",
-        `You are already enrolled in ${courseId} section ${sectionName}. You cannot register for multiple sections of the same course.`
-      );
-      return;
-    }
-
-    // 3. Already Enrolled -> Offer to Unregister
+    // 2. Already Enrolled -> Offer to Unregister
     if (isAlreadyEnrolled) {
       openAlertModal(
         "Unregister?",
@@ -334,6 +317,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         location.reload();
       });
+      return;
+    }
+
+    // 3. Duplicate Course Enrollment Check
+    if (isSameCourseEnrolled) {
+      const existingClass = currentClasses.find(
+        (cls) => cls.courseId === courseId
+      );
+      const existingClassObj = allClasses.find(
+        (cls) => cls.classId === existingClass.classId
+      );
+      const sectionName = existingClassObj?.section || "another section";
+
+      openAlertModal(
+        "Already Enrolled in Course",
+        `You are already enrolled in ${courseId} section ${sectionName}. You cannot register for multiple sections of the same course.`
+      );
       return;
     }
 
