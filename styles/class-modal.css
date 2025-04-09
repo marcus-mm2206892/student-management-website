@@ -279,7 +279,7 @@ body {
 
 /* COURSE DESCRIPTION */
 
-.course-image {
+.modal .course-image {
   background: var(--clr-surface-tonal-a20);
   position: relative;
   aspect-ratio: 1 / 1;
@@ -291,14 +291,14 @@ body {
     outline 0.3s ease-out;
 }
 
-.course-image:hover {
+.modal .course-image:hover {
   transform: translateY(-0.5rem);
   outline: 1px solid var(--clr-contrast-a0);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 
-.course-image img {
+.modal .course-image img {
   object-fit: contain;
 }
 

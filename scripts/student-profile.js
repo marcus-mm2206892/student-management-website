@@ -1,37 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
   let user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  // Make classes empty for testing
+  // user.semesterEnrollment.classes = []; 
+  // localStorage.setItem("loggedInUser", JSON.stringify(user));
+
   const courses = JSON.parse(localStorage.getItem("courses"));
   const majors = JSON.parse(localStorage.getItem("majors"));
+  const classes = JSON.parse(localStorage.getItem("classes"));
 
-  renderStudentProfile(user, courses, majors);
-
+  renderStudentProfile(user, courses, majors, classes);
   renderCurrentCourses(user, courses);
 });
 
-function renderStudentProfile(user, courses, majors) {
-  let creditHours = 0;
-  let pendingHours = 0;
-  //need to add new attribute to semesterEnrollment to show if class is pending or open
+function renderStudentProfile(user, courses, majors, classes) {
+  let creditHours = 0; // for "open" classes
+  let pendingHours = 0; // for "pending" classes
+
   user.semesterEnrollment.classes.forEach((userClass) => {
-    courses.find((course) => {
-      if (course.courseId === userClass.courseId) {
-        //currently comparing null
-        if (userClass.classStatus === "open") {
-          creditHours += course.creditHours;
-        } else {
-          pendingHours += course.creditHours;
-        }
+    const course = courses.find((c) => c.courseId === userClass.courseId);
+    const classInfo = classes.find((cls) => cls.classId === userClass.classId); // you need to load this from localStorage
+
+    if (course && classInfo) {
+      if (classInfo.classStatus === "open") {
+        creditHours += course.creditHours;
+      } else if (classInfo.classStatus === "pending") {
+        pendingHours += course.creditHours;
       }
-    });
+    }
   });
+
   const completedCourses = user.completedCourses.length;
   let totalCourses = 0;
   let percentCompleted = 0;
-  majors.map((major) => {
+
+  majors.forEach((major) => {
     if (major.majorName === user.department) {
       totalCourses = major.requiredCourses.length;
       percentCompleted = Math.round((completedCourses / totalCourses) * 100);
     }
+  });
+
+  const activeClasses = user.semesterEnrollment.classes.filter((userClass) => {
+    const classInfo = classes.find((cls) => cls.classId === userClass.classId);
+    return classInfo?.classStatus === "open";
   });
 
   document.querySelector(".student-profile").innerHTML = `
@@ -47,10 +59,13 @@ function renderStudentProfile(user, courses, majors) {
                     <img src="../assets/major-files/2024-${
                       user.department === "Computer Science" ? "cs" : "ce"
                     }-flowchart.png" alt="Flowchart" width="100%" height="100%" />
-                    <div class="hover-icon">
-                        <i class="fa-solid fa-download"></i>
-                        <span class="hover-text">View Syllabus</span>
-                    </div>
+                    <a class="hover-icon" href="../assets/major-files/2024-${
+                      user.department === "Computer Science" ? "cs" : "ce"
+                    }-flowchart.pdf" download>
+                    <i class="fa-solid fa-download"></i>
+                    <span class="hover-text">Download Flowchart</span>
+                    </a>
+
                 </div>
 
             </section>
@@ -101,10 +116,14 @@ function renderStudentProfile(user, courses, majors) {
             </section>
 
             <div class="content-info-div">
-                <h3 class="content-info-attribute">Download Your Course Flowchart</h3>
-                <p class="content-info-paragraph attachment">
-                    <i class="fa-solid fa-file-pdf"></i> CMPS-2024-Flowchart.pdf
-                </p>
+                <h3 class="content-info-attribute">Download Study Plan</h3>
+                <a class="content-info-paragraph attachment" 
+                  href="../assets/major-files/2024-${
+                    user.department === "Computer Science" ? "cs" : "ce"
+                  }-studyplan.pdf" 
+                  download>
+                  <i class="fa-solid fa-file-pdf"></i> Download ${user.department === "Computer Science" ? "Computer Science" : "Computer Engineering"} Study Plan
+                </a>
             </div>
 
             <div class="progress-card">
@@ -114,7 +133,7 @@ function renderStudentProfile(user, courses, majors) {
                     <div class="progress-text">
                         <p class="content-info-attribute total-tag">Completed ${completedCourses} of ${totalCourses} Total Courses</p>
                         <p>You are also taking <span>${
-                          user.semesterEnrollment.classes.length
+                          activeClasses.length
                         } courses</span> this semester</p>
                     </div>
                     
@@ -157,12 +176,12 @@ function renderCurrentCourses(user, courses) {
         const creditHoursText =
           course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
         out += `
-                <div class="course-card">
+                <div class="course-card open-modal" data-course-id="${course.courseId}">
                 <div class="course-image">
                     <img src="${course.courseImage}" alt="Course Image">
-                    <div class="hover-icon">
-                        <i class="fa-solid fa-plus"></i>
-                        <span class="hover-text">Register Course</span>
+                    <div class="hover-icon view-learning" data-course-id="${course.courseId}">
+                      <i class="fa-solid fa-eye"></i>
+                      <span class="hover-text">View Learning Path</span>
                     </div>
                     <i class="fa-solid fa-turn-up top-right-icon"></i>
                 </div>
@@ -197,18 +216,33 @@ function renderCurrentCourses(user, courses) {
   if (out.trim() === "") {
     courseGrid.innerHTML = "";
     courseGrid.style.display = "none";
-
+  
     emptyContent.style.display = "flex";
     emptyContent.innerHTML = "";
-
+  
     if (typeof renderEmptyContent === "function") {
       renderEmptyContent();
     }
   } else {
     courseGrid.innerHTML = out;
     courseGrid.style.display = "grid";
-  
     emptyContent.style.display = "none";
     emptyContent.innerHTML = "";
+
+    document.querySelectorAll(".open-modal").forEach((card) => {
+      card.addEventListener("click", function () {
+        const courseId = this.dataset.courseId;
+        if (window.openClassModal && courseId) {
+          openClassModal(courseId);
+        }
+      });
+    });
+  
+    document.querySelectorAll(".view-learning").forEach((el) => {
+      el.addEventListener("click", function () {
+        window.location.href = "../html/learningpath.html";
+      });
+    });
   }
+  
 }

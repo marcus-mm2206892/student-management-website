@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  function renderRecomended() {
+  function renderRecommended() {
     const recommendedCoursesGrid = document.querySelector(
       ".recommended-courses .course-grid"
     );
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
     supplementaryGrid.innerHTML = out;
   }
 
-  const csElectives = ["CMPS497", "CMPS482", "CMPS485"];
+  const csElectives = ["CMPS497", "CMPS482", "CMPS485", "CMPS360"];
   const ceElectives = ["CMPE457", "CMPE476", "CMPE483"];
 
   function renderElectives() {
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
     electiveGrid.innerHTML = out;
   }
 
-  renderRecomended();
+  renderRecommended();
   renderSupplementary();
   renderElectives();
 
