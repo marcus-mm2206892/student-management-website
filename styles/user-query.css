@@ -140,39 +140,17 @@ body {
   margin: 0 1rem;
 }
 
-/* NO RESULTS FOUND */
-.no-results {
-  display: none;
-  flex-direction: column;
+.course-completed-tag {
+  background-color: var(--clr-surface-a40);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--clr-contrast-a40);
-  font-size: 1rem;
-  font-weight: 500;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
+  font-weight: bold;
 }
 
-.dark-mode-svg {
-  width: 12rem;
-  height: 12rem;
-  display: block;
-}
-
-.light-mode-svg {
-  width: 12rem;
-  height: 12rem;
-  display: none;
-}
-
-.no-results p {
-  font-size: 1rem;
-  color: var(--clr-contrast-a30);
-}
 
 @media (max-width: 768px) {
   .query-header {

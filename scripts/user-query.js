@@ -20,51 +20,55 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function courseTemplate(course) {
-    const creditHoursText =
-      course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
-
-    const hoverIconHTML =
-      userRole === "student"
-        ? `
-    <div class="hover-icon" onclick="window.location.href='../html/register-course.html'">
-      <i class="fa-solid fa-plus"></i>
-      <span class="hover-text">Register Course</span>
-    </div>
-  `
-        : "";
-
+    const creditHoursText = course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
+  
+    const hoverIconHTML = userRole === "student"
+      ? `
+        <div class="hover-icon" onclick="window.location.href='../html/register-course.html'">
+          <i class="fa-solid fa-plus"></i>
+          <span class="hover-text">Register Course</span>
+        </div>
+      `
+      : "";
+  
+    // Check if current student completed this course
+    let completedBadgeHTML = "";
+    if (userRole === "student") {
+      const completedCourses = loggedInUser?.completedCourses || [];
+      const hasCompleted = completedCourses.some(c => c.courseId === course.courseId);
+      if (hasCompleted) {
+        completedBadgeHTML = `<span class="tag"><i class="fa-solid fa-flag-checkered"></i>Completed</span>`;
+      }
+    }
+  
     return `
-        <div class="course-card">
-          <div class="course-image">
-            <img src="${course.courseImage}" alt="Course Image">
-            ${hoverIconHTML}
-            <i class="fa-solid fa-turn-up top-right-icon"></i>
+      <div class="course-card">
+        <div class="course-image">
+          <img src="${course.courseImage}" alt="Course Image">
+          ${hoverIconHTML}
+          <i class="fa-solid fa-turn-up top-right-icon"></i>
+        </div>
+        <div class="course-info">
+          <div class="course-header">
+            <span class="course-tag">${course.courseId}</span>
+            <span class="semester">Spring 2025</span>
           </div>
-          <div class="course-info">
-            <div class="course-header">
-              <span class="course-tag">${course.courseId}</span>
-              <span class="semester">Spring 2025</span>
-            </div>
-            <h3>${course.courseName}</h3>
-            <p class="course-subtitle">${course.description}</p>
-            <div class="course-tags">
-              <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${
-                course.creditHours
-              } ${creditHoursText}</span>
-
-                ${course.majorsOffered
-                .map(
-                (major) => `
-                <span class="tag"><i class="fa-solid ${
-                major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
-                }"></i> ${major == "CMPS" ? 'CS' : 'CE'}</span>`)
-                .join("")}
-
-            </div>
+          <h3>${course.courseName}</h3>
+          <p class="course-subtitle">${course.description}</p>
+          <div class="course-tags">
+            ${completedBadgeHTML}
+            <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${course.creditHours} ${creditHoursText}</span>
+            ${course.majorsOffered.map(
+              (major) => `
+                <span class="tag"><i class="fa-solid ${major === "CMPE" ? "fa-microchip" : "fa-laptop-code"}"></i> ${major == "CMPS" ? 'CS' : 'CE'}</span>
+              `
+            ).join("")}
           </div>
         </div>
-      `;
+      </div>
+    `;
   }
+  
 
   document.addEventListener("click", function (event) {
     const courseCard = event.target.closest(".course-card");
