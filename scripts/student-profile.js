@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let user = JSON.parse(localStorage.getItem("loggedInUser"));
 
   // Make classes empty for testing
-  // user.semesterEnrollment.classes = []; 
+  // user.semesterEnrollment.classes = [];
   // localStorage.setItem("loggedInUser", JSON.stringify(user));
 
   const courses = JSON.parse(localStorage.getItem("courses"));
@@ -122,7 +122,11 @@ function renderStudentProfile(user, courses, majors, classes) {
                     user.department === "Computer Science" ? "cs" : "ce"
                   }-studyplan.pdf" 
                   download>
-                  <i class="fa-solid fa-file-pdf"></i> Download ${user.department === "Computer Science" ? "Computer Science" : "Computer Engineering"} Study Plan
+                  <i class="fa-solid fa-file-pdf"></i> Download ${
+                    user.department === "Computer Science"
+                      ? "Computer Science"
+                      : "Computer Engineering"
+                  } Study Plan
                 </a>
             </div>
 
@@ -159,70 +163,65 @@ function renderStudentProfile(user, courses, majors, classes) {
 function renderCurrentCourses(user, courses) {
   const courseGrid = document.querySelector(".course-grid");
   const emptyContent = document.querySelector(".empty-content");
-  let creditHours = 0;
-  user.semesterEnrollment.classes.forEach((userClass) => {
-    courses.find((course) => {
-      if (course.courseId === userClass.courseId) {
-        creditHours += course.creditHours;
-      }
-    });
-  });
+  const classes = JSON.parse(localStorage.getItem("classes")); // load class info to check classStatus
 
   let out = "";
+  let creditHours = 0;
+
   user.semesterEnrollment.classes.forEach((userClass) => {
-    courses.map((course) => {
-      //todo: addeventlistener
-      if (course.courseId === userClass.courseId) {
-        const creditHoursText =
-          course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
-        out += `
-                <div class="course-card open-modal" data-course-id="${course.courseId}">
-                <div class="course-image">
-                    <img src="${course.courseImage}" alt="Course Image">
-                    <div class="hover-icon view-learning" data-course-id="${course.courseId}">
-                      <i class="fa-solid fa-eye"></i>
-                      <span class="hover-text">View Learning Path</span>
-                    </div>
-                    <i class="fa-solid fa-turn-up top-right-icon"></i>
+    const classInfo = classes.find((cls) => cls.classId === userClass.classId);
+    if (!classInfo || classInfo.classStatus !== "open") return;
+
+    const course = courses.find((c) => c.courseId === userClass.courseId);
+    if (course) {
+      creditHours += course.creditHours;
+      const creditHoursText =
+        course.creditHours === 1 ? "Credit Hour" : "Credit Hours";
+      out += `
+        <div class="course-card open-modal" data-course-id="${course.courseId}">
+            <div class="course-image">
+                <img src="${course.courseImage}" alt="Course Image">
+                <div class="hover-icon view-learning" data-course-id="${
+                  course.courseId
+                }">
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="hover-text">View Learning Path</span>
                 </div>
-                <div class="course-info">
-                    <div class="course-header">
-                        <span class="course-tag">${course.courseId}</span>
-                        <span class="semester">Spring 2025</span>
-                    </div>
-                    <h3>${course.courseName}</h3>
-                    <p class="course-subtitle">${course.description}</p>
-                     <div class="course-tags">
-                        <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${
-                          course.creditHours
-                        } ${creditHoursText} </span>
-                         ${course.majorsOffered
-                           .map(
-                             (major) => `
+                <i class="fa-solid fa-turn-up top-right-icon"></i>
+            </div>
+            <div class="course-info">
+                <div class="course-header">
+                    <span class="course-tag">${course.courseId}</span>
+                    <span class="semester">Spring 2025</span>
+                </div>
+                <h3>${course.courseName}</h3>
+                <p class="course-subtitle">${course.description}</p>
+                <div class="course-tags">
+                    <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${
+                      course.creditHours
+                    } ${creditHoursText}</span>
+                    ${course.majorsOffered
+                      .map(
+                        (major) => `
                         <span class="tag"><i class="fa-solid ${
                           major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
                         }"></i> ${major}</span>
-                        `
-                           )
-                           .join("")}
-                    </div>
+                      `
+                      )
+                      .join("")}
                 </div>
             </div>
-                `;
-      }
-    });
+        </div>
+      `;
+    }
   });
 
   if (out.trim() === "") {
     courseGrid.innerHTML = "";
     courseGrid.style.display = "none";
-  
     emptyContent.style.display = "flex";
     emptyContent.innerHTML = "";
-  
-    if (typeof renderEmptyContent === "function") {
-      renderEmptyContent();
-    }
+    if (typeof renderEmptyContent === "function") renderEmptyContent();
   } else {
     courseGrid.innerHTML = out;
     courseGrid.style.display = "grid";
@@ -237,12 +236,11 @@ function renderCurrentCourses(user, courses) {
         }
       });
     });
-  
+
     document.querySelectorAll(".view-learning").forEach((el) => {
       el.addEventListener("click", function () {
         window.location.href = "../html/learningpath.html";
       });
     });
   }
-  
 }

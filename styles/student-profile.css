@@ -58,7 +58,7 @@ body {
   aspect-ratio: 1 / 1;
   border-radius: 8px;
   width: 100%;
-  max-height: 16rem;
+  max-height: 24rem;
   height: auto;
   transition: border 0.3s ease-out, box-shadow 0.3s ease-out;
 }
