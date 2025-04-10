@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const courseName = card.dataset.coursename;
 
         renderStudentsForClass(classId, courseId, courseName, section);
-        initializeSubmit(classId, enrolledStudents);
       });
     }
   );
@@ -97,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     studentGrades = [];
     const selectedContainer = document.querySelector(".classes.selected");
 
-    enrolledStudents = students.filter((student) =>
+    const enrolledStudents = students.filter((student) =>
       student.semesterEnrollment?.classes?.some(
         (cls) => cls.classId === classId
       )
@@ -114,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const studentClass = student.semesterEnrollment.classes.find(c => c.classId === classId);
         console.log(studentClass.letterGrade);
         
-        const savedGrade = localStorage.getItem(student.email) || "A";
+        const savedGrade = localStorage.getItem(student.email) || "Select a grade";
 
         return `
           <div class="card">
@@ -168,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     initializeDropdownListeners();
+    initializeSubmit(classId, enrolledStudents);
   }
 
   function initializeDropdownListeners() {
@@ -216,15 +216,18 @@ document.addEventListener("DOMContentLoaded", function () {
   function initializeSubmit(classId, enrolledStudents) {
     document.querySelector("#submit-btn").addEventListener("click", function () {
       submitGrades(classId, enrolledStudents);
-      location.reload();});
+    });
   }
 
   function submitGrades(classId, enrolledStudents){
-    console.log("SUBMITTED");
-
+    let isGradeMissing = false;
+    let studentWithMissingGrade;
+  
     enrolledStudents.map(student => {
       if (!localStorage.getItem(student.email)){
-        openAlertModal("Missing Grade", `Please choose a grade for student with ID ${student.studentId}`);
+        studentWithMissingGrade = student;
+        isGradeMissing = true;
+        return;
       }
       const grade = localStorage.getItem(student.email);
 
@@ -238,12 +241,25 @@ document.addEventListener("DOMContentLoaded", function () {
       student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
       console.log(student);
     })
-    localStorage.setItem("students",JSON.stringify(students));
 
-    selectedClass = classes.find(c => c.classId === classId);
-    selectedClass.classStatus = "completed";
-    localStorage.setItem("classes", JSON.stringify(classes));
-    console.log(selectedClass);
+    if (isGradeMissing) {
+      console.log("Grades not submitted");
+      let userProfile = users.find((u) => u.email === studentWithMissingGrade.email);
+      
+      openAlertModal("Missing Grades", `Please choose a grade for student ${userProfile.firstName} ${userProfile.lastName}`);
+      
+      return;
+    }
+    else {
+      localStorage.setItem("students",JSON.stringify(students));
+
+      selectedClass = classes.find(c => c.classId === classId);
+      selectedClass.classStatus = "completed";
+      localStorage.setItem("classes", JSON.stringify(classes));
+      console.log(selectedClass);
+
+      openAlertModal("Grades Submitted", `Grades for the class with classID ${classId} have been submitted`);
+    }
   }
 
   // Adjust layout on resize
