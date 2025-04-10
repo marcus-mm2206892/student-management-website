@@ -102,6 +102,11 @@
     font-size: 1.25rem;
 }
 
+th .dropdown-icon{
+    font-size: 0.9rem;
+    
+}
+
 .navbar-menu {
     display: flex;
     gap: .75rem;

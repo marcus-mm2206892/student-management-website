@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <section class="credit-hours-card">
                 <div class="credit-hours-text">
-                    <h2>You having <strong>${pendingClasses.length}</strong> courses awaiting for approval.</h2>
+                    <h2>You have <strong>${pendingClasses.length} courses </strong> awaiting for approval.</h2>
                 </div>
                 <div class="credit-hours-image">
                     <img src="../assets/imgs/unitrack-images/login-page-graphic.png" alt="Credit Hours Graphic">
