@@ -29,18 +29,23 @@
       document.getElementById("selectedOption").textContent = value;
 
       const course = allCourses.find( crs => crs.courseId == currentCourseId);
-      const courseClasses = course.currentClasses;
+      let courseClasses = course.currentClasses;
+
       console.log(courseClasses);
 
       const classDropdown = document.querySelectorAll(".dropdown-menu")[1];
       classDropdown.innerHTML = "";
   
       courseClasses.forEach(classId => {
-        const option = document.createElement("div");
-        option.innerHTML = `<i class="fas fa-calendar-alt"></i>CRN: ${classId}`;
-        // option.innerHTML = classDdTemplate(classId)
-        option.onclick = () => selectOption('class', classId);
-        classDropdown.appendChild(option);
+          const cls = allClasses.find(cls => cls.classId == classId);
+        if ( cls.classStatus == 'open' || cls.classStatus == 'pending'){  // Only show currently 'open' and 'pending' classes
+          const option = document.createElement("div");
+          option.innerHTML = `<i class="fas fa-calendar-alt"></i>CRN: ${classId}`;
+          option.onclick = () => selectOption('class', classId);
+          classDropdown.appendChild(option);
+        } else {
+          console.log("closed")
+        }
       });
       
       document.querySelector(".course-title").textContent = course.courseName || '';
@@ -76,6 +81,7 @@
     const locationContainer = document.querySelector(".class-location");
     document.querySelector(".section-tag").textContent = cls.section || ''; // Set the CRN and section of the class in the modal header
     document.querySelector(".crn-tag").textContent = `CRN ${cls.classId}`;
+    document.querySelector(".campus-tag").textContent = `${cls.campus} Campus`;
 
     // Update the instructor information
 
@@ -132,8 +138,8 @@
     toggle.addEventListener("click", toggleDropdown);
   });
 
-  function courseDdTemplate(courseId) {
-    return `<div onclick="selectOption('course','${courseId}')"><i class="fas fa-book"></i>${courseId}</div>`;
+  function courseDdTemplate(courseId, courseName) {
+    return `<div onclick="selectOption('course','${courseId}')"><i class="fas fa-book"></i>${courseId} : ${courseName}</div>`;
   }
   function classDdTemplate(classId) {
     return `<div onclick="selectOption('class')"><i class="fas fa-calendar-alt"></i>CRN: ${classId}</div>`;
@@ -156,7 +162,7 @@
     out = ``;
 
     allCourses.forEach(course => {
-      out += courseDdTemplate(course.courseId);
+      out += courseDdTemplate(course.courseId, course.courseName);
     })
   
     courseDD.innerHTML = out;
