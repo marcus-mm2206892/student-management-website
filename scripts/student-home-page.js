@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ".recommended-courses .course-grid"
     );
     const recommendedEmpty = document.querySelector("#recommendedEmpty");
-    const errorElement = document.querySelector("#studentHomeError");
+    const errorElement = document.querySelector("#recommendedError");
 
     if (!allCourses || !Array.isArray(allCourses)) {
       recommendedCoursesGrid.style.display = "none";
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ".supplementary-courses .course-grid"
     );
     const supplementaryEmpty = document.querySelector("#supplementaryEmpty");
-    const errorElement = document.querySelector("#studentHomeError");
+    const errorElement = document.querySelector("#supplementaryError");
 
     if (!allCourses || !Array.isArray(allCourses)) {
       supplementaryGrid.style.display = "none";
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ".elective-courses .course-grid"
     );
     const electivesEmpty = document.querySelector("#electivesEmpty");
-    const errorElement = document.querySelector("#studentHomeError");
+    const errorElement = document.querySelector("#electivesError");
 
     if (!allCourses || !Array.isArray(allCourses)) {
       electiveGrid.style.display = "none";

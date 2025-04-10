@@ -56,7 +56,7 @@ body {
   border: 1px solid var(--clr-contrast-a0);
 }
 
-#no-of-classes{
+#no-of-classes {
   align-self: center;
 }
 
@@ -67,7 +67,6 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 1rem;
-
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -149,6 +148,10 @@ body {
   -ms-overflow-style: none;
 }
 
+.classes.selected .cards-container{
+  padding-bottom: 12rem;
+}
+
 .cards-container::-webkit-scrollbar {
   display: none;
 }
@@ -218,10 +221,6 @@ body {
   gap: 0.5rem;
 }
 
-.course-header {
-  justify-content: space-between;
-}
-
 .class-header h3 {
   padding-right: 1rem;
 }
@@ -278,12 +277,12 @@ body {
   background-color: var(--clr-primary-a20);
 }
 
-.dropdown {
+.grade-submission .dropdown {
   position: relative;
-  width: 4rem;
+  width: 6rem;
 }
 
-.dropdown-toggle {
+.grade-submission .dropdown-toggle {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -294,17 +293,19 @@ body {
   background: var(--clr-surface-a20);
 }
 
-.dropdown-menu {
-  position: fixed;
-  top: var(--dropdown-top, 100%);
-  left: var(--dropdown-left, 0);
-  width: 4rem;
+.grade-submission .dropdown-menu {
+  border-radius: 8px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
   background: var(--clr-surface-a0);
   border: 1px solid var(--clr-surface-a20);
-  border-radius: 8px;
+  width: 100%;
+  max-height: 180px;
+  overflow-y: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: none;
-  z-index: 100;
 }
 
 .dropdown-menu div {
@@ -318,6 +319,55 @@ body {
   background: var(--clr-surface-a20);
 }
 
+.no-class-selected {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #777;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.no-class-selected p {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.no-class-selected i {
+  margin-bottom: 0.5rem;
+}
+
+.grades-submitted-message {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--clr-surface-a10);
+  border: 1px solid var(--clr-surface-a20);
+  border-radius: 10px;
+  margin-top: 2rem;
+  color: var(--clr-contrast-a0);
+}
+
+.grades-submitted-message h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.grades-submitted-message p {
+  color: var(--clr-contrast-a40);
+  margin-top: 0.5rem;
+}
+
+.fa-circle-check {
+  font-size: 2rem; 
+  color: var(--clr-primary-a0);
+}
+
+.classes.completed {
+  justify-content: flex-start;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-image: url("../assets/imgs/unitrack-images/pattern-white.png");
@@ -325,6 +375,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  .student-grade h3 {
+    font-size: 1rem;
+  }
+
   .classes-container {
     flex-direction: column;
     height: 100vh;
@@ -357,7 +411,7 @@ body {
     margin-bottom: 1rem;
   }
 
-  .dropdown-toggle {
+  .grade-submission .dropdown-toggle {
     width: 100%;
     padding: 0.75rem;
     border-radius: 8px;
@@ -367,7 +421,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
   }
 
@@ -399,13 +453,5 @@ body {
   }
   .grade-submission-header {
     background-color: var(--clr-surface-a0);
-  }
-
-  .college-tag {
-    background-color: var(--clr-surface-a50);
-  }
-
-  .section-tag {
-    background-color: var(--clr-surface-a50);
   }
 }

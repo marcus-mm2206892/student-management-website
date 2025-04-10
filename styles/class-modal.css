@@ -75,7 +75,6 @@ body {
 }
 
 .course-tag,
-.section-tag,
 .crn-tag {
   background: var(--clr-primary-a0);
   color: #f5f5f5;

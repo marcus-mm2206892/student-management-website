@@ -26,29 +26,29 @@ document.addEventListener("DOMContentLoaded", function () {
         c.instructors.includes(instructor.email)
       );
 
-      console.log(instructorClasses);
-
       const openInstructorClasses = instructorClasses.filter((ic) => {
         return ic.classStatus === "open" || ic.classStatus === "completed";
-      })
+      });
 
-      console.log(openInstructorClasses)
-
-      const instructorClassesWithName = openInstructorClasses.map((oic) => {
-        const course = courses.find(
-          (course) => course.courseId === oic.courseId
-        );
-        let submitted = "S"
-        if (oic.classStatus === "open") { submitted = "P"}
-        return { ...oic, courseName: course?.courseName || "Unnamed Course", submitted: submitted };
-      }).sort((a, b) => {
-        // Sorting to put open classes first
-        if (a.classStatus === "open" && b.classStatus === "completed") return -1;
-        if (a.classStatus === "completed" && b.classStatus === "open") return 1;
-        return 0; 
-      });;
-
-      console.log(instructorClassesWithName);
+      const instructorClassesWithName = openInstructorClasses
+        .map((oic) => {
+          const course = courses.find(
+            (course) => course.courseId === oic.courseId
+          );
+          let submitted = oic.classStatus === "open" ? "P" : "S";
+          return {
+            ...oic,
+            courseName: course?.courseName || "Unnamed Course",
+            submitted: submitted,
+          };
+        })
+        .sort((a, b) => {
+          if (a.classStatus === "open" && b.classStatus === "completed")
+            return -1;
+          if (a.classStatus === "completed" && b.classStatus === "open")
+            return 1;
+          return 0;
+        });
 
       document.querySelector(
         "#no-of-classes"
@@ -57,13 +57,30 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentTeaching = document.querySelector(
         "#current-teaching-classes"
       );
+      const selectedContainer = document.querySelector(".classes.selected");
+
+      selectedContainer.innerHTML = `
+        <div class="no-class-selected">
+          <i class="fa-regular fa-folder-open" style="font-size: 3rem; color: #aaa;"></i>
+          <p>No class selected</p>
+          <span>Please select a class to view and submit grades.</span>
+        </div>
+      `;
+
       currentTeaching.innerHTML = instructorClassesWithName
         .map(
           (ic) => `
-            <div class="card" data-classid="${ic.classId}" data-courseid="${ic.courseId}" data-section="${ic.section}" data-coursename="${ic.courseName}" data-section="${ic.status}">
+            <div class="card" 
+              data-classid="${ic.classId}" 
+              data-courseid="${ic.courseId}" 
+              data-section="${ic.section}" 
+              data-coursename="${ic.courseName}" 
+              data-campus="${ic.campus}">
+
               <div class="course-header">
                 <span class="course-tag">${ic.courseId}</span>
                 <span class="section-tag">${ic.section}</span>
+                <span class="campus-tag">${ic.campus}</span>
               </div>
               <div class="course-completed-main">
                 <div class="course-grade">
@@ -71,16 +88,14 @@ document.addEventListener("DOMContentLoaded", function () {
                   <div class="status-container"><span class="status">${ic.submitted}</span></div>
                 </div>
                 <div class="course-tags">
-                  <span class="tag"><i class="fa-solid fa-user-graduate"></i> ${ic.enrollmentActual}</span>
-                  <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
+                  <span class="tag"><i class="fa-solid fa-user-graduate"></i> ${ic.enrollmentActual} Students</span>
                 </div>
               </div>
             </div>
-        ` 
+        `
         )
         .join("");
 
-      // Listener to handle class card click and load students
       currentTeaching.addEventListener("click", function (event) {
         const card = event.target.closest(".card");
         if (!card) return;
@@ -89,14 +104,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const courseId = card.dataset.courseid;
         const section = card.dataset.section;
         const courseName = card.dataset.coursename;
+        const campus = card.dataset.campus;
 
-        renderStudentsForClass(classId, courseId, courseName, section);
+        selectedContainer.classList.remove("completed");
+        renderStudentsForClass(classId, courseId, courseName, section, campus);
       });
     }
   );
 
-  function renderStudentsForClass(classId, courseId, courseName, section) {
+  function renderStudentsForClass(classId, courseId, courseName, section, campus) {
     const selectedContainer = document.querySelector(".classes.selected");
+
+    const selectedClassData = classes.find((c) => c.classId === classId);
+    const isCompleted = selectedClassData.classStatus === "completed";
 
     const enrolledStudents = students.filter((student) =>
       student.semesterEnrollment?.classes?.some(
@@ -104,41 +124,59 @@ document.addEventListener("DOMContentLoaded", function () {
       )
     );
 
+    if (isCompleted) {
+      selectedContainer.classList.add("completed");
+      selectedContainer.innerHTML = `
+        <div class="class-header completed-view">
+          <div class="course-tags-div">
+            <span class="course-tag">${courseId}</span>
+            <span class="section-tag">Section ${section}</span>
+            <span class="campus-tag">${campus}</span>
+            <h3>${courseName}</h3>
+          </div>
+        </div>
+    
+        <div class="grades-submitted-message">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>Grades have been submitted!</h3>
+          <p>You can no longer modify grades for this class.</p>
+        </div>
+      `;
+      return;
+    }
+    
+
     const studentCards = enrolledStudents
       .map((student) => {
         const userProfile = users.find((u) => u.email === student.email);
-
-        const studentClass = student.semesterEnrollment.classes.find(c => c.classId === classId);
-        console.log(studentClass.letterGrade);
-        
-        const savedGrade = localStorage.getItem(student.email) || "Select a grade";
+        const savedGrade = localStorage.getItem(student.email) || "Grade";
 
         return `
-          <div class="card">
-            <div class="student" data-student-id="${student.studentId}">
-              <div class="student-grade">
-                <div>
-                  <h3>${userProfile?.firstName || "Unknown"} ${
+        <div class="card">
+          <div class="student" data-student-id="${student.studentId}">
+            <div class="student-grade">
+              <div>
+                <h3>${userProfile?.firstName || "Unknown"} ${
           userProfile?.lastName || ""
         }</h3>
-                  <div><span class="student-info email">${
-                    student.email
-                  }</span></div>
+                <div><span class="student-info email">${
+                  student.email
+                }</span></div>
+              </div>
+              <div class="dropdown">
+                <div class="dropdown-toggle">
+                  <span id="selectedOption">${savedGrade}</span>
+                  <i class="fas fa-chevron-down"></i>
                 </div>
-                <div class="dropdown">
-                  <div class="dropdown-toggle">
-                    <span id="selectedOption">${savedGrade}</span>
-                    <i class="fas fa-chevron-down"></i>
-                  </div>
-                  <div class="dropdown-menu">
-                    ${["A", "B+", "B", "C+", "C", "D+", "D", "F", "I"]
-                      .map((g) => `<div>${g}</div>`)
-                      .join("")}
-                  </div>
+                <div class="dropdown-menu">
+                  ${["A", "B+", "B", "C+", "C", "D+", "D", "F", "I"]
+                    .map((g) => `<div>${g}</div>`)
+                    .join("")}
                 </div>
               </div>
             </div>
-          </div>`;
+          </div>
+        </div>`;
       })
       .join("");
 
@@ -147,11 +185,11 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="course-tags-div">
           <span class="course-tag">${courseId}</span>
           <span class="section-tag">Section ${section}</span>
+          <span class="campus-tag">${campus}</span>
           <h3>${courseName}</h3>
         </div>
         <div class="course-tags-div">
           <span class="tag"><i class="fa-solid fa-user-graduate"></i> ${enrolledStudents.length} Students</span>
-          <span class="tag"><i class="fa-solid fa-chart-bar"></i> Average Letter Grade: B+</span>
         </div>
       </div>
   
@@ -197,7 +235,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Global hide on click outside
     document.addEventListener("click", () => {
       document.querySelectorAll(".dropdown-menu").forEach((menu) => {
         menu.style.display = "none";
@@ -212,72 +249,74 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function initializeSubmit(classId, enrolledStudents) {
-    document.querySelector("#submit-btn").addEventListener("click", function () {
-      submitGrades(classId, enrolledStudents);
-
-      setTimeout(() => {
-        location.reload();
-      }, 2500);
-    });
+    document
+      .querySelector("#submit-btn")
+      .addEventListener("click", function () {
+        submitGrades(classId, enrolledStudents);
+        setTimeout(() => {
+          location.reload();
+        }, 2500);
+      });
   }
 
-  function submitGrades(classId, enrolledStudents){
+  function submitGrades(classId, enrolledStudents) {
     let isGradeMissing = false;
     let studentWithMissingGrade;
-  
-    enrolledStudents.map(student => {
-      if (!localStorage.getItem(student.email)){
+
+    enrolledStudents.forEach((student) => {
+      const grade = localStorage.getItem(student.email);
+      if (!grade) {
         studentWithMissingGrade = student;
         isGradeMissing = true;
         return;
       }
-      const grade = localStorage.getItem(student.email);
 
-
-      // Give student the letter grade selected and change status to graded
-      const selectedClass = student.semesterEnrollment.classes.find(studentClass => studentClass.classId === classId);
+      const selectedClass = student.semesterEnrollment.classes.find(
+        (c) => c.classId === classId
+      );
       selectedClass.letterGrade = grade;
       selectedClass.gradeStatus = "graded";
 
-      // Remove the class from student's enrolled classes
-      const enrolledClasses = student.semesterEnrollment.classes.filter(studentClass => studentClass.classId != classId);
-      console.log(enrolledClasses)
-      student.classes = enrolledClasses;
+      student.semesterEnrollment.classes =
+        student.semesterEnrollment.classes.filter((c) => c.classId !== classId);
 
-      // Find if student has completed the course
-      const index = student.completedCourses.findIndex(course => course.courseId === selectedClass.courseId);
+      const index = student.completedCourses.findIndex(
+        (course) => course.courseId === selectedClass.courseId
+      );
 
       if (index === -1) {
-        // Add to completedCourses if student has not completed the course
-        student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
+        student.completedCourses.push({
+          courseId: selectedClass.courseId,
+          letterGrade: selectedClass.letterGrade,
+        });
       } else {
-        // Change the grade of the student if student has completed the course
         student.completedCourses[index].letterGrade = selectedClass.letterGrade;
-      };
-    })
+      }
+    });
 
     if (isGradeMissing) {
-      //If a grade has not been selected for one student, an alert will pop up
-
-      console.log("Grades not submitted");
-      let userProfile = users.find((u) => u.email === studentWithMissingGrade.email);
-      
-      openAlertModal("Missing Grades", `Please choose a grade for student ${userProfile.firstName} ${userProfile.lastName}`);
-      
+      const userProfile = users.find(
+        (u) => u.email === studentWithMissingGrade.email
+      );
+      openAlertModal(
+        "Missing Grades",
+        `Please choose a grade for student ${userProfile.firstName} ${userProfile.lastName}`
+      );
       return;
     }
-    else {
-      localStorage.setItem("students",JSON.stringify(students));
 
-      selectedClass = classes.find(c => c.classId === classId);
-      selectedClass.classStatus = "completed";
-      localStorage.setItem("classes", JSON.stringify(classes));
+    localStorage.setItem("students", JSON.stringify(students));
 
-      openAlertModal("Grades Submitted", `Grades for the class with classID ${classId} have been submitted`);
-    }
+    const selectedClass = classes.find((c) => c.classId === classId);
+    selectedClass.classStatus = "completed";
+    localStorage.setItem("classes", JSON.stringify(classes));
+
+    openAlertModal(
+      "Grades Submitted",
+      `Grades for the class with classID ${classId} have been submitted`
+    );
   }
 
-  // Adjust layout on resize
   function adjustLayout() {
     const teachingDiv = document.querySelector(".classes.teaching");
     const selectedDiv = document.querySelector(".classes.selected");

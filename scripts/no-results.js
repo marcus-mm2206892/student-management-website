@@ -84,16 +84,21 @@ noResultsContainer.innerHTML = `
           </p>
         </div>
   `;
-  applyThemeToSVG();
+applyThemeToSVG();
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", () => {
     applyThemeToSVG();
   });
 
-  function applyThemeToSVG() {
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-    document.querySelector('.dark-mode-svg').style.display = isDark ? 'block' : 'none';
-    document.querySelector('.light-mode-svg').style.display = isDark ? 'none' : 'block';
-  }
-  
+function applyThemeToSVG() {
+  const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  document.querySelector(".dark-mode-svg").style.display = isDark
+    ? "block"
+    : "none";
+  document.querySelector(".light-mode-svg").style.display = isDark
+    ? "none"
+    : "block";
+}

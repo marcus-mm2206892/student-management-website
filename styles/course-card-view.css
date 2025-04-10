@@ -244,6 +244,18 @@
   font-weight: bold;
 }
 
+.campus-tag {
+  background: var(--clr-surface-a20);
+  color: #f5f5f5;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+}
+
 /* TITLE */
 .category h3 {
   text-align: left;
