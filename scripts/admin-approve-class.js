@@ -96,13 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(numberOfStudents);
                 console.log(allClasses.find(cls => cls.classId == classId))
 
-                console.log(`Class ID: ${classId} | New Status: ${selectedStatus}`);
+                
                 let status;
                 switch (selectedStatus) {
                     case 'approved':
                         status = "open";
                         if (numberOfStudents<5){
-                            console.error("Minimum of 5 students required to approve a class.");
+                            console.log("Minimum of 5 students required to approve a class.");
                             alert("Minimum of 5 students required to approve a class.");
                             return;
                         }
@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         status = "closed";
                         break;
                 }
+                console.log(`Class ID: ${classId} | New Status: ${selectedStatus}`);
                 console.log(status);
                 // Change the status of the class
                 // Update classes in local storgae
@@ -226,11 +227,13 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", adjustTableColumns);
     adjustTableColumns();
 
+    // open modal if table is clicked
     document.querySelectorAll(".open-modal").forEach((el) => {
         el.addEventListener("click", function () {
           const classId = this.dataset.classId;
-          if (classId && typeof openClassModal === "function") {
+          if (classId && typeof openClassModal === "function" && this.querySelector(".status-dropdown") != document.activeElement) {
             openClassModal(classId);
+            
           }
         });
       });
