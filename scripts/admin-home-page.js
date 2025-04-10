@@ -38,7 +38,7 @@ function renderAdminHome(user, courses, classes) {
         <div class="courses-header">
           <div class="courses-header-left">
             <h2>Pending Classes</h2>
-            <p>Pending enrollments with 5 waitlisted students waiting for your approval.</p>
+            <p>Classes with 5 or more waitlisted students waiting for your approval.</p>
           </div>
           <div class="courses-header-right">
             <a href="admin-approve-class.html" class="browse-courses">
