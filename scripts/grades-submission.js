@@ -112,13 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const studentClass = student.semesterEnrollment.classes.find(c => c.classId === classId);
         console.log(studentClass.letterGrade);
-
-        let savedGrade = studentClass.letterGrade
-        if (savedGrade === "N/A") {
-          savedGrade = "Give a Grade";
-        }
         
-        // const savedGrade = localStorage.getItem(student.email) || "A";
+        const savedGrade = localStorage.getItem(student.email) || "A";
 
         return `
           <div class="card">
@@ -167,11 +162,12 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
   
       <div class="submit-container">
-        <button class="submit-btn">Submit Grades</button>
+        <button class="submit-btn" id="submit-btn">Submit Grades</button>
       </div>
     `;
 
     initializeDropdownListeners();
+    initializeSubmit(classId, enrolledStudents);
   }
 
   function initializeDropdownListeners() {
@@ -217,19 +213,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  function initializeSubmit(classId, enrolledStudents) {
+    document.querySelector("#submit-btn").addEventListener("click", submitGrades(classId, enrolledStudents));
+  }
   function submitGrades(classId, enrolledStudents){
+    console.log("SUBMITTED");
     enrolledStudents.map(student => {
-      const grade = JSON.parse(localStorage.getItem(student.email));
+      if (localStorage.getItem(student.email)){
+        openAlertModal("Missing Grade", `Please choose a grade for student with ID ${student.studentId}`);
+      }
+      const grade = localStorage.getItem(student.email);
 
       const selectedClass = student.semesterEnrollment.classes.find(studentClass => studentClass.classId === classId);
       selectedClass.letterGrade = grade;
       selectedClass.gradeStatus = "graded";
 
-      // const enrolledClasses = student.classes.filter(studentClass => studentClass.classId != classId);
+      // const enrolledClasses = student.semesterEnrollment.classes.filter(studentClass => studentClass.classId != classId);
       // student.classes = enrolledClasses;
 
       student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
+      console.log(student);
     })
+    localStorage.setItem("students",JSON.stringify(students));
   }
 
   // Adjust layout on resize
