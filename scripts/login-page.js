@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    localStorage.clear();
     checkLocalStorage(); //Check if local storage exists in the browser
     // auto-login if "Remember Me" is enabled
     const rememberedUser = JSON.parse(localStorage.getItem("rememberedUser"));
