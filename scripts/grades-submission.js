@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     openAlertModal(
       "Grades Submitted",
-      `Grades for the class with classID ${classId} have been submitted`
+      `Grades for the class with CRN ${classId} have been submitted`
     );
   }
 
