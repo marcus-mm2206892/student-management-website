@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     courses = [],
     users = [];
 
-  let studentGrades=[];
-  let enrolledStudents = [];
   Promise.all([
     fetch("../assets/data/classes.json").then((res) => res.json()),
     fetch("../assets/data/instructors.json").then((res) => res.json()),
@@ -93,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   function renderStudentsForClass(classId, courseId, courseName, section) {
-    studentGrades = [];
     const selectedContainer = document.querySelector(".classes.selected");
 
     const enrolledStudents = students.filter((student) =>
@@ -105,10 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const studentCards = enrolledStudents
       .map((student) => {
         const userProfile = users.find((u) => u.email === student.email);
-
-        const studentGrade = {studentId: student.studentId, email: student.email};
-        studentGrades.push(studentGrade);
-        console.log(studentGrades);
 
         const studentClass = student.semesterEnrollment.classes.find(c => c.classId === classId);
         console.log(studentClass.letterGrade);
@@ -235,17 +228,32 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       const grade = localStorage.getItem(student.email);
 
+
+      // Give student the letter grade selected and change status to graded
       const selectedClass = student.semesterEnrollment.classes.find(studentClass => studentClass.classId === classId);
       selectedClass.letterGrade = grade;
       selectedClass.gradeStatus = "graded";
 
-      // const enrolledClasses = student.semesterEnrollment.classes.filter(studentClass => studentClass.classId != classId);
-      // student.classes = enrolledClasses;
+      // Remove the class from student's enrolled classes
+      const enrolledClasses = student.semesterEnrollment.classes.filter(studentClass => studentClass.classId != classId);
+      console.log(enrolledClasses)
+      student.classes = enrolledClasses;
 
-      student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
+      // Find if student has completed the course
+      const index = student.completedCourses.findIndex(course => course.courseId === selectedClass.courseId);
+
+      if (index === -1) {
+        // Add to completedCourses if student has not completed the course
+        student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
+      } else {
+        // Change the grade of the student if student has completed the course
+        student.completedCourses[index].letterGrade = selectedClass.letterGrade;
+      };
     })
 
     if (isGradeMissing) {
+      //If a grade has not been selected for one student, an alert will pop up
+
       console.log("Grades not submitted");
       let userProfile = users.find((u) => u.email === studentWithMissingGrade.email);
       
