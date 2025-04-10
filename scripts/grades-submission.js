@@ -216,6 +216,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function initializeSubmit(classId, enrolledStudents) {
     document.querySelector("#submit-btn").addEventListener("click", function () {
       submitGrades(classId, enrolledStudents);
+
+      setTimeout(() => {
+        location.reload();
+      }, 2500);
     });
   }
 
@@ -239,7 +243,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // student.classes = enrolledClasses;
 
       student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
-      console.log(student);
     })
 
     if (isGradeMissing) {
@@ -256,7 +259,6 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedClass = classes.find(c => c.classId === classId);
       selectedClass.classStatus = "completed";
       localStorage.setItem("classes", JSON.stringify(classes));
-      console.log(selectedClass);
 
       openAlertModal("Grades Submitted", `Grades for the class with classID ${classId} have been submitted`);
     }
