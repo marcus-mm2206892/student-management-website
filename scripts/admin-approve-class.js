@@ -9,9 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let allCourses = JSON.parse(localStorage.getItem("courses"));
   let allClasses = JSON.parse(localStorage.getItem("classes"));
   let allUsers = JSON.parse(localStorage.getItem("users"));
-  allClasses.sort((a, b) => b.enrollmentActual - a.enrollmentActual);
 
-  console.log(allClasses);
+  allClasses.sort((a, b) => b.enrollmentActual - a.enrollmentActual);
   renderClasses(allClasses);
 
   function renderClasses(allClasses) {
@@ -22,25 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
           (crs) => crs.courseId == classItem.courseId
         );
         if (!course) return;
-        let classStatus = classItem
-          ? classItem.classStatus.toLowerCase()
-          : "unknown";
 
-        let statusClass = "";
-        switch (classStatus) {
-          case "open":
-            statusClass = "status-approved";
-            break;
-          case "closed":
-            statusClass = "status-rejected";
-            break;
-          case "pending":
-            statusClass = "status-pending";
-            break;
-          default:
-            statusClass = "status-default";
-            break;
-        }
+        let classStatus = (classItem.classStatus || "pending").toLowerCase();
+        let statusClass =
+          {
+            open: "status-approved",
+            closed: "status-rejected",
+            pending: "status-pending",
+          }[classStatus] || "status-default";
 
         let instructorNames =
           (classItem.instructors || [])
@@ -51,61 +39,45 @@ document.addEventListener("DOMContentLoaded", function () {
             .join("<br>") || "TBA";
 
         out += `
-                <tr class="course-row open-modal" data-class-id="${
-                  classItem.classId
-                }">
-                    <td class="data course-no"><span>${
-                      course.courseId
-                    }</span></td>
-                    <td class="data course-name"><span>${
-                      course.courseName
-                    }</span></td>
-                    <td class="data course-instructor"><span>${
-                      instructorNames || "TBA"
-                    }</span></td>
-                    <td class="data course-section"><span>${
-                      classItem.section
-                    }</span></td>
-                    <td class="data course-enrollment"><span>${
-                      classItem
-                        ? classItem.enrollmentActual +
-                          "/" +
-                          classItem.enrollmentMaximum
-                        : "0/0"
-                    }</span></td>
-                    <td class="data course-status">
-                        <span class="status-badge ${statusClass}">
-                            <span class="status-circle"></span>
-                            ${
-                              classStatus.charAt(0).toUpperCase() +
-                              classStatus.slice(1)
-                            }
-                        </span>
-                    </td>
-                    <td>
-                        <select class="status-dropdown" data-classId="${
-                          classItem.classId
-                        }" data-numberOfStudents="${
-          classItem.enrollmentActual
-        }">
-                            <option value="open" ${
-                              classStatus === "open" ? "selected" : ""
-                            }>Approve</option>
-                            <option value="pending" ${
-                              classStatus === "pending" ? "selected" : ""
-                            }>Pending</option>
-                            <option value="closed" ${
-                              classStatus === "closed" ? "selected" : ""
-                            }>Rejected</option>
-                        </select>
-                    </td>
-                </tr>`;
+          <tr class="course-row open-modal" data-class-id="${
+            classItem.classId
+          }">
+            <td class="data course-no"><span>${course.courseId}</span></td>
+            <td class="data course-name"><span>${course.courseName}</span></td>
+            <td class="data course-instructor"><span>${instructorNames}</span></td>
+            <td class="data course-section"><span>${
+              classItem.section
+            }</span></td>
+            <td class="data course-enrollment"><span>${
+              classItem.enrollmentActual
+            }/${classItem.enrollmentMaximum}</span></td>
+            <td class="data course-status">
+              <span class="status-badge ${statusClass}">
+                <span class="status-circle"></span>
+                ${classStatus.charAt(0).toUpperCase() + classStatus.slice(1)}
+              </span>
+            </td>
+            <td>
+              <select class="status-dropdown" data-classId="${
+                classItem.classId
+              }" data-numberOfStudents="${classItem.enrollmentActual}">
+                <option value="open" ${
+                  classStatus === "open" ? "selected" : ""
+                }>Approve</option>
+                <option value="pending" ${
+                  classStatus === "pending" ? "selected" : ""
+                }>Pending</option>
+                <option value="closed" ${
+                  classStatus === "closed" ? "selected" : ""
+                }>Rejected</option>
+              </select>
+            </td>
+          </tr>`;
       });
 
       tableBody.innerHTML = out;
-      console.log("Courses successfully loaded into table.");
-
       attachDropdownListeners();
+      attachModalListeners();
 
       if (typeof adjustTableColumns === "function") {
         adjustTableColumns();
@@ -121,71 +93,55 @@ document.addEventListener("DOMContentLoaded", function () {
       dropdown.addEventListener("change", function () {
         const selectedStatus = this.value;
         const classId = this.getAttribute("data-classId");
-        const numberOfStudents = this.getAttribute("data-numberOfStudents");
-        console.log(numberOfStudents);
-        console.log(allClasses.find((cls) => cls.classId == classId));
+        const numberOfStudents = parseInt(
+          this.getAttribute("data-numberOfStudents")
+        );
 
-        let status;
-        switch (selectedStatus) {
-          case "approved":
-            status = "open";
-
-            if (parseInt(numberOfStudents) < 5) {
-              openAlertModal(
-                "Approval Error",
-                "Minimum of 5 students required to approve a class."
-              );
-              this.value = "pending";
-              return;
-            }
-
-            break;
-          case "pending":
-            status = "pending";
-            break;
-          case "rejected":
-            status = "closed";
-            break;
+        // Prevent approving classes with fewer than 5 students
+        if (selectedStatus === "open" && numberOfStudents < 5) {
+          openAlertModal(
+            "Approval Error",
+            "Minimum of 5 students required to approve a class."
+          );
+          this.value = "pending"; // revert back to pending
+          return;
         }
-        console.log(`Class ID: ${classId} | New Status: ${selectedStatus}`);
-        console.log(status);
-        // Change the status of the class
-        // Update classes in local storgae
+
+        openAlertModal(
+          "Status Changed",
+          `You changed the class status to "${selectedStatus.toUpperCase()}".`
+        );
+
+        // Update status
+        const updatedStatus = selectedStatus;
         allClasses = allClasses.map((cls) => {
           if (cls.classId == classId) {
-            return { ...cls, classStatus: status };
+            return { ...cls, classStatus: updatedStatus };
           }
           return cls;
         });
 
-        console.log(allClasses.find((cls) => cls.classId == classId));
-
-        //Save everything
         localStorage.setItem("classes", JSON.stringify(allClasses));
-
-        const row = this.closest("tr");
-        const statusBadge = row.querySelector(".status-badge");
-
-        const statusText =
-          selectedStatus.charAt(0).toUpperCase() + selectedStatus.slice(1);
-        statusBadge.innerHTML = `<span class="status-circle"></span>${statusText}`;
-
-        statusBadge.classList.remove(
-          "status-approved",
-          "status-pending",
-          "status-rejected"
-        );
-        if (selectedStatus === "approved")
-          statusBadge.classList.add("status-approved");
-        if (selectedStatus === "pending")
-          statusBadge.classList.add("status-pending");
-        if (selectedStatus === "rejected")
-          statusBadge.classList.add("status-rejected");
+        renderClasses(allClasses);
       });
     });
   }
 
-  // Searchbar query funcitonality
+  function attachModalListeners() {
+    document.querySelectorAll(".open-modal").forEach((el) => {
+      el.addEventListener("click", function () {
+        const classId = this.dataset.classId;
+        if (
+          classId &&
+          typeof openClassModal === "function" &&
+          this.querySelector(".status-dropdown") !== document.activeElement
+        ) {
+          openClassModal(classId);
+        }
+      });
+    });
+  }
+
   searchBar.addEventListener("input", function () {
     let searchQuery = searchBar.value.toLowerCase().trim();
     let rows = document.querySelectorAll(".course-row");
@@ -247,21 +203,11 @@ document.addEventListener("DOMContentLoaded", function () {
       row.querySelectorAll("td").forEach((td) => (td.style.display = ""));
     });
 
-    if (windowWidth < 820) {
-      hideColumn("course-instructor");
-    }
-    if (windowWidth < 720) {
-      hideColumn("course-enrollment");
-    }
-    if (windowWidth < 620) {
-      hideColumn("course-section");
-    }
-    if (windowWidth < 530) {
-      hideColumn("course-name");
-    }
-    if (windowWidth < 410) {
-      hideColumn("course-status");
-    }
+    if (windowWidth < 820) hideColumn("course-instructor");
+    if (windowWidth < 720) hideColumn("course-enrollment");
+    if (windowWidth < 620) hideColumn("course-section");
+    if (windowWidth < 530) hideColumn("course-name");
+    if (windowWidth < 410) hideColumn("course-status");
   }
 
   function hideColumn(className) {
@@ -277,21 +223,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", adjustTableColumns);
   adjustTableColumns();
 
-  // open modal if table is clicked
-  document.querySelectorAll(".open-modal").forEach((el) => {
-    el.addEventListener("click", function () {
-      const classId = this.dataset.classId;
-      if (
-        classId &&
-        typeof openClassModal === "function" &&
-        this.querySelector(".status-dropdown") != document.activeElement
-      ) {
-        openClassModal(classId);
-      }
-    });
-  });
-
-  // sorting Status
   const statusOrders = [
     ["open", "pending", "closed"],
     ["pending", "closed", "open"],
@@ -300,9 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector(".course-status").addEventListener("click", () => {
     const timesClicked = JSON.parse(localStorage.getItem("timesClicked")) ?? 0;
-    if (timesClicked === 0) {
-      localStorage.setItem("timesClicked", 1);
-    }
+    localStorage.setItem("timesClicked", timesClicked + 1);
 
     const currentOrder = statusOrders[timesClicked % statusOrders.length];
     const currentPriority = Object.fromEntries(
@@ -310,12 +239,11 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     allClasses.sort((a, b) => {
-      const aPriority = currentPriority[a.classStatus];
-      const bPriority = currentPriority[b.classStatus];
+      const aPriority = currentPriority[a.classStatus] ?? 99;
+      const bPriority = currentPriority[b.classStatus] ?? 99;
       return aPriority - bPriority;
     });
 
-    localStorage.setItem("timesClicked", timesClicked + 1);
     renderClasses(allClasses);
   });
 });

@@ -186,21 +186,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // hide the columns progressively based on screen width
-    if (windowWidth < 800) {
-      hideColumn("course-instructor");
-    }
-    if (windowWidth < 700) {
-      hideColumn("course-enrollment");
-    }
-    if (windowWidth < 600) {
-      hideColumn("course-section");
-    }
-    if (windowWidth < 520) {
-      hideColumn("course-name");
-    }
-    if (windowWidth < 400) {
-      hideColumn("course-status");
-    }
+    if (windowWidth < 820) hideColumn("course-instructor");
+    if (windowWidth < 720) hideColumn("course-enrollment");
+    if (windowWidth < 620) hideColumn("course-section");
+    if (windowWidth < 530) hideColumn("course-name");
+    if (windowWidth < 410) hideColumn("course-status");
   }
 
   // function to hide table headers and corresponding data columns
