@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   .join("<br>") || "TBA";
     
                 out += `
-                <tr class="course-row">
+                <tr class="course-row open-modal" data-class-id="${classItem.classId}">
                     <td class="data course-no"><span>${course.courseId}</span></td>
                     <td class="data course-name"><span>${course.courseName}</span></td>
                     <td class="data course-instructor"><span>${instructorNames|| "TBA"}</span></td>
@@ -226,16 +226,13 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", adjustTableColumns);
     adjustTableColumns();
 
-    document.addEventListener("click", function (event) {
-        if (event.target.closest(".course-no")) {
-          const courseId = event.target.closest(".course-no").innerText.trim();
-          console.log("Clicked "+ courseId)
-          if (window.openClassModal) {
-            window.openClassModal(courseId);
-          } else {
-            console.warn("Class modal not initialized");
+    document.querySelectorAll(".open-modal").forEach((el) => {
+        el.addEventListener("click", function () {
+          const classId = this.dataset.classId;
+          if (classId && typeof openClassModal === "function") {
+            openClassModal(classId);
           }
-        }
+        });
       });
 
     // sorting Status
