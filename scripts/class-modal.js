@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   // GLOBAL: Expose this for use in register-course.js
-  window.openClassModal = function (courseId) {
+  window.openClassModal = function (classId) {
     const courses = JSON.parse(localStorage.getItem("courses"));
     const classes = JSON.parse(localStorage.getItem("classes"));
     const users = JSON.parse(localStorage.getItem("users"));
-    const course = courses.find((c) => c.courseId === courseId);
-    const courseClass = classes.find((cls) => cls.courseId === courseId);
-
     const instructorsData = JSON.parse(localStorage.getItem("instructors"));
+
+    const courseClass = classes.find((cls) => cls.classId === classId);
+    if (!courseClass) return;
+
+    const course = courses.find((c) => c.courseId === courseClass.courseId);
 
     const instructors = (courseClass?.instructors || [])
       .map((email) => {
@@ -56,19 +58,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const scheduleType = courseClass?.schedule?.scheduleType || "TBA";
 
     function generateWeekdaySpans(scheduleType) {
-    const allDays = ["S", "M", "T", "W", "T", "F", "S"];
-    const uniqueDays = ["S", "M", "T", "W", "T", "F", "SAT"];
-    const activeSet = new Set(scheduleType.split(""));
-    
-    return allDays
+      const allDays = ["S", "M", "T", "W", "T", "F", "S"];
+      const uniqueDays = ["S", "M", "T", "W", "T", "F", "SAT"];
+      const activeSet = new Set(scheduleType.split(""));
+
+      return allDays
         .map((day, index) => {
-        const matchChar = uniqueDays[index];
-        const isActive = activeSet.has(matchChar);
-        return `<span class="day${isActive ? " active" : ""}">${day}</span>`;
+          const matchChar = uniqueDays[index];
+          const isActive = activeSet.has(matchChar);
+          return `<span class="day${isActive ? " active" : ""}">${day}</span>`;
         })
         .join("");
     }
-      
 
     const modalHTML = `
         <div id="classDetailsModal" class="modal">
@@ -292,9 +293,17 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       `;
 
-    // Append and show
     const modalContainer = document.getElementById("modalContainer");
     modalContainer.innerHTML = modalHTML;
+
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (user?.role === "admin" || user?.role === "instructor") {
+      const registerBtn = document.querySelector(".register-btn");
+      if (registerBtn) {
+        registerBtn.style.display = "none";
+      }
+    }
+
     setupModalEvents();
     document.getElementById("classDetailsModal").style.display = "flex";
   };
@@ -362,16 +371,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function selectOption(option) {
     document.querySelector("#selectedOption").textContent = option;
-  
+
     closeDropdown();
-  
+
     document
       .querySelectorAll(".content-section")
       .forEach((section) => section.classList.remove("active"));
-  
+
     document.getElementById(option).classList.add("active");
   }
-  
 
   window.toggleDropdown = toggleDropdown;
   window.openDropdown = openDropdown;

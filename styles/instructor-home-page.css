@@ -263,7 +263,7 @@ body {
   transform: translate(4px, 5px);
 }
 
-.course-grid, .course-grid2 {
+.course-grid1, .course-grid2, .course-grid3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;

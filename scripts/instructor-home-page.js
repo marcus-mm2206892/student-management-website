@@ -1,213 +1,347 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const user = JSON.parse(localStorage.getItem("loggedInUser"));
-    const courses = JSON.parse(localStorage.getItem("courses"));
-    const classes = JSON.parse(localStorage.getItem("classes"));
-    renderInstructorHome(user, courses, classes);
-    renderCurrentCourses(user, courses, classes);
-    renderSubmittedGrades(user, courses, classes);
-  });
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  const courses = JSON.parse(localStorage.getItem("courses"));
+  const classes = JSON.parse(localStorage.getItem("classes"));
 
-  document.addEventListener("click", function (event) {
-    const courseCard = event.target.closest(".course-card");
-//  todo: should be opening course modal
-    if (courseCard) {
-    const courseId = courseCard
-        .querySelector(".course-tag")
-        ?.textContent.trim();
-    if (courseId && window.openCourseModal) {
-        openCourseModal(courseId);
-    }
-    }
+  renderInstructorHome(user, courses, classes);
+  renderCurrentCourses(user, courses, classes);
+  renderSubmittedGrades(user, courses, classes);
+  renderPendingClasses(user, courses, classes);
 });
 
+function renderInstructorHome(user, courses, classes) {
+  const classCount = user.teachingClasses.length;
+  let coursesTaught = [];
+
+  user.teachingClasses.forEach((userClassId) => {
+    const match = classes.find((c) => c.classId === userClassId);
+    if (match && !coursesTaught.find((c) => c.courseId === match.courseId)) {
+      coursesTaught.push(match);
+    }
+  });
+
+  const coursesTaughtText = coursesTaught.length === 1 ? "course" : "courses";
+
+  document.querySelector(".instructor-profile").innerHTML = `
+    <section class="greetings">
+      <h2>Hello there, ${user.firstName} ${user.lastName}</h2>
+      <span>Track the courses you are teaching at your university.</span>
+    </section>
+
+    <section class="instructor-profile-left">
+
+      <section class="credit-hours-card">
+        <div class="credit-hours-text">
+          <h2>You are teaching <strong>${classCount} classes</strong> and <strong>${
+    coursesTaught.length
+  } ${coursesTaughtText}</strong> this semester.</h2>
+        </div>
+        <div class="credit-hours-image">
+          <img src="../assets/imgs/unitrack-images/login-page-graphic.png" alt="Credit Hours Graphic">
+        </div>
+      </section>
+
+      <section class="courses teaching-courses">
+        <div class="courses-header">
+          <div class="courses-header-left">
+            <h2>Current Teaching Classes</h2>
+            <p>Ongoing classes that you are currently teaching</p>
+          </div>
+          <div class="courses-header-right">
+            <a href="../html/user-query.html" class="browse-courses">
+              View all courses <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="course-grid1"></div>
+        <div class="empty-content" style="display: none;"></div>
+      </section>
+
+      <section class="courses submitted-grade-courses">
+        <div class="courses-header">
+          <div class="courses-header-left">
+            <h2>Submitted Class Grades</h2>
+            <p>Review and verify the grades you have submitted for your students</p>
+          </div>
+          <div class="courses-header-right">
+            <a href="../html/instructor-grades-submission.html" class="browse-courses">
+              Go to grades submission <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="course-grid2"></div>
+        <div class="empty-content" style="display: none;"></div>
+      </section>
+    </section>
+
+    <section class="courses pending-classes-section">
+      <div class="courses-header">
+        <div class="courses-header-left">
+          <h2>Pending Approval</h2>
+          <p>These classes are waiting to be opened by the administration</p>
+        </div>
+      </div>
+      <div class="course-grid3"></div>
+      <div class="empty-content" style="display: none;"></div>
+    </section>
 
 
-  function renderInstructorHome(user, courses, classes) {
-    const classCount = user.teachingClasses.length;
-    let coursesTaught = [];
-    user.teachingClasses.forEach((userClass) => {
-      const match = classes.find((c) => c.classId === userClass);
-      if (match && !coursesTaught.find((c) => c.courseId === match.courseId)) {
-        coursesTaught.push(match);
+    <section class="instructor-profile-right">
+      <section class="about-me-div">
+        <h3>About Me</h3>
+        <div class="about-me-content">
+          <img src="${
+            "../" + user["profile-image"]
+          }" alt="User Avatar" class="about-me-avatar">
+          <div class="about-me-content-right">
+            <h2>${user.firstName} ${user.lastName}</h2>
+            <span>${user.email}</span>
+            <span class="department-tag">CSE Department</span>
+            <span class="college-tag">College of Engineering</span>
+          </div>
+        </div>
+      </section>
+    </section>
+  `;
+}
+
+function renderCurrentCourses(user, courses, classes) {
+  const grid = document.querySelector(".course-grid1");
+  const empty = grid.nextElementSibling;
+  let output = "";
+
+  const classList = user.teachingClasses
+    .map((id) => classes.find((cls) => cls.classId === id))
+    .filter((cls) => cls && cls.classStatus.toLowerCase() === "open");
+
+  if (classList.length === 0) {
+    grid.innerHTML = "";
+    grid.style.display = "none";
+    empty.style.display = "flex";
+    if (typeof renderEmptyContent === "function") renderEmptyContent();
+    return;
+  }
+
+  classList.forEach((cls) => {
+    const course = courses.find((c) => c.courseId === cls.courseId);
+    if (!course) return;
+
+    const creditHoursText =
+      course.creditHours === 1 ? "credit hour" : "credit hours";
+
+    const tags = `
+      <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${
+        course.creditHours
+      } ${creditHoursText}</span>
+      ${course.majorsOffered
+        .map(
+          (major) => `
+        <span class="tag">
+          <i class="fa-solid ${
+            major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
+          }"></i> 
+          ${major === "CMPS" ? "CS" : "CE"}
+        </span>`
+        )
+        .join("")}
+    `;
+
+    output += `
+      <div class="course-card open-modal" data-class-id="${cls.classId}">
+        <div class="course-image">
+          <img src="${course.courseImage}" alt="Course Image" style="width:100%; height:100%; object-fit:cover;">
+          <div class="hover-icon">
+            <i class="fa-solid fa-eye"></i>
+            <span class="hover-text">View Class</span>
+          </div>
+          <i class="fa-solid fa-turn-up top-right-icon"></i>
+        </div>
+        <div class="course-info">
+          <div class="course-header">
+            <div class="card-tags-div">
+              <span class="course-tag">${cls.courseId}</span>
+              <span class="section-tag">${cls.section}</span>
+            </div>
+            <span class="semester">${cls.semester}</span>
+          </div>
+          <h3>${course.courseName}</h3>
+          <p class="course-subtitle">${course.description}</p>
+          <div class="course-tags">${tags}</div>
+        </div>
+      </div>
+    `;
+  });
+
+  grid.innerHTML = output;
+  grid.style.display = "grid";
+  empty.style.display = "none";
+
+  document.querySelectorAll(".open-modal").forEach((el) => {
+    el.addEventListener("click", function () {
+      const classId = this.dataset.classId;
+      if (classId && typeof openClassModal === "function") {
+        openClassModal(classId);
       }
     });
-    const coursesTaughtText = coursesTaught.length === 1 ? "course" : "courses";
-  
-    document.querySelector(".instructor-profile").innerHTML = `
-      <section class="greetings">
-        <h2>Hello there, ${user.firstName} ${user.lastName}</h2>
-        <span>Track the courses you are teaching at your university.</span>
-      </section>
-  
-      <section class="instructor-profile-left">
-  
-        <section class="credit-hours-card">
-          <div class="credit-hours-text">
-            <h2>You are teaching <strong>${classCount} classes</strong> and <strong>${coursesTaught.length} ${coursesTaughtText}</strong> this semester.</h2>
-          </div>
-          <div class="credit-hours-image">
-            <img src="../assets/imgs/unitrack-images/login-page-graphic.png" alt="Credit Hours Graphic">
-          </div>
-        </section>
-  
-        <section class="courses teaching-courses">
-          <div class="courses-header">
-            <div class="courses-header-left">
-              <h2>Current Teaching Classes</h2>
-              <p>Ongoing classes that you are currently teaching</p>
-            </div>
-            <div class="courses-header-right">
-              <a href="../html/user-query.html" class="browse-courses">
-                View all courses <i class="fa-solid fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
-          <div class="course-grid"></div>
-        </section>
-  
-        <section class="courses submitted-grade-courses">
-          <div class="courses-header">
-            <div class="courses-header-left">
-              <h2>Submitted Class Grades</h2>
-              <p>Review and verify the grades you have submitted for your students</p>
-            </div>
-            <div class="courses-header-right">
-              <a href="../html/instructor-grades-submission.html" class="browse-courses">
-                Go to grades submission <i class="fa-solid fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
-          <div class="course-grid2"></div>
-        </section>
-      </section>
-  
-      <section class="instructor-profile-right">
-        <section class="about-me-div">
-          <h3>About Me</h3>
-          <div class="about-me-content">
-            <img src="${"../" + user["profile-image"]}" alt="User Avatar" class="about-me-avatar"> 
-            <div class="about-me-content-right">
-              <h2>${user.firstName} ${user.lastName}</h2>
-              <span>${user.email}</span>
-              <span class="department-tag">CSE Department</span>
-              <span class="college-tag">College of Engineering</span>
-            </div>
-          </div>
-        </section>
-      </section>
+  });
+}
+
+function renderSubmittedGrades(user, courses, classes) {
+  const grid = document.querySelector(".course-grid2");
+  const empty = grid.nextElementSibling;
+  let output = "";
+
+  const submitted = user.gradedClasses
+    .map((id) => classes.find((cls) => cls.classId === id))
+    .filter((cls) => cls && cls.classStatus.toLowerCase() === "closed");
+
+  if (submitted.length === 0) {
+    grid.innerHTML = "";
+    grid.style.display = "none";
+    empty.style.display = "flex";
+    if (typeof renderEmptyContent === "function") renderEmptyContent();
+    return;
+  }
+
+  submitted.forEach((cls) => {
+    const course = courses.find((c) => c.courseId === cls.courseId);
+    if (!course) return;
+
+    const creditHoursText =
+      course.creditHours === 1 ? "credit hour" : "credit hours";
+    const tags = `
+      <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${
+        course.creditHours
+      } ${creditHoursText}</span>
+      ${course.majorsOffered
+        .map(
+          (major) => `
+        <span class="tag">
+          <i class="fa-solid ${
+            major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
+          }"></i> 
+          ${major === "CMPS" ? "CS" : "CE"}
+        </span>`
+        )
+        .join("")}
     `;
-  }
-  
-  function renderCurrentCourses(user, courses, classes) {
-    const grid = document.querySelector(".course-grid");
-    let output = "";
-  
-    const classList = user.teachingClasses
-      .map(id => classes.find(cls => cls.classId === id))
-      .filter(Boolean);
-  
-    if (classList.length === 0) {
-      grid.innerHTML = `<span class="end-of-results">All Done! No Classes Found.</span>`;
-      return;
-    }
-  
-    classList.forEach(cls => {
-      const course = courses.find(c => c.courseId === cls.courseId);
-      if (!course) return;
-  
-      const creditHoursText = course.creditHours === 1 ? "credit hour" : "credit hours";
-  
-      const tags = `
-        <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${course.creditHours} ${creditHoursText}</span>
-        ${course.majorsOffered.map(major => `
-          <span class="tag">
-            <i class="fa-solid ${major === "CMPE" ? "fa-microchip" : "fa-laptop-code"}"></i> 
-            ${major === "CMPS" ? "CS" : "CE"}
-          </span>`).join("")}
-      `;
-          //couldn't find the conflict in css, fixed using inline
-      output += `
-        <div class="course-card" onclick="window.openClassModal('${cls.classId}')">
-          <div class="course-image">
-           <img src="${course.courseImage}" alt="Course Image" style="width:100%; height:100%; object-fit:cover;"> 
-            <div class="hover-icon">
-              <i class="fa-solid fa-eye"></i>
-              <span class="hover-text">View Class</span>
-            </div>
-            <i class="fa-solid fa-turn-up top-right-icon"></i>
+
+    output += `
+      <div class="course-card open-modal" data-class-id="${cls.classId}">
+        <div class="course-image">
+          <img src="${course.courseImage}" alt="Course Image" style="width:100%; height:100%; object-fit:cover;">
+          <div class="hover-icon">
+            <i class="fa-solid fa-eye"></i>
+            <span class="hover-text">View Class</span>
           </div>
-          <div class="course-info">
-            <div class="course-header">
-              <div class="card-tags-div">
-                <span class="course-tag">${cls.courseId}</span>
-                <span class="section-tag">${cls.section}</span>
-              </div>
-              <span class="semester">${cls.semester}</span>
-            </div>
-            <h3>${course.courseName}</h3>
-            <p class="course-subtitle">${course.description}</p>
-            <div class="course-tags">${tags}</div>
-          </div>
+          <i class="fa-solid fa-turn-up top-right-icon"></i>
         </div>
-      `;
-    });
-  
-    grid.innerHTML = output;
-  }
-  
-  function renderSubmittedGrades(user, courses, classes) {
-    const grid = document.querySelector(".course-grid2");
-    const submitted = user.gradedClasses.map(
-      id => classes.find(c => c.classId ===id)
-    )
-    console.log(submitted);
-  
-    if (submitted.length === 0) {
-      grid.innerHTML = `<span class="end-of-results">All Done! No Classes Found.</span>`;
-      return;
-    }
-  
-    let output = "";
-    submitted.forEach(cls => {
-      const course = courses.find(c => c.courseId === cls.courseId);
-      if (!course) return;
-  
-      const creditHoursText = course.creditHours === 1 ? "credit hour" : "credit hours";
-      const tags = `
-        <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${course.creditHours} ${creditHoursText}</span>
-        ${course.majorsOffered.map(major => `
-          <span class="tag">
-            <i class="fa-solid ${major === "CMPE" ? "fa-microchip" : "fa-laptop-code"}"></i> 
-            ${major === "CMPS" ? "CS" : "CE"}
-          </span>`).join("")}
-      `;
-  
-      output += `
-        <div class="course-card" onclick="window.openClassModal('${cls.classId}')">
-          <div class="course-image">
-            <img src="${course.courseImage}" alt="Course Image" style="width:100%; height:100%; object-fit:cover;"> 
-            <div class="hover-icon">
-              <i class="fa-solid fa-eye"></i>
-              <span class="hover-text">View Class</span>
+        <div class="course-info">
+          <div class="course-header">
+            <div class="card-tags-div">
+              <span class="course-tag">${cls.courseId}</span>
+              <span class="section-tag">${cls.section}</span>
             </div>
-            <i class="fa-solid fa-turn-up top-right-icon"></i>
+            <span class="semester">${cls.semester}</span>
           </div>
-          <div class="course-info">
-            <div class="course-header">
-              <div class="card-tags-div">
-                <span class="course-tag">${cls.courseId}</span>
-                <span class="section-tag">${cls.section}</span>
-              </div>
-              <span class="semester">${cls.semester}</span>
-            </div>
-            <h3>${course.courseName}</h3>
-            <p class="course-subtitle">${course.description}</p>
-            <div class="course-tags">${tags}</div>
-          </div>
+          <h3>${course.courseName}</h3>
+          <p class="course-subtitle">${course.description}</p>
+          <div class="course-tags">${tags}</div>
         </div>
-      `;
+      </div>
+    `;
+  });
+
+  grid.innerHTML = output;
+  grid.style.display = "grid";
+  empty.style.display = "none";
+
+  document.querySelectorAll(".open-modal").forEach((el) => {
+    el.addEventListener("click", function () {
+      const classId = this.dataset.classId;
+      if (classId && typeof openClassModal === "function") {
+        openClassModal(classId);
+      }
     });
-  
-    grid.innerHTML = output;
+  });
+}
+
+function renderPendingClasses(user, courses, classes) {
+  const grid = document.querySelector(".course-grid3");
+  const empty = grid.nextElementSibling;
+  let output = "";
+
+  const pending = user.teachingClasses
+    .map((id) => classes.find((cls) => cls.classId === id))
+    .filter((cls) => cls && cls.classStatus.toLowerCase() === "pending");
+
+  if (pending.length === 0) {
+    grid.innerHTML = "";
+    grid.style.display = "none";
+    empty.style.display = "flex";
+    if (typeof renderEmptyContent === "function") renderEmptyContent();
+    return;
   }
-  
+
+  pending.forEach((cls) => {
+    const course = courses.find((c) => c.courseId === cls.courseId);
+    if (!course) return;
+
+    const creditHoursText =
+      course.creditHours === 1 ? "credit hour" : "credit hours";
+    const tags = `
+      <span class="tag"><i class="fa-solid fa-hourglass-half"></i> ${
+        course.creditHours
+      } ${creditHoursText}</span>
+      ${course.majorsOffered
+        .map(
+          (major) => `
+        <span class="tag">
+          <i class="fa-solid ${
+            major === "CMPE" ? "fa-microchip" : "fa-laptop-code"
+          }"></i> 
+          ${major === "CMPS" ? "CS" : "CE"}
+        </span>`
+        )
+        .join("")}
+    `;
+
+    output += `
+      <div class="course-card open-modal" data-class-id="${cls.classId}">
+        <div class="course-image">
+          <img src="${course.courseImage}" alt="Course Image" style="width:100%; height:100%; object-fit:cover;">
+          <div class="hover-icon">
+            <i class="fa-solid fa-eye"></i>
+            <span class="hover-text">View Class</span>
+          </div>
+          <i class="fa-solid fa-turn-up top-right-icon"></i>
+        </div>
+        <div class="course-info">
+          <div class="course-header">
+            <div class="card-tags-div">
+              <span class="course-tag">${cls.courseId}</span>
+              <span class="section-tag">${cls.section}</span>
+            </div>
+            <span class="semester">${cls.semester}</span>
+          </div>
+          <h3>${course.courseName}</h3>
+          <p class="course-subtitle">${course.description}</p>
+          <div class="course-tags">${tags}</div>
+        </div>
+      </div>
+    `;
+  });
+
+  grid.innerHTML = output;
+  grid.style.display = "grid";
+  empty.style.display = "none";
+
+  document.querySelectorAll(".open-modal").forEach((el) => {
+    el.addEventListener("click", function () {
+      const classId = this.dataset.classId;
+      if (classId && typeof openClassModal === "function") {
+        openClassModal(classId);
+      }
+    });
+  });
+}
