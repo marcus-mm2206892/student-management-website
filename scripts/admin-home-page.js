@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function renderAdminHome(user, courses, classes) {
   const pendingClasses = classes.filter(
-    (c) => c.classStatus === "pending" && c.enrollmentActual === 5
+    (c) => c.classStatus === "pending" && c.enrollmentActual >= 5
   );  
   const approvedClasses = classes.filter(c => c.classStatus === "open");
   const closedClasses = classes.filter(c => c.classStatus === "closed");
