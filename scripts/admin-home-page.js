@@ -76,10 +76,18 @@ function renderAdminHome(user, courses, classes) {
         </div>
 
         <div class="info-card pending-classes-total">
-          <h3 class="content-info-attribute">Number of Pending Classes</h3>
+          <h3 class="content-info-attribute">Number of Eligible Classes</h3>
           <div class="info-text">
             <h2 class="number-tag">${pendingClasses.length} of ${totalClasses}</h2>
-            <p><span>${Math.round((pendingClasses.length / totalClasses) * 100)}%</span> of all courses are pending</p>
+            <p><span>${Math.round((pendingClasses.length / totalClasses) * 100)}%</span> of all courses are ready to be approved</p>
+          </div>
+        </div>
+
+          <div class="info-card pending-classes-total">
+          <h3 class="content-info-attribute">Number of Pending Classes</h3>
+          <div class="info-text">
+            <h2 class="number-tag">${classes.filter((c)=>c.classStatus==="pending").length} of ${totalClasses}</h2>
+            <p><span>${Math.round((classes.filter((c)=>c.classStatus==="pending").length / totalClasses) * 100)}%</span> of all courses are pending</p>
           </div>
         </div>
 
