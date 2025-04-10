@@ -252,38 +252,46 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
               </div>
   
-              <div id="Eligibility" class="content-section">
+             <div id="Eligibility" class="content-section">
                 <div class="content-info-div eligibility-container">
                   <h3 class="content-info-attribute">Prerequisite Courses</h3>
                   <div class="prerequisite-list">
-                    ${(course?.prerequisites || [])
-                      .map(
-                        (pr) => `
-                      <div class="prerequisite-card">
-                        <div class="prerequisite-header">
-                          <span class="course-tag">${
-                            typeof pr === "string" ? pr : pr.courseId
-                          }</span>
-                        </div>
-                        <div class="prerequisite-details">
-                          <div class="letter-grade-container">
-                            <span class="letter-grade">${
-                              typeof pr === "object" ? pr.minGrade : "D"
-                            }</span>
-                          </div>
-                          <div class="course-info">
-                            <p class="minimum-grade">Minimum Grade Required</p>
-                            <h3>${
-                              typeof pr === "string" ? pr : pr.courseId
-                            }</h3>
-                          </div>
-                        </div>
-                      </div>
-                    `
-                      )
-                      .join("")}
+                    ${
+                      course?.prerequisites?.length
+                        ? course.prerequisites
+                            .map(
+                              (pr) => `
+                            <div class="prerequisite-card">
+                              <div class="prerequisite-header">
+                                <span class="course-tag">${
+                                  typeof pr === "string" ? pr : pr.courseId
+                                }</span>
+                              </div>
+                              <div class="prerequisite-details">
+                                <div class="letter-grade-container">
+                                  <span class="letter-grade">${
+                                    typeof pr === "object" ? pr.minGrade : "D"
+                                  }</span>
+                                </div>
+                                <div class="course-info">
+                                  <p class="minimum-grade">Minimum Grade Required</p>
+                                  <h3>${
+                                    typeof pr === "string" ? pr : pr.courseId
+                                  }</h3>
+                                </div>
+                              </div>
+                            </div>
+                          `
+                            )
+                            .join("")
+                        : `<p class="no-prerequisites">No prerequisite courses required for this class.</p>`
+                    }
                   </div>
-                  <p class="eligibility-note">Students must complete the above courses before enrolling.</p>
+                  ${
+                    course?.prerequisites?.length
+                      ? `<p class="eligibility-note">Students must complete the above courses before enrolling.</p>`
+                      : ""
+                  }
                 </div>
               </div>
             </div>
