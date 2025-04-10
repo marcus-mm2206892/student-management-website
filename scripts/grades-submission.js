@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     courses = [],
     users = [];
 
-  let studentGrades=[];
-
   Promise.all([
     fetch("../assets/data/classes.json").then((res) => res.json()),
     fetch("../assets/data/instructors.json").then((res) => res.json()),
@@ -43,7 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let submitted = "S"
         if (oic.classStatus === "open") { submitted = "P"}
         return { ...oic, courseName: course?.courseName || "Unnamed Course", submitted: submitted };
-      });
+      }).sort((a, b) => {
+        // Sorting to put open classes first
+        if (a.classStatus === "open" && b.classStatus === "completed") return -1;
+        if (a.classStatus === "completed" && b.classStatus === "open") return 1;
+        return 0; 
+      });;
 
       console.log(instructorClassesWithName);
 
@@ -93,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   function renderStudentsForClass(classId, courseId, courseName, section) {
-    studentGrades = [];
     const selectedContainer = document.querySelector(".classes.selected");
 
     const enrolledStudents = students.filter((student) =>
@@ -106,14 +108,10 @@ document.addEventListener("DOMContentLoaded", function () {
       .map((student) => {
         const userProfile = users.find((u) => u.email === student.email);
 
-        const studentGrade = {studentId: student.studentId, email: student.email};
-        studentGrades.push(studentGrade);
-        console.log(studentGrades);
-
         const studentClass = student.semesterEnrollment.classes.find(c => c.classId === classId);
         console.log(studentClass.letterGrade);
         
-        const savedGrade = localStorage.getItem(student.email) || "A";
+        const savedGrade = localStorage.getItem(student.email) || "Select a grade";
 
         return `
           <div class="card">
@@ -214,27 +212,69 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function initializeSubmit(classId, enrolledStudents) {
-    document.querySelector("#submit-btn").addEventListener("click", submitGrades(classId, enrolledStudents));
+    document.querySelector("#submit-btn").addEventListener("click", function () {
+      submitGrades(classId, enrolledStudents);
+
+      setTimeout(() => {
+        location.reload();
+      }, 2500);
+    });
   }
+
   function submitGrades(classId, enrolledStudents){
-    console.log("SUBMITTED");
+    let isGradeMissing = false;
+    let studentWithMissingGrade;
+  
     enrolledStudents.map(student => {
-      if (localStorage.getItem(student.email)){
-        openAlertModal("Missing Grade", `Please choose a grade for student with ID ${student.studentId}`);
+      if (!localStorage.getItem(student.email)){
+        studentWithMissingGrade = student;
+        isGradeMissing = true;
+        return;
       }
       const grade = localStorage.getItem(student.email);
 
+
+      // Give student the letter grade selected and change status to graded
       const selectedClass = student.semesterEnrollment.classes.find(studentClass => studentClass.classId === classId);
       selectedClass.letterGrade = grade;
       selectedClass.gradeStatus = "graded";
 
-      // const enrolledClasses = student.semesterEnrollment.classes.filter(studentClass => studentClass.classId != classId);
-      // student.classes = enrolledClasses;
+      // Remove the class from student's enrolled classes
+      const enrolledClasses = student.semesterEnrollment.classes.filter(studentClass => studentClass.classId != classId);
+      console.log(enrolledClasses)
+      student.classes = enrolledClasses;
 
-      student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
-      console.log(student);
+      // Find if student has completed the course
+      const index = student.completedCourses.findIndex(course => course.courseId === selectedClass.courseId);
+
+      if (index === -1) {
+        // Add to completedCourses if student has not completed the course
+        student.completedCourses.push({courseId:selectedClass.courseId, letterGrade:selectedClass.letterGrade});
+      } else {
+        // Change the grade of the student if student has completed the course
+        student.completedCourses[index].letterGrade = selectedClass.letterGrade;
+      };
     })
-    localStorage.setItem("students",JSON.stringify(students));
+
+    if (isGradeMissing) {
+      //If a grade has not been selected for one student, an alert will pop up
+
+      console.log("Grades not submitted");
+      let userProfile = users.find((u) => u.email === studentWithMissingGrade.email);
+      
+      openAlertModal("Missing Grades", `Please choose a grade for student ${userProfile.firstName} ${userProfile.lastName}`);
+      
+      return;
+    }
+    else {
+      localStorage.setItem("students",JSON.stringify(students));
+
+      selectedClass = classes.find(c => c.classId === classId);
+      selectedClass.classStatus = "completed";
+      localStorage.setItem("classes", JSON.stringify(classes));
+
+      openAlertModal("Grades Submitted", `Grades for the class with classID ${classId} have been submitted`);
+    }
   }
 
   // Adjust layout on resize
