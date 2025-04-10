@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     users = [];
 
   let studentGrades=[];
-
+  let enrolledStudents = [];
   Promise.all([
     fetch("../assets/data/classes.json").then((res) => res.json()),
     fetch("../assets/data/instructors.json").then((res) => res.json()),
@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const courseName = card.dataset.coursename;
 
         renderStudentsForClass(classId, courseId, courseName, section);
+        initializeSubmit(classId, enrolledStudents);
       });
     }
   );
@@ -96,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     studentGrades = [];
     const selectedContainer = document.querySelector(".classes.selected");
 
-    const enrolledStudents = students.filter((student) =>
+    enrolledStudents = students.filter((student) =>
       student.semesterEnrollment?.classes?.some(
         (cls) => cls.classId === classId
       )
@@ -167,7 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     initializeDropdownListeners();
-    initializeSubmit(classId, enrolledStudents);
   }
 
   function initializeDropdownListeners() {
@@ -214,12 +214,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function initializeSubmit(classId, enrolledStudents) {
-    document.querySelector("#submit-btn").addEventListener("click", submitGrades(classId, enrolledStudents));
+    document.querySelector("#submit-btn").addEventListener("click", function () {
+      submitGrades(classId, enrolledStudents);
+      location.reload();});
   }
+
   function submitGrades(classId, enrolledStudents){
     console.log("SUBMITTED");
+
     enrolledStudents.map(student => {
-      if (localStorage.getItem(student.email)){
+      if (!localStorage.getItem(student.email)){
         openAlertModal("Missing Grade", `Please choose a grade for student with ID ${student.studentId}`);
       }
       const grade = localStorage.getItem(student.email);
@@ -235,6 +239,11 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(student);
     })
     localStorage.setItem("students",JSON.stringify(students));
+
+    selectedClass = classes.find(c => c.classId === classId);
+    selectedClass.classStatus = "completed";
+    localStorage.setItem("classes", JSON.stringify(classes));
+    console.log(selectedClass);
   }
 
   // Adjust layout on resize
