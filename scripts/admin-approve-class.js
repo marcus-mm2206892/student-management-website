@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </td>
                     <td>
                         <select class="status-dropdown" data-classId="${classItem.classId}" data-numberOfStudents="${classItem.enrollmentActual}">
-                            <option value="approved" ${classStatus === "open" ? "selected" : ""}>Approve</option>
+                            <option value="open" ${classStatus === "open" ? "selected" : ""}>Approve</option>
                             <option value="pending" ${classStatus === "pending" ? "selected" : ""}>Pending</option>
                             <option value="rejected" ${classStatus === "closed" ? "selected" : ""}>Rejected</option>
                         </select>
