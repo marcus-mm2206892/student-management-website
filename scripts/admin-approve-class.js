@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".status-dropdown").forEach((dropdown) => {
       dropdown.addEventListener("change", function () {
         const selectedStatus = this.value;
+        console.log(selectedStatus);
         const classId = this.getAttribute("data-classId");
         const numberOfStudents = this.getAttribute("data-numberOfStudents");
         console.log(numberOfStudents);
@@ -127,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let status;
         switch (selectedStatus) {
-          case "approved":
+          case "open":
             status = "open";
 
             if (parseInt(numberOfStudents) < 5) {
@@ -143,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
           case "pending":
             status = "pending";
             break;
-          case "rejected":
+          case "closed":
             status = "closed";
             break;
         }
@@ -175,11 +176,11 @@ document.addEventListener("DOMContentLoaded", function () {
           "status-pending",
           "status-rejected"
         );
-        if (selectedStatus === "approved")
+        if (selectedStatus === "open")
           statusBadge.classList.add("status-approved");
-        if (selectedStatus === "pending")
+        else if (selectedStatus === "pending")
           statusBadge.classList.add("status-pending");
-        if (selectedStatus === "rejected")
+        else if (selectedStatus === "closed")
           statusBadge.classList.add("status-rejected");
       });
     });
