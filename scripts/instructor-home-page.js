@@ -80,6 +80,11 @@ function renderInstructorHome(user, courses, classes) {
           <h2>Pending Approval</h2>
           <p>These classes are waiting to be opened by the administration</p>
         </div>
+        <div class="courses-header-right">
+            <a href="../html/user-query.html" class="browse-courses">
+              View all courses <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
       </div>
       <div class="course-grid3"></div>
       <div class="empty-content" style="display: none;"></div>
