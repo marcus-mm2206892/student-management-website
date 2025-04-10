@@ -41,7 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let submitted = "S"
         if (oic.classStatus === "open") { submitted = "P"}
         return { ...oic, courseName: course?.courseName || "Unnamed Course", submitted: submitted };
-      });
+      }).sort((a, b) => {
+        // Sorting to put open classes first
+        if (a.classStatus === "open" && b.classStatus === "completed") return -1;
+        if (a.classStatus === "completed" && b.classStatus === "open") return 1;
+        return 0; 
+      });;
 
       console.log(instructorClassesWithName);
 
