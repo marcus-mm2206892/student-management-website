@@ -1,21 +1,14 @@
-  //1. Fix the dropdowns. Should get a value 
-
-  //2. Update the classes dropdown depending on the selected course 
-
-  //3. Display class schedule and relevent info (instructors, class location etc)
-  
   let allCourses = JSON.parse(localStorage.getItem("courses"));
   let allClasses = JSON.parse(localStorage.getItem("classes"));
   let allUsers = JSON.parse(localStorage.getItem("users"));
   let allInstructors = JSON.parse(localStorage.getItem("instructors"));
 
-  allCourses = allCourses.filter( crs => crs.currentClasses.length > 0); //Only display courses that have classes
-
+  allCourses = allCourses.filter( crs => crs.currentClasses.length > 0); // Only display courses that have classes
 
   let currentCourseId = null;
   
   function toggleDropdown(event) {
-    const dropdown = event.currentTarget.parentElement;  //Need to fix the closing of dropdown
+    const dropdown = event.currentTarget.parentElement; 
     if (!dropdown) return;
 
     dropdown.classList.toggle("active");
@@ -99,8 +92,6 @@
 
     instructorsContainer.innerHTML = out;
 
-
-  
     // Update schedule days
     const weekdays = scheduleContainer.querySelector(".weekdays");
     weekdays.innerHTML = "";
@@ -170,6 +161,4 @@
   
     courseDD.innerHTML = out;
   }
-
-  // renderCourseDD();
 
