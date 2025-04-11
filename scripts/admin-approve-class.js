@@ -39,10 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .join("<br>") || "TBA";
 
         out += `
-          <tr class="course-row open-modal" data-class-id="${
-            classItem.classId
-          }">
-            <td class="data course-no"><span>${course.courseId}</span></td>
+          <tr class="course-row" data-class-id="${classItem.classId}">
+            <td class="data course-no"> <span class="open-modal" data-class-id="${classItem.classId}">${course.courseId}</span> </td>
             <td class="data course-name"><span>${course.courseName}</span></td>
             <td class="data course-instructor"><span>${instructorNames}</span></td>
             <td class="data course-section"><span>${
