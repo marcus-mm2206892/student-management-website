@@ -9,16 +9,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function renderInstructorHome(user, courses, classes) {
-  const classCount = user.teachingClasses.length;
+  const classCount = classes.reduce((count, cls) => {
+    if (cls.instructors.includes(user.email) && cls.classStatus === "open") {
+      return count + 1;
+    }
+    return count;
+  }, 0);
   let coursesTaught = [];
 
   user.teachingClasses.forEach((userClassId) => {
-    const match = classes.find((c) => c.classId === userClassId);
+    const match = classes.filter((c) => c.classStatus === "open").find((c) => c.classId === userClassId);
     if (match && !coursesTaught.find((c) => c.courseId === match.courseId)) {
       coursesTaught.push(match);
     }
   });
 
+  const classesTaughtText = classCount === 1? "class" : "classes";
   const coursesTaughtText = coursesTaught.length === 1 ? "course" : "courses";
 
   document.querySelector(".instructor-profile").innerHTML = `
@@ -31,7 +37,7 @@ function renderInstructorHome(user, courses, classes) {
 
       <section class="credit-hours-card">
         <div class="credit-hours-text">
-          <h2>You are teaching <strong>${classCount} classes</strong> and <strong>${
+          <h2>You are teaching <strong>${classCount} ${classesTaughtText}</strong> and <strong>${
     coursesTaught.length
   } ${coursesTaughtText}</strong> this semester.</h2>
         </div>

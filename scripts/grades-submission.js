@@ -21,9 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
       courses = JSON.parse(localStorage.courses) || coursesData;
       users = JSON.parse(localStorage.users) || usersData;
 
-      const instructor = instructors.find((i) => i.email === user.email);
       const instructorClasses = classes.filter((c) =>
-        c.instructors.includes(instructor.email)
+        c.instructors.includes(user.email)
       );
 
       const openInstructorClasses = instructorClasses.filter((ic) => {
@@ -253,9 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelector("#submit-btn")
       .addEventListener("click", function () {
         submitGrades(classId, enrolledStudents);
-        setTimeout(() => {
-          location.reload();
-        }, 2500);
+        // setTimeout(() => {location.reload();}, 2500);
       });
   }
 
@@ -294,13 +291,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     localStorage.setItem("students", JSON.stringify(students));
 
+    // Set the status of the class to completed
     const selectedClass = classes.find((c) => c.classId === classId);
     selectedClass.classStatus = "completed";
+
+    // Remove the class from the teaching classes of the instructor(s) and add to graded classes of the instructor(s)
     const instructorsTeachingSelectedClass = selectedClass.instructors;
     instructorsTeachingSelectedClass.map(itsc => {
       const instructor = instructors.find(ins => ins.email === itsc);
+      const newTeachingClasses = instructor.teachingClasses.filter(cls => cls != classId);
+      instructor.teachingClasses = newTeachingClasses;
       instructor.gradedClasses.push(classId);
+
+      if (instructor.email === user.email) {
+        user.teachingClasses = newTeachingClasses;
+        user.gradedClasses.push(classId);
+      }
     })
+
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
     localStorage.setItem("instructors", JSON.stringify(instructors));
     localStorage.setItem("classes", JSON.stringify(classes));
 
