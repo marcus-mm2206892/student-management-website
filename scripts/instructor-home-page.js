@@ -72,24 +72,23 @@ function renderInstructorHome(user, courses, classes) {
         <div class="course-grid2"></div>
         <div class="empty-content" style="display: none;"></div>
       </section>
-    </section>
 
-    <section class="courses pending-classes-section">
-      <div class="courses-header">
-        <div class="courses-header-left">
-          <h2>Pending Approval</h2>
-          <p>These classes are waiting to be opened by the administration</p>
+      <section class="courses pending-classes-section">
+        <div class="courses-header">
+          <div class="courses-header-left">
+            <h2>Pending Approval</h2>
+            <p>These classes are waiting to be opened by the administration</p>
+          </div>
+          <div class="courses-header-right">
+              <a href="../html/user-query.html" class="browse-courses">
+                View all courses <i class="fa-solid fa-chevron-right"></i>
+              </a>
+          </div>
         </div>
-        <div class="courses-header-right">
-            <a href="../html/user-query.html" class="browse-courses">
-              View all courses <i class="fa-solid fa-chevron-right"></i>
-            </a>
-        </div>
-      </div>
-      <div class="course-grid3"></div>
-      <div class="empty-content" style="display: none;"></div>
+        <div class="course-grid3"></div>
+        <div class="empty-content" style="display: none;"></div>
+      </section>
     </section>
-
 
     <section class="instructor-profile-right">
       <section class="about-me-div">

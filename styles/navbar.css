@@ -653,7 +653,7 @@ th .dropdown-icon{
 }
 
 @media (max-width: 768px) {
-    .navbar .learningpath-btn {
+    .navbar .learningpath-btn, .navbar .classstatus-btn, .navbar .viewgrades-btn {
         display: none
     }
 }
