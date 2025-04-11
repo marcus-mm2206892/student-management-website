@@ -95,6 +95,7 @@ function renderStudentNavbar(user) {
             Profile
           </button>
         </div>
+        <!--
         <hr class="hr options-theme">
         <div class="theme-toggle">
           <div class="theme-option">
@@ -110,6 +111,7 @@ function renderStudentNavbar(user) {
             <span class="theme-label">Dark</span>
           </div>
         </div>
+        -->
         <hr class="hr theme-signout">
         <button class="signout-btn"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
       </div>
@@ -184,6 +186,7 @@ function renderInstructorNavbar(user) {
             Profile
           </button>
         </div>
+        <!-- 
         <hr class="hr options-theme">
         <div class="theme-toggle">
           <div class="theme-option">
@@ -199,6 +202,7 @@ function renderInstructorNavbar(user) {
             <span class="theme-label">Dark</span>
           </div>
         </div>
+        -->
         <hr class="hr theme-signout">
         <button class="signout-btn"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
       </div>
@@ -277,6 +281,7 @@ function renderAdminNavbar(user) {
             Profile
           </button>
         </div>
+        <!--
         <hr class="hr options-theme">
         <div class="theme-toggle">
           <div class="theme-option">
@@ -292,6 +297,7 @@ function renderAdminNavbar(user) {
             <span class="theme-label">Dark</span>
           </div>
         </div>
+        -->
         <hr class="hr theme-signout">
         <button class="signout-btn"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
       </div>
