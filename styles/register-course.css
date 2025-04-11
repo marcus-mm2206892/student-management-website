@@ -253,6 +253,11 @@ tbody tr td button:hover {
   background-color: var(--contrast-a0);
 }
 
+.course-status:hover{
+  cursor: pointer;
+}
+
+
 .status-circle {
   width: 10px;
   height: 10px;

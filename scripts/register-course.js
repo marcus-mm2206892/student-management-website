@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const tableBody = document.querySelector("#data-output");
   const searchInfo = document.querySelector("#searchInfo");
   const registerTable = document.querySelector(".register-table");
+  const timesClicked = JSON.parse(localStorage.getItem("timesClicked"))??0;
 
   let allCourses = JSON.parse(localStorage.getItem("courses"));
   let allClasses = JSON.parse(localStorage.getItem("classes"));
@@ -26,8 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const student = allStudents.find((s) => s.email == user.email);
       const enrolledClasses = student.semesterEnrollment?.classes || [];
 
-      allClasses.sort((a, b) => b.enrollmentActual - a.enrollmentActual);
-
+      if (timesClicked===0){
+        allClasses.sort((a, b) => b.enrollmentActual - a.enrollmentActual);
+      }
       // Filter out completed classes
       allClasses.filter(c => c.classStatus !== "completed").forEach((classItem) => {
         let course = allCourses.find((c) => c.courseId === classItem.courseId);
@@ -369,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!passedPreReq) {
       openAlertModal(
         "Missing Prerequisites",
-        `You must complete the prerequisite courses before enrolling in ${courseId}.`
+        `You must complete the prerequisite courses with a grade above D before enrolling in ${courseId}.`
       );
       return;
     }
@@ -431,7 +433,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ];
       
     document.querySelector(".course-status").addEventListener("click", () => {
-        const timesClicked = JSON.parse(localStorage.getItem("timesClicked"))??0;
+      const timesClicked = JSON.parse(localStorage.getItem("timesClicked"))??0;
         if(timesClicked===0){
             localStorage.setItem("timesClicked",1);
         }
@@ -441,12 +443,12 @@ document.addEventListener("DOMContentLoaded", function () {
             currentOrder.map((status, index) => [status, index + 1])
         );
 
-        allClasses.sort((a, b) => { // not sure why this isn't sorting when it's exactly the same as admin
+        allClasses.sort((a, b) => { // fixed
             const aPriority = currentPriority[a.classStatus];
             const bPriority = currentPriority[b.classStatus];
             return aPriority - bPriority;
         });
-        console.log(currentOrder); 
+        console.log("sorted by: " + currentOrder); 
         localStorage.setItem("timesClicked", timesClicked+1);
         renderClasses(allClasses);
     });

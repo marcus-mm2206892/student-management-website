@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const bPriority = currentPriority[b.classStatus] ?? 99;
       return aPriority - bPriority;
     });
-
+    console.log("sorted by: " + currentOrder); 
     renderClasses(allClasses.filter(cls => cls.classStatus?.toLowerCase() !== "completed"));
   });
 });
