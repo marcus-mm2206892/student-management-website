@@ -159,9 +159,6 @@ document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
 function courseDdTemplate(courseId) {
   return `<div onclick="selectOption('course','${courseId}')"><i class="fas fa-book"></i>${courseId}</div>`;
 }
-function classDdTemplate(classId) {
-  return `<div onclick="selectOption('class')"><i class="fas fa-calendar-alt"></i>CRN: ${classId} Section ${section}</div>`;
-}
 
 function instructorTemplate(instructor, user) {
   return `
