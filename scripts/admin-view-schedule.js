@@ -38,8 +38,7 @@ function selectOption(type, value) {
 
     courseClasses.forEach((classId) => {
       const cls = allClasses.find((cls) => cls.classId == classId);
-      if (cls.classStatus == "open" || cls.classStatus == "pending") {
-        // Only show currently 'open' and 'pending' classes
+      if (cls.classStatus == "open" || cls.classStatus == "pending") {    // Only show currently 'open' and 'pending' classes
         const option = document.createElement("div");
         option.innerHTML = `<i class="fas fa-calendar-alt"></i>CRN: ${classId}`;
         option.onclick = () => selectOption("class", classId);
@@ -55,8 +54,8 @@ function selectOption(type, value) {
 
     if (courseClasses.length) {
       const firstClass = allClasses.find(
-        (cls) => cls.classId == courseClasses[0]
-      ); // Auto select the first class of the course, by default
+        (cls) => cls.classId == courseClasses[0]    // Auto select the first class of the course, by default
+      ); 
       document.getElementById("selectedCRNOption").textContent =
         "CRN: " + courseClasses[0];
       updateSchedule(firstClass);
@@ -87,16 +86,14 @@ function selectOption(type, value) {
 function updateSchedule(cls) {
   const scheduleContainer = document.querySelector(".class-schedule");
   const locationContainer = document.querySelector(".class-location");
-  document.querySelector(".section-tag").textContent = cls.section || ""; // Set the CRN and section of the class in the modal header
+  document.querySelector(".section-tag").textContent = cls.section || "";   // Set the CRN and section of the class in the modal header
   document.querySelector(".crn-tag").textContent = `CRN ${cls.classId}`;
   document.querySelector(".campus-tag").textContent = `${cls.campus}`;
 
   // Update the instructor information
-
   const instructorsContainer = document.querySelector(".instructors-list");
   const instructorEmails = cls.instructors;
 
-  // console.log(instructorEmails);
   out = ``;
   instructorEmails.forEach((instructorEmail) => {
     const instructor = allInstructors.find(
@@ -118,16 +115,25 @@ function updateSchedule(cls) {
     activeDays = ["S", "T"];
   } else if (scheduleDays == "MW") {
     activeDays = ["M", "W"];
-  }
+  } 
+
+  // For keeping track of how many 'S' we are including, since 'S' refers to both Saturday and Sunday
+  let sCount = 0;
 
   days.forEach((day) => {
     const span = document.createElement("span");
     span.classList.add("day");
-    if (activeDays.includes(day)) span.classList.add("active");
+
+    day == "S" ? sCount++ : '';
+
+    if (activeDays.includes(day) && sCount < 2) {
+      span.classList.add("active");
+    } 
     span.textContent = day;
     weekdays.appendChild(span);
   });
 
+  // Start and end of classes for Spring and Fall semesters in 2025
   let dataRange;
   if (cls.semester == "Spring 2025") {
     dataRange = "19/01/2025 - 05/08/2025";
@@ -150,7 +156,7 @@ document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
   toggle.addEventListener("click", toggleDropdown);
 });
 
-function courseDdTemplate(courseId, courseName) {
+function courseDdTemplate(courseId) {
   return `<div onclick="selectOption('course','${courseId}')"><i class="fas fa-book"></i>${courseId}</div>`;
 }
 function classDdTemplate(classId) {
@@ -176,7 +182,7 @@ function renderCourseDD() {
   out = ``;
 
   allCourses.forEach((course) => {
-    out += courseDdTemplate(course.courseId, course.courseName);
+    out += courseDdTemplate(course.courseId);
   });
 
   courseDD.innerHTML = out;
