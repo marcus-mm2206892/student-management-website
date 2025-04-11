@@ -279,19 +279,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       student.semesterEnrollment.classes =
         student.semesterEnrollment.classes.filter((c) => c.classId !== classId);
-
-      // const index = student.completedCourses.findIndex(
-      //   (course) => course.courseId === selectedClass.courseId
-      // );
-
-      // if (index === -1) {
-      //   student.completedCourses.push({
-      //     courseId: selectedClass.courseId,
-      //     letterGrade: selectedClass.letterGrade,
-      //   });
-      // } else {
-      //   student.completedCourses[index].letterGrade = selectedClass.letterGrade;
-      // }
     });
 
     if (isGradeMissing) {
