@@ -276,6 +276,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       student.semesterEnrollment.classes =
         student.semesterEnrollment.classes.filter((c) => c.classId !== classId);
+      
+      student.completedCourses.push({
+        courseId: selectedClass.courseId,
+        letterGrade: selectedClass.letterGrade,
+      });
     });
 
     if (isGradeMissing) {
