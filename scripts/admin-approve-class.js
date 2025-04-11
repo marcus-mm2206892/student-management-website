@@ -157,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
         allClasses = allClasses.map((cls) => {
           if (cls.classId == classId) {
             const instructors = cls.instructors;
+            // If the status is closed, remove the class from the instructor's teaching classes
             if (updatedStatus === "closed") {
               instructors.map(i => {
                 const instructor = allInstructors.find(instructor => instructor.email === i);
@@ -166,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
               )
             }
             else {
+            // Add the instructor's class if missing from the their teaching classes
               instructors.map(i => {
                 const instructor = allInstructors.find(instructor => instructor.email === i);
                 const teachingClasses = instructor.teachingClasses;
