@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Users Loaded:", allUsers);
   
-  //2. When admin Closes a section, it should automatically unregister the student if he has been registered
+  //2. When admin closes a section, it should automatically unregister the student if he has been registered
   renderClasses(allClasses);
   function renderClasses(allClasses){
     try {
@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const enrolledClasses = student.semesterEnrollment?.classes || [];
 
       allClasses.sort((a, b) => b.enrollmentActual - a.enrollmentActual);
-      allClasses.forEach((classItem) => {
+
+      // Filter out completed classes
+      allClasses.filter(c => c.classStatus !== "completed").forEach((classItem) => {
         let course = allCourses.find((c) => c.courseId === classItem.courseId);
         if (!course) return;
 
@@ -260,9 +262,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const courseCredit = course?.creditHours || 0;
     const totalAfterAdd = enrolledCourseCredits + courseCredit;
 
-    //insert validation for already completed courses here!
+    // 1. Completed Course Restriction
+    if (completedCourses.find(c => c === course.courseId)) {
+      openAlertModal("Course Already Completed",
+        "You have already completed this course."
+      );
+      return;
+    }
 
-    // 1. Gender-based Campus Restriction
+    // 2. Gender-based Campus Restriction
     if (isMale && classObj.campus?.toLowerCase() === "female") {
       openAlertModal(
         "Campus Restriction",
@@ -279,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 2. Already Enrolled -> Offer to Unregister
+    // 3. Already Enrolled -> Offer to Unregister
     if (isAlreadyEnrolled) {
       openAlertModal(
         "Unregister?",
@@ -308,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 3. Duplicate Course Enrollment Check
+    // 4. Duplicate Course Enrollment Check
     if (isSameCourseEnrolled) {
       const existingClass = currentClasses.find(
         (cls) => cls.courseId === courseId
@@ -325,7 +333,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 4. Prerequisite Check
+    // 5. Prerequisite Check
     const prerequisites = course?.prerequisites || [];
     const completedCourseIds = completedCourses.map((c) => c.courseId);
     const passedPreReq = prerequisites.every((prereq) => {
@@ -366,7 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 5. Credit Hour Cap
+    // 6. Credit Hour Cap
 
     if (totalAfterAdd > 18) {
       openAlertModal(
