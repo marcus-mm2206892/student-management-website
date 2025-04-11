@@ -280,18 +280,18 @@ document.addEventListener("DOMContentLoaded", function () {
       student.semesterEnrollment.classes =
         student.semesterEnrollment.classes.filter((c) => c.classId !== classId);
 
-      const index = student.completedCourses.findIndex(
-        (course) => course.courseId === selectedClass.courseId
-      );
+      // const index = student.completedCourses.findIndex(
+      //   (course) => course.courseId === selectedClass.courseId
+      // );
 
-      if (index === -1) {
-        student.completedCourses.push({
-          courseId: selectedClass.courseId,
-          letterGrade: selectedClass.letterGrade,
-        });
-      } else {
-        student.completedCourses[index].letterGrade = selectedClass.letterGrade;
-      }
+      // if (index === -1) {
+      //   student.completedCourses.push({
+      //     courseId: selectedClass.courseId,
+      //     letterGrade: selectedClass.letterGrade,
+      //   });
+      // } else {
+      //   student.completedCourses[index].letterGrade = selectedClass.letterGrade;
+      // }
     });
 
     if (isGradeMissing) {
@@ -309,6 +309,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const selectedClass = classes.find((c) => c.classId === classId);
     selectedClass.classStatus = "completed";
+    const instructorsTeachingSelectedClass = selectedClass.instructors;
+    instructorsTeachingSelectedClass.map(itsc => {
+      const instructor = instructors.find(ins => ins.email === itsc);
+      instructor.gradedClasses.push(classId);
+    })
+    localStorage.setItem("instructors", JSON.stringify(instructors));
     localStorage.setItem("classes", JSON.stringify(classes));
 
     openAlertModal(
