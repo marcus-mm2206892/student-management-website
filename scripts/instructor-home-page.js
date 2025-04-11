@@ -197,7 +197,7 @@ function renderSubmittedGrades(user, courses, classes) {
 
   const submitted = user.gradedClasses
     .map((id) => classes.find((cls) => cls.classId === id))
-    .filter((cls) => cls && cls.classStatus.toLowerCase() === "closed");
+    .filter((cls) => cls && cls.classStatus.toLowerCase() === "completed");
 
   if (submitted.length === 0) {
     grid.innerHTML = "";
