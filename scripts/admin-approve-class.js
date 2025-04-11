@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let allCourses = JSON.parse(localStorage.getItem("courses"));
   let allClasses = JSON.parse(localStorage.getItem("classes"));
   let allUsers = JSON.parse(localStorage.getItem("users"));
+  let allInstructors = JSON.parse(localStorage.getItem("instructors"));
 
   allClasses.sort((a, b) => b.enrollmentActual - a.enrollmentActual);
   renderClasses(allClasses.filter(cls => cls.classStatus?.toLowerCase() !== "completed"));
@@ -89,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function attachDropdownListeners() {
     document.querySelectorAll(".status-dropdown").forEach((dropdown) => {
       dropdown.addEventListener("change", function () {
-        const selectedStatus = this.value;
+        let selectedStatus = this.value;
         const classId = this.getAttribute("data-classId");
         const numberOfStudents = parseInt(
           this.getAttribute("data-numberOfStudents")
@@ -105,6 +106,47 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
         }
 
+        // Obtain the schedule of the selected class
+        if (selectedStatus === "open") {
+          const selectedClass = allClasses.find(cls => cls.classId === classId );
+          console.log(selectedClass);
+          let hoursTakenByClass = [];
+          const classScheduleType = selectedClass.schedule.scheduleType;
+          const classStartTime = parseInt(selectedClass.schedule.startTime.split(":")[0], 10);
+          const classEndTime = parseInt(selectedClass.schedule.endTime.split(":")[0], 10);
+          for (i=classStartTime; i<=classEndTime; i++) {
+            hoursTakenByClass.push(i)
+          }
+          console.log(hoursTakenByClass);
+
+          // Find the instructors of the selected class
+          const classInstructors = selectedClass.instructors;
+
+          // If an instructor already has a class during the selected class's time frame, then prevent from approving
+          classInstructors.map(ci => {
+            const instructor = allInstructors.find(i => i.email === ci); // Find the instructor
+            const teachingClasses = instructor.teachingClasses; // Obtain the instructor's teaching classes
+
+            teachingClasses.filter(cls => cls !== selectedClass.classId).map(tc => {
+              // Check if the instructor's class is approved
+              if (allClasses.filter(cls => cls.classStatus==="open").find(cls => cls.classId === tc)) {
+                const classData = allClasses.filter(cls => cls.classStatus==="open").find(cls => cls.classId === tc); //Obtain the instructor's class's data
+                
+                // Check if the class to be approved, is conflicting with the approved class
+                if (classData.schedule.scheduleType === classScheduleType && (hoursTakenByClass.find(h => h === parseInt(classData.schedule.startTime.split(":")[0], 10)) || hoursTakenByClass.find(h => h === parseInt(classData.schedule.endTime.split(":")[0], 10)))) {
+                  openAlertModal(
+                    "Conflicting Schedules",
+                    "An instructor already has an approved class during the time frame"
+                  );
+                  this.value = "pending";
+                  selectedStatus = "pending"; // revert back to pending
+                  return;
+                }
+              }
+            })
+          })
+        }
+
         openAlertModal(
           "Status Changed",
           `You changed the class status to "${selectedStatus.toUpperCase()}".`
@@ -114,13 +156,35 @@ document.addEventListener("DOMContentLoaded", function () {
         const updatedStatus = selectedStatus;
         allClasses = allClasses.map((cls) => {
           if (cls.classId == classId) {
+            const instructors = cls.instructors;
+            if (updatedStatus === "closed") {
+              instructors.map(i => {
+                const instructor = allInstructors.find(instructor => instructor.email === i);
+                const newTeachingClasses = instructor.teachingClasses.filter(tc => tc !== classId);
+                instructor.teachingClasses = newTeachingClasses;
+                }
+              )
+            }
+            else {
+              instructors.map(i => {
+                const instructor = allInstructors.find(instructor => instructor.email === i);
+                const teachingClasses = instructor.teachingClasses;
+                if (!teachingClasses.find(tc => tc === classId)) {
+                  teachingClasses.push(classId);
+                  }
+                }
+              )
+            }
             return { ...cls, classStatus: updatedStatus };
           }
           return cls;
         });
-
+        
+        const selectedClass = allClasses.find(cls => cls.classId === classId );
+        console.log(selectedClass);
+        localStorage.setItem("instructors", JSON.stringify(allInstructors));
         localStorage.setItem("classes", JSON.stringify(allClasses));
-        renderClasses(allClasses);
+        renderClasses(allClasses.filter(cls => cls.classStatus?.toLowerCase() !== "completed"));
       });
     });
   }
