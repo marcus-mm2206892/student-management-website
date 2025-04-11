@@ -186,11 +186,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // hide the columns progressively based on screen width
-    if (windowWidth < 820) hideColumn("course-instructor");
-    if (windowWidth < 720) hideColumn("course-enrollment");
-    if (windowWidth < 620) hideColumn("course-section");
-    if (windowWidth < 530) hideColumn("course-name");
-    if (windowWidth < 410) hideColumn("course-status");
+    if (windowWidth < 940) hideColumn("course-instructor");
+    if (windowWidth < 840) hideColumn("course-enrollment");
+    if (windowWidth < 740) hideColumn("course-section");
+    if (windowWidth < 650) hideColumn("course-name");
+    if (windowWidth < 530) hideColumn("course-status");
   }
 
   // function to hide table headers and corresponding data columns
@@ -259,6 +259,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const courseCredit = course?.creditHours || 0;
     const totalAfterAdd = enrolledCourseCredits + courseCredit;
+
+    //insert validation for already completed courses here!
 
     // 1. Gender-based Campus Restriction
     if (isMale && classObj.campus?.toLowerCase() === "female") {

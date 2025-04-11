@@ -276,3 +276,10 @@
   color: var(--clr-primary-a0);
   font-size: 0.7rem;
 }
+
+
+@media (prefers-color-scheme: light) {
+  .section-tag, .crn-tag {
+    background: var(--clr-surface-a50);
+  }
+}

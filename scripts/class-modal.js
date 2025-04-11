@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h2 class="course-title">${course?.courseName || "N/A"}</h2>
                 <div class="course-tags-div">
                   <span class="course-tag">${course?.courseId || ""}</span>
+                  <span class="campus-tag">${courseClass?.campus || ""}</span>
                   <span class="crn-tag">CRN ${
                     courseClass?.classId || "TBA"
                   }</span>
