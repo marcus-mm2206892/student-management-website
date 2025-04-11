@@ -1376,7 +1376,7 @@
     "campus": "Male",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "MW",
       "startTime": "10:00",
@@ -1647,7 +1647,7 @@
     "campus": "Female",
     "enrollmentActual": 0,
     "enrollmentMaximum": 35,
-    "classStatus": "open",
+    "classStatus": "pending",
     "schedule": {
       "scheduleType": "STT",
       "startTime": "10:00",
