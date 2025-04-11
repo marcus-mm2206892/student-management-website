@@ -129,11 +129,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const course = {
         courseId: `${subjectCode}${courseNumber}`,
         courseName,
+        creditHours,
         subject,
         courseNumber,
-        creditHours,
         prerequisites: prereqs,
         majorsOffered: majors,
+        currentClasses: [],
         description,
         imageUrl: imageUrl
       };
