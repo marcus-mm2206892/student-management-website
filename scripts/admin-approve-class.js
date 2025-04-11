@@ -306,6 +306,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return aPriority - bPriority;
     });
 
-    renderClasses(allClasses);
+    renderClasses(allClasses.filter(cls => cls.classStatus?.toLowerCase() !== "completed"));
   });
 });
