@@ -263,7 +263,6 @@ body {
 
 /* MODAL CONTENT */
 .modal-content {
-  flex-grow: 1;
   padding: 1.5rem;
   overflow-y: auto;
   background: var(--clr-surface-a20);
@@ -419,7 +418,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3.5rem;
+  width: 1.5rem;
   height: 1.5rem;
   font-size: 0.85rem;
   font-weight: bold;

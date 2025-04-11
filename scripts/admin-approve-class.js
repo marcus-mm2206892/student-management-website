@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let allUsers = JSON.parse(localStorage.getItem("users"));
 
   allClasses.sort((a, b) => b.enrollmentActual - a.enrollmentActual);
-  renderClasses(allClasses);
+  renderClasses(allClasses.filter(cls => cls.classStatus?.toLowerCase() !== "completed"));
 
   function renderClasses(allClasses) {
     try {
@@ -203,11 +203,11 @@ document.addEventListener("DOMContentLoaded", function () {
       row.querySelectorAll("td").forEach((td) => (td.style.display = ""));
     });
 
-    if (windowWidth < 820) hideColumn("course-instructor");
-    if (windowWidth < 720) hideColumn("course-enrollment");
-    if (windowWidth < 620) hideColumn("course-section");
-    if (windowWidth < 530) hideColumn("course-name");
-    if (windowWidth < 410) hideColumn("course-status");
+    if (windowWidth < 840) hideColumn("course-instructor");
+    if (windowWidth < 740) hideColumn("course-enrollment");
+    if (windowWidth < 640) hideColumn("course-section");
+    if (windowWidth < 550) hideColumn("course-name");
+    if (windowWidth < 430) hideColumn("course-status");
   }
 
   function hideColumn(className) {

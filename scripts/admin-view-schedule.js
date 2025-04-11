@@ -111,13 +111,13 @@ function updateSchedule(cls) {
   // Update schedule days
   const weekdays = scheduleContainer.querySelector(".weekdays");
   weekdays.innerHTML = "";
-  const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  const days = ["S", "M", "T", "W", "T", "F", "S"];
   const scheduleDays = cls.schedule.scheduleType;
 
   if (scheduleDays == "STT") {
-    activeDays = ["SUN", "TUE", "THU"];
+    activeDays = ["S", "T"];
   } else if (scheduleDays == "MW") {
-    activeDays = ["MON", "WED"];
+    activeDays = ["M", "W"];
   }
 
   days.forEach((day) => {
@@ -151,10 +151,10 @@ document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
 });
 
 function courseDdTemplate(courseId, courseName) {
-  return `<div onclick="selectOption('course','${courseId}')"><i class="fas fa-book"></i>${courseId} : ${courseName}</div>`;
+  return `<div onclick="selectOption('course','${courseId}')"><i class="fas fa-book"></i>${courseId}</div>`;
 }
 function classDdTemplate(classId) {
-  return `<div onclick="selectOption('class')"><i class="fas fa-calendar-alt"></i>CRN: ${classId}</div>`;
+  return `<div onclick="selectOption('class')"><i class="fas fa-calendar-alt"></i>CRN: ${classId} Section ${section}</div>`;
 }
 
 function instructorTemplate(instructor, user) {
