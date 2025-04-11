@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelector("#submit-btn")
       .addEventListener("click", function () {
         submitGrades(classId, enrolledStudents);
-        // setTimeout(() => {location.reload();}, 2500);
+        setTimeout(() => {location.reload();}, 2500);
       });
   }
 
