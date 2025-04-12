@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const searchBar = document.querySelector("#searchBar");
   const tableHead = document.querySelector("#tableHead");
-  const tableHeadRow = tableHead.querySelectorAll("tr")[1]; // second row (actual column headers)
+  const tableHeadRow = tableHead.querySelectorAll("tr")[1]; // Second row (actual column headers)
   const tableBody = document.querySelector("#data-output");
   const searchInfo = document.querySelector("#searchInfo");
   const registerTable = document.querySelector(".register-table");
@@ -177,11 +177,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // adjust table columns based on screen width
+  // Adjust table columns based on screen width
   function adjustTableColumns() {
     let windowWidth = window.innerWidth;
 
-    // reset all columns before hiding
+    // Reset all columns before hiding
     tableHeadRow
       .querySelectorAll("th")
       .forEach((th) => (th.style.display = ""));
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
       row.querySelectorAll("td").forEach((td) => (td.style.display = ""));
     });
 
-    // hide the columns progressively based on screen width
+    // Hide the columns progressively based on screen width
     if (windowWidth < 940) hideColumn("course-instructor");
     if (windowWidth < 840) hideColumn("course-enrollment");
     if (windowWidth < 740) hideColumn("course-section");
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (windowWidth < 530) hideColumn("course-status");
   }
 
-  // function to hide table headers and corresponding data columns
+  // Function to hide table headers and corresponding data columns
   function hideColumn(className) {
     let th = tableHeadRow.querySelector(`.${className}`);
     if (th) th.style.display = "none"; // hide the table header
@@ -208,10 +208,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // run adjustments on window resize
+  // Run adjustments on window resize
   window.addEventListener("resize", adjustTableColumns);
 
-  // initial call on page load
+  // Initial call on page load
   adjustTableColumns();
 
   document.addEventListener("click", function (event) {
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  //when clicked, should display a modal about the class
+  // When clicked, should display a modal about the class
   document.querySelectorAll(".open-modal").forEach((el) => {
     el.addEventListener("click", function () {
       const classId = this.dataset.classId;
@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       if (!completed) return false;
 
-      // grade comparison
+      // Grade comparison
       const gradeScale = [
         "A",
         "A-",

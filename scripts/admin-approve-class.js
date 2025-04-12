@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Approval Error",
             "Minimum of 5 students required to approve a class."
           );
-          this.value = "pending"; // revert back to pending
+          this.value = "pending"; // Revert back to pending
           return;
         }
 
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "An instructor already has an approved class during the time frame"
                   );
                   this.value = "pending";
-                  selectedStatus = "pending"; // revert back to pending
+                  selectedStatus = "pending"; // Revert back to pending
                   return;
                 }
               }
@@ -187,6 +187,8 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("instructors", JSON.stringify(allInstructors));
         localStorage.setItem("classes", JSON.stringify(allClasses));
         renderClasses(allClasses.filter(cls => cls.classStatus?.toLowerCase() !== "completed"));
+
+        setTimeout(() => location.reload(), 1200);
       });
     });
   }
@@ -248,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
       tableHeadRow.style.display = "none";
       searchInfo.style.display = "none";
     }
-
+    
     if (searchQuery === "") {
       searchInfo.style.display = "none";
       tableBody.style.display = "table-row-group";

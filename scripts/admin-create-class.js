@@ -6,9 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let classes = JSON.parse(localStorage.getItem("classes") || "[]");
 
   const courseDropdown = document.querySelector("#coursesDropdown");
-  const instructorDropdownMenu = document.querySelector(
-    "#instructorDropdownMenu"
-  );
+  const instructorDropdownMenu = document.querySelector("#instructorDropdownMenu");
+
   const tagContainer = document.querySelector("#selectedInstructors");
 
   const selectedCourse = document.querySelector("#selectedCourse");
@@ -90,14 +89,14 @@ document.addEventListener("DOMContentLoaded", function () {
       )
       .join("");
 
-    // autogenerate section if campus is selected
+    // Autogenerate section if campus is selected
     const campus = selectedCampus.textContent;
     if (campus === "Male" || campus === "Female") {
       autoGenerateSection(courseId, campus);
     }
   };
 
-  //we want to autogenerate sections
+  // To autogenerate sections
   function autoGenerateSection(courseId, campus) {
     const relevantClasses = classes.filter(
       (c) => c.courseId === courseId && c.campus === campus
@@ -106,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let base = campus === "Male" ? 1 : 51;
     let sectionNumber = base;
 
-    // Extract all existing section codes for this course + campus
+    // Extract all existing section codes for this course & campus
     const usedSections = new Set(relevantClasses.map((c) => c.section));
 
     // Loop until we find a section not used yet
@@ -189,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .join("");
   }
 
-  // populate time dropdown
+  // Populate time dropdown
   populateTimeDropdowns();
 
   // Form Submission
