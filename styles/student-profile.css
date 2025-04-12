@@ -559,6 +559,10 @@ body {
   .course-image-div .course-image:hover {
     border: 2px solid var(--clr-primary-a0);
   }
+
+  .content-info-paragraph.attachment {
+    color: var(--clr-contrast-a0);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
