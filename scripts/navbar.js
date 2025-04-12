@@ -88,7 +88,7 @@ function renderStudentNavbar(user) {
           </div>
         </div>        
         <div class="dropdown-options">
-          <button class="dropdown-btn profile">
+          <button class="dropdown-btn profile" onClick=" window.location.href = '../html/student-profile.html'">
             <div class="icon-box">
               <img src="${"../"+user["profile-image"]}" alt="User Icon" class="profile-icon">
             </div>
@@ -179,9 +179,9 @@ function renderInstructorNavbar(user) {
           </div>
         </div>        
         <div class="dropdown-options">
-          <button class="dropdown-btn profile">
+          <button class="dropdown-btn profile" onClick=" window.location.href = '../html/instructor-home-page.html'">
             <div class="icon-box">
-              <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon">
+              <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon" >
             </div>
             Profile
           </button>
@@ -274,7 +274,7 @@ function renderAdminNavbar(user) {
           </div>
         </div>        
         <div class="dropdown-options">
-          <button class="dropdown-btn profile">
+          <button class="dropdown-btn profile" onClick=" window.location.href = '../html/admin-home-page.html'">
             <div class="icon-box">
               <img src="../assets/imgs/user-icon-black.png" alt="User Icon" class="profile-icon">
             </div>
